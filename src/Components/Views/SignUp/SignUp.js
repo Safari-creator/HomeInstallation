@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -8,24 +8,24 @@ import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
-function Login() {
+function SignUp() {
   let history = useHistory();
 
-  return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    return (
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <Box
         component="span"
-        sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+        sx={{ display: "inline-block", mx: "2px", transform: "scale(0.9)" }}
       >
         <Card
           variant="outlined"
-          style={{ borderRadius: "1.3em", width: "30vw" }}
+          style={{ borderRadius: "1.3em", width: "50vw" }}
         >
           <CardContent>
             <Box
               component="form"
               sx={{
-                "& > :not(style)": { m: 1, width: "40ch" },
+                "& > :not(style)": { m: 1, width: "60ch" },
               }}
               style={{
                 display: "flex",
@@ -38,13 +38,17 @@ function Login() {
               autoComplete="off"
             >
               <div>
-                <h1>Login</h1>
+                <h1>Create Account</h1>
               </div>
-              <TextField id="outlined-basic" type="text" label="Email" variant="outlined" />
+              <TextField type="text" label="Email" variant="outlined" />
               <TextField
                 type="password"
-                id="outlined-basic"
                 label="Password"
+                variant="outlined"
+              />
+              <TextField
+                type="password"
+                label="Confirm Password"
                 variant="outlined"
               />
               <Button
@@ -52,7 +56,7 @@ function Login() {
                 onClick={() => history.push("/task-details")}
                 style={{ marginTop: "40px", padding: "10px" }}
               >
-                Login
+                Sign Up
               </Button>
 
               <div style={{display: "flex", justifyContent: "space-between", marginTop: "30px"}}>
@@ -69,7 +73,7 @@ function Login() {
         </Card>
       </Box>
     </div>
-  );
+    )
 }
 
-export default Login;
+export default SignUp
