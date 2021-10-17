@@ -50,12 +50,10 @@ function SideNavBar() {
         {navItems.map((navItem, index) => {
           return (
             <>
-              {console.log("arr length>>", typeof navItem)}
               <ListItemButton
                 onClick={typeof navItem !== "string" ? handleClick : ""}
               >
                 <ListItemIcon>
-                  {/* <InboxIcon /> */}
                   {typeof navItem !== "string"
                     ? tempComponentArr[index][0]
                     : tempComponentArr[index]}
@@ -83,7 +81,6 @@ function SideNavBar() {
                         <List component="div" disablePadding>
                           <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                              {/* <StarBorder /> */}
                               {tempComponentArr[index][index2 + 1]}
                             </ListItemIcon>
                             <ListItemText primary={value} />
