@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.signin-section {
+  max-width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(214, 203, 203);
+}
+
+.signin-section .container {
+  padding: 100px 100px 100px 100px;
+}
+
+.signin-section .container .signin-wrapper {
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  background-color: white;
+  display: flex;
+}
+
+.signin-section .container .signin-wrapper .signin-form {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 70px 50px 70px;
+  position: relative;
+}
+
+.signin-section .container .signin-wrapper .signin-form h3 {
+  text-align: left;
+  justify-content: space-evenly;
+}
+
+.signin-section .container .signin-wrapper .signin-form p {
+  font-size: 12px;
+  text-align: left;
+  color: grey;
+  margin-top: 20px;
+}
+
+.signin-section .container .signin-wrapper .signin-form form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.signin-section .container .signin-wrapper .signin-form form label {
+  font-size: 12px;
+}
+
+.signin-section .container .signin-wrapper .signin-form .form-input {
+  width: 100%;
+  font-size: 10px;
+  color: grey;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 3px;
+  justify-content: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.signin-section .container .signin-wrapper .signin-form form button {
+  background-color: rgb(4, 4, 54);
+  width: 100%;
+  color: white;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.signin-section .container .signin-wrapper .signin-form form button span {
+  font-weight: 900;
+  color: black;
+  text-align: center;
+  padding: 5px;
+}
+
+.signin-section .container .signin-wrapper .signin-image {
+  width: 50%;
+}
+
+.signin-section .container .signin-wrapper .signin-image .image-wrapper {
+  max-width: 400px;
+  max-height: 600px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.signin-section .container .signin-wrapper .signin-image .image-wrapper img {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
