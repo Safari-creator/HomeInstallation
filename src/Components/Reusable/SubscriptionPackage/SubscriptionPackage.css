@@ -1,3 +1,8 @@
+.box-shadow{
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+
+
 .package-header{
     background-color: rgb(245, 245, 245);
     background-color: rgb(40, 133, 205);

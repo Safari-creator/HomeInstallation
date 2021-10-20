@@ -9,12 +9,13 @@ function HomeReview({image, name}) {
             <div className="review-image-container">
                 <img className="review-image" src={image} alt="image" width="125" />
             </div>
-            <img src={ReviewStars} alt="stars" width="150" />
-            <div className="review-text">
+            <div className="align-review-container">
+            <div><img src={ReviewStars} alt="stars" width="150" /></div>
+            <div className="review-text text-color">
             “I really like the fact that I can go to the Property <br /> without my clipboard and complete the whole <br /> inspection with Aurora”. <br />
-            <b>~{name}</b>
+            <p><b className="review-name">~{name}</b></p>
             </div>
-
+            </div>
             
         </div>
     )

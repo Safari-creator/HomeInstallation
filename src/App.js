@@ -15,6 +15,7 @@ import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
 import SignUp from './Components/Views/SignUp/SignUp'
 import Dashboard from './Components/Views/Dashboard/Dashboard'
 import Home from './Components/Views/Home/Home'
+// import HomeLogin from './Components/Views/HomeLogin/HomeLogin'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Router>
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/Home' component={Home}></Route>
+        {/* <Route exact path='/Home-Login' component={HomeLogin}></Route> */}
         <Route exact path='/Dashboard' component={Dashboard}></Route>
         <Route exact path='/Sign-In' component={Login}></Route>
         <Route exact path='/Sign-Up' component={SignUp}></Route>

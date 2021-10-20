@@ -3,7 +3,7 @@ import './SubscriptionPackage.css'
 
 function SubscriptionPackage({image}) {
     return (
-        <div>
+        <div className="box-shadow">
             <div className={image?"package-header": "no-ribbon"}>
                 <div className="package-header-text">
                 <h6>Monthly</h6>
