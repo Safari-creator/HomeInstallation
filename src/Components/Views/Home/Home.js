@@ -71,17 +71,20 @@ import TextField from '@mui/material/TextField';
 const style = {
   display: 'flex',
   flexDirection: 'column',
-  position: 'fixed',
+  position: 'relative',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 700,
   height: 600,
+  outline: 'none',
   bgcolor: 'background.paper',
   // border: '2px solid #000',
   boxShadow: 24,
   p: 4,
   padding: 0,
+  minHeight: '100vh',
+  overflowY: 'auto',
 };
 
 
@@ -91,6 +94,11 @@ function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   // const classes = useStyle()
+
+
+  React.useEffect(() => {
+    handleOpen()
+  }, [])
   return (
     <div>
       <Modal
@@ -98,8 +106,9 @@ function Home() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        className="modal"
       >
-        <Box sx={style}>
+        <Box className="modal-box">
           <div className="modal-blue-container">
             <img src={circularLogo} className="circular-logo" alt="logo" width="150" />
             <img src={cross} onClick={handleClose} className="cross-sign" alt="cross" width="40" />
