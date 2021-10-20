@@ -1,3 +1,7 @@
+.MuiModal-root{
+    overflow-y: overlay;
+}
+
 .modal{
     background-color: rgba(0, 0, 0, 0.7) !important;
     height: 100% !important;
@@ -50,7 +54,7 @@
     max-width: 720px;
     width: 100%;
     margin-right: auto;
-
+    height: 611px;
 }
 
 
@@ -59,7 +63,13 @@
     flex-direction: column;
     align-items: center;
     background-color: rgb(48, 153, 242);
+    height: 162px;
 }
+
+.title-container{
+    margin-top: -24px;
+}
+
 
 .modal-heading{
     margin: 0 !important;

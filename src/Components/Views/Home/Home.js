@@ -112,12 +112,14 @@ function Home() {
           <div className="modal-blue-container">
             <img src={circularLogo} className="circular-logo" alt="logo" width="150" />
             <img src={cross} onClick={handleClose} className="cross-sign" alt="cross" width="40" />
+            <div className="title-container">
             <Typography id="modal-modal-title" variant="h6" component="h2">
               <h2 className="modal-heading">Try it now. Risk free.</h2>
             </Typography>
             <Typography className="no-margin" id="modal-modal-description" sx={{ mt: 2 }}>
               <h6 className="modal-description">No hidden features, no gimmicks. Cancel anytime.</h6>
             </Typography>
+            </div>
           </div>
 
 
