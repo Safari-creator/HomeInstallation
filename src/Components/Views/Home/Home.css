@@ -200,6 +200,10 @@
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     margin: 50px !important;
+    transform: all .2s ease-in-out !important;
+    animation-name: movingButton;
+    animation-duration: 2s;
+    animation-iteration-count: infinite
 }
 
 .down-arrow{
@@ -503,3 +507,23 @@ flex-direction: column;
 /* .signature-image{
     width: ;
 } */
+
+
+@keyframes movingButton {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(
+    0deg);
+    }
+}
