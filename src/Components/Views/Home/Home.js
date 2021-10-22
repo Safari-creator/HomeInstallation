@@ -138,7 +138,7 @@ function Home() {
           </div>
         </Box>
       </Modal>
-      <HomeHeader />
+      <HomeHeader handleOpen={handleOpen} />
 
 
       <div className="home-background1">
@@ -195,16 +195,18 @@ function Home() {
         <div className="overview-middle-title">
           <h2 className="overview-middle-title-text">Does any of these sound familiar?</h2>
         </div>
-        <div className="details-list text-color">
-          {/* <ul> */}
-
+        <div className="details-list text-color disable">
           <div className="checkbox-container"><CheckBoxIcon color="action" /> Are you frustrated by the amount of  &nbsp;<b>time it takes to do your Inspection?</b></div>
           <div className="checkbox-container"><CheckBoxIcon color="action" /> Are you wondering if  &nbsp;<b>there's a better way?</b></div>
           <div className="checkbox-container"><CheckBoxIcon color="action" /> Do you want to  &nbsp;<b>increase the amount of homes you inspect without working longer hours...</b></div>
           <div className="checkbox-container"><CheckBoxIcon color="action" /> Do you want a  &nbsp;<b>High Tech way to complete you inspection reports faster?</b></div>
           <div className="checkbox-container"><CheckBoxIcon color="action" /> Do you want the  &nbsp;<b>Secret to making more money doing Home Inspections?</b></div>
-          {/* </ul> */}
-        </div>
+        </div>  
+        <div className="details-list text-color">
+          <div className="checkbox-container">Are you frustrated by the amount of time it takes to do your Inspection?</div>
+          <div className="checkbox-container">Are you wondering if there's a better way?</div>
+          <div className="checkbox-container">Do you want to increase the amount of homes you inspect without working longer hours...</div>
+        </div>  
 
         <div className="mid-set">
           <div className="details-paragraph-text">
@@ -222,7 +224,7 @@ function Home() {
               TRY IT NOW FOR 7-DAYS FREE!
             </Button>
           </div>
-          <img className="mid-set-image" src={DesmondImg} alt="User Image" srcset="" />
+          <img className="mid-set-image disable" src={DesmondImg} alt="User Image" srcset="" />
         </div>
       </div>
 
@@ -296,7 +298,7 @@ function Home() {
       </div>
 
 
-      <div className="black-container">
+      <div className="black-container" id="features">
         <div className="blue-images-container-left">
           <div className="blue-image-left">
             <img src={reels} alt="reels" />
@@ -352,7 +354,7 @@ function Home() {
       </div>
 
 
-      <div className="package-description-container">
+      <div className="package-description-container" id="pricing">
         <div className="package-description-heading">
         <p className="text-details-heading">Pricing that puts any other software to shame:</p>
         <p className="package-description-text">Being a home inspector myself, I understand the frustration of paying premium prices for <br /> software that doesn't fulfill your needs.That's why I created Aurora, a software that offers <br /> more than anything else on the market, for a fraction of the cost.</p>

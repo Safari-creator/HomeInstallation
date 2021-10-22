@@ -1,15 +1,30 @@
+.decoration-none{
+    text-decoration: none;
+}
+
 .home-header{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     outline: none;
     background-color: rgb(241, 244, 248);
     box-shadow: 0 2px 5px 2px rgb(0 0 0 / 30%);
-    display: block;
+    /* display: block; */
+    display: "flex";
+    align-items: "center";
+    justify-content: "space-between";
+    position: "sticky";
+    
+}
+
+.header-logo{
+    width: 150px;
+    margin-left: 30px;
 }
 
 .home-header-navlink{
     font-size: 16px !important;
     color: rgb(92, 156, 207) !important;
+    text-decoration: none !important;
 }
 
 .home-header-button{
@@ -21,4 +36,30 @@
     border: 1px solid rgba(0,0,0,0.2) !important;
     border-radius: 11px !important;
     padding: 10px 40px !important;
+}
+
+/* @media only screen and (max-width: 800px){
+    /* For tablet */
+    /* .home-header{
+        
+    }
+} */    
+
+@media only screen and (min-width: 0px) and (max-width: 770px){
+.disable {
+    display: none !important;
+}
+
+.home-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.header-logo{
+    width: 100px;
+
+}
 }

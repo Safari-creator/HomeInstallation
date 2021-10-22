@@ -5,23 +5,24 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./HomeHeader.css";
 
-function HomeHeader() {
+function HomeHeader({handleOpen}) {
   return (
     <div
       className="home-header"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        position: "sticky",
-      }}
+      // style={{
+      //   display: "flex",
+      //   alignItems: "center",
+      //   justifyContent: "space-between",
+      //   position: "sticky",
+      // }}
     >
       {/* hoiodsfmdf sdfknsfip sdkjfnrjg;lksadfn   */}
-      <span>
+      <span >
         <img
           src={Logo}
           alt="logo"
-          style={{ width: "150px", marginLeft: "30px" }}
+          // style={{ width: "150px", marginLeft: "30px" }}
+          className="header-logo"
         />
       </span>
       <div
@@ -32,16 +33,17 @@ function HomeHeader() {
           width: "55%",
           marginRight: "30px",
         }}
+        className="disable"
       >
         <span>
-          <Button className="home-header-navlink" variant="text">
-            <h4>Features</h4>
-          </Button>
+        <a href="#features" className="decoration-none"> <Button className="home-header-navlink" variant="text">
+           <h4>Features</h4>
+          </Button></a>
         </span>
         <span>
-          <Button className="home-header-navlink" variant="text">
-            <h4>Pricing</h4>
-          </Button>
+        <a href="#pricing" className="decoration-none"><Button className="home-header-navlink" variant="text">
+           <h4>Pricing</h4>
+          </Button></a>
         </span>
         <span>
           <Button className="home-header-navlink" variant="text">
@@ -50,7 +52,7 @@ function HomeHeader() {
         </span>
         <span>
           <Button className="home-header-navlink" variant="text">
-            <h4>Free Trial</h4>
+            <h4 onClick={() => handleOpen()}>Free Trial</h4>
           </Button>
         </span>
         <span>

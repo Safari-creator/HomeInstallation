@@ -52,3 +52,10 @@
     transform: rotate(360deg);
   }
 } */
+
+@media only screen and (max-width: 800px){
+  /* For tablet */
+  .App{
+      overflow-x: auto;
+  }
+}
