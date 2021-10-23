@@ -11,7 +11,7 @@ function SubscriptionPackage({image}) {
                 <h6>All-in-one Software</h6>
                 </div>
                 {image?
-                    <div className="red-ribbon">
+                    <div className="red-ribbon disable">
                     <img src={image} width="200"/>
                     </div>
                 : ""} 

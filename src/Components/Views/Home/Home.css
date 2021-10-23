@@ -354,6 +354,12 @@ flex-direction: column;
     margin-bottom: 50px;
 }
 
+.home-background2-container{
+    display: flex;
+    width: 87%;
+    justify-content: space-evenly;
+}
+
 
 .why-to-use{
     display: flex;
@@ -597,6 +603,137 @@ flex-direction: column;
 
     .details-paragraph-text{
         margin-left: 0.1em;
+    }
+
+    .disable-fullscreen{
+        display: flex;
+    }
+
+
+    .home-background2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-background2-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .why-to-use{
+        display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    overflow-y: hidden;
+    }
+
+    .text-details{
+        width: 100%;
+        margin-left: 0px;
+        /* padding: 0px !important; */
+    }
+
+    .text-color{
+        padding: 0px;
+    }
+
+    .tablet-image{
+        width: 200px;
+    }
+    .pay-rise-text{
+        margin-left: 0px;
+    line-height: 25px;
+    margin-top: 0px;
+    }
+
+    .pay-rise-height{
+        /* width: 385px;   */
+        width: 367px;  
+        line-height: 28px; 
+    }
+
+    .mob-pad{
+        padding-left: 15px;
+    }
+
+    .black-image{
+        width: 100px;
+    }
+
+    .black-images-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .black-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blue-images-container-left{
+        margin-top: 0px;
+    }
+
+    .blue-images-container-right{
+        margin-top: 0px;
+    }
+
+    .blue-image{
+        width: auto;
+    }
+
+    .blue-image-left{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .blue-image-right{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .blue-image-title-right{
+        text-align: center;
+    }
+
+    .blue-image-title-left{
+        text-align: center;
+    }
+
+    .black-image-container{
+        display: block;
+    }
+
+
+    .text-details-heading{
+        font-weight: 300;
+    line-height: 46px;
+    font-size: 35px;
+    }
+
+    .package-description-text{
+        font-size: 16px;
+        line-height: 22px;
+        text-align: start;
+    }
+
+    .package-component{
+        display: flex;
+        flex-direction: column;
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .mid-set{
+        display: flex;
+    flex-direction: column;
+    }
+
+    .sign-image{
+        width: 200px !important;
+    margin-left: -177px;
     }
 
 

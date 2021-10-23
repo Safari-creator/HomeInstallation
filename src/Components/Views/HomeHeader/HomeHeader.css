@@ -8,11 +8,11 @@
     outline: none;
     background-color: rgb(241, 244, 248);
     box-shadow: 0 2px 5px 2px rgb(0 0 0 / 30%);
-    /* display: block; */
-    display: "flex";
-    align-items: "center";
-    justify-content: "space-between";
-    position: "sticky";
+    /* display: flex; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: "stickys"; */
     
 }
 
