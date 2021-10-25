@@ -56,15 +56,25 @@
 
 @media only screen and (max-width: 800px){
   /* For tablet */
+  body{
+    overflow: auto !important;
+  }
+
   .App{
-      overflow-x: clip;
+      overflow: auto !important;
+      overflow-x: clip !important;
       font-size: 16px;
       /* width: 400px; */
   }
+
   /* *{
   } */
-  html{
+  /* html{
     width: 400px;
     overflow-x: hidden;
-  }
+  } */
+
+  /* *{
+    overflow-x: hidden;
+  } */
 }
