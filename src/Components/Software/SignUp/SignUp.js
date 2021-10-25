@@ -9,10 +9,26 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 const SignUp = () => {
 
     let history = useHistory();
+    const clientId = "382147708211-8rgvf7ca8b4p1nqe433pvp604sg0q2na.apps.googleusercontent.com";
+    const onSuccess = (res) => {
+        console.log('[Login Success] currentUser:', res.profileObj);
+    };
+    const onFailure = (res) => {
+        console.log('[Login failed] res:', res);
+    }
+    const responseGoogle = response => {
+        console.log(response);
+        setName(response.profileObj.name);
+        setEmail(response.profileObj.email);
+        setUrl(response.profileObj.imageUrl);
+    };
 
     // const [checked,setChecked] = useState(false);
     const [tab, setTab] = useState(0);
-    
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [url, setUrl] = useState("");
+
     return(
         <center class="signup-section">
             <div class="container">
@@ -36,10 +52,10 @@ const SignUp = () => {
                             <button onClick={() => setTab(1)}>Next</button>
                             <p>or</p>
                                 <GoogleLogin 
-                    // clientId={clientId}
-                    // onSuccess={responseGoogle}
-                    // onFailure={responseGoogle}
-                    // cookiePolicy={"single_host_origin"}
+                    clientId={clientId}
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={"single_host_origin"}
                     >Register with google</GoogleLogin>
                         </form>
                         <div class="signup-footer"><p>Already have an Account? <button className="signup-button">SIGN IN</button></p></div>

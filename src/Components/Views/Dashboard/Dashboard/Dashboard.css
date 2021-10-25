@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-section {
+  padding-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-section .dashboard-header {
+  width: 100%;
+  /* padding: 0px 20px; */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.dashboard-section .dashboard-header h2 {
+  float: left;
+  font-size: 20.45px;
+  font-weight: bold;
+  line-height: 29px;
+}
+
+.dashboard-section .dashboard-header .header-right {
+  float: right;
+}
+
+.dashboard-section .dashboard-header .header-right p {
+  line-height: 29px;
+}
+
+.dashboard-section .dashboard-body {
+  background-color: #bec1f0;
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-section .dashboard-body .dashboard-left {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.dashboard-section .dashboard-body .dashboard-left .two-columns {
+  display: flex;
+  width: 100%;
+}
+
+.dashboard-section .dashboard-body .dashboard-left .two-columns .today-section {
+  border-radius: 10px;
+  width: 50%;
+  /* margin-right: 10px; */
+  background-color: white;
+  margin: 10px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-body {
+  border-radius: inherit;
+  padding: 10px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-body
+  p {
+  font-size: 12px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-body
+  .today-image {
+  width: 250px;
+  height: 200px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-body
+  .today-image
+  img {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .today-section
+  .today-body
+  button {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+  font-weight: 500;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+  cursor: pointer;
+  outline: none;
+}
+
+.dashboard-section .dashboard-body .dashboard-left .two-columns .map-section {
+  border-radius: 10px;
+  width: 50%;
+  margin: 10px;
+  background-color: white;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .map-section
+  .map-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .two-columns
+  .map-section
+  .map-body {
+  background-color: white;
+  border-radius: inherit;
+}
+
+.dashboard-section .dashboard-body .dashboard-left .one-column {
+  width: 100%;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .one-column
+  .schedule-section {
+  border-radius: 10px;
+  background-color: white;
+  height: fit-content;
+  width: 96%;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .one-column
+  .schedule-section
+  .schedule-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .one-column
+  .schedule-section
+  .schedule-body {
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .one-column
+  .schedule-section
+  .schedule-body
+  button {
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+  font-weight: 500;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+  cursor: pointer;
+  outline: none;
+  margin: 10px 30px 10px 30px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-left
+  .one-column
+  .schedule-section
+  .schedule-body
+  textarea {
+  /* position: absolute;
+  bottom: 0; */
+  row-gap: 3;
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 75%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.dashboard-section .dashboard-body .dashboard-right {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.dashboard-section .dashboard-body .dashboard-right .subscribe-section {
+  border-radius: 10px;
+  background-color: white;
+  height: fit-content;
+  width: 100%;
+  margin: 10px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-body {
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-body
+  p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-body
+  h5 {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 10px;
+  letter-spacing: 0px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-body
+  .subscribe-buttons {
+  margin: 0 auto;
+  text-align: center;
+  float: bottom;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .subscribe-section
+  .subscribe-body
+  .subscribe-buttons
+  button {
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+  font-weight: bold;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+  cursor: pointer;
+  outline: none;
+  margin: 20px 10px 10px 10px;
+}
+
+.dashboard-section .dashboard-body .dashboard-right .newinspector-section {
+  border-radius: 10px;
+  /* margin-right: 10px;
+  margin-left: 10px; */
+  margin: 10px;
+  background-color: white;
+  height: fit-content;
+  width: 100%;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .newinspector-section
+  .newinspector-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .newinspector-section
+  .newinspector-body {
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .newinspector-section
+  .newinspector-body
+  h5 {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 10px;
+  letter-spacing: 0px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .newinspector-section
+  .newinspector-body
+  button {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  color: gray;
+  border: 1px solid gray;
+  font-weight: bolder;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+  cursor: pointer;
+  outline: none;
+  margin: 20px 10px 10px 10px;
+}
+
+.dashboard-section .dashboard-body .dashboard-right .inprogress-section {
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  margin: 10px;
+  height: 100px;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .inprogress-section
+  .inprogress-header {
+  background-color: #d5d5e4;
+  color: grey;
+  border-radius: inherit;
+}
+
+.dashboard-section
+  .dashboard-body
+  .dashboard-right
+  .inprogress-section
+  .inprogress-body {
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+.dashboard-section .dashboard-body .dashboard-right .help-section {
+  margin: 10px;
+  background-color: white;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+}
+
+.dashboard-section .dashboard-body .dashboard-right .help-section h3 {
+  width: 50%;
+  line-height: 60px;
+  color: gray;
+}
+
+.dashboard-section .dashboard-body .dashboard-right .help-section button {
+  width: 50%;
+  background-color: #fb8200;
+  font-size: 10px;
+  border-radius: inherit;
+  margin: 0.5px;
+  padding: 20px;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+}
