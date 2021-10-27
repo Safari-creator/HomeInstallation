@@ -9,19 +9,11 @@ function HomeHeader({handleOpen}) {
   return (
     <div
       className="home-header"
-      // style={{
-      //   display: "flex",
-      //   alignItems: "center",
-      //   justifyContent: "space-between",
-      //   position: "sticky",
-      // }}
     >
-      {/* hoiodsfmdf sdfknsfip sdkjfnrjg;lksadfn   */}
       <span >
         <img
           src={Logo}
           alt="logo"
-          // style={{ width: "150px", marginLeft: "30px" }}
           className="header-logo"
         />
       </span>

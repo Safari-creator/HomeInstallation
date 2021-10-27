@@ -106,7 +106,7 @@ function Home() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className="modal disable"
+        className="modal"
       >
         <Box className="modal-box">
           <div className="modal-blue-container">

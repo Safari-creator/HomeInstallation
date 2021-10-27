@@ -2,9 +2,9 @@
     text-decoration: none;
 }
 
-.home-header{
-    padding-top: 0px;
-    padding-bottom: 0px;
+.signup-home-header{
+    padding-top: 10px;
+    padding-bottom: 10px;
     outline: none;
     background-color: rgb(241, 244, 248);
     box-shadow: 0 2px 5px 2px rgb(0 0 0 / 30%);
@@ -16,7 +16,7 @@
     
 }
 
-.header-logo{
+.signup-header-logo{
     width: 150px;
     margin-left: 70px;
 }
@@ -38,6 +38,16 @@
     padding: 10px 40px !important;
 }
 
+.contact{
+    margin-right: 75px;
+    /* display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    width: "55%";
+    margin-right: "-110px"; */
+}
+
+
 /* @media only screen and (max-width: 800px){
     /* For tablet */
     /* .home-header{
@@ -58,8 +68,13 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.header-logo{
-    width: 100px;
-
+.signup-home-header{
+    display: flex;
+    justify-content: center;
 }
+
+.signup-header-logo{
+    margin-left: 45px;
+}
+
 }
