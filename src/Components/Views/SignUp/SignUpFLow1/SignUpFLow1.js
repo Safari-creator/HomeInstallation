@@ -39,7 +39,7 @@ function SignUpFLow1() {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
-                                <Typography>Aurora Monthly - 7 Day Free Trial (then $89/mo)</Typography>
+                                <Typography className="accordian-heading1">Aurora Monthly - 7 Day Free Trial (then $89/mo)</Typography>
                             </AccordionSummary>
                             <AccordionDetails >
                                 <div className="desktop-image-container">
@@ -56,7 +56,7 @@ function SignUpFLow1() {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
-                                <Typography>Aurora Monthly - 7 Day Free Trial (then $89/mo)</Typography>
+                                <Typography className="accordian-heading2">Aurora Monthly - 7 Day Free Trial (then $89/mo)</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <div className="desktop-image-container">
@@ -83,15 +83,15 @@ function SignUpFLow1() {
                     </div>
 
                     <div className="secured-content">
-                        <div><img src={YellowTick} alt="yellow-ribbon" /></div>
+                        <div ><img src={YellowTick} className="secured-image" alt="yellow-ribbon" /></div>
                         <div className="secured-content-text"><b> INDUSTRY LEADING GUARANTEE</b><br />
-                            <p className="left-align">If you choose Aurora today and you don't feel it significantly reduces your time during home inspections, we will give you a complete refund, no questions asked.</p>
+                            <p className="web-align mob-align">If you choose Aurora today and you don't feel it significantly reduces your time during home inspections, we will give you a complete refund, no questions asked.</p>
                         </div>
                     </div>
                     <div className="secured-content">
-                        <img src={BigLock} alt="big-lock" />
+                        <img src={BigLock} className="secured-image" alt="big-lock" />
                         <div className="secured-content-text"><b> SECURE PROCESSING</b><br />
-                           <p className="left-align">Each order is processed through a secure, 256-bit encrypted payment processing gateway to ensure your privacy.</p> 
+                           <p className="web-align mob-align">Each order is processed through a secure, 256-bit encrypted payment processing gateway to ensure your privacy.</p> 
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@ function SignUpFLow1() {
                         <div className="input-field"><TextField className="input-design" placeholder="Enter Country.." fullWidth id="fullWidth" /></div>
                     </div>
                     <div className="overview-middle-title form-heading">
-                        <h5 className="overview-middle-title-text form-heading-text">---------------- Credit Card Inforamtion ----------------</h5>
+                        <h5 className="overview-middle-title-text form-heading-text">------------- Credit Card Inforamtion -------------</h5>
                     </div>
                     <div className="input-tags form-input-right left-align">
                         <label>Card Number*</label>
@@ -137,9 +137,9 @@ function SignUpFLow1() {
                         <div className="input-field"><TextField className="input-design" fullWidth id="fullWidth" /></div> */}
                         <div className="inline-input">
 
-                            <div className="input-field"><label>State / Province*</label><TextField className="input-design" placeholder="MM/YY" fullWidth id="fullWidth" /></div>
+                            <div className="input-field"><label>Expiry Date*</label><TextField className="input-design" placeholder="MM/YY" fullWidth id="fullWidth" /></div>
 
-                            <div className="input-field zip"><label>Zip*</label><TextField className="input-design MuiInputBase-fullwidth" placeholder="Enter CVV" fullWidth id="fullWidth" /></div>
+                            <div className="input-field zip"><label>Cvv*</label><TextField className="input-design MuiInputBase-fullwidth" placeholder="Enter CVV" fullWidth id="fullWidth" /></div>
                         </div>
                         {/* <label>Country*</label>
                         <div className="input-field"><TextField className="input-design" fullWidth id="fullWidth" /></div> */}

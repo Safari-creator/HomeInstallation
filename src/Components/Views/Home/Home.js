@@ -35,6 +35,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
+import { useHistory } from "react-router-dom";
 // import { makeStyles } from "@mui/material";
 
 
@@ -90,6 +91,7 @@ const style = {
 
 
 function Home() {
+  let history = useHistory();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -106,7 +108,7 @@ function Home() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className="modal"
+        className="modal disable"
       >
         <Box className="modal-box">
           <div className="modal-blue-container">
@@ -129,7 +131,7 @@ function Home() {
               <div className="input-field"><TextField className="input-design" fullWidth label="Email" id="fullWidth" /></div>
               <div className="input-field"><TextField className="input-design" fullWidth label="Number" id="fullWidth" /></div>
             </div>
-            <Button className="modal-button" onClick={handleOpen} variant="contained">
+            <Button className="modal-button" onClick={() => history.push('/Sign-Up')} variant="contained">
               TRY IT NOW FOR 7-DAYS FREE!
             </Button>
             <Typography className="no-margin" id="modal-modal-description" sx={{ mt: 2 }}>
@@ -153,7 +155,7 @@ function Home() {
             time back and increase your revenue.
           </h4>
         </div>
-        <Button className="home-button1" onClick={handleOpen} variant="contained">
+        <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
           TRY IT NOW FOR 7-DAYS FREE!
         </Button>
         <div className="down-arrow">
@@ -184,7 +186,7 @@ function Home() {
         <div className="desktop-image-container">
           <img className="desktop-image" src={Desktop} alt="desktop pic" width="700" />
         </div>
-        <Button className="home-button1" onClick={handleOpen} variant="contained">
+        <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
           TRY IT NOW FOR 7-DAYS FREE!
         </Button>
       </div>
@@ -220,7 +222,7 @@ function Home() {
             <p>In fact, the app saves you so much time that you’re able to <br /> <b>get to your next inspection faster</b>, and <u> with just a couple<br /> home inspections, the software pays for itself! </u><br /></p>
 
             <p>It’s all possible with <b>Aurora.</b><br /></p>
-            <Button className="home-button1" onClick={handleOpen} variant="contained">
+            <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
               TRY IT NOW FOR 7-DAYS FREE!
             </Button>
           </div>
@@ -272,7 +274,7 @@ function Home() {
 
           <p className="pay-rise-height"> When a house you inspect takes you a shorter amount of time to complete, you get paid the same amount, while <br /> taking fewer hours to complete the inspection, thus increasing your hourly rate! <br /></p>
         </div>
-        <Button className="home-button1" onClick={handleOpen} variant="contained">
+        <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
           TRY IT NOW FOR 7-DAYS FREE!
         </Button>
         <p className="text-color pay-rise-text mob-pad">
@@ -357,7 +359,7 @@ function Home() {
         <div className="black-image-container disable-fullscreen">
           <img src={mirrorTablet} alt="mirror tablet" width="670" />
           {/* <span className="blue-text"><p>View Full Features List</p><p>View A Sample Report</p></span> */}
-          <Button className="home-button1" onClick={handleOpen} variant="contained">
+          <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
             TRY IT NOW FOR 7-DAYS FREE!
           </Button>
           <div className="blue-text-container"><span className="blue-text">View Full Features List</span><span className="blue-text">View A Sample Report</span></div>
@@ -374,7 +376,7 @@ function Home() {
           <SubscriptionPackage image={""} />
           <SubscriptionPackage image={redRibbon} />
         </div>
-        <Button className="home-button1" onClick={handleOpen} variant="contained">
+        <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
           TRY IT NOW FOR 7-DAYS FREE!
         </Button>
       </div>
@@ -409,7 +411,7 @@ function Home() {
             <p className="details-paragraph-text">Today is the day. Thanks for your time! <br /></p>
             <div > <img className="sign-image" src={signature} alt="User Image" width="330" /> </div>
             <p className="details-paragraph-text">- CEO, Aurora</p>
-            <Button className="home-button1" onClick={handleOpen} variant="contained">
+            <Button className="home-button1" onClick={() => history.push('/Sign-Up')} variant="contained">
               TRY IT NOW FOR 7-DAYS FREE!
             </Button>
           </div>

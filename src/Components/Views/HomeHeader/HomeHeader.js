@@ -4,8 +4,12 @@ import Button from "@mui/material/Button";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./HomeHeader.css";
+import { useHistory } from "react-router-dom";
+
 
 function HomeHeader({handleOpen}) {
+  let history = useHistory();
+
   return (
     <div
       className="home-header"
@@ -48,7 +52,7 @@ function HomeHeader({handleOpen}) {
           </Button>
         </span>
         <span>
-          <Button className="home-header-button" variant="contained">
+          <Button className="home-header-button" onClick={() => history.push('/Sign-Up')} variant="contained">
             Members
           </Button>
           {/* <NotificationsIcon /> */}

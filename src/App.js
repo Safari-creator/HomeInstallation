@@ -12,7 +12,7 @@ import TaskDetails from './Components/Views/TaskDetails/TaskDetails'
 import Header from './Components/Views/Header/Header';
 import SideNavBar from './Components/Views/SideNavBar/SideNavBar';
 import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
-import SignUp from './Components/Views/SignUp/SignUp'
+// import SignUp from './Components/Views/SignUp/SignUp'
 import SignUpFLow1 from './Components/Views/SignUp/SignUpFLow1/SignUpFLow1';
 import Dashboard from './Components/Views/Dashboard/Dashboard'
 import Home from './Components/Views/Home/Home'
