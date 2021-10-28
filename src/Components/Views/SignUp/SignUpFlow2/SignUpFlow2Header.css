@@ -1,0 +1,129 @@
+.decoration-none{
+    text-decoration: none;
+}
+
+.signup-home-header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+    background-color: rgb(241, 244, 248);
+    box-shadow: 0 2px 5px 2px rgb(0 0 0 / 30%);
+    /* display: flex; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: "stickys"; */
+    
+}
+
+.flow2{
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-bar{
+    width: 70%;
+    color: #fff;
+    background-color: #428bca;
+    text-align: center;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+    line-height: 36px;
+    height: 35px;
+    font-size: 14px;
+    background-image: linear-gradient( 
+45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    animation: progress-bar-stripes 2s linear infinite reverse;
+    transition: width .25s ease, height .25s ease, font-size .25s ease;
+}
+
+.white-portion{
+    width: 75%;
+    background: #fff
+}
+
+.flow2-heading{
+    text-align: center;
+    font-size: 54px;
+    color: rgb(6, 6, 6);
+}
+
+.flow2-heading-context{
+    text-align: center;
+    font-size: 24px;
+    color: rgb(6, 6, 6);
+    /* word-wrap: break-word; */
+    line-height: normal;
+    font-family: "Open Sans", Helvetica, sans-serif !important;
+}
+
+.red-text{
+    color: rgb(199, 38, 24);
+}
+
+
+
+.signup-header-logo{
+    width: 150px;
+    margin-left: 70px;
+}
+
+.home-header-navlink{
+    font-size: 16px !important;
+    color: rgb(92, 156, 207) !important;
+    text-decoration: none !important;
+}
+
+.home-header-button{
+    color: rgb(255, 255, 255) !important;
+    font-weight: 600 !important;
+    background-color: rgb(0, 117, 178) !important;
+    font-size: 14px !important;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%) !important;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-radius: 11px !important;
+    padding: 10px 40px !important;
+}
+
+.contact{
+    margin-right: 75px;
+    /* display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    width: "55%";
+    margin-right: "-110px"; */
+}
+
+
+@keyframes progress-bar-stripes {
+    0% {
+        background-position: 40px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 770px){
+.disable {
+    display: none !important;
+}
+
+.home-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.signup-home-header{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-header-logo{
+    margin-left: 45px;
+}
+
+}

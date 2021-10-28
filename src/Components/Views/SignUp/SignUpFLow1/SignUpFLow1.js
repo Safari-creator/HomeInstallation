@@ -14,11 +14,13 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
+import { useHistory } from "react-router-dom";
+
 
 
 
 function SignUpFLow1() {
-
+    let history = useHistory();
     const [checkClick1, setCheckClick1] = React.useState(false)
     const [checkClick2, setCheckClick2] = React.useState(true)
 
@@ -155,7 +157,7 @@ function SignUpFLow1() {
                             <p>7 Days FREE, then $899 <br />per year</p>
                         </div>
                     </div>
-                    <Button className="button full-width" variant="contained">
+                    <Button className="button full-width" onClick={() => history.push('/upsell-1')} variant="contained">
                         Complete Order & Get Instant Access
                     </Button>
 
