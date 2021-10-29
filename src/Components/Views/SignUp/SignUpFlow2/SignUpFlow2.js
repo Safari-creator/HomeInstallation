@@ -28,7 +28,7 @@ function SignUpFLow2() {
                        <div><div className="second circle"><span className="font30">00</span></div><div className="light-grey timer-title">seconds</div></div>
                     </div>
                 </div>
-                <Button className="home-button1 offer-button" onClick={() => history.push('/Sign-Up')} variant="contained">
+                <Button className="home-button1 offer-button" onClick={() => history.push('/confirmed')} variant="contained">
                     <span className="highlight-text"><b>Yes! I Want Instant Access To The Cloud Storage!</b></span>
                     <span className="blur-text">By Clicking This Button You Will Be Charged $10 Today, Then $10 Per Month After 30 Days</span>
                 </Button>
@@ -42,10 +42,9 @@ function SignUpFLow2() {
                 </div>
             </div>
             {/* <hr /> */}
-            <div className="copyright-text height20">© Copyright 2019 - All Rights Reserved, InspectSource <br />
+            <div className="copyright-text height20 border-top">© Copyright 2019 - All Rights Reserved, InspectSource <br />
                 185 Bradford Square, Fayetteville, GA 30215 <br />
                 Customer Service: (770)-780-5532</div>
-
         </div>
     )
 }

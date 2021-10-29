@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../../../Assets/images/Aurora_logo.png'
-import './SignUpFLow1Header.css' 
+import './SignUpFlow1Header.css' 
 import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 
 function SignUpFlow1Header() {
