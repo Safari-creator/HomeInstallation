@@ -1,0 +1,112 @@
+/* /* .sidebar-section {
+  width: 100%;
+  max-width: 250px;
+} */
+
+/* .sidebar-section .container {
+  box-sizing: border-box;
+} */
+
+/* .sidebar-section .container .sidebar-wrapper {
+  width: 250px;
+  height: fit-content;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: left;
+} */
+
+/* .sidebar-wrapper .sidebar-item {
+  font-size: 11.93px;
+  color: black;
+  margin-bottom: 30px;
+  cursor: pointer;
+  
+} */
+
+.sidebar-section {
+  width: 215.58px;
+  height: 979.9px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.sidebar-section .sidebar-image {
+  height: 109.92px;
+}
+.sidebar-section .image-wrapper {
+  width: 108.92px;
+  height: 41.54px;
+  top: 21.51px;
+  left: 17.04px;
+  position: absolute;
+}
+.sidebar-section .image-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.sidebar-section .sidebar-content {
+  /* display: flex;
+  flex-direction: column; */
+  /* position: relative; */
+}
+.sidebar-section .sidebar-content p {
+  width: 40px;
+  height: 12px;
+  font-size: 10.23px;
+  text-align: left;
+  font-weight: 500;
+  line-height: 12.37px;
+  letter-spacing: 0.64px;
+  position: absolute;
+  left: 19.6px;
+  top: 95.43px;
+}
+.sidebar-section .sidebar-content .contents {
+  width: 215.58px;
+  height: 43.46px;
+  position: absolute;
+  left: 0px;
+  cursor: pointer;
+}
+.sidebar-section .sidebar-content .contents .content-icon {
+  width: 20.45px;
+  height: 20.45px;
+  position: absolute;
+  top: 11.08px;
+  left: 17.04px;
+  opacity: 40%;
+}
+.sidebar-section .sidebar-content .contents .content-name {
+  width: 100%;
+  height: 29px;
+  position: absolute;
+  top: 8.08px;
+  left: 46.01px;
+  opacity: 60%;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 11.93px;
+  line-height: 28.97px;
+}
+
+.sidebar-section .sidebar-content .buttons {
+  position: absolute;
+  left: 17.04px;
+}
+
+.sidebar-section .sidebar-content .buttons button {
+  color: rgba(251, 130, 0, 100%);
+  background-color: rgba(0, 0, 0, 10%);
+  opacity: 10%;
+  border-radius: 8.52px;
+  width: 181.49px;
+  height: 57.94px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}

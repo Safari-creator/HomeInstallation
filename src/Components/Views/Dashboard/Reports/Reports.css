@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.reports-section {
+  padding-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-section .reports-header {
+  width: 100%;
+  /* padding: 0px 20px; */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.reports-section .reports-header h2 {
+  float: left;
+  font-size: 20.45px;
+  font-weight: bold;
+  line-height: 29px;
+}
+
+.reports-section .reports-header .header-right {
+  float: right;
+}
+
+.reports-section .reports-header .header-right p {
+  line-height: 29px;
+}
+
+.reports-section .reports-body {
+  background-color: #bec1f0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reports-section .reports-body .body-header {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  /* line-height: 50px; */
+  /* margin: 0 auto; */
+  /* width: 974px;
+  height: 78px; */
+}
+
+.reports-section .reports-body .body-header label {
+  color: black;
+  font-size: 12px;
+  line-height: 25px;
+  margin-right: 5px;
+}
+
+.reports-section .reports-body .body-header input {
+  border-radius: 50px;
+  border: 1px solid blue;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+}
+
+.reports-section .reports-body .body-header button {
+  font-size: 12px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 1px 1px 10px 1px rgb(202, 199, 199);
+  cursor: pointer;
+  outline: none;
+  margin-left: 10px;
+}
+
+.reports-section .reports-body .body-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-section .reports-body .body-main .body-one h3 {
+}
+
+.reports-section .reports-body .body-main .body-one p {
+}
