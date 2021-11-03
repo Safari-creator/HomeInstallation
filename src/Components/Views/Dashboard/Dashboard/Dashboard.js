@@ -11,10 +11,10 @@ const Dashboard = () => {
     useEffect(() => {
         const sidebar = document.querySelector('.sidebar-section')
 
-        if (showSidebar) {
+        if (showSidebar && window.innerWidth < 1280) {
             sidebar.style.left = '0'
         }
-        else {
+        else if (!showSidebar && window.innerWidth < 1280) {
             sidebar.style.left = "-216px"
         }
     })
