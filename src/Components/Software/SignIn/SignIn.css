@@ -8,16 +8,18 @@
   height: fit-content;
   justify-content: center;
   align-items: center;
-  background-color: rgb(214, 203, 203);
+  background-color: #e5eaff;
 }
 
 .signin-section .container {
-  padding: 100px 100px 100px 100px;
+  /* padding: 100px 100px 100px 100px; */
+  height: 100vh;
 }
 
 .signin-section .container .signin-wrapper {
-  width: 800px;
-  height: 600px;
+  width: 85%;
+  float: right;
+  height: 100vh;
   margin: auto;
   background-color: white;
   display: flex;
@@ -28,20 +30,27 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 50px 70px 50px 70px;
+  /* padding: 50px 70px 50px 70px; */
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
 .signin-section .container .signin-wrapper .signin-form h3 {
   text-align: left;
   justify-content: space-evenly;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a202c;
+  width: 330px;
 }
 
 .signin-section .container .signin-wrapper .signin-form p {
-  font-size: 12px;
+  font-size: 16px;
   text-align: left;
-  color: grey;
-  margin-top: 20px;
+  color: #2d3748;
+  font-weight: 400;
+  width: 330px;
 }
 
 .signin-section .container .signin-wrapper .signin-form form {
@@ -55,28 +64,46 @@
 
 .signin-section .container .signin-wrapper .signin-form .form-input {
   width: 100%;
-  font-size: 10px;
-  color: grey;
-  padding: 10px;
+  font-size: 14px;
+  height: 50px;
+  color: #8692a6;
+  padding: 10px 30px;
   box-sizing: border-box;
   border: 1px solid grey;
-  border-radius: 3px;
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+  border-radius: 6px;
   justify-content: left;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 10px;
 }
 
+.signin-section .signin-form-body {
+  width: 330px;
+}
+
+.signin-section .signin-form-body label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #696f79;
+}
+
 .signin-section .container .signin-wrapper .signin-form form button {
-  background-color: rgb(4, 4, 54);
+  background-color: #0f123f;
   width: 100%;
   color: white;
   border: none;
+  height: 50px;
   text-align: center;
   display: inline-block;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   padding: 10px;
   margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .signin-section .container .signin-wrapper .signin-form form button span {
@@ -91,8 +118,8 @@
 }
 
 .signin-section .container .signin-wrapper .signin-image .image-wrapper {
-  max-width: 400px;
-  max-height: 600px;
+  /* max-width: 400px; */
+  /* max-height: 600px; */
   height: 100%;
   object-fit: cover;
 }
@@ -102,4 +129,70 @@
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .signin-section .container .signin-wrapper {
+    width: 100%;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signin-section .container .signin-wrapper {
+    background: url("../assets/signup-image.png");
+    display: block;
+  }
+  .signin-section .container .signin-wrapper .signin-form {
+    background: white;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 100%;
+  }
+  .signin-section .container .signin-wrapper .signin-form .signin-heading {
+    display: none;
+  }
+  .signin-section .container .signin-wrapper .signin-image {
+    display: none;
+  }
+  .signin-section .container .signin-wrapper .signin-form .signin-footer {
+    display: none;
+  }
+  .signin-section .container .signin-wrapper .signin-form h3 {
+    font-size: 18px;
+    width: 80%;
+  }
+  .signin-section .container .signin-wrapper .signin-form p.sub-heading,
+  .signin-section .container .signin-wrapper .signin-form form label {
+    font-size: 12px;
+    width: 80%;
+  }
+  .signin-section .container .signin-wrapper .signin-form .form-input {
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .signin-section .container .signin-wrapper .signin-form form p {
+    margin-top: 10px;
+  }
+  .signin-section .signin-form-body {
+    width: 80%;
+  }
+  .signin-section .container .signin-wrapper .signin-form p {
+    width: 80%;
+    color: #8692a6;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .signin-section .signin-form-body,
+  .signin-section .container .signin-wrapper .signin-form h3,
+  .signin-section .container .signin-wrapper .signin-form p.sub-heading,
+  .signin-section .container .signin-wrapper .signin-form p {
+    width: 100%;
+  }
 }

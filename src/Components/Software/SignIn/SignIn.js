@@ -1,5 +1,5 @@
 import './SignIn.css';
-import signUpImage from '../assets/signin-image.jpg';
+import signUpImage from '../assets/signup-image.png';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from "react-google-login";
 import React, { useState } from 'react';
@@ -32,9 +32,9 @@ const SignIn = () => {
             <div className="container">
                 <div className="signin-wrapper">
                     <div className="signin-form">
-                        <p>Welcome back</p>
+                        <p>Welcome Back!</p>
                         <h3>Login to your account</h3>
-                        <form>
+                        <form className="signin-form-body">
                             <label>Email</label><br />
                             <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br />
                             <label>Password</label><br />

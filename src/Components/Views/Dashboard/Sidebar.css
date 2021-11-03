@@ -1,19 +1,24 @@
 .sidebar-section {
   width: 215.58px;
-  height: 979.9px;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   left: 0px;
   top: 0px;
+  background: white;
+  z-index: 1000;
 }
 .sidebar-section .sidebar-image {
-  height: 109.92px;
+  /* height: 109.92px; */
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .sidebar-section .image-wrapper {
   width: 108.92px;
   height: 41.54px;
   top: 21.51px;
   left: 17.04px;
-  position: absolute;
+  /* position: absolute; */
 }
 .sidebar-section .image-wrapper img {
   width: 100%;
@@ -23,7 +28,14 @@
   /* display: flex;
   flex-direction: column; */
   /* position: relative; */
+  /* height: 100vh; */
 }
+
+.sidebar-section .content-heading p {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
 .sidebar-section .sidebar-content p {
   width: 40px;
   height: 12px;
@@ -32,29 +44,34 @@
   font-weight: 500;
   line-height: 12.37px;
   letter-spacing: 0.64px;
-  position: absolute;
+  opacity: 50%;
+  /* position: absolute; */
   left: 19.6px;
   top: 95.43px;
 }
 .sidebar-section .sidebar-content .contents {
   width: 215.58px;
-  height: 43.46px;
-  position: absolute;
+  height: 34px;
+  /* position: absolute; */
   left: 0px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 .sidebar-section .sidebar-content .contents .content-icon {
   width: 20.45px;
   height: 20.45px;
-  position: absolute;
+  margin-left: 20px;
+  margin-right: 10px;
+  /* position: absolute; */
   top: 11.08px;
   left: 17.04px;
-  opacity: 40%;
 }
 .sidebar-section .sidebar-content .contents .content-name {
   width: 100%;
   height: 29px;
-  position: absolute;
+  /* position: absolute; */
   top: 8.08px;
   left: 46.01px;
   opacity: 60%;
@@ -65,9 +82,9 @@
 }
 
 .sidebar-section .sidebar-content .buttons {
-  position: absolute;
+  /* position: absolute; */
   left: 17.04px;
-  background-color: rgba(0, 0, 0, 10%);
+  /* background-color: rgba(0, 0, 0, 10%); */
 }
 
 .sidebar-section .sidebar-content .buttons button {
@@ -81,14 +98,28 @@
   font-weight: 600;
   font-size: 18px;
   position: relative;
+  border: none;
+  margin-top: 20px;
 }
 
 .sidebar-section .sidebar-content .buttons button img {
   width: 47.72px;
   height: 47.72px;
-  position: absolute;
+  /* position: absolute; */
   /* left: 22.15px;
   bottom: 36.54px; */
   left: 5.11px;
   bottom: 5.11px;
+}
+
+@media screen and (max-width: 1279px) {
+  .sidebar-section {
+    position: fixed;
+    top: 0;
+    left: -216px;
+    transition: 0.2s all linear;
+  }
+  .sidebar-section .sidebar-content .buttons {
+    display: none;
+  }
 }

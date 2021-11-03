@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import signUpImage from '../assets/signin-image.jpg';
+import signUpImage from '../assets/signup-image.png';
 import './SignUp.css';
 import GoogleLogin from "react-google-login";
 import { useHistory } from 'react-router-dom';
@@ -40,25 +40,26 @@ const SignUp = () => {
                                 <h5>Personal Info.</h5>
                             </div>
                             <h3>Register Individual Account!</h3>
-                            <p>For the purpose of industry regulation, your details are required.</p>
-                            <form>
+                            <p className="sub-heading">For the purpose of industry regulation, your details are required.</p>
+                            <form className="signup-form-body">
                                 <label>Your fullname*</label><br />
                                 <input className="form-input" type="text" placeholder="Enter full name"></input><br />
                                 <label>Email address*</label><br />
                                 <input className="form-input" type="text" placeholder="Enter email address"></input><br />
                                 <label>Create password*</label><br />
                                 <input className="form-input" type="text" placeholder="Enter password"></input><br />
-                                <label><input type="checkbox"></input>I agree to terms and conditions.</label>
+                                <label className="tnc"><input type="checkbox" style={{ cursor: 'pointer' }}></input><span>I agree to terms and conditions.</span></label>
                                 <button onClick={() => setTab(1)}>Next</button>
-                                <p>or</p>
+                                <p style={{ color: '#787878', fontSize: 12, fontWeight: 400 }}>or</p>
                                 <GoogleLogin
+                                    style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)', borderRadius: 6, fontWeight: 500, fontSize: 16, textAlign: 'center' }}
                                     clientId={clientId}
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                     cookiePolicy={"single_host_origin"}
                                 >Register with google</GoogleLogin>
                             </form>
-                            <div className="signup-footer"><p>Already have an Account? <button className="signup-button">SIGN IN</button></p></div>
+                            <div className="signup-footer"><p>Already have an Account? <button className="signup-button" style={{ cursor: 'pointer' }}>Sign IN</button></p></div>
                         </div>}
                     {tab === 1 &&
                         <div className="signup-form">
@@ -67,15 +68,17 @@ const SignUp = () => {
                                 <h5>Residency Info.</h5>
                             </div>
                             <h3>Complete Your Profile!</h3>
-                            <p>For the purpose of industry regulation, your details are required.</p>
-                            <form>
-                                <label>Phone Number</label><br />
+                            <p className="sub-heading">For the purpose of industry regulation, your details are required.</p>
+                            <form className="signup-form-body">
+                                <label>Phone number</label><br />
                                 <input className="form-input" type="text" placeholder="Enter full name"></input><br />
-                                <label>Your Address</label><br />
+                                <label>Your address</label><br />
                                 <input className="form-input" type="text" placeholder="Please enter address"></input><br />
                                 <label>Country of residence</label><br />
-                                <input className="form-input" type="text" placeholder="Enter password"></input><br />
-                                <button onClick={() => setTab(2)}>Save and Continue</button>
+                                <select className="form-input">
+                                    <option selected disabled>Please select</option>
+                                </select>
+                                <button onClick={() => setTab(2)}>Save & Continue</button>
                                 <p>Your info is safely secured.</p>
                             </form>
                         </div>}
@@ -86,13 +89,13 @@ const SignUp = () => {
                                 <h5>Profile Verification.</h5>
                             </div>
                             <h3>Complete Your Profile!</h3>
-                            <p>For the purpose of industry regulation, your details are required.</p>
-                            <form>
+                            <p className="sub-heading">For the purpose of industry regulation, your details are required.</p>
+                            <form className="signup-form-body">
                                 <label>Add Profile Photo</label><br />
                                 <input className="form-input" type="text" placeholder="Browse"></input><br />
                                 <label>Add Profile Destination</label><br />
                                 <input className="form-input" type="text" placeholder="Example"></input><br />
-                                <button onClick={() => history.push('/Sign-In')}>Save and Continue</button>
+                                <button onClick={() => history.push('/Sign-In')}>Save & Continue</button>
                                 <p>Your info is safely secured.</p>
                             </form>
                         </div>}
