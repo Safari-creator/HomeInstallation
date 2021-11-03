@@ -1,10 +1,14 @@
 import React from 'react';
+// import './CreateNewReports.css';
 
 const CreateNewReports = () => {
     return(
-        <center>
-            <div>CreateNewReports</div>
-        </center>
+        // <div className="createnewreports-section">
+        //     <div className="header-part">
+        //         <p>Create New Reports</p>
+        //     </div>
+        // </div>
+        <p>me</p>
     );
 }
 

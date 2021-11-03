@@ -59,6 +59,7 @@
   align-items: center;
   margin-bottom: 5px;
 }
+
 .sidebar-section .sidebar-content .contents .content-icon {
   width: 20.45px;
   height: 20.45px;
@@ -68,6 +69,7 @@
   top: 11.08px;
   left: 17.04px;
 }
+
 .sidebar-section .sidebar-content .contents .content-name {
   width: 100%;
   height: 29px;
@@ -88,9 +90,9 @@
 }
 
 .sidebar-section .sidebar-content .buttons button {
-  color: rgba(251, 130, 0);
-  /* opacity: 10%; */
   border-radius: 8.52px;
+  border-color: #e7e7e7;
+  color: rgba(251, 130, 0);
   width: 181.49px;
   height: 57.94px;
   cursor: pointer;
