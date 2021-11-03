@@ -35,49 +35,50 @@ const Sidebar = ({setTab }) => {
                     <p class="content-name" onClick={() => setTab(1)}>Create New Reports</p>
                 </div>
                 <div class="contents" style={{top: '196.83px'}}>
-                    <img src={contracts} alt="reportsIcon" class="content-icon"/>
+                    <img src={contracts} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(2)}>Contracts</p>
                 </div>
                 <div class="contents" style={{top: '240px'}}>
-                    <img src={realtors} alt="reportsIcon" class="content-icon"/>
+                    <img src={realtors} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(3)}>Realtors</p>
                 </div>
                 <div class="contents" style={{top: '283px'}}>
-                    <img src={extraPages} alt="reportsIcon" class="content-icon"/>
+                    <img src={extraPages} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(4)}>Extra Pages</p>
                 </div>
                 <div class="contents" style={{top: '326.38px'}}>
-                    <img src={reports} alt="reportsIcon" class="content-icon"/>
+                    <img src={reports} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(4)}>Reports</p>
                 </div>
                 <div class="contents" style={{top: '369.46px'}}>
-                    <img src={template} alt="reportsIcon" class="content-icon"/>
+                    <img src={template} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(6)}>Template</p>
                 </div>
                 <div class="contents" style={{top: '412.91px'}}>
-                    <img src={contacts} alt="reportsIcon" class="content-icon"/>
+                    <img src={contacts} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(7)}>Contacts</p>
                 </div>
                 <div class="contents" style={{top: '456.37px'}}>
-                    <img src={metrics} alt="reportsIcon" class="content-icon"/>
+                    <img src={metrics} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(8)}>Metrics</p>
                 </div>
-                <div class="contents" style={{top: '499.83px'}}>
-                    <img src={automation} alt="reportsIcon" class="content-icon"/>
+                <div className="contents" style={{top: '499.83px'}}>
+                    <img src={automation} alt="reportsIcon" className="content-icon"/>
                     <p class="content-name" onClick={() => setTab(9)}>Automation</p>
                 </div>
-                <div class="contents" style={{top: '543.28px'}}>
-                    <img src={settings} alt="reportsIcon" class="content-icon"/>
-                    <p class="content-name" onClick={() => setTab(10)}>Settings</p>
+                <div className="contents" style={{top: '543.28px'}}>
+                    <img src={settings} alt="reportsIcon" className="content-icon"/>
+                    <p className="content-name" onClick={() => setTab(10)}>Settings</p>
                 </div>
-                <div class="buttons" style={{top: '821px'}}>
+                <div className="buttons" style={{top: '821px'}}>
                     <button>Help?</button>
                 </div>
-                <div class="buttons" style={{top: '890.53px'}}>
+                <div className="buttons" style={{top: '890.53px'}}>
                     <button>
                         <img src={profile} alt=""></img>
-                        
-                        </button>
+                        <p className="profile">Profile</p>
+                        <p className="designated">Designation</p>
+                    </button>
                 </div>
             </div>
         </div>

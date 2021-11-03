@@ -43,6 +43,7 @@
   left: 0px;
   cursor: pointer;
 }
+
 .sidebar-section .sidebar-content .contents .content-icon {
   width: 20.45px;
   height: 20.45px;
@@ -51,6 +52,7 @@
   left: 17.04px;
   opacity: 40%;
 }
+
 .sidebar-section .sidebar-content .contents .content-name {
   width: 100%;
   height: 29px;
@@ -71,9 +73,9 @@
 }
 
 .sidebar-section .sidebar-content .buttons button {
-  color: rgba(251, 130, 0);
-  /* opacity: 10%; */
   border-radius: 8.52px;
+  border-color: #e7e7e7;
+  color: rgba(251, 130, 0);
   width: 181.49px;
   height: 57.94px;
   cursor: pointer;
@@ -81,14 +83,32 @@
   font-weight: 600;
   font-size: 18px;
   position: relative;
+  line-height: 29px;
 }
 
 .sidebar-section .sidebar-content .buttons button img {
   width: 47.72px;
   height: 47.72px;
   position: absolute;
-  /* left: 22.15px;
-  bottom: 36.54px; */
   left: 5.11px;
   bottom: 5.11px;
+}
+
+.sidebar-section .sidebar-content .buttons button .profile {
+  position: absolute;
+  top: 8.52px;
+  left: 56.24px;
+  font-size: 11.93px;
+  line-height: 29px;
+  font-weight: 600;
+  color: black;
+  /* font-family: Inter; */
+  font-style: normal;
+}
+
+.sidebar-section .sidebar-content .buttons button .designated {
+  position: absolute;
+  top: 28.97px;
+  left: 56.24px;
+  color: rgba(0, 0, 0, 0.5);
 }
