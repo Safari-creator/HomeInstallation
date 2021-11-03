@@ -38,6 +38,12 @@
     padding: 10px 40px !important;
 }
 
+.align-header{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
 .contact{
     margin-right: 75px;
     /* display: "flex";
@@ -69,12 +75,16 @@
     padding-bottom: 5px;
 }
 .signup-home-header{
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: column;
 }
 
 .signup-header-logo{
     margin-left: 45px;
 }
+
+}
+
+@media only screen and (min-width: 0px) and (max-width: 770px){
 
 }

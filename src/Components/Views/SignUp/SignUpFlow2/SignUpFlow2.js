@@ -13,9 +13,13 @@ function SignUpFLow2() {
         <div>
             <SignUpFlow2Header />
             <div className="home-background1">
+                <div className="padd10 align-center margin-top">
                 <div >
-                    <div style={{marginTop: "-114px"}} className="video1">
-                        <iframe title="vimeo-player" src="https://player.vimeo.com/video/493370943?h=3f98cb151a" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                    <div class="wistia_responsive_padding" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                        <div class="wistia_responsive_wrapper" style={{ height: "100%", left: "0", position: "absolute", top: "0", width: "100%" }}>
+                            <div class="wistia_embed wistia_async_s3lqfi0zn7 seo=false videoFoam=true" style={{ height: "100%", width: "100%" }}>&nbsp;
+                            </div>
+                        </div>
                     </div>
                     <h3 className="home-heading">
                         Hurry, this SPECIAL offer won't last long!
@@ -23,9 +27,9 @@ function SignUpFLow2() {
                 </div>
                 <div>
                     <div className="timer">
-                       <div><div className="minute circle"><span className="font30">00</span></div><div className="light-grey timer-title">Hours</div> </div>
-                       <div><div className="hours circle"><span className="font30">00</span></div><div className="light-grey timer-title">minute</div> </div>
-                       <div><div className="second circle"><span className="font30">00</span></div><div className="light-grey timer-title">seconds</div></div>
+                        <div><div className="minute circle"><span className="font30">00</span></div><div className="light-grey timer-title">Hours</div> </div>
+                        <div><div className="hours circle"><span className="font30">00</span></div><div className="light-grey timer-title">minute</div> </div>
+                        <div><div className="second circle"><span className="font30">00</span></div><div className="light-grey timer-title">seconds</div></div>
                     </div>
                 </div>
                 <Button className="home-button1 offer-button" onClick={() => history.push('/confirmed')} variant="contained">
@@ -40,6 +44,8 @@ function SignUpFLow2() {
                     </a>
                     <a href="" className="light-grey margin20">No Thanks, I Don't Want To Protect My Work With Cloud Storage</a>
                 </div>
+                </div>
+                
             </div>
             {/* <hr /> */}
             <div className="copyright-text height20 border-top">© Copyright 2019 - All Rights Reserved, InspectSource <br />

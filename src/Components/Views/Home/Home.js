@@ -127,9 +127,14 @@ function Home() {
 
           <div className="modal-input">
             <div className="input-tags">
-              <div className="input-field"><TextField className="input-design" fullWidth label="Name" id="fullWidth" /></div>
+            <div>
+                        <div className="input-field"><TextField className="input-design margin10" placeholder="Name..." fullWidth id="fullWidth" /></div>
+                        <div className="input-field"><TextField className="input-design margin10" placeholder="Email..." fullWidth id="fullWidth" /></div>
+                        <div className="input-field"><TextField className="input-design margin10" placeholder="Number..." fullWidth id="fullWidth" /></div>
+                    </div>
+              {/* <div className="input-field"><TextField className="input-design" fullWidth label="Name" id="fullWidth" /></div>
               <div className="input-field"><TextField className="input-design" fullWidth label="Email" id="fullWidth" /></div>
-              <div className="input-field"><TextField className="input-design" fullWidth label="Number" id="fullWidth" /></div>
+              <div className="input-field"><TextField className="input-design" fullWidth label="Number" id="fullWidth" /></div> */}
             </div>
             <Button className="modal-button" onClick={() => history.push('/Sign-Up')} variant="contained">
               TRY IT NOW FOR 7-DAYS FREE!

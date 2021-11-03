@@ -17,11 +17,47 @@
 }
 
 .total-amount-content{
-    width: 46%;
-    margin-left: 27%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.vid100{
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+.top-content{
+
 }
 
 .access-button{
     width: 100%;
     margin-left: -5%;
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 770px){
+
+    .total-amount-content {
+        width: 100%;
+        margin-left: 0%;
+        /* line-height: 4em; */
+    }
+    .access-button{
+        margin-left: -10%;
+    }
+    .top-content{
+        /* margin-top: ; */
+    }
+
+    .right-align{
+        text-align: end;
+    }
+
+    .vid100{
+        width: 94%;
+        margin-left: 4%;
+    }
 }

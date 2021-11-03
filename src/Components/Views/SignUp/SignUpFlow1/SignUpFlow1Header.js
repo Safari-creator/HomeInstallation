@@ -6,7 +6,7 @@ import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
 function SignUpFlow1Header() {
     return (
         <div
-        className="signup-home-header"
+        className="signup-home-header align-header"
       >
         <span >
           <img

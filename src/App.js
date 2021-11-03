@@ -17,6 +17,7 @@ import SignUpFLow1 from './Components/Views/SignUp/SignUpFlow1/SignUpFlow1';
 import SignUpFLow2 from './Components/Views/SignUp/SignUpFlow2/SignUpFlow2';
 import SignUpFLow3 from './Components/Views/SignUp/SignUpFlow3/SignUpFlow3';
 import SignUpFLow4 from './Components/Views/SignUp/SignUpFlow4/SignUpFlow4';
+import Membership from './Components/Views/Membership/Membership';
 import Dashboard from './Components/Views/Dashboard/Dashboard'
 import Home from './Components/Views/Home/Home'
 // import HomeLogin from './Components/Views/HomeLogin/HomeLogin'
@@ -38,7 +39,7 @@ function App() {
         <Route exact path='/Create-Password' component={SignUpFLow4}></Route>
         <Route exact path='/task-details' component={TaskDetails}></Route>
         <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
-        {/* <Route exact path='/Forgot-Password' component={ForgotPassword}></Route> */}
+        <Route exact path='/membership-area' component={Membership}></Route>
       </Router>
     </div>
   );

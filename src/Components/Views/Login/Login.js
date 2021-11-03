@@ -25,7 +25,7 @@ function Login() {
             {/* <label>Confirm Password:</label>
             <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div> */}
             <div className="align-center">
-            <Button className="create-button width100" onClick={() => history.push('/lesson-1')} variant="contained">
+            <Button className="create-button width100" onClick={() => history.push('/membership-area')} variant="contained">
                 LOGIN TO ACCOUNT
             </Button>
             <Link to="/membership" class="margin-bottom10px"><div>Forgot Password?</div></Link>

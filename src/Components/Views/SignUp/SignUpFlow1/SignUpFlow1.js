@@ -72,14 +72,6 @@ function SignUpFLow1() {
                             </AccordionDetails>
                         </Accordion>
                     </div>
-                    {/* <hr
-                        style={{
-                            marginTop: '50px',
-                            color: 'color',
-                            backgroundColor: 'color',
-                            height: 5
-                        }}
-                    /> */}
                     <div>
                         <hr className="line" />
                     </div>
@@ -152,7 +144,7 @@ function SignUpFLow1() {
                             <p><b>Amount</b></p>
                         </div>
                         <hr />
-                        <div className="display-row margin-top">
+                        <div className="display-row">
                             <p>Aurora Yearly</p>
                             <p>7 Days FREE, then $899 <br />per year</p>
                         </div>

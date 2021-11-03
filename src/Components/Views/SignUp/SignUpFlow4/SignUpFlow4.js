@@ -26,7 +26,7 @@ function SignUpFlow4() {
                 <label>Confirm Password:</label>
                 <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
                 <div className="align-center">
-                <Button className="create-button width100" onClick={() => history.push('/membership')} variant="contained">
+                <Button className="create-button width100" onClick={() => history.push('/Sign-In')} variant="contained">
                     CREATE YOUR ACCOUNT
                 </Button>
                 <Link to="/Sign-In" class="margin-bottom10px"><div>Already a member? Login Now!</div></Link>
