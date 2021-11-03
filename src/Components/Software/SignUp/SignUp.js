@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import signUpImage from '../assets/signin-image.jpg';
 import './SignUp.css';
 import GoogleLogin from "react-google-login";
