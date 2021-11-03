@@ -43,14 +43,14 @@ function App() {
         <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
       </Router> */}
       {/* <MainDashboard></MainDashboard> */}
-      {/* <MainDashboard></MainDashboard> */}
-      <Router>
+      <MainDashboard></MainDashboard>
+      {/* <Router>
       <Route exact path='/' component={SignUp}></Route>
       <Route exact path='/Sign-In' component={SignIn}></Route>
       <Route exact path='/MainDashboard' component={MainDashboard}></Route>
-      {/* <Route exact path='/task-details' component={TaskDetails}></Route>
-      <Route exact path='/Forgot-Password' component={ForgotPassword}></Route> */}
-      </Router>
+      <Route exact path='/task-details' component={TaskDetails}></Route>
+      <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
+      </Router> */}
       {/* <SignIn></SignIn> */}
       {/* <SignUp></SignUp> */}
     </div>
