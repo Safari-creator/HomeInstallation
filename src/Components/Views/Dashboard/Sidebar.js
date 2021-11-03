@@ -12,6 +12,7 @@ import contacts from "../../Software/assets/contacts.png"
 import metrics from "../../Software/assets/metrics.png"
 import automation from "../../Software/assets/automation.png"
 import settings from "../../Software/assets/settings.png"
+import profile from "../../Software/assets/profile.png"
 
 const Sidebar = ({setTab }) => {
     return (
@@ -73,7 +74,10 @@ const Sidebar = ({setTab }) => {
                     <button>Help?</button>
                 </div>
                 <div class="buttons" style={{top: '890.53px'}}>
-                    <button><p>Profile</p></button>
+                    <button>
+                        <img src={profile} alt=""></img>
+                        
+                        </button>
                 </div>
             </div>
         </div>

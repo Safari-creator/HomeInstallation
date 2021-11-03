@@ -31,7 +31,8 @@
 }
 
 .dashboard-section .dashboard-body {
-  background-color: #bec1f0;
+  /* background-color: #bec1f0; */
+  background-color: #e5eaff;
   display: flex;
   padding: 20px;
   width: 100%;

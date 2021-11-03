@@ -6,13 +6,13 @@ app.aurora2go.com
 
 import React from 'react'
 import './App.css';
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import Login from './Components/Views/Login/Login';
-// import TaskDetails from './Components/Views/TaskDetails/TaskDetails'
+import TaskDetails from './Components/Views/TaskDetails/TaskDetails'
 // import Header from './Components/Views/Header/Header';
 // import SideNavBar from './Components/Views/SideNavBar/SideNavBar';
-// import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
-// // import SignUp from './Components/Views/SignUp/SignUp'
+import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
+import SignUp from './Components/Views/SignUp/SignUp'
 // import SignUpFLow1 from './Components/Views/SignUp/SignUpFlow1/SignUpFlow1';
 // import SignUpFLow2 from './Components/Views/SignUp/SignUpFlow2/SignUpFlow2';
 // import SignUpFLow3 from './Components/Views/SignUp/SignUpFlow3/SignUpFlow3';
@@ -21,7 +21,8 @@ import './App.css';
 // import Home from './Components/Views/Home/Home'
 // import HomeLogin from './Components/Views/HomeLogin/HomeLogin'
 import MainDashboard from './Components/Views/Dashboard/MainDashboard';
-// import Sidebar from './Components/Views/Dashboard/Sidebar';
+import Sidebar from './Components/Views/Dashboard/Sidebar';
+import SignIn from './Components/Software/SignIn/SignIn';
 
 function App() {
   return (
@@ -40,8 +41,15 @@ function App() {
         <Route exact path='/task-details' component={TaskDetails}></Route>
         <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
       </Router> */}
-      {/* <MainDashboard></MainDashboard> */}
       <MainDashboard></MainDashboard>
+      {/* <MainDashboard></MainDashboard> */}
+      {/* <Router>
+      // <Route exact path='/' component={SignUp}></Route>
+      //   <Route exact path='/Sign-In' component={SignIn}></Route>
+      //   <Route exact path='/task-details' component={TaskDetails}></Route>
+      //   <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
+      // </Router> */}
+      {/* <SignIn></SignIn> */}
     </div>
   );
 }
