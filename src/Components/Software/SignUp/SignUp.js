@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import React, {useState} from 'react';
 import signUpImage from '../assets/signin-image.jpg';
 import './SignUp.css';
 import GoogleLogin from "react-google-login";
@@ -30,12 +30,12 @@ const SignUp = () => {
     const [url, setUrl] = useState("");
 
     return(
-        <center class="signup-section">
-            <div class="container">
-                <div class="signup-wrapper" setTab={setTab}>
+        <center className="signup-section">
+            <div className="container">
+                <div className="signup-wrapper" setTab={setTab}>
                     {tab === 0 &&
-                    <div class="signup-form">
-                        <div class="signup-heading">
+                    <div className="signup-form">
+                        <div className="signup-heading">
                             <p>Step 01/03</p>
                             <h5>Personal Info.</h5>
                         </div>
@@ -58,11 +58,11 @@ const SignUp = () => {
                     cookiePolicy={"single_host_origin"}
                     >Register with google</GoogleLogin>
                         </form>
-                        <div class="signup-footer"><p>Already have an Account? <button className="signup-button">SIGN IN</button></p></div>
+                        <div className="signup-footer"><p>Already have an Account? <button className="signup-button">SIGN IN</button></p></div>
                     </div>}
                     {tab === 1 &&
-                    <div class="signup-form">
-                        <div class="signup-heading">
+                    <div className="signup-form">
+                        <div className="signup-heading">
                             <p>Step 02/03</p>
                             <h5>Residency Info.</h5>
                         </div>
@@ -80,8 +80,8 @@ const SignUp = () => {
                         </form>
                     </div>}
                     {tab === 2 &&
-                    <div class="signup-form">
-                        <div class="signup-heading">
+                    <div className="signup-form">
+                        <div className="signup-heading">
                             <p>Step 03/03</p>
                             <h5>Profile Verification.</h5>
                         </div>
@@ -96,8 +96,8 @@ const SignUp = () => {
                             <p>Your info is safely secured.</p>
                         </form>
                     </div>}
-                    <div class="signup-image">
-                        <div class="image-wrapper">
+                    <div className="signup-image">
+                        <div className="image-wrapper">
                             <img src={signUpImage} alt="signUpImage"></img>
                         </div>
                     </div>

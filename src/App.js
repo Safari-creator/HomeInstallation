@@ -12,7 +12,7 @@ import TaskDetails from './Components/Views/TaskDetails/TaskDetails'
 // import Header from './Components/Views/Header/Header';
 // import SideNavBar from './Components/Views/SideNavBar/SideNavBar';
 import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
-import SignUp from './Components/Views/SignUp/SignUp'
+// import SignUp from './Components/Views/SignUp/SignUp'
 // import SignUpFLow1 from './Components/Views/SignUp/SignUpFlow1/SignUpFlow1';
 // import SignUpFLow2 from './Components/Views/SignUp/SignUpFlow2/SignUpFlow2';
 // import SignUpFLow3 from './Components/Views/SignUp/SignUpFlow3/SignUpFlow3';
@@ -23,6 +23,7 @@ import SignUp from './Components/Views/SignUp/SignUp'
 import MainDashboard from './Components/Views/Dashboard/MainDashboard';
 import Sidebar from './Components/Views/Dashboard/Sidebar';
 import SignIn from './Components/Software/SignIn/SignIn';
+import SignUp from './Components/Software/SignUp/SignUp';
 
 function App() {
   return (
@@ -41,15 +42,17 @@ function App() {
         <Route exact path='/task-details' component={TaskDetails}></Route>
         <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
       </Router> */}
-      <MainDashboard></MainDashboard>
       {/* <MainDashboard></MainDashboard> */}
-      {/* <Router>
-      // <Route exact path='/' component={SignUp}></Route>
-      //   <Route exact path='/Sign-In' component={SignIn}></Route>
-      //   <Route exact path='/task-details' component={TaskDetails}></Route>
-      //   <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
-      // </Router> */}
+      {/* <MainDashboard></MainDashboard> */}
+      <Router>
+      <Route exact path='/' component={SignUp}></Route>
+      <Route exact path='/Sign-In' component={SignIn}></Route>
+      <Route exact path='/MainDashboard' component={MainDashboard}></Route>
+      {/* <Route exact path='/task-details' component={TaskDetails}></Route>
+      <Route exact path='/Forgot-Password' component={ForgotPassword}></Route> */}
+      </Router>
       {/* <SignIn></SignIn> */}
+      {/* <SignUp></SignUp> */}
     </div>
   );
 }
