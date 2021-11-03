@@ -1,7 +1,7 @@
 import './SignIn.css';
 import signUpImage from '../assets/signin-image.jpg';
 // import GoogleLogin from "react-google-login";
-import {React , useState} from 'react';
+import { React, useState } from 'react';
 
 const SignIn = () => {
 
@@ -26,17 +26,17 @@ const SignIn = () => {
 
 
     return (
-        <center class="signin-section">
-            <div class="container">
-                <div class="signin-wrapper">
-                    <div class="signin-form">
-                            <p>Welcome back</p>
-                            <h3>Login to your account</h3>
+        <center className="signin-section">
+            <div className="container">
+                <div className="signin-wrapper">
+                    <div className="signin-form">
+                        <p>Welcome back</p>
+                        <h3>Login to your account</h3>
                         <form>
-                            <label>Email</label><br/>
-                            <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br/>
-                            <label>Password</label><br/>
-                            <input className="form-input" type="text" placeholder="*******"></input><br/>
+                            <label>Email</label><br />
+                            <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br />
+                            <label>Password</label><br />
+                            <input className="form-input" type="text" placeholder="*******"></input><br />
                             <button>Login now</button>
                             {/* <GoogleLogin 
                     clientId={clientId}
@@ -46,8 +46,8 @@ const SignIn = () => {
                     >Or Sign-in with google</GoogleLogin> */}
                         </form>
                     </div>
-                    <div class="signin-image">
-                        <div class="image-wrapper">
+                    <div className="signin-image">
+                        <div className="image-wrapper">
                             <img src={signUpImage} alt="signInImage"></img>
                         </div>
                     </div>

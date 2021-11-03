@@ -19,18 +19,18 @@ function SignUpFlow4() {
             <hr className="width48" />
             <div className="form-input-right left-align align-center">
                 <div className="form-input">
-                <label>Email:</label>
-                <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
-                <label>Password:</label>
-                <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
-                <label>Confirm Password:</label>
-                <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
-                <div className="align-center">
-                <Button className="create-button width100" onClick={() => history.push('/membership')} variant="contained">
-                    CREATE YOUR ACCOUNT
-                </Button>
-                <Link to="/Sign-In" class="margin-bottom10px"><div>Already a member? Login Now!</div></Link>
-                </div>
+                    <label>Email:</label>
+                    <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
+                    <label>Password:</label>
+                    <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
+                    <label>Confirm Password:</label>
+                    <div className="input-field"><TextField className="input-design margin10" placeholder="Enter Full Address.." fullWidth id="fullWidth" /></div>
+                    <div className="align-center">
+                        <Button className="create-button width100" onClick={() => history.push('/membership')} variant="contained">
+                            CREATE YOUR ACCOUNT
+                        </Button>
+                        <Link to="/Sign-In" className="margin-bottom10px"><div>Already a member? Login Now!</div></Link>
+                    </div>
                 </div>
             </div>
             <div className="copyright-text height20 border-top">© Copyright 2019 - All Rights Reserved, InspectSource <br />
