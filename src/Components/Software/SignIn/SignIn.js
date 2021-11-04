@@ -40,12 +40,12 @@ const SignIn = () => {
                             <label>Password</label><br />
                             <input className="form-input" type="text" placeholder="*******"></input><br />
                             <button onClick={() => history.push('/MainDashboard')}>Login</button>
-                            <GoogleLogin
+                            {/* <GoogleLogin
                                 clientId={clientId}
                                 onSuccess={responseGoogle}
                                 onFailure={responseGoogle}
                                 cookiePolicy={"single_host_origin"}
-                            >Or Sign-in with google</GoogleLogin>
+                            >Or Sign-in with google</GoogleLogin> */}
                         </form>
                     </div>
                     <div className="signin-image">

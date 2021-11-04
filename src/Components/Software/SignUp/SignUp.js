@@ -50,14 +50,14 @@ const SignUp = () => {
                                 <input className="form-input" type="text" placeholder="Enter password"></input><br />
                                 <label className="tnc"><input type="checkbox" style={{ cursor: 'pointer' }}></input><span>I agree to terms and conditions.</span></label>
                                 <button onClick={() => setTab(1)}>Next</button>
-                                <p style={{ color: '#787878', fontSize: 12, fontWeight: 400 }}>or</p>
+                                {/* <p style={{ color: '#787878', fontSize: 12, fontWeight: 400 }}>or</p>
                                 <GoogleLogin
                                     style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)', borderRadius: 6, fontWeight: 500, fontSize: 16, textAlign: 'center' }}
                                     clientId={clientId}
                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                     cookiePolicy={"single_host_origin"}
-                                >Register with google</GoogleLogin>
+                                >Register with google</GoogleLogin> */}
                             </form>
                             <div className="signup-footer"><p>Already have an Account? <button className="signup-button" style={{ cursor: 'pointer' }}>Sign IN</button></p></div>
                         </div>}

@@ -108,6 +108,9 @@
   .two-columns
   .today-section
   .today-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 12.7812px 42.6042px rgba(160, 163, 189, 0.1);
@@ -123,6 +126,7 @@
   font-size: 12px;
   font-weight: lighter;
   font-style: italic;
+  text-align: center;
 }
 
 .dashboard-section
@@ -134,6 +138,7 @@
   .today-image {
   width: 250px;
   height: 200px;
+  margin: auto;
 }
 
 .dashboard-section
@@ -166,7 +171,7 @@
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   outline: none;
-  opacity: 50%;
+  opacity: 0.5;
   border: none;
 }
 
@@ -326,6 +331,9 @@
   .dashboard-right
   .subscribe-section
   .subscribe-body {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border-radius: inherit;
   padding: 10px;
@@ -419,6 +427,9 @@
   .dashboard-right
   .newinspector-section
   .newinspector-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border-radius: inherit;
   padding: 10px;
@@ -455,7 +466,7 @@
   box-shadow: 0px 2px 10px rgb(0 0 0 / 40%);
   cursor: pointer;
   outline: none;
-  opacity: 50%;
+  opacity: 0.5;
   border: none;
   margin-top: 20px;
 }
