@@ -2,7 +2,7 @@ import './SignIn.css';
 import signUpImage from '../assets/signin-image.jpg';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from "react-google-login";
-import {React , useState} from 'react';
+import React, {useState} from 'react';
 
 const SignIn = () => {
 
