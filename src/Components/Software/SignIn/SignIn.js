@@ -1,8 +1,12 @@
 import './SignIn.css';
-import signUpImage from '../assets/signin-image.jpg';
+import signUpImage from '../assets/signup-image.png';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from "react-google-login";
+<<<<<<< HEAD
 import React, {useState} from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 7a0d62aed60436483db8bb5db6fb8355c8553e5c
 
 const SignIn = () => {
 
@@ -32,20 +36,20 @@ const SignIn = () => {
             <div className="container">
                 <div className="signin-wrapper">
                     <div className="signin-form">
-                            <p>Welcome back</p>
-                            <h3>Login to your account</h3>
-                        <form>
-                            <label>Email</label><br/>
-                            <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br/>
-                            <label>Password</label><br/>
-                            <input className="form-input" type="text" placeholder="*******"></input><br/>
+                        <p>Welcome Back!</p>
+                        <h3>Login to your account</h3>
+                        <form className="signin-form-body">
+                            <label>Email</label><br />
+                            <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br />
+                            <label>Password</label><br />
+                            <input className="form-input" type="text" placeholder="*******"></input><br />
                             <button onClick={() => history.push('/MainDashboard')}>Login</button>
-                            <GoogleLogin 
-                    clientId={clientId}
-                    onSuccess={responseGoogle}
-                    onFailure={responseGoogle}
-                    cookiePolicy={"single_host_origin"}
-                    >Or Sign-in with google</GoogleLogin>
+                            {/* <GoogleLogin
+                                clientId={clientId}
+                                onSuccess={responseGoogle}
+                                onFailure={responseGoogle}
+                                cookiePolicy={"single_host_origin"}
+                            >Or Sign-in with google</GoogleLogin> */}
                         </form>
                     </div>
                     <div className="signin-image">

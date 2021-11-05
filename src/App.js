@@ -27,33 +27,11 @@ import SignUp from './Components/Software/SignUp/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Header />
-      <SideNavBar /> */}
-      {/* <Router>
-        <Route exact path='/' component={Home}></Route>
-        <Route exact path='/Home' component={Home}></Route>
-        <Route exact path='/Dashboard' component={Dashboard}></Route>
-        <Route exact path='/Sign-In' component={Login}></Route>
-        <Route exact path='/Sign-Up' component={SignUpFLow1}></Route>
-        <Route exact path='/Upsell-1' component={SignUpFLow2}></Route>
-        <Route exact path='/confirmed' component={SignUpFLow3}></Route>
-        <Route exact path='/Create-Password' component={SignUpFLow4}></Route>
-        <Route exact path='/task-details' component={TaskDetails}></Route>
-        <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
-      </Router> */}
-      {/* <MainDashboard></MainDashboard> */}
-      <MainDashboard></MainDashboard>
-      {/* <Router>
-      <Route exact path='/' component={SignUp}></Route>
-      <Route exact path='/Sign-In' component={SignIn}></Route>
-      <Route exact path='/MainDashboard' component={MainDashboard}></Route>
-      <Route exact path='/task-details' component={TaskDetails}></Route>
-      <Route exact path='/Forgot-Password' component={ForgotPassword}></Route>
-      </Router> */}
-      {/* <SignIn></SignIn> */}
-      {/* <SignUp></SignUp> */}
-    </div>
+      <Router>
+        <Route exact path='/' component={SignUp}></Route>
+        <Route exact path='/Sign-In' component={SignIn}></Route>
+        <Route exact path='/MainDashboard' component={MainDashboard}></Route>
+      </Router>
   );
 }
 

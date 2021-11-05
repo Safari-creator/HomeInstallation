@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import React, { useState } from 'react'
 import Reports from './Reports/Reports';
 import CreateNewReports from './CreateNewReports/CreateNewReports';
 import Contracts from './Contracts/Contracts';
@@ -16,11 +16,11 @@ function MainDashboard() {
 
     const [tab, setTab] = useState(0);
     return (
-        // <center class="maindashboard-section">
-        //     <div class="container">
-        //         <div class="maindashboard-wrapper">
+        // <center className="maindashboard-section">
+        //     <div className="container">
+        //         <div className="maindashboard-wrapper">
         //             <Sidebar setTab={setTab}/>
-        //             <div class="tabs-wrapper">
+        //             <div className="tabs-wrapper">
         //             {tab === 1 &&
         //             <Reports></Reports>
         //             }
@@ -58,46 +58,46 @@ function MainDashboard() {
         //         </div>
         //     </div>
         // </center>
-        <center class="maindashboard-section">
-            <Sidebar setTab={setTab}/>
-            <div class="tabs-section">
-                <div class="container">
+        <div className="maindashboard-section">
+            <Sidebar setTab={setTab} />
+            <div className="tabs-section">
+                <div className="container">
                     {tab === 0 &&
-                    <Dashboard></Dashboard>
+                        <Dashboard></Dashboard>
                     }
                     {tab === 1 &&
-                    <CreateNewReports></CreateNewReports>
+                        <CreateNewReports></CreateNewReports>
                     }
                     {tab === 2 &&
-                    <Contracts></Contracts>
+                        <Contracts></Contracts>
                     }
                     {tab === 3 &&
-                    <Realtors></Realtors>
+                        <Realtors></Realtors>
                     }
                     {tab === 4 &&
-                    <ExtraPages></ExtraPages>
+                        <ExtraPages></ExtraPages>
                     }
                     {tab === 5 &&
-                    <Reports></Reports>
+                        <Reports></Reports>
                     }
                     {tab === 6 &&
-                    <Templates></Templates>
+                        <Templates></Templates>
                     }
                     {tab === 7 &&
-                    <Contacts></Contacts>
+                        <Contacts></Contacts>
                     }
                     {tab === 8 &&
-                    <Metrics></Metrics>
+                        <Metrics></Metrics>
                     }
                     {tab === 9 &&
-                    <Automation></Automation>
+                        <Automation></Automation>
                     }
                     {tab === 10 &&
-                    <Settings></Settings>
+                        <Settings></Settings>
                     }
                 </div>
             </div>
-        </center>
+        </div>
     )
 }
 
