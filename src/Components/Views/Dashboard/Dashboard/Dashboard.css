@@ -51,7 +51,6 @@
 }
 
 .dashboard-section .dashboard-body {
-  /* background-color: #bec1f0; */
   background-color: #e5eaff;
   display: flex;
   padding: 20px;
@@ -331,7 +330,7 @@
   .dashboard-right
   .subscribe-section
   .subscribe-body {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
