@@ -9,14 +9,19 @@ const CreateNewReports = () => {
     return(
         <div className="createnewreports-section">
             <section className="header-part">
-                <p className="header-name">Create New Reports</p>
-                <img className="header-clock" src={headerClock} alt="headerClock"></img>
-                <p className="header-time">14:20 PM Friday April, 21</p>
-                <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
-                <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
-                <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
+                <div class="header-part-left">
+                    <p className="header-name">Create New Reports</p>
+                </div>
+                <div class="header-part-right">
+                    <img className="header-clock" src={headerClock} alt="headerClock"></img>
+                    <p className="header-time">14:20 PM Friday April, 21</p>
+                    <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
+                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
+                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
+                </div>
             </section>
             <section className="body-part">
+                <div className="body-part-wrapper">
                     <div className="body-part-left">
                         <div className="section-one">
                                 <div className="section-header">
@@ -170,6 +175,9 @@ const CreateNewReports = () => {
                                         </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="button">
+                            <button>Next</button>
                         </div>
                     </div>
                     <div className="body-part-right">
@@ -343,6 +351,7 @@ const CreateNewReports = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     </section>
                 

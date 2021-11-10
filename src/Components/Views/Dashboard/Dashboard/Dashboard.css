@@ -4,8 +4,9 @@
 }
 
 .maindashboard-section {
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .dashboard-section {
