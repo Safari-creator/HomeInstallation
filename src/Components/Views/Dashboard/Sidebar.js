@@ -48,7 +48,7 @@ const Sidebar = ({ setTab }) => {
                 </div>
                 <div className="contents" style={{ top: '326.38px' }}>
                     <img src={reports} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(4)}>Reports</p>
+                    <p className="content-name" onClick={() => setTab(5)}>Reports</p>
                 </div>
                 <div className="contents" style={{ top: '369.46px' }}>
                     <img src={template} alt="reportsIcon" className="content-icon" />

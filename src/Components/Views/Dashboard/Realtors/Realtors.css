@@ -1,0 +1,39 @@
+.width100{
+    width: 100% !important;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.space-between{
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+
+.whitebg{
+    background: white;
+}
+
+
+.row-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.add-realtors{
+  width: 50%;
+  background-color: #fb8200;
+  border-radius: 9px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  border: none;
+  height: 54px;
+  width: 217px;
+  height: 54px;
+}

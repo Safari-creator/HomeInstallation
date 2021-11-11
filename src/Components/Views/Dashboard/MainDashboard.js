@@ -10,7 +10,8 @@ import Contacts from './Contacts/Contacts';
 import Metrics from './Metrics/Metrics';
 import Automation from './Automation/Automation';
 import Settings from './Settings/Settings';
-import Sidebar from './Sidebar'
+import Sidebar from './Sidebar';
+import DashboardHeader from './DashboardHeader';
 
 function MainDashboard() {
 
@@ -62,6 +63,7 @@ function MainDashboard() {
             <Sidebar setTab={setTab} />
             <div className="tabs-section">
                 <div className="container">
+                    <DashboardHeader />
                     {tab === 0 &&
                         <Dashboard></Dashboard>
                     }

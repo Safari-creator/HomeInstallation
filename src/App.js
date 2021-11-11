@@ -31,6 +31,7 @@ function App() {
         <Route exact path='/' component={SignUp}></Route>
         <Route exact path='/Sign-In' component={SignIn}></Route>
         <Route exact path='/MainDashboard' component={MainDashboard}></Route>
+        {/* <Route exact path='/Realtors' component={MainDashboard}></Route> */}
       </Router>
   );
 }
