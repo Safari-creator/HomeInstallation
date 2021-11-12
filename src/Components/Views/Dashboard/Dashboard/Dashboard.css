@@ -3,11 +3,9 @@
   padding: 0;
 }
 
-.maindashboard-section {
-  /* height: 100vh; */
-  /* overflow: hidden; */
+/* .maindashboard-section {
   overflow-x: hidden;
-}
+} */
 
 .dashboard-section {
   padding-left: 216px;
