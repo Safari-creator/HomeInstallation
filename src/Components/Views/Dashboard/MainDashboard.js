@@ -12,6 +12,7 @@ import Automation from './Automation/Automation';
 import Settings from './Settings/Settings';
 import Sidebar from './Sidebar';
 import DashboardHeader from './DashboardHeader';
+import AddRealtors from './Realtors/AddRealtors';
 
 function MainDashboard() {
 
@@ -32,7 +33,7 @@ function MainDashboard() {
                         <Contracts></Contracts>
                     }
                     {tab === 3 &&
-                        <Realtors></Realtors>
+                        <Realtors setTab={setTab}></Realtors>
                     }
                     {tab === 4 &&
                         <ExtraPages></ExtraPages>
@@ -54,6 +55,9 @@ function MainDashboard() {
                     }
                     {tab === 10 &&
                         <Settings></Settings>
+                    }
+                    {tab === 11 &&
+                        <AddRealtors></AddRealtors>
                     }
                 </div>
             </div>

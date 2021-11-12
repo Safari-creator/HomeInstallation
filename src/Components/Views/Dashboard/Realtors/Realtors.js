@@ -230,7 +230,7 @@ const top100Films = [
   { title: 'Pulp Fiction', year: 1994 },
 ]
 
-const Realtors = () => {
+const Realtors = ({setTab}) => {
 
   /**
    * For colum data
@@ -425,7 +425,7 @@ const Realtors = () => {
           </div>
         </div>
         <div class="button">
-          <button>Add New Realtors</button>
+          <button onClick={() => setTab(11)}>Add New Realtors</button>
         </div>
       </section>
     </div>
