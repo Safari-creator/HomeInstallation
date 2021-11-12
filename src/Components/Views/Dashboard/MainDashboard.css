@@ -17,3 +17,12 @@
 .maindashboard-section .tabs-section .container {
   padding: 30px;
 } */
+.maindashboard-section .tabs-section {
+  width: 100%;
+  /* padding-left: 250px; */
+  box-sizing: border-box;
+}
+.maindashboard-section {
+  width: 100%;
+  /* padding-left: 200px; */
+}

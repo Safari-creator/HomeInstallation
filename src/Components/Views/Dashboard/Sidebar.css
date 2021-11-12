@@ -8,7 +8,6 @@
   z-index: 1000;
 }
 .sidebar-section .sidebar-image {
-  /* height: 109.92px; */
   margin-left: 15px;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -18,7 +17,6 @@
   height: 41.54px;
   top: 21.51px;
   left: 17.04px;
-  /* position: absolute; */
 }
 .sidebar-section .image-wrapper img {
   width: 100%;
@@ -29,6 +27,9 @@
   flex-direction: column; */
   /* position: relative; */
   /* height: 100vh; */
+  height: calc(100vh - 95px);
+  overflow-y: auto;
+  padding-bottom: 30px;
 }
 
 .sidebar-section .content-heading p {
@@ -87,6 +88,8 @@
   /* position: absolute; */
   left: 17.04px;
   /* background-color: rgba(0, 0, 0, 10%); */
+  display: flex;
+  justify-content: center;
 }
 
 .sidebar-section .sidebar-content .buttons button {
@@ -122,6 +125,6 @@
     transition: 0.2s all linear;
   }
   .sidebar-section .sidebar-content .buttons {
-    display: none;
+    /* display: none; */
   }
 }

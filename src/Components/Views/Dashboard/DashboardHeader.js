@@ -1,6 +1,10 @@
 import React from 'react'
 import bars from '../../../Components/Software/assets/bars.png';
 import sidebarImage from '../../../Components/Software/assets/sidebar-logo.png';
+import headerClock from "../../Software/assets/headerClock.png"
+import headerProfile from "../../Software/assets/headerProfile.png"
+import headerIconOne from "../../Software/assets/headerIconOne.png"
+import headerIconTwo from "../../Software/assets/headerIconTwo.png"
 
 
 function DashboardHeader() {
@@ -27,9 +31,24 @@ function DashboardHeader() {
                     }} className="fa fa-bars" /><span className="screen-title">Dashboard</span></h2>
                 {/* <img src={sidebarImage} alt="topbarImage" className="topbarImage"></img> */}
                 <div className="header-right">
-                    <i className="fas fa-clock"></i><p>14:20 PM Friday April, 2021</p>
+                <img className="header-clock" src={headerClock} alt="headerClock"></img><p>14:20 PM Friday April, 2021</p>
+                    <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
+                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
+                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
             </section>
+            {/* <section className="header-part">
+                <div class="header-part-left">
+                    <p className="header-name">Create New Reports</p>
+                </div>
+                <div class="header-part-right">
+                    <img className="header-clock" src={headerClock} alt="headerClock"></img>
+                    <p className="header-time">14:20 PM Friday April, 21</p>
+                    <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
+                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
+                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
+                </div>
+            </section> */}
         </div>
     )
 }

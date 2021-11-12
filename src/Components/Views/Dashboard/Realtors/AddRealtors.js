@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Realtors() {
+function AddRealtors() {
     return (
         <div>
-            Real
+            AddRealtors
         </div>
     )
 }
 
-export default Realtors
+export default AddRealtors

@@ -3,119 +3,73 @@ import './Reports.css';
 
 const Reports = () => {
     return (
-        <div className="dashboard-section">
-            <section className="dashboard-body">
-                <div className="dashboard-left">
-                    <div className="two-columns">
-                        <div className="today-section">
-                            <div className="today-header">
-                                <h3>Today</h3>
-                            </div>
-                            <div className="today-body">
-                                <p>No inspector scheduled for today.</p>
-                                <button>New Inspector</button>
-                            </div>
-                        </div>
-                        <div className="map-section">
-                            <div className="map-header">
-                                <h3>Map</h3>
-                            </div>
-                            <div className="map-body">
-                            </div>
-                        </div>
+        <div className="extrapages-section">
+            <section className="body-part">
+                <div class="body-part-one">
+                    <div class="part-one-left">
+                        <p>Search</p>
+                        <input type="text" placeholder="Start Date"></input>
                     </div>
-                    <div className="one-column">
-                        <div className="schedule-section">
-                            <div className="schedule-header">
-                                <h3>Schedule</h3>
-                            </div>
-                            <div className="schedule-body">
-                                <button>Select Date</button>
-                                <button>Inspection</button>
-                                <button>Select Time</button>
-                                <textarea></textarea>
-                            </div>
-                        </div>
+                    <div class="part-one-right">
+                        <p>Report Date</p>
+                        <input type="text" placeholder="Start Date"></input>
+                        <input type="text" placeholder="End Date"></input>
                     </div>
+
+                    <div class="button">
+                        <button class="yellow-button">Search</button>
+                        <button class="blue-button">Reset</button>
+                    </div>
+
                 </div>
-                <div className="dashboard-right">
-                    <div className="subscribe-section">
-                        <div className="subscribe-header">
-                            <h3>Subscribe</h3>
-                        </div>
-                        <div className="subscribe-body">
-                            <p>You have used 0 of your 6 free inspections.</p>
-                            <h5>Thanks for trying us out! Use your free inspections to get to know the software and see if it is a good fit for you. When you are ready join here.</h5>
-                            <div className="subscribe-buttons">
-                                <button>Subscribe</button>
-                                <button>View Pricing</button>
+                <div class="body-part-two report-body">
+                    <div class="part-two-content">
+                        <div class="row">
+                            <h2 class="row-heading">House 1</h2>
+                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
+                            <div class="button row-reverse">
+                                <button class="yellow-button">Print</button>
+                                <button class="blue-button">Create PDF</button>
+                                <button class="yellow-button">Email</button>
+                                <button class="blue-button">Edit</button>
+                                <button class="yellow-button">Delete</button>
                             </div>
                         </div>
-                    </div>
-                    <div className="newinspector-section">
-                        <div className="newinspector-header">
-                            <h3>New Inspector</h3>
+                        <hr class="row-divider" />
+                        <div class="row">
+                            <h2 class="row-heading">Test 1</h2>
+                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
+                            <div class="button row-reverse">
+                                <button class="yellow-button">Print</button>
+                                <button class="blue-button">Create PDF</button>
+                                <button class="yellow-button">Email</button>
+                                <button class="blue-button">Edit</button>
+                                <button class="yellow-button">Delete</button>
+                            </div>
                         </div>
-                        <div className="newinspector-body">
-                            <h5>Thanks for trying us out! Use your free inspections to get to know the software and see if it is a good fit for you. When you are ready join here.</h5>
-                            <button>Learn more</button>
+                        <hr class="row-divider" />
+                        <div class="row">
+                            <h2 class="row-heading">Test 2</h2>
+                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
+                            <div class="button row-reverse">
+                                <button class="yellow-button">Print</button>
+                                <button class="blue-button">Create PDF</button>
+                                <button class="yellow-button">Email</button>
+                                <button class="blue-button">Edit</button>
+                                <button class="yellow-button">Delete</button>
+                            </div>
                         </div>
+                        <hr class="row-divider" />
                     </div>
-                    <div className="inprogress-section">
-                        <div className="inprogress-header">
-                            <h3>Inprogess</h3>
-                        </div>
-                        <div className="inprogress-body"></div>
-                    </div>
-                    <div className="help-section">
-                        <h3>Need Help?</h3>
-                        <button>Call Us?</button>
+                    <div class="part-two-footer">
+                        <div class="footer-right top222">
+                            <button>Previous</button>
+                            <p>1/10</p>
+                            <button>Next</button></div>
                     </div>
                 </div>
             </section>
         </div>
-        // <div className="reports-section">
-        //     <section className="reports-body">
-        //         <div className="body-header">
-        //             <label>Search</label>
-        //             <input type="text" placeholder="keyboard" style={{ marginRight: "20px" }}></input>
-        //             <label>Reports Date</label>
-        //             <input type="text" placeholder="Start Date" style={{ marginRight: "5px" }}></input>
-        //             <input type="text" placeholder="End Date" style={{ marginRight: "20px" }}></input>
-        //             <button style={{ backgroundColor: "#fb8200" }}>Search</button>
-        //             <button style={{ backgroundColor: "#00a1fb" }}>Reset</button>
-        //         </div>
-        //         <div className="body-main">
-        //             <div className="body-one">
-        //                 <h3>House 1</h3>
-        //                 <p>This file will be deleted in 12 days and 2 hours | 06-Oct-2021 7:35 am</p>
-        //                 <button>Print</button>
-        //                 <button>Create PDF</button>
-        //                 <button>Email</button>
-        //                 <button>Edit</button>
-        //                 <button>Delete</button>
-        //             </div>
-        //             <div className="body-one">
-        //                 <h3>Test 1</h3>
-        //                 <p>This file will be deleted in 12 days and 2 hours | 06-Oct-2021 7:35 am</p>
-        //                 <button>Print</button>
-        //                 <button>Create PDF</button>
-        //                 <button>Email</button>
-        //                 <button>Edit</button>
-        //                 <button>Delete</button>
-        //             </div>
-        //             <div className="body-one">
-        //                 <h3>Test 2</h3>
-        //                 <p>This file will be deleted in 12 days and 2 hours | 06-Oct-2021 7:35 am</p>
-        //                 <button>Print</button>
-        //                 <button>Create PDF</button>
-        //                 <button>Email</button>
-        //                 <button>Edit</button>
-        //                 <button>Delete</button>
-        //             </div>
-        //         </div>
-        //     </section>
-        // </div>
     );
 }
 

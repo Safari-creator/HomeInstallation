@@ -15,7 +15,6 @@
     background: white;
 }
 
-
 .row-reverse{
     display: flex;
     flex-direction: row-reverse;
@@ -36,4 +35,46 @@
   height: 54px;
   width: 217px;
   height: 54px;
+}
+
+
+.extrapages-section
+  .body-part
+  .body-part-two
+  .part-two-content
+  .heading
+  .name {
+  width: 20%;
+}
+.extrapages-section
+  .body-part
+  .body-part-two
+  .part-two-content
+  .heading
+  .type {
+  width: 20%;
+}
+.extrapages-section
+  .body-part
+  .body-part-two
+  .part-two-content
+  .heading
+  .email-address {
+  width: 20%;
+}
+.extrapages-section
+  .body-part
+  .body-part-two
+  .part-two-content
+  .heading
+  .company {
+  width: 20%;
+}
+.extrapages-section
+  .body-part
+  .body-part-two
+  .part-two-content
+  .heading
+  .manage {
+  width: 20%;
 }

@@ -17,48 +17,6 @@ function MainDashboard() {
 
     const [tab, setTab] = useState(0);
     return (
-        // <center className="maindashboard-section">
-        //     <div className="container">
-        //         <div className="maindashboard-wrapper">
-        //             <Sidebar setTab={setTab}/>
-        //             <div className="tabs-wrapper">
-        //             {tab === 1 &&
-        //             <Reports></Reports>
-        //             }
-        //             {tab === 2 &&
-        //             <CreateNewReports></CreateNewReports>
-        //             }
-        //             {tab === 3 &&
-        //             <Contracts></Contracts>
-        //             }
-        //             {tab === 4 &&
-        //             <Realtors></Realtors>
-        //             }
-        //             {tab === 5 &&
-        //             <ExtraPages></ExtraPages>
-        //             }
-        //             {tab === 0 &&
-        //             <Dashboard></Dashboard>
-        //             }
-        //             {tab === 6 &&
-        //             <Templates></Templates>
-        //             }
-        //             {tab === 7 &&
-        //             <Contacts></Contacts>
-        //             }
-        //             {tab === 8 &&
-        //             <Metrics></Metrics>
-        //             }
-        //             {tab === 9 &&
-        //             <Automation></Automation>
-        //             }
-        //             {tab === 10 &&
-        //             <Settings></Settings>
-        //             }
-        //             </div>
-        //         </div>
-        //     </div>
-        // </center>
         <div className="maindashboard-section">
             <Sidebar setTab={setTab} />
             <div className="tabs-section">

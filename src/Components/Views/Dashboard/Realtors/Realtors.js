@@ -269,113 +269,164 @@ const Realtors = () => {
     getOptionLabel: (option) => option.title,
   });
   return (
-    <div className="dashboard-section">
-      <section className="dashboard-body column">
-        <div className="dashboard-left width100">
-          <div className="two-columns">
-            <div className="today-section width100">
-              <div className="today-body space-between">
-                <div>
-                  <NativeSelect
-                    defaultValue={30}
-                    inputProps={{
-                      name: 'age',
-                      id: 'uncontrolled-native',
-                    }}
-                  >
-                    <option value={10}>Ten</option>
-                    <option value={20}>Twenty</option>
-                    <option value={30}>Thirty</option>
-                  </NativeSelect>
-                </div>
-                <div>
-                  <Root>
-                    <div {...getRootProps()}>
-                      <Label {...getInputLabelProps()}>Customized hook</Label>
-                      <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
-                        {value.map((option, index) => (
-                          <StyledTag label={option.title} {...getTagProps({ index })} />
-                        ))}
+    // <div className="dashboard-section">
+    //   <section className="dashboard-body column">
+    //     <div className="dashboard-left width100">
+    //       <div className="two-columns">
+    //         <div className="today-section width100">
+    //           <div className="today-body space-between">
+    //             <div>
+    //               <NativeSelect
+    //                 defaultValue={30}
+    //                 inputProps={{
+    //                   name: 'age',
+    //                   id: 'uncontrolled-native',
+    //                 }}
+    //               >
+    //                 <option value={10}>Ten</option>
+    //                 <option value={20}>Twenty</option>
+    //                 <option value={30}>Thirty</option>
+    //               </NativeSelect>
+    //             </div>
+    //             <div>
+    //               <Root>
+    //                 <div {...getRootProps()}>
+    //                   <Label {...getInputLabelProps()}>Customized hook</Label>
+    //                   <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
+    //                     {value.map((option, index) => (
+    //                       <StyledTag label={option.title} {...getTagProps({ index })} />
+    //                     ))}
 
-                        <input {...getInputProps()} />
-                      </InputWrapper>
-                    </div>
-                    {groupedOptions.length > 0 ? (
-                      <Listbox {...getListboxProps()}>
-                        {groupedOptions.map((option, index) => (
-                          <li {...getOptionProps({ option, index })}>
-                            <span>{option.title}</span>
-                            <CheckIcon fontSize="small" />
-                          </li>
-                        ))}
-                      </Listbox>
-                    ) : null}
-                  </Root>
-                </div>
-              </div>
-            </div>
+    //                     <input {...getInputProps()} />
+    //                   </InputWrapper>
+    //                 </div>
+    //                 {groupedOptions.length > 0 ? (
+    //                   <Listbox {...getListboxProps()}>
+    //                     {groupedOptions.map((option, index) => (
+    //                       <li {...getOptionProps({ option, index })}>
+    //                         <span>{option.title}</span>
+    //                         <CheckIcon fontSize="small" />
+    //                       </li>
+    //                     ))}
+    //                   </Listbox>
+    //                 ) : null}
+    //               </Root>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     <div className="dashboard-left width100">
+    //       <div className="two-columns">
+    //         <div className="today-section width100">
+    //           <div className="today-body">
+    //             <TableContainer sx={{ maxHeight: 440 }}>
+    //               <Table stickyHeader aria-label="sticky table">
+    //                 <TableHead>
+    //                   <TableRow>
+    //                     {columns.map((column) => (
+    //                       <TableCell
+    //                         key={column.id}
+    //                         align={column.align}
+    //                         style={{ minWidth: column.minWidth }}
+    //                       >
+    //                         {column.label}
+    //                       </TableCell>
+    //                     ))}
+    //                   </TableRow>
+    //                 </TableHead>
+    //                 <TableBody>
+    //                   {rows
+    //                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+    //                     .map((row) => {
+    //                       return (
+    //                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+    //                           {columns.map((column) => {
+    //                             const value = row[column.id];
+    //                             return (
+    //                               <TableCell key={column.id} align={column.align}>
+    //                                 {column.format && typeof value === 'number'
+    //                                   ? column.format(value)
+    //                                   : value}
+    //                               </TableCell>
+    //                             );
+    //                           })}
+    //                         </TableRow>
+    //                       );
+    //                     })}
+    //                 </TableBody>
+    //               </Table>
+    //             </TableContainer>
+    //             <TablePagination
+    //               rowsPerPageOptions={[10, 25, 100]}
+    //               component="div"
+    //               count={rows.length}
+    //               rowsPerPage={rowsPerPage}
+    //               page={page}
+    //               onPageChange={handleChangePage}
+    //               onRowsPerPageChange={handleChangeRowsPerPage}
+    //             />
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     <div className="row-reverse">
+    //       <button className="add-realtors">Add Realtors</button>
+    //     </div>
+
+    //   </section>
+    // </div>
+    <div className="extrapages-section">
+      <section className="body-part">
+        <div class="body-part-one">
+          <div class="part-one-left">
+            <p>Show</p>
+            <select name="selectList" id="selectList">
+              <option value="option 1">10</option>
+              <option value="option 2">25</option>
+            </select>
+          </div>
+          <div class="part-one-right">
+            <p>Search</p>
+            <input type="text" placeholder="Entries"></input>
           </div>
         </div>
-
-        <div className="dashboard-left width100">
-          <div className="two-columns">
-            <div className="today-section width100">
-              <div className="today-body">
-                <TableContainer sx={{ maxHeight: 440 }}>
-                  <Table stickyHeader aria-label="sticky table">
-                    <TableHead>
-                      <TableRow>
-                        {columns.map((column) => (
-                          <TableCell
-                            key={column.id}
-                            align={column.align}
-                            style={{ minWidth: column.minWidth }}
-                          >
-                            {column.label}
-                          </TableCell>
-                        ))}
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {rows
-                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                        .map((row) => {
-                          return (
-                            <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                              {columns.map((column) => {
-                                const value = row[column.id];
-                                return (
-                                  <TableCell key={column.id} align={column.align}>
-                                    {column.format && typeof value === 'number'
-                                      ? column.format(value)
-                                      : value}
-                                  </TableCell>
-                                );
-                              })}
-                            </TableRow>
-                          );
-                        })}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-                <TablePagination
-                  rowsPerPageOptions={[10, 25, 100]}
-                  component="div"
-                  count={rows.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  onPageChange={handleChangePage}
-                  onRowsPerPageChange={handleChangeRowsPerPage}
-                />
+        <div class="body-part-two">
+          <div class="part-two-content">
+            <div class="heading">
+              <div class="name">
+                <p>Name</p>
+              </div>
+              <div class="type">
+                <p>Type</p>
+              </div>
+              <div class="email-address">
+                <p>Email Address</p>
+              </div>
+              <div class="company">
+                <p>Company</p>
+              </div>
+              <div class="manage">
+                <p>Manage</p>
               </div>
             </div>
+            <div class="body">
+              <p>No matching records found</p>
+            </div>
+          </div>
+          <div class="part-two-footer">
+            <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
+            <div class="footer-right">
+              <button>Previous</button>
+              <p>1/10</p>
+              <button>Next</button></div>
           </div>
         </div>
-
-        <div className="row-reverse">
-          <button className="add-realtors">Add Realtors</button>
+        <div class="button">
+          <button>Add New Realtors</button>
         </div>
-
       </section>
     </div>
   );
