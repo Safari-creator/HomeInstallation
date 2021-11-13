@@ -26,7 +26,6 @@ const CreateNewReports = () => {
                         <div className="section-one">
                                 <div className="section-header">
                                     <p>Inspection Property Details</p>
-                                    
                                 </div>
                                 <div className="section-body">
                                     <div className="form-part">
@@ -91,17 +90,26 @@ const CreateNewReports = () => {
                                 </div>
                                 <div className="section-body">
                                     <div className="form-part">
-                                        {/* <label>Enter Report Name:</label>
-                                        <input type="text"></input>
-                                        <label>Cover Picture 1:</label>
-                                        <input type="text" placeholder="choose file"></input>
-                                        <label>Cover Picture 2:</label>
-                                        <input type="text" placeholder="choose file"></input> */}
-                                        <div><input type="checkbox" value="Paneer" />Buyer
+                                        <div class="form-left">
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>Buyer</label></div>
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>Seller</label></div>
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>Owners</label></div>
+                                        <div class="owners"><input type="checkbox" value="Paneer" />
+                                        <label>Other Present</label></div>
+                                        
                                         </div>
-                                        <input type="checkbox" value="Paneer" />Seller
-                                        <input type="checkbox" value="Paneer" />Owners
-                                        <input type="checkbox" value="Paneer" />Paneer
+                                        <div class="form-right">
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>Buyer's Agent</label></div>
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>None</label></div>
+                                        <div><input type="checkbox" value="Paneer" />
+                                        <label>Seller's Agent</label></div>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                         </div>
