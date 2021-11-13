@@ -5,7 +5,7 @@ import bars from '../../../Software/assets/bars.png'
 import { useEffect } from 'react';
 import sidebarImage from '../../../Software/assets/sidebar-logo.png'
 
-const Dashboard = () => {
+const   Dashboard = () => {
     // const [showSidebar, setShowSideBar] = useState(false)
 
     // useEffect(() => {
