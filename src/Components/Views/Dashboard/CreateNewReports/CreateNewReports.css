@@ -58,11 +58,6 @@
 }
 
 .createnewreports-section .body-part {
-  /* width: 980px; */
-  /* height: 1922px; */
-  /* position: absolute;
-  left: 238px;
-  top: 90px; */
   padding-left: 238px;
   padding-top: 21.83px;
   background-color: #e5eaff;
@@ -677,8 +672,6 @@
   .button
   button {
   border-radius: 8.52px;
-  /* border-color: #e7e7e7;
-  color: rgba(251, 130, 0); */
   color: white;
   background-color: rgba(251, 130, 0);
   border-color: rgba(251, 130, 0);
