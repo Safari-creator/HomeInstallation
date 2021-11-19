@@ -10,7 +10,7 @@ import textbox from "../../../Software/assets/textbox.png"
 const Settings = () => {
     return(
         <div class="settings-section">
-             <section className="header-part">
+             {/* <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Settings</p>
                 </div>
@@ -21,7 +21,7 @@ const Settings = () => {
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
                     <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
-            </section>
+            </section> */}
             <section class="body-part">
                 <div class="body-header">
                     <div class="body-header-left">
