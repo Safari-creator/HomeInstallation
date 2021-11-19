@@ -21,6 +21,7 @@ import ForgotPassword from './Components/Views/ForgotPassword/ForgotPassword'
 // import Home from './Components/Views/Home/Home'
 // import HomeLogin from './Components/Views/HomeLogin/HomeLogin'
 import MainDashboard from './Components/Views/Dashboard/MainDashboard';
+import SettingsServices from './Components/Views/Dashboard/SettingsServices/SettingsServices';
 import Sidebar from './Components/Views/Dashboard/Sidebar';
 import SignIn from './Components/Software/SignIn/SignIn';
 import SignUp from './Components/Software/SignUp/SignUp';
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/' component={SignUp}></Route>
         <Route exact path='/Sign-In' component={SignIn}></Route>
         <Route exact path='/MainDashboard' component={MainDashboard}></Route>
+        <Route exact path='/SettingsServices' component={SettingsServices}></Route>
       </Router>
   );
 }

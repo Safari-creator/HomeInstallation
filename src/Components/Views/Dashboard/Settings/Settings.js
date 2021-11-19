@@ -6,8 +6,11 @@ import headerIconOne from "../../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
 import sidebarImage from "../../../Software/assets/sidebar-logo.png"
 import textbox from "../../../Software/assets/textbox.png"
+import { useHistory } from 'react-router-dom';
 
 const Settings = () => {
+
+    let history = useHistory();
     return(
         <div class="settings-section">
              <section className="header-part">
@@ -141,7 +144,7 @@ const Settings = () => {
                         </div>
                     </div>
                     <div class="button">
-                        <button>SAVE PROFILE</button>
+                        <button onClick={() => history.push('/SettingsServices')}>SAVE PROFILE</button>
                     </div>
                 </div>
             </section>
