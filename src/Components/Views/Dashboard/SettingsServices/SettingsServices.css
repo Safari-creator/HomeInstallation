@@ -3,17 +3,20 @@
   padding: 0;
 }
 
-.settings-section {
+.settingsServices-section {
   box-sizing: border-box;
   margin: 0 auto;
 }
 
-.settings-section .header-part {
+.settingsServices-section .header-part {
   justify-content: space-between;
   padding: 0px 20px 0 232.62px;
   display: flex;
 }
-.settings-section .header-part .header-part-left .header-name {
+.settingsServices-section .header-part .header-part-left {
+  display: flex;
+}
+.settingsServices-section .header-part .header-part-left .header-name {
   margin-top: 20px;
   margin-bottom: 19.17px;
   font-size: 20.45px;
@@ -21,16 +24,25 @@
   line-height: 28.97px;
   color: #171717;
 }
-.settings-section .header-part .header-part-right {
+.settingsServices-section .header-part .header-part-left .header-subname {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  margin-left: 19.38px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.97px;
+  color: rgba(154, 154, 154, 1);
+}
+.settingsServices-section .header-part .header-part-right {
   display: flex;
   margin-right: 20px;
 }
-.settings-section .header-part .header-part-right .header-clock {
+.settingsServices-section .header-part .header-part-right .header-clock {
   width: 34.08px;
   height: 34.08px;
   margin-top: 19.84px;
 }
-.settings-section .header-part .header-part-right .header-time {
+.settingsServices-section .header-part .header-part-right .header-time {
   font-size: 14px;
   font-weight: 300;
   line-height: 16.41px;
@@ -38,21 +50,412 @@
   color: #000000;
   margin-top: 26px;
 }
-.settings-section .header-part .header-part-right .header-icon-one {
+.settingsServices-section .header-part .header-part-right .header-icon-one {
   width: 34.08px;
   height: 34.08px;
   margin-left: 12.78px;
   margin-top: 17.04px;
 }
-.settings-section .header-part .header-part-right .header-icon-two {
+.settingsServices-section .header-part .header-part-right .header-icon-two {
   width: 34.08px;
   height: 34.08px;
   margin-left: 12.78px;
   margin-top: 17.04px;
 }
-.settings-section .header-part .header-part-right .header-icon-profile {
+.settingsServices-section .header-part .header-part-right .header-icon-profile {
   width: 34.08px;
   height: 34.08px;
   margin-left: 12.78px;
   margin-top: 17.04px;
+}
+.settingsServices-section .body-part {
+  padding-left: 238px;
+  padding-top: 22.83px;
+  padding-right: 20px;
+  background-color: #e5eaff;
+}
+.settingsServices-section .body-part .body-wrapper {
+  background-color: white;
+  padding: 61px 54px 450px 36px;
+  border-radius: 20px;
+}
+.settingsServices-section .body-part .body-wrapper .body-header {
+  background: white;
+  padding: 20px 0px 21px 0px;
+  text-align: center;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  /* border-radius: 20px; */
+}
+.settingsServices-section .body-part .body-wrapper .body-header p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgba(80, 80, 80, 1);
+}
+.settingsServices-section .body-part .body-wrapper .body-content {
+  text-align: center;
+  margin-top: 34px;
+}
+.settingsServices-section .body-part .body-wrapper .body-content .button-one {
+  width: 229px;
+  height: 54px;
+  border-radius: 9px;
+  background-color: rgba(251, 130, 0, 1);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  border-color: rgba(251, 130, 0, 1);
+  cursor: pointer;
+  border: none;
+  margin-right: 15px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.settingsServices-section .body-part .body-wrapper .body-content .button-two {
+  width: 229px;
+  height: 54px;
+  border-radius: 9px;
+  background-color: #5388d8;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.settingsServices-section .body-part .body-wrapper .body-header-one {
+  background-color: #eeeeee;
+  display: flex;
+  padding: 19px 0px 18px 74.05px;
+  border-radius: 20px 20px 0px 0px;
+}
+.settingsServices-section .body-part .body-wrapper .body-header-one img {
+  width: 20px;
+  height: 16.95px;
+  margin-top: 7px;
+  margin-right: 10.01px;
+  cursor: pointer;
+}
+.settingsServices-section .body-part .body-wrapper .body-header-one p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.9px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.settingsServices-section .body-part .body-wrapper .body-content-two {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  padding: 14px 27px 29px 28px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section {
+  display: flex;
+  flex-direction: column;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  color: #a1a1aa;
+  margin-top: 14px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-one {
+  display: flex;
+  margin-top: 14px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-one
+  div
+  label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 21px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-one
+  div
+  input {
+  width: 173px;
+  height: 28px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 16px;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-two {
+  display: flex;
+  margin-top: 32px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-two
+  div
+  label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 21px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-two
+  div
+  input {
+  width: 177px;
+  height: 28px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 16px;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-three {
+  display: flex;
+  margin-top: 32px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-three
+  div
+  label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 21px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .details-section
+  .row-three
+  div
+  select {
+  width: 177px;
+  height: 28px;
+  border-radius: 10px;
+  border-color: #bbbbbb;
+  padding-left: 19px;
+  color: rgba(0, 0, 0, 50%);
+  font-size: 12px;
+  line-height: 20px;
+  margin-right: 16px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .modifiers-section {
+  margin-top: 50px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .modifiers-section
+  .header {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  color: #a1a1aa;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .modifiers-section
+  .body {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #505050;
+  margin-top: 18px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .modifiers-section
+  .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 27px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .modifiers-section
+  button {
+  border-radius: 9px;
+  color: white;
+  background-color: rgba(251, 130, 0);
+  border: none;
+  width: 229px;
+  height: 54px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .addons-section {
+  margin-top: 50px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .addons-section
+  .header {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  color: #a1a1aa;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .addons-section
+  .body {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #505050;
+  margin-top: 18px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .addons-section
+  .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 27px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .addons-section
+  button {
+  border-radius: 9px;
+  color: white;
+  background-color: rgba(251, 130, 0);
+  border: none;
+  width: 229px;
+  height: 54px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .taxes-section {
+  margin-top: 50px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .taxes-section
+  .header {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  color: #a1a1aa;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .taxes-section
+  .body {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #505050;
+  margin-top: 18px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .taxes-section
+  .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 27px;
+}
+.settingsServices-section
+  .body-part
+  .body-wrapper
+  .body-content-two
+  .taxes-section
+  button {
+  border-radius: 9px;
+  color: white;
+  background-color: rgba(251, 130, 0);
+  border: none;
+  width: 229px;
+  height: 54px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
 }
