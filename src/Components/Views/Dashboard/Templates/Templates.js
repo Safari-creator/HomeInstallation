@@ -12,7 +12,7 @@ import threeDots from "../../../Software/assets/threeDots.png"
 const Templates = () => {
     return(
         <div class="templates-section">
-             <section className="header-part">
+             {/* <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Templates</p>
                 </div>
@@ -23,7 +23,7 @@ const Templates = () => {
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
                     <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
-            </section>
+            </section> */}
             <section className="body-part">
                 <div class="body-part-one">
                     <div class="part-one-left">
