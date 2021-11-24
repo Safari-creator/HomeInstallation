@@ -2,7 +2,9 @@ import './SignIn.css';
 import signUpImage from '../assets/signup-image.png';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from "react-google-login";
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import axios from "axios";
+
 
 const SignIn = () => {
 
@@ -27,6 +29,70 @@ const SignIn = () => {
     const [email, setEmail] = useState("");
     const [url, setUrl] = useState("");
 
+    const getAuth = async () => {
+        const auth = await localStorage.getItem("auth");
+        if (auth !== null) {
+            return auth;
+        }
+        // return "portola"
+        return "none";
+    };
+
+    // const checkAuth = async (path, body) => {
+    //     try {
+    //         const auth = await getAuth();
+    //         let res;
+    //         console.log("post BODY", path, body);
+    //         res = await axios({
+    //             method: "post",
+    //             url: url(path),
+    //             data: body,
+    //             headers: {
+    //                 crossorigin: true,
+    //                 authorization: auth,
+    //             },
+    //         });
+    //         console.log("post DATA", path, res.data);
+    //         return res;
+    //     } catch (e) {
+    //         console.log("post error", e);
+    //         return {
+    //             data: {
+    //                 success: false,
+    //                 message: e.response ? e.response.data : "server crashed",
+    //                 status: e.response ? e.response.status : -1,
+    //             },
+    //         };
+    //     }
+    // };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (event) {
+            axios.post("http://34.229.16.173:8000/login",{
+                headers: {
+                  Authorization: 'Bearer'
+                }},
+                {
+                    email:"aaryan+5@punchh.com",
+                    password:"0987"
+                },
+                )
+                .then((resp) => {
+                    // (resp);
+                    // window.localStorage.setItem("token", resp.data.token);
+                    // window.location = '/team';
+                    console.log("******",resp.message)
+                    console.log(">>>>>>",resp.data)
+                    history.push('/MainDashboard')
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        } else {
+            alert("Passwords do not match");
+        }
+    }
+
     return (
         <center className="signin-section">
             <div className="container">
@@ -36,10 +102,10 @@ const SignIn = () => {
                         <h3>Login to your account</h3>
                         <form className="signin-form-body">
                             <label>Email</label><br />
-                            <input className="form-input" type="text" placeholder="john.snow@gmail.com"></input><br />
+                            <input className="form-input" type="text" placeholder="Enter Email..."></input><br />
                             <label>Password</label><br />
-                            <input className="form-input" type="text" placeholder="*******"></input><br />
-                            <button onClick={() => history.push('/MainDashboard')}>Login</button>
+                            <input className="form-input" type="text" placeholder=" Enter Password..."></input><br />
+                            <button onClick={(e) => handleSubmit(e)}>Login</button>
                             {/* <GoogleLogin
                                 clientId={clientId}
                                 onSuccess={responseGoogle}

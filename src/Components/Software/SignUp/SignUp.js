@@ -59,7 +59,7 @@ const SignUp = () => {
                                     cookiePolicy={"single_host_origin"}
                                 >Register with google</GoogleLogin> */}
                             </form>
-                            <div className="signup-footer"><p>Already have an Account? <button className="signup-button" style={{ cursor: 'pointer' }}>Sign IN</button></p></div>
+                            <div className="signup-footer"><p>Already have an Account? <button className="signup-button" style={{ cursor: 'pointer' }} onClick={() => history.push("/Sign-In")}>Sign In</button></p></div>
                         </div>}
                     {tab === 1 &&
                         <div className="signup-form">
