@@ -10,3 +10,52 @@
     text-align: center;
     margin-left: 5px;
 }
+
+.body-part-two .MuiPaper-root{
+    /* background: #EEEEEE; */
+    border-radius: 20px 20px 0px 0px;
+}
+
+.body-part-two .MuiPaper-root .MuiAccordionSummary-root {
+    background: #EEEEEE;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+.body-part-two .MuiPaper-root .MuiButtonBase-root .MuiAccordionSummary-content p{
+    color: #000000;
+    opacity: 0.6;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    margin-left: 50px;
+}
+
+.body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    color: #000000;
+    opacity: 0.6;
+    margin-left: 50px;
+}
+
+.body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordian-region .MuiAccordianDetails-root .MuiFormGroup-root .MuiFormControlLabel-root .MuiCheckbox-root .PrivateSwitchBase-input{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 120%;
+    color: #A1A1AA;
+}
+
+.body-part .body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root .MuiFormGroup-root .MuiFormControlLabel-root{
+    margin-left: 40px;
+}
+
+.body-part .body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root{
+    background: #FFFFFF;
+    box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+    border-radius: 0px;
+}
