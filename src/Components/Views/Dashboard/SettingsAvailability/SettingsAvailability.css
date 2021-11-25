@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.settingsAvailability-section {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.settingsAvailability-section .header-part {
+  justify-content: space-between;
+  padding: 0px 20px 0 232.62px;
+  display: flex;
+}
+.settingsAvailability-section .header-part .header-part-left {
+  display: flex;
+}
+.settingsAvailability-section .header-part .header-part-left .header-name {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  font-size: 20.45px;
+  font-weight: 700;
+  line-height: 28.97px;
+  color: #171717;
+}
+.settingsAvailability-section .header-part .header-part-left .header-subname {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  margin-left: 19.38px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.97px;
+  color: rgba(154, 154, 154, 1);
+}
+.settingsAvailability-section .header-part .header-part-right {
+  display: flex;
+  margin-right: 20px;
+}
+.settingsAvailability-section .header-part .header-part-right .header-clock {
+  width: 34.08px;
+  height: 34.08px;
+  margin-top: 19.84px;
+}
+.settingsAvailability-section .header-part .header-part-right .header-time {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.41px;
+  opacity: 60%;
+  color: #000000;
+  margin-top: 26px;
+}
+.settingsAvailability-section .header-part .header-part-right .header-icon-one {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsAvailability-section .header-part .header-part-right .header-icon-two {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsAvailability-section
+  .header-part
+  .header-part-right
+  .header-icon-profile {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsAvailability-section .body-part {
+  padding-left: 238px;
+  padding-top: 22.83px;
+  padding-right: 20px;
+  background-color: #e5eaff;
+  display: flex;
+}
+.settingsAvailability-section .body-part .body-wrapper {
+  background-color: white;
+  padding: 34px 50px 624px 42px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-one {
+  display: flex;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-one .para {
+  margin-right: 57px;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-one .para p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #505050;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-one
+  .open-schedule {
+  margin-right: 21.5px;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-one
+  .open-schedule
+  p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.settingsAvailability-section .body-part .body-wrapper .body-one .time-slots {
+}
+.settingsAvailability-section .body-part .body-wrapper .body-one .time-slots p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.settingsAvailability-section .body-part .body-wrapper .body-content {
+  background-color: #eeeeee;
+  display: flex;
+  padding: 14px 0px 14px 72.5px;
+  border-radius: 20px 20px 0px 0px;
+  margin-top: 38px;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-content img {
+  width: 20px;
+  height: 16.95px;
+  margin-top: 7px;
+  margin-right: 10.01px;
+  cursor: pointer;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-content p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.9px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.settingsAvailability-section .body-part .body-wrapper .body-points {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  padding: 12px 60.68px 26.8px 74.04px;
+}
+.settingsAvailability-section .body-part .body-wrapper .body-points .points {
+  display: flex;
+  margin-top: 33.69px;
+  position: relative;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-points
+  .points
+  .button-added {
+  display: flex;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-points
+  .points
+  .button-added
+  button {
+  background-color: tomato;
+  position: absolute;
+  right: 20px;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-points
+  .points-space {
+  width: 100%;
+  height: 200px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-points
+  .points
+  .arrow {
+  margin-right: 12.01px;
+}
+.settingsAvailability-section
+  .body-part
+  .body-wrapper
+  .body-points
+  .points
+  .dots {
+  position: absolute;
+  right: 0px;
+}

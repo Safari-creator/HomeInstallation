@@ -6,15 +6,17 @@ import headerIconOne from "../../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
 import arrowSide from "../../../Software/assets/arrowSide.png"
 import Sidebar from '../Sidebar';
+import { useHistory } from 'react-router-dom';
 
 const SettingsServices = () => {
 
     const [SettingsTab, setSettingsTab] = useState(1);
 
+    let history = useHistory();
     return(
         <div class="settingsServices-section">
             <Sidebar/>
-             <section className="header-part">
+            <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Settings</p>
                     <p className="header-subname">Services and Fees Setup</p>
@@ -120,7 +122,7 @@ const SettingsServices = () => {
                     </div>
                 </div>
                 <div className="body-content">
-                    <button className="button-one">Add Services</button>
+                    <button className="button-one" onClick={() => history.push('/SettingsAvailability')}>Add Services</button>
                     <button className="button-two">Undelete Services</button>
                 </div>
                 </div>
