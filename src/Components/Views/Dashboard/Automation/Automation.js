@@ -266,7 +266,6 @@ const Automation = () => {
                             </Accordion>
                         )
                     })}
-
                 </div>
             </section>
         </div>

@@ -112,10 +112,7 @@
   background-color: white;
   border-radius: 20px;
   position: relative;
-  padding-top: 70px;
-  padding-left: 36px;
-  padding-right: 54px;
-  padding-bottom: 428px;
+  padding: 70px 54px 428px 36px;
 }
 .extrapages-section .body-part .body-part-two .part-two-buttons {
   position: absolute;
