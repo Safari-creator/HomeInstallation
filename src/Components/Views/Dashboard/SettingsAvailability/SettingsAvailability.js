@@ -186,7 +186,7 @@ const SettingsAvailability = () => {
                         </div>
                         <div className="points">
                             <img className="arrow" src={arrowSide}></img>
-                            <p>S</p>
+                            <p>Saturday</p>
                             <img className="dots" src={threeDots}></img>
                         </div>
                     </div>

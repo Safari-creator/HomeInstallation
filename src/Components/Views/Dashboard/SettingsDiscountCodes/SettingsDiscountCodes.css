@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.settingsDiscountCodes-section {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.settingsDiscountCodes-section .header-part {
+  justify-content: space-between;
+  padding: 0px 20px 0 232.62px;
+  display: flex;
+}
+.settingsDiscountCodes-section .header-part .header-part-left {
+  display: flex;
+}
+.settingsDiscountCodes-section .header-part .header-part-left .header-name {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  font-size: 20.45px;
+  font-weight: 700;
+  line-height: 28.97px;
+  color: #171717;
+}
+.settingsDiscountCodes-section .header-part .header-part-left .header-subname {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  margin-left: 19.38px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.97px;
+  color: rgba(154, 154, 154, 1);
+}
+.settingsDiscountCodes-section .header-part .header-part-right {
+  display: flex;
+  margin-right: 20px;
+}
+.settingsDiscountCodes-section .header-part .header-part-right .header-clock {
+  width: 34.08px;
+  height: 34.08px;
+  margin-top: 19.84px;
+}
+.settingsDiscountCodes-section .header-part .header-part-right .header-time {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.41px;
+  opacity: 60%;
+  color: #000000;
+  margin-top: 26px;
+}
+.settingsDiscountCodes-section
+  .header-part
+  .header-part-right
+  .header-icon-one {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsDiscountCodes-section
+  .header-part
+  .header-part-right
+  .header-icon-two {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsDiscountCodes-section
+  .header-part
+  .header-part-right
+  .header-icon-profile {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.settingsDiscountCodes-section .body-part {
+  padding-left: 238px;
+  padding-top: 22.83px;
+  padding-right: 20px;
+  background-color: #e5eaff;
+  display: flex;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper {
+  width: 100%;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-one {
+  display: flex;
+  margin-top: 14.83px;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 8.52px;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-one .left {
+  padding: 18px 0px 17px 26px;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-one .left p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  color: #bababa;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-one .right {
+  padding: 11px 22.33px 11px 0px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-one
+  .right
+  button {
+  background: #fb8200;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 9px;
+  margin-right: 46.17px;
+  padding: 8.77px 23px;
+  border: none;
+  color: white;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-one .right img {
+  margin-right: 22.33px;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-two {
+  background-color: white;
+  padding: 75px 50px 557px 42px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-two
+  .body-content {
+  background: #ffffff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 13px 0px 12px 0px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-two
+  .body-content
+  p {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #505050;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-two .button {
+  margin-top: 36px;
+  text-align: center;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-two
+  .button
+  button {
+  background: #fb8200;
+  box-shadow: 0px 2px 10px rgba(251, 130, 0, 0.5);
+  border-radius: 9px;
+  padding: 16px 52px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 600;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-three {
+  background-color: white;
+  padding: 45px 49px 0px 49px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-three .one {
+  display: flex;
+  background: #eeeeee;
+  border-radius: 20px 20px 0px 0px;
+  justify-content: space-between;
+  padding: 14px 21.33px 14px 74.5px;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-three .left {
+  display: flex;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .left
+  .arrowside {
+  margin-right: 10px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .left
+  .main {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 29px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 10px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .left
+  .sub1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 29px;
+  color: #9a9a9a;
+  margin-right: 23px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .left
+  .sub2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 29px;
+  color: #9a9a9a;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-three .button {
+  margin-top: 400px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .button
+  button {
+  background: #fb8200;
+  box-shadow: 0px 2px 10px rgba(251, 130, 0, 0.5);
+  border-radius: 9px;
+  padding: 16px 52px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 600;
+}
+.settingsDiscountCodes-section .body-part .body-wrapper .body-three .two {
+  background: #ffffff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  margin-bottom: 248px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown {
+  padding: 29px 23px 23px 24px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown
+  p {
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 600;
+  color: #a1a1a1;
+  margin-left: 45px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown
+  div {
+  margin-top: 36px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown
+  label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 20px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown
+  input {
+  width: 150px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+  border-radius: 10px;
+  margin-right: 35px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .arrowdown
+  select {
+  width: 150px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+  border-radius: 10px;
+  margin-right: 35px;
+  padding: 4px 11px 4px 19px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .button {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+.settingsDiscountCodes-section
+  .body-part
+  .body-wrapper
+  .body-three
+  .two
+  .button
+  button {
+  background: #fb8200;
+  box-shadow: 0px 2px 10px rgba(251, 130, 0, 0.5);
+  border-radius: 9px;
+  padding: 16px 52px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 600;
+}

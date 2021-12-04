@@ -27,6 +27,8 @@ import SignIn from './Components/Software/SignIn/SignIn';
 import SignUp from './Components/Software/SignUp/SignUp';
 import SettingsAvailability from './Components/Views/Dashboard/SettingsAvailability/SettingsAvailability';
 import SettingsTeam from './Components/Views/Dashboard/SettingsTeam/SettingsTeam';
+import SettingsSampleReports from './Components/Views/Dashboard/SettingsSampleReports/SettingsSampleReports';
+import SettingsDiscountCodes from './Components/Views/Dashboard/SettingsDiscountCodes/SettingsDiscountCodes';
 
 function App() {
   return (
@@ -34,10 +36,11 @@ function App() {
         <Route exact path='/' component={SignUp}></Route>
         <Route exact path='/Sign-In' component={SignIn}></Route>
         <Route exact path='/MainDashboard' component={MainDashboard}></Route>
-        {/* <Route exact path='/Realtors' component={MainDashboard}></Route> */}
         <Route exact path='/SettingsServices' component={SettingsServices}></Route>
         <Route exact path='/SettingsAvailability' component={SettingsAvailability}></Route>
         <Route exact path='/SettingsTeam' component={SettingsTeam}></Route>
+        <Route exact path='/SettingsSampleReports' component={SettingsSampleReports}></Route>
+        <Route exact path='/SettingsDiscountCodes' component={SettingsDiscountCodes}></Route>
       </Router>
   );
 }
