@@ -76,7 +76,6 @@ const Sidebar = ({ setTab }) => {
                 <div className="buttons" style={{ top: '890.53px' }}>
                     <button>
                         <img src={profile} alt=""></img>
-
                     </button>
                 </div>
             </div>
