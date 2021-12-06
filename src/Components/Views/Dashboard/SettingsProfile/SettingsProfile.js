@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Sidebar from '../Sidebar';
 
 
 function SettingsProfile() {
@@ -24,6 +25,20 @@ function SettingsProfile() {
 
     return (
         <div class="settings-section">
+            <Sidebar/>
+            <section className="header-part">
+                <div class="header-part-left">
+                    <p className="header-name">Settings</p>
+                    <p className="header-subname">Profile</p>
+                </div>
+                <div class="header-part-right">
+                    <img className="header-clock" src={headerClock} alt="headerClock"></img>
+                    <p className="header-time">14:20 PM Friday April, 21</p>
+                    <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
+                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
+                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
+                </div>
+            </section>
             <section class="body-part">
                 <div class="body-header">
                     <div class="body-header-left">

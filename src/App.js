@@ -25,6 +25,7 @@ import SettingsServices from './Components/Views/Dashboard/SettingsServices/Sett
 import Sidebar from './Components/Views/Dashboard/Sidebar';
 import SignIn from './Components/Software/SignIn/SignIn';
 import SignUp from './Components/Software/SignUp/SignUp';
+import SettingsProfile from './Components/Views/Dashboard/SettingsProfile/SettingsProfile';
 import SettingsAvailability from './Components/Views/Dashboard/SettingsAvailability/SettingsAvailability';
 import SettingsTeam from './Components/Views/Dashboard/SettingsTeam/SettingsTeam';
 import SettingsSampleReports from './Components/Views/Dashboard/SettingsSampleReports/SettingsSampleReports';
@@ -37,6 +38,7 @@ function App() {
         <Route exact path='/' component={SignUp}></Route>
         <Route exact path='/Sign-In' component={SignIn}></Route>
         <Route exact path='/MainDashboard' component={MainDashboard}></Route>
+        <Route exact path='/SettingsProfile' component={SettingsProfile}></Route>
         <Route exact path='/SettingsServices' component={SettingsServices}></Route>
         <Route exact path='/SettingsAvailability' component={SettingsAvailability}></Route>
         <Route exact path='/SettingsTeam' component={SettingsTeam}></Route>

@@ -15,6 +15,12 @@ import settings from "../../Software/assets/settings.png"
 import profile from "../../Software/assets/profile.png"
 
 const Sidebar = ({ setTab }) => {
+
+    function changeColor() {
+        document.body.style.color = "red";
+        return false;
+    }    
+
     return (
         <div className="sidebar-section">
             <div className="sidebar-image">
@@ -27,7 +33,7 @@ const Sidebar = ({ setTab }) => {
                     <p>System</p>
                 </div>
                 <div className="contents">
-                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => setTab(0)} />
+                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => setTab(0)}/>
                     <p className="content-name" onClick={() => setTab(0)}>Dashboard</p>
                 </div>
                 <div className="contents" style={{ top: '153.38px' }}>

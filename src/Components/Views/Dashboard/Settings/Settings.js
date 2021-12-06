@@ -171,7 +171,7 @@ const Settings = () => {
         },
     ]
 
-    // let history = useHistory();
+    let history = useHistory();
     return (
         <div class="extrapages-section">
             <section class="body-part">
@@ -181,24 +181,24 @@ const Settings = () => {
                     </Typography>
                     <div class="col3 flex pad-top-bot20">
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">PROFILE</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsProfile')}>PROFILE</button>
                         </div>
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">SERVICES {"&"} FEES</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsServices')}>SERVICES {"&"} FEES</button>
                         </div>
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">AVAILABILITY</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsAvailability')}>AVAILABILITY</button>
                         </div>
                     </div>
                     <div class="col3 flex pad-top-bot20">
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">TEAM</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsTeam')}>TEAM</button>
                         </div>
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">SAMPLE REPORTS</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsSampleReports')}>SAMPLE REPORTS</button>
                         </div>
                         <div class="part-one-left flex space-between">
-                            <button class="select-list">DISCOUNT CODES</button>
+                            <button class="select-list" onClick={() => history.push('/SettingsDiscountCodes')}>DISCOUNT CODES</button>
                         </div>
                     </div>
 
