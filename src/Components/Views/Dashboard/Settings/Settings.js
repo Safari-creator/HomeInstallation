@@ -146,27 +146,27 @@ const Settings = () => {
         },
         {
             title: "SCHEDULING TOOLS",
-            subTitle: ["Scheduling Options", "Online Scheduler", "Get A Quote Widget", "Inspection Request Form"],
+            subTitle: [{ heading: "Scheduling Options", component: <Agreements /> },{ heading: "Online Scheduler", component: <Agreements /> }, { heading: "Get A Quote Widget", component: <Agreements /> }, { heading: "Inspection Request Form", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
             title: "HOME INSPECTION ADVANCED",
-            subTitle: ["Need customizable automation, linked Inspection events, configurable metrics, or additional scheduling rules? Learn about Advanced"],
+            subTitle: [{ heading: "Need customizable automation, linked Inspection events, configurable metrics, or additional scheduling rules? Learn about Advanced", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
             title: "REPORT OPTIONS",
-            subTitle: ["Report Tools", "Location Tags"],
+            subTitle: [{ heading: "Report Tools", component: <Agreements /> },{ heading: "Location Tags", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
             title: "COMPANY SETTINGS",
-            subTitle: ["Social Links", "Subscription", "Data Imports", "Agents", "Calendar Options", "Localization (currency, date format, unit, etc)"],
+            subTitle: [{ heading: "Social Links", component: <Agreements /> },{ heading: "Subscription", component: <Agreements /> },{ heading: "Data Imports", component: <Agreements /> },{ heading: "Agents", component: <Agreements /> },{ heading: "Calendar Options", component: <Agreements /> } ,{ heading: "Localization (currency, date format, unit, etc)", component: <Agreements /> } ],
             // Ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor",
         },
         {
             title: "USER SETTINGS",
-            subTitle: ["Integrations", "User Options"],
+            subTitle: [{ heading: "Integrations", component: <Agreements /> },{ heading: "User Options", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
     ]
