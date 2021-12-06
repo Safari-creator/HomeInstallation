@@ -29,6 +29,7 @@ import SettingsAvailability from './Components/Views/Dashboard/SettingsAvailabil
 import SettingsTeam from './Components/Views/Dashboard/SettingsTeam/SettingsTeam';
 import SettingsSampleReports from './Components/Views/Dashboard/SettingsSampleReports/SettingsSampleReports';
 import SettingsDiscountCodes from './Components/Views/Dashboard/SettingsDiscountCodes/SettingsDiscountCodes';
+import SettingsBusinessTools from './Components/Views/Dashboard/SettingsBusinessTools/SettingsBusinessTools';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route exact path='/SettingsTeam' component={SettingsTeam}></Route>
         <Route exact path='/SettingsSampleReports' component={SettingsSampleReports}></Route>
         <Route exact path='/SettingsDiscountCodes' component={SettingsDiscountCodes}></Route>
+        <Route exact path='/Settings/BusinessTools' component={SettingsBusinessTools}></Route>
       </Router>
   );
 }

@@ -3,9 +3,22 @@
   padding: 0;
 }
 
+.bg-white{
+  background-color: white !important;
+}
+
 .settings-section {
   box-sizing: border-box;
   margin: 0 auto;
+}
+
+.css-1fjvggn-MuiPaper-root-MuiAccordion-root{
+  border: none !important;
+}
+
+.pad-top-bot20{
+ padding-top: 20px;
+ padding-bottom: 20px;
 }
 
 .settings-section .header-part {
@@ -93,16 +106,17 @@
   cursor: pointer;
   border: none;
 }
+
 .settings-section .body-part .body-content {
   padding: 28px 0px 10px 31px;
   background-color: white;
 }
-.settings-section .body-part .body-content .body-content-one {
-}
+
 .settings-section .body-part .body-content .body-content-one .three-columns {
   width: 100%;
   display: flex;
 }
+
 .settings-section
   .body-part
   .body-content
@@ -128,14 +142,7 @@
   font-weight: 600;
   color: rgba(161, 161, 170, 1);
 }
-.settings-section
-  .body-part
-  .body-content
-  .body-content-one
-  .three-columns
-  .column-one
-  div {
-}
+
 .settings-section
   .body-part
   .body-content

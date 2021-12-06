@@ -34,7 +34,6 @@ const SignIn = () => {
         if (auth !== null) {
             return auth;
         }
-        // return "portola"
         return "none";
     };
 
@@ -67,27 +66,27 @@ const SignIn = () => {
     // };
 
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     if (event) {
-    //         axios.post("http://34.229.16.173:8000/login",
-    //             {
-    //                 email:"aaryan+5@punchh.com",
-    //                 password:"0987"
-    //             },
-    //             )
-    //             .then((resp) => {
-    //                 console.log("******",resp.message)
-    //                 console.log(">>>>>>",resp.data)
-    //                 history.push('/MainDashboard')
-    //             })
-    //             .catch((err) => {
-    //                 console.error(err);
-    //             });
-    //     } else {
-    //         alert("Passwords do not match");
-    //     }
-    // }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (event) {
+            axios.post("http://34.229.16.173:8000/login",
+                {
+                    email:"aaryan+5@punchh.com",
+                    password:"0987"
+                },
+                )
+                .then((resp) => {
+                    console.log("******",resp.message)
+                    console.log(">>>>>>",resp.data)
+                    history.push('/MainDashboard')
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        } else {
+            alert("Passwords do not match");
+        }
+    }
 
     return (
         <center className="signin-section">
