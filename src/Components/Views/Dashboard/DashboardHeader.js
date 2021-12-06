@@ -8,7 +8,7 @@ import headerIconOne from "../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../Software/assets/headerIconTwo.png"
 
 
-function DashboardHeader() {
+function DashboardHeader({ title }) {
     const [showSidebar, setShowSideBar] = React.useState(false)
 
 
@@ -25,7 +25,7 @@ function DashboardHeader() {
     return (
         <div className="dashboard-section">
             {/* {showSidebar && <div className="overlay" onClick={() => setShowSideBar(false)} />} */}
-            {/* <section className="dashboard-header">
+            <section className="dashboard-header">
                 <h2 style={{ display: 'flex', alignItems: 'center' }}>
                     <img src={bars} onClick={() => {
                         setShowSideBar(() => true)
@@ -38,8 +38,8 @@ function DashboardHeader() {
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
                     <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
-            </section> */}
-            <section className="header-part">
+            </section>
+            {/* <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Dashboard</p>
                 </div>
@@ -50,7 +50,7 @@ function DashboardHeader() {
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
                     <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }

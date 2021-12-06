@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.bg-white{
+.sub-accordian-dropdown .MuiPaper-elevation .MuiAccordionSummary-root{
   background-color: white !important;
 }
 

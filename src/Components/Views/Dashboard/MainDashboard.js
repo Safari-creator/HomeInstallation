@@ -17,12 +17,13 @@ import AddRealtors from './Realtors/AddRealtors';
 function MainDashboard() {
 
     const [tab, setTab] = useState(0);
+    const [title, setTitle] = useState(["Dashboard", "Create New Report", "Contracts", "Realtors", "Extra Pages", "Reports", "Templates", "Contacts","Metrics","Automation", "Settings", "Add Realtors"])
     return (
         <div className="maindashboard-section">
             <Sidebar setTab={setTab} />
             <div className="tabs-section">
                 <div className="container">
-                    <DashboardHeader />
+                    <DashboardHeader title={title[tab]} />
                     {tab === 0 &&
                         <Dashboard></Dashboard>
                     }
