@@ -146,7 +146,7 @@ const Settings = () => {
         },
         {
             title: "SCHEDULING TOOLS",
-            subTitle: [{ heading: "Scheduling Options", component: <Agreements /> },{ heading: "Online Scheduler", component: <Agreements /> }, { heading: "Get A Quote Widget", component: <Agreements /> }, { heading: "Inspection Request Form", component: <Agreements /> }],
+            subTitle: [{ heading: "Scheduling Options", component: <Agreements /> }, { heading: "Online Scheduler", component: <Agreements /> }, { heading: "Get A Quote Widget", component: <Agreements /> }, { heading: "Inspection Request Form", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
@@ -156,17 +156,17 @@ const Settings = () => {
         },
         {
             title: "REPORT OPTIONS",
-            subTitle: [{ heading: "Report Tools", component: <Agreements /> },{ heading: "Location Tags", component: <Agreements /> }],
+            subTitle: [{ heading: "Report Tools", component: <Agreements /> }, { heading: "Location Tags", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
             title: "COMPANY SETTINGS",
-            subTitle: [{ heading: "Social Links", component: <Agreements /> },{ heading: "Subscription", component: <Agreements /> },{ heading: "Data Imports", component: <Agreements /> },{ heading: "Agents", component: <Agreements /> },{ heading: "Calendar Options", component: <Agreements /> } ,{ heading: "Localization (currency, date format, unit, etc)", component: <Agreements /> } ],
+            subTitle: [{ heading: "Social Links", component: <Agreements /> }, { heading: "Subscription", component: <Agreements /> }, { heading: "Data Imports", component: <Agreements /> }, { heading: "Agents", component: <Agreements /> }, { heading: "Calendar Options", component: <Agreements /> }, { heading: "Localization (currency, date format, unit, etc)", component: <Agreements /> }],
             // Ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor",
         },
         {
             title: "USER SETTINGS",
-            subTitle: [{ heading: "Integrations", component: <Agreements /> },{ heading: "User Options", component: <Agreements /> }],
+            subTitle: [{ heading: "Integrations", component: <Agreements /> }, { heading: "User Options", component: <Agreements /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
     ]
@@ -211,16 +211,31 @@ const Settings = () => {
                                 <AccordionDetails>
                                     <FormGroup>
                                         {console.log(section.emails)}
-                                        {section?.subTitle?.map((subtitle, index2) => {
+                                        {/* {section?.subTitle?.map((subtitle, index2) => {
                                             return (
                                                 <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
-                                                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                                                        <Typography>{subtitle.heading}</Typography>
-                                                    </AccordionSummary>
-                                                    <AccordionDetails>
-                                                        {subtitle.component}
-                                                    </AccordionDetails>
+                                                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                                                            <Typography>{subtitle.heading}</Typography>
+                                                        </AccordionSummary>
+                                                        <AccordionDetails>
+                                                            {subtitle.component}
+                                                        </AccordionDetails>
                                                 </Accordion>
+                                            )
+                                        }
+                                        )} */}
+                                        {section?.subTitle?.map((subtitle, index2) => {
+                                            return (
+                                                <div className={`${subtitle.heading.split(' ')[0] + (subtitle.heading.split(' ').length > 1 ? ('-' + subtitle.heading.split(' ')[1]) : '')}-dropdown sub-accordian-dropdown`}>
+                                                    <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
+                                                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                                                            <Typography>{subtitle.heading}</Typography>
+                                                        </AccordionSummary>
+                                                        <AccordionDetails>
+                                                            {subtitle.component}
+                                                        </AccordionDetails>
+                                                    </Accordion>
+                                                </div>
                                             )
                                         }
                                         )}

@@ -7,7 +7,7 @@ import headerIconOne from "../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../Software/assets/headerIconTwo.png"
 
 
-function DashboardHeader() {
+function DashboardHeader({ title }) {
     const [showSidebar, setShowSideBar] = React.useState(false)
 
 
@@ -28,7 +28,7 @@ function DashboardHeader() {
                 <h2 style={{ display: 'flex', alignItems: 'center' }}>
                     <img src={bars} onClick={() => {
                         setShowSideBar(() => true)
-                    }} className="fa fa-bars" /><span className="screen-title">Dashboard</span></h2>
+                    }} className="fa fa-bars" /><span className="screen-title">{title}</span></h2>
                 {/* <img src={sidebarImage} alt="topbarImage" className="topbarImage"></img> */}
                 <div className="header-right">
                 <img className="header-clock" src={headerClock} alt="headerClock"></img><p>14:20 PM Friday April, 2021</p>
