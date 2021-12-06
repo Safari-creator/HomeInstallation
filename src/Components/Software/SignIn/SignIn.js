@@ -100,8 +100,8 @@ const SignIn = () => {
                             <input className="form-input" type="text" placeholder="Enter Email..."></input><br />
                             <label>Password</label><br />
                             <input className="form-input" type="text" placeholder=" Enter Password..."></input><br />
-                            <button onClick={(e) => handleSubmit(e)}>Login</button>
-                            {/* <button onClick={() => history.push('/MainDashboard')}>Login</button> */}
+                            {/* <button onClick={(e) => handleSubmit(e)}>Login</button> */}
+                            <button onClick={() => history.push('/MainDashboard')}>Login</button>
                             {/* <GoogleLogin
                                 clientId={clientId}
                                 onSuccess={responseGoogle}

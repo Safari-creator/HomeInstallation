@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+.pad-top-bot20{
+ padding-top: 20px;
+ padding-bottom: 20px;
+}
+
 .settings-section .header-part {
   justify-content: space-between;
   padding: 0px 20px 0 232.62px;
