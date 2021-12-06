@@ -1,4 +1,5 @@
 import React from 'react'
+import './DashboardHeader.css';
 import bars from '../../../Components/Software/assets/bars.png';
 import sidebarImage from '../../../Components/Software/assets/sidebar-logo.png';
 import headerClock from "../../Software/assets/headerClock.png"
@@ -28,8 +29,9 @@ function DashboardHeader({ title }) {
                 <h2 style={{ display: 'flex', alignItems: 'center' }}>
                     <img src={bars} onClick={() => {
                         setShowSideBar(() => true)
-                    }} className="fa fa-bars" /><span className="screen-title">{title}</span></h2>
-                {/* <img src={sidebarImage} alt="topbarImage" className="topbarImage"></img> */}
+                    }} className="fa fa-bars" />
+                    <span className="screen-title">{title}</span></h2>
+                <img src={sidebarImage} alt="topbarImage" className="topbarImage"></img>
                 <div className="header-right">
                 <img className="header-clock" src={headerClock} alt="headerClock"></img><p>14:20 PM Friday April, 2021</p>
                     <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
@@ -39,7 +41,7 @@ function DashboardHeader({ title }) {
             </section>
             {/* <section className="header-part">
                 <div class="header-part-left">
-                    <p className="header-name">Create New Reports</p>
+                    <p className="header-name">Dashboard</p>
                 </div>
                 <div class="header-part-right">
                     <img className="header-clock" src={headerClock} alt="headerClock"></img>

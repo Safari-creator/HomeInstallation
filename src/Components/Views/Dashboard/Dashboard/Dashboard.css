@@ -552,7 +552,8 @@
 
 @media screen and (max-width: 1279px) {
   .dashboard-section {
-    padding-left: 0;
+    /* padding-left: 0; */
+    padding-left: 216px;
   }
   .dashboard-section .dashboard-header .fa.fa-bars {
     display: block;

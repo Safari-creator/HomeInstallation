@@ -117,7 +117,15 @@
   bottom: 5.11px;
 }
 
-@media screen and (max-width: 1279px) {
+.sidebar-section .sidebar-content .contents .content-icon:focus {
+  color: aqua;
+}
+
+.sidebar-section .sidebar-content .contents .content-icon:active {
+  color: aqua;
+}
+
+/* @media screen and (max-width: 1279px) {
   .sidebar-section {
     position: fixed;
     top: 0;
@@ -125,6 +133,5 @@
     transition: 0.2s all linear;
   }
   .sidebar-section .sidebar-content .buttons {
-    /* display: none; */
   }
-}
+} */

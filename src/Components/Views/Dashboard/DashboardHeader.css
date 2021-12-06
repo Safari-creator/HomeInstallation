@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-section {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.dashboard-section .header-part {
+  justify-content: space-between;
+  padding: 0px 20px 0 0px;
+  display: flex;
+}
+.dashboard-section .header-part .header-part-left {
+  display: flex;
+}
+.dashboard-section .header-part .header-part-left .header-name {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  font-size: 20.45px;
+  font-weight: 700;
+  line-height: 28.97px;
+  color: #171717;
+}
+.dashboard-section .header-part .header-part-left .header-subname {
+  margin-top: 20px;
+  margin-bottom: 19.17px;
+  margin-left: 19.38px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.97px;
+  color: rgba(154, 154, 154, 1);
+}
+.dashboard-section .header-part .header-part-right {
+  display: flex;
+  margin-right: 20px;
+}
+.dashboard-section .header-part .header-part-right .header-clock {
+  width: 34.08px;
+  height: 34.08px;
+  margin-top: 19.84px;
+}
+.dashboard-section .header-part .header-part-right .header-time {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.41px;
+  opacity: 60%;
+  color: #000000;
+  margin-top: 26px;
+}
+.dashboard-section .header-part .header-part-right .header-icon-one {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.dashboard-section .header-part .header-part-right .header-icon-two {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}
+.dashboard-section .header-part .header-part-right .header-icon-profile {
+  width: 34.08px;
+  height: 34.08px;
+  margin-left: 12.78px;
+  margin-top: 17.04px;
+}

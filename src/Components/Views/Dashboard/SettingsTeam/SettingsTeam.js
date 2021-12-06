@@ -57,6 +57,7 @@ const SettingsTeam = () => {
             <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Settings</p>
+                    <p className="header-subname">Team</p>
                 </div>
                 <div class="header-part-right">
                     <img className="header-clock" src={headerClock} alt="headerClock"></img>

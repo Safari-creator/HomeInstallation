@@ -16,10 +16,10 @@ const SettingsServices = () => {
     return(
         <div class="settingsServices-section">
             <Sidebar/>
-             {/* <section className="header-part">
+            <section className="header-part">
                 <div class="header-part-left">
                     <p className="header-name">Settings</p>
-                    <p className="header-subname">Services and Fees Setup</p>
+                    <p className="header-subname">Services</p>
                 </div>
                 <div class="header-part-right">
                     <img className="header-clock" src={headerClock} alt="headerClock"></img>
@@ -28,7 +28,7 @@ const SettingsServices = () => {
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
                     <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
                 </div>
-            </section>  */}
+            </section>
             <section className="body-part">
             {SettingsTab == 1 &&
                 <div className="body-wrapper">
