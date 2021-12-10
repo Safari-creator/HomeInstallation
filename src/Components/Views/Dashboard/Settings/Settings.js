@@ -20,7 +20,12 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Agreement from './BussinesTools/Agreements/Agreements';
-
+import ReportTools from '../Settings/ReportTools/ReportTools';
+import LocationTags from '../Settings/LocationTags/LocationTags';
+import SchedulingOptions from '../Settings/SchedulingTools/SchedulingOptions/SchedulingOptions';
+import OnlineScheduler from '../Settings/SchedulingTools/OnlineScheduler/OnlineScheduler';
+import GetAQuoteWidget from '../Settings/SchedulingTools/GetAQuoteWidget/GetAQuoteWidget';
+import InspectionRequestForm from '../Settings/SchedulingTools/InspectionRequestForm/InspectionRequestForm';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -146,7 +151,7 @@ const Settings = () => {
         },
         {
             title: "SCHEDULING TOOLS",
-            subTitle: [{ heading: "Scheduling Options", component: <Agreements /> }, { heading: "Online Scheduler", component: <Agreements /> }, { heading: "Get A Quote Widget", component: <Agreements /> }, { heading: "Inspection Request Form", component: <Agreements /> }],
+            subTitle: [{ heading: "Scheduling Options", component: <SchedulingOptions /> }, { heading: "Online Scheduler", component: <OnlineScheduler /> }, { heading: "Get A Quote Widget", component: <GetAQuoteWidget /> }, { heading: "Inspection Request Form", component: <InspectionRequestForm /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
@@ -156,7 +161,7 @@ const Settings = () => {
         },
         {
             title: "REPORT OPTIONS",
-            subTitle: [{ heading: "Report Tools", component: <Agreements /> }, { heading: "Location Tags", component: <Agreements /> }],
+            subTitle: [{ heading: "Report Tools", component: <ReportTools /> }, { heading: "Location Tags", component: <LocationTags /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
@@ -201,7 +206,6 @@ const Settings = () => {
                             <button class="select-list" onClick={() => history.push('/SettingsDiscountCodes')}>DISCOUNT CODES</button>
                         </div>
                     </div>
-
                     {questionsList.map((section, index1) => {
                         return (
                             <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
@@ -239,7 +243,6 @@ const Settings = () => {
                                             )
                                         }
                                         )}
-
                                     </FormGroup>
                                 </AccordionDetails>
                             </Accordion>

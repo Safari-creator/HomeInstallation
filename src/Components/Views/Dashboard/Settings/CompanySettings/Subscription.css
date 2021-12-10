@@ -1,0 +1,30 @@
+.company-setting-subscription-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.company-setting-subscription-container .free-trial-text {
+  color: #4caf50;
+  white-space: nowrap;
+}
+
+.company-setting-subscription-container .subscription-text {
+  width: 50%;
+  font-size: 14px;
+}
+
+.company-setting-subscription-container .view-plan-btn {
+  width: 162px;
+  height: 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background: #fb8200;
+  box-shadow: 0px 2px 10px rgba(251, 130, 0, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+}

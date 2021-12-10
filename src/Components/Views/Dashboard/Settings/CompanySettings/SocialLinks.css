@@ -1,0 +1,24 @@
+.company-setting-social-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.company-setting-social-container:last-of-type {
+  margin-bottom: 0;
+}
+.company-setting-social-icon {
+  width: 30px;
+}
+.company-setting-social-input-box {
+  width: 250px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  /* shadow-base */
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+  border-radius: 10px;
+  margin-left: 25px;
+  outline: none;
+  padding-left: 10px;
+}

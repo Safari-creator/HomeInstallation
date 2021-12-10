@@ -1,0 +1,28 @@
+.getAQuoteWidget-section {
+}
+
+.getAQuoteWidget-section .getAQuoteWidget-wrapper {
+  padding: 24px;
+  display: flex;
+}
+
+.getAQuoteWidget-section .getAQuoteWidget-wrapper input {
+  margin-top: 10px;
+}
+
+.getAQuoteWidget-section .getAQuoteWidget-wrapper .content {
+  width: 181px;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.getAQuoteWidget-section .getAQuoteWidget-wrapper .sub-content {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: left !important;
+  display: block;
+}

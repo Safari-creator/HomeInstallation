@@ -1,0 +1,27 @@
+.reportOptions-section .reportOptions-wrapper {
+  padding: 24px;
+}
+
+.reportOptions-section .reportOptions-wrapper .section {
+  display: flex;
+  margin-top: 40px;
+}
+.reportOptions-section .reportOptions-wrapper .section input {
+  margin-top: 5px;
+}
+.reportOptions-section .reportOptions-wrapper .section .content {
+  width: 191px;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.reportOptions-section .reportOptions-wrapper .section .sub-content {
+  width: 342px;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: left !important;
+  display: block;
+}

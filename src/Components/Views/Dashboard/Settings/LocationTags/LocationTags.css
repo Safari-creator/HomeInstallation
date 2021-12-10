@@ -1,0 +1,60 @@
+.locationTags-section {
+}
+.locationTags-section .locationTags-wrapper {
+  display: flex;
+}
+.locationTags-section .locationTags-wrapper .section-one {
+  width: 30%;
+  margin-right: 50px;
+}
+.locationTags-section .locationTags-wrapper .section-one .one {
+  font-size: 18px !important;
+}
+.locationTags-section .locationTags-wrapper .section-one .two {
+  font-size: 14px !important;
+}
+.locationTags-section .locationTags-wrapper .section-one .three {
+  font-size: 14px !important;
+  color: rgb(17, 100, 196) !important;
+}
+.locationTags-section .locationTags-wrapper .section-one .four {
+  font-size: 14px !important;
+  color: rgb(17, 100, 196) !important;
+}
+.locationTags-section .locationTags-wrapper .section-two {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.locationTags-section .locationTags-wrapper .section-two .section p {
+  text-align: left !important;
+  color: black !important;
+}
+.locationTags-section .locationTags-wrapper .section-two .section button {
+  background: #e6dfdf;
+  border-radius: 5px;
+  padding: 1px 9px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400px;
+  line-height: 20px;
+  border: none;
+  margin-top: 13px;
+  color: #52525b;
+}
+.locationTags-section .locationTags-wrapper .section-two .section .cross {
+  margin-right: 10px;
+  text-align: center;
+}
+.locationTags-section .locationTags-wrapper .section-two .section .location {
+  background: white;
+}
+.locationTags-section .locationTags-wrapper .section-two .line {
+  background: #111111;
+  opacity: 0.64;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  height: 1px;
+  width: 542px;
+  margin-top: 13px;
+  margin-bottom: 20px;
+}

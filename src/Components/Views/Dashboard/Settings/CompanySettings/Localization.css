@@ -1,0 +1,37 @@
+.company-settings-localization-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+}
+.company-settings-localization-row .left-col {
+  font-size: 14px;
+  width: 25%;
+}
+.company-settings-localization-row .center-col {
+  font-size: 14px;
+  width: 35%;
+}
+.company-settings-localization-row .custom-option {
+  /* position: absolute; */
+  width: 177px;
+  height: 28px;
+  /* left: calc(50% - 177px/2 - 5px); */
+  /* top: 118.99%; */
+  /* bottom: -21.85%; */
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  outline: none;
+  /* shadow-base */
+
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+  border-radius: 10px;
+}
+.company-settings-localization-row .right-col {
+  font-size: 14px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
