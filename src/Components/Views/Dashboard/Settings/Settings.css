@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.sub-accordian-dropdown .MuiPaper-elevation .MuiAccordionSummary-root{
+.sub-accordian-dropdown .MuiPaper-elevation .MuiAccordionSummary-root {
   background-color: white !important;
 }
 
@@ -12,13 +12,13 @@
   margin: 0 auto;
 }
 
-.css-1fjvggn-MuiPaper-root-MuiAccordion-root{
+.css-1fjvggn-MuiPaper-root-MuiAccordion-root {
   border: none !important;
 }
 
-.pad-top-bot20{
- padding-top: 20px;
- padding-bottom: 20px;
+.pad-top-bot20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .settings-section .header-part {
@@ -392,4 +392,20 @@
   border: none;
   margin-top: 20px;
   line-height: 21.6px;
+}
+
+.sub-accordian-dropdown .MuiPaper-root .MuiAccordionSummary-root {
+  background-color: white;
+}
+
+.sub-accordian-dropdown
+  .MuiPaper-root
+  .MuiCollapse-root
+  .MuiCollapse-wrapper
+  .MuiCollapse-wrapperInner
+  .MuiAccordion-region
+  .MuiAccordionDetails-root {
+  box-shadow: none !important;
+  border: none !important;
+  padding-left: 90px;
 }

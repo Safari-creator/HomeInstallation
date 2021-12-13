@@ -258,7 +258,7 @@
   background-color: white;
 } */
 
-/* .Modal {
+.Modal {
   position: absolute;
   top: 40px;
   left: 40px;
@@ -315,7 +315,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-} */
+}
 
 .settingsTeam-section .body-part .body-content .body-four {
   width: 570px;

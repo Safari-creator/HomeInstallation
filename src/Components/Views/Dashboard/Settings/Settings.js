@@ -1,15 +1,7 @@
 import React from 'react';
 import './Settings.css';
 import Agreements from './BussinesTools/Agreements/Agreements';
-import headerClock from "../../../Software/assets/headerClock.png"
-import headerProfile from "../../../Software/assets/headerProfile.png"
-import headerIconOne from "../../../Software/assets/headerIconOne.png"
-import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
-import sidebarImage from "../../../Software/assets/sidebar-logo.png"
-import textbox from "../../../Software/assets/textbox.png"
 import { useHistory } from 'react-router-dom';
-
-
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
@@ -17,15 +9,21 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Agreement from './BussinesTools/Agreements/Agreements';
 import ReportTools from '../Settings/ReportTools/ReportTools';
 import LocationTags from '../Settings/LocationTags/LocationTags';
 import SchedulingOptions from '../Settings/SchedulingTools/SchedulingOptions/SchedulingOptions';
 import OnlineScheduler from '../Settings/SchedulingTools/OnlineScheduler/OnlineScheduler';
 import GetAQuoteWidget from '../Settings/SchedulingTools/GetAQuoteWidget/GetAQuoteWidget';
 import InspectionRequestForm from '../Settings/SchedulingTools/InspectionRequestForm/InspectionRequestForm';
+import SocialLinks from './CompanySettings/SocialLinks';
+import Subscription from './CompanySettings/Subscription';
+import DataImports from './CompanySettings/DataImports'
+import Agents from './CompanySettings/Agents';
+import Calendar from './CompanySettings/Calendar';
+import Localization from './CompanySettings/Localization';
+import Integrations from './UserSettings/Integrations';
+import UserOptions from './UserSettings/UserOptions';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -62,13 +60,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     padding: theme.spacing(2),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
-
-
-
-/**
- * Checkbox
- * @returns 
- */
 
 const BpIcon = styled('span')(({ theme }) => ({
     borderRadius: 3,
@@ -132,9 +123,6 @@ function BpCheckbox(props) {
     );
 }
 
-
-
-
 const Settings = () => {
 
     const [expanded, setExpanded] = React.useState('panel1');
@@ -166,12 +154,12 @@ const Settings = () => {
         },
         {
             title: "COMPANY SETTINGS",
-            subTitle: [{ heading: "Social Links", component: <Agreements /> }, { heading: "Subscription", component: <Agreements /> }, { heading: "Data Imports", component: <Agreements /> }, { heading: "Agents", component: <Agreements /> }, { heading: "Calendar Options", component: <Agreements /> }, { heading: "Localization (currency, date format, unit, etc)", component: <Agreements /> }],
+            subTitle: [{ heading: "Social Links", component: <SocialLinks /> }, { heading: "Subscription", component: <Subscription /> }, { heading: "Data Imports", component: <DataImports /> }, { heading: "Agents", component: <Agents /> }, { heading: "Calendar Options", component: <Calendar /> }, { heading: "Localization (currency, date format, unit, etc)", component: <Localization /> }],
             // Ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor",
         },
         {
             title: "USER SETTINGS",
-            subTitle: [{ heading: "Integrations", component: <Agreements /> }, { heading: "User Options", component: <Agreements /> }],
+            subTitle: [{ heading: "Integrations", component: <Integrations /> }, { heading: "User Options", component: <UserOptions /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
     ]
@@ -206,6 +194,7 @@ const Settings = () => {
                             <button class="select-list" onClick={() => history.push('/SettingsDiscountCodes')}>DISCOUNT CODES</button>
                         </div>
                     </div>
+
                     {questionsList.map((section, index1) => {
                         return (
                             <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
@@ -217,14 +206,16 @@ const Settings = () => {
                                         {console.log(section.emails)}
                                         {/* {section?.subTitle?.map((subtitle, index2) => {
                                             return (
-                                                <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
+                                                <div className={`${subtitle.heading.split(' ')[0] + (subtitle.heading.split(' ').length > 1 ? ('-' + subtitle.heading.split(' ')[1]) : '')}-dropdown sub-accordian-dropdown`}>
+                                                    <Accordion key={index1} onChange={handleChange('panel1')} style={{ marginBottom: "25px" }}>
                                                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                                                             <Typography>{subtitle.heading}</Typography>
                                                         </AccordionSummary>
                                                         <AccordionDetails>
                                                             {subtitle.component}
                                                         </AccordionDetails>
-                                                </Accordion>
+                                                    </Accordion>
+                                                </div>
                                             )
                                         }
                                         )} */}
@@ -243,6 +234,7 @@ const Settings = () => {
                                             )
                                         }
                                         )}
+
                                     </FormGroup>
                                 </AccordionDetails>
                             </Accordion>
