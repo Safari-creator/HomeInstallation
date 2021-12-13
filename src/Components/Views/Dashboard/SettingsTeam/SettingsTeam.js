@@ -10,47 +10,34 @@ import tick from "../../../Software/assets/tick.png"
 import { useHistory } from 'react-router-dom';
 import SettingsTeams from '../SettingsTeams/SettingsTeams';
 import Modal from 'react-modal';
-import ReactModal from 'react-modal';
 
 const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+      backgroundColor       : '#ffffff',
+      padding               : '0px',
+      borderRadius          : '24px',
+    }
+};
 
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#yourAppElement');
-
-
-const SettingsTeam = () => {
+const SettingsTeam = (props) => {
 
     let history = useHistory();
 
-    let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+    const setModalIsOpenToTrue =()=>{
+        setModalIsOpen(true)
+    }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-    // const [isOpen, setIsOpen] = useState(false);
-    // const togglePopup = () => {
-    //     setIsOpen(!isOpen);
-    //   }
+    const setModalIsOpenToFalse =()=>{
+        setModalIsOpen(false)
+    }
 
     return(
         <div class="settingsTeam-section">
@@ -132,80 +119,19 @@ const SettingsTeam = () => {
                     </div>
                     <div className="button">
                         {/* <button onClick={togglePopup}>ADD INSPECTION</button> */}
-                        <button onClick={openModal}>ADD INSPECTION</button>
+                        <button onClick={setModalIsOpenToTrue}>ADD INSPECTION</button>
+                             <Modal isOpen={modalIsOpen} style={customStyles} onRequestClose={()=> setModalIsOpen(false)}>
+                            {/* <button onClick={setModalIsOpenToFalse}>x</button> */}
+                            <SettingsTeams name="Add Staff Member"/>
+                        </Modal>
                     </div>
-                        <ReactModal
+                        {/* <ReactModal
                         isOpen={modalIsOpen}
                         contentLabel="Example Modal"
                         onRequestClose={closeModal}
                         className="Modal"
-                        overlayClassName="Overlay">
-
-                        <div className="modal-wrapper">
-                            <div className="modal-heading">
-                                <p>ADD AN INSPECTOR</p>
-                            </div>
-                            <div className="modal-content">
-                                <div className="column-one">
-                                        <label>First Name:</label>
-                                        <input type="text"></input>
-                                        <label>Last Name:</label>
-                                        <input type="text"></input>
-                                        <label>Phone:</label>
-                                        <input type="text"></input>
-                                        <label>Email(required):</label>
-                                        <input type="text"></input>
-                                </div>
-                                <div className="column-two">
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can schedule new inspections?</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can publish reports?</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can add new comments to template?</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can schedule new inspections?</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can publish reports?</label>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" value="Paneer" />
-                                            <label>Can add new comments to template?</label>
-                                        </div>
-                                </div>
-                            </div>
-                            <div className="button">
-                                <button>ADD INSPECTOR</button>
-                            </div>
-                        </div>
-                        </ReactModal>
-                        {/* <Modal
-                            isOpen={modalIsOpen}
-                            onAfterOpen={afterOpenModal}
-                            onRequestClose={closeModal}
-                            // style={customStyles}
-                            contentLabel="Example Modal"
-                        > */}
-                        {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                        <button onClick={closeMoal}>close</button>
-                        <div>I am a modal</div>
-                        <form>
-                        <input />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <button>the modal</button>
-                        </form> */}
-                    {/* </Modal> */}
+                        overlayClassName="Overlay"> */}
+                        {/* </ReactModal> */}
                     <div className="body-three">
                         <div className="header">
                             <div className="left">
@@ -243,7 +169,11 @@ const SettingsTeam = () => {
                         </div>
                     </div>
                     <div className="button">
-                        <button>ADD STAFF MEMBER</button>
+                        <button onClick={setModalIsOpenToTrue}>ADD STAFF MEMBER</button>
+                        <Modal isOpen={modalIsOpen} style={customStyles} onRequestClose={()=> setModalIsOpen(false)}>
+                            {/* <button onClick={setModalIsOpenToFalse}>x</button> */}
+                            <SettingsTeams name="Add Staff Member"/>
+                        </Modal>
                     </div>
                     <div class="body-four">
                         <div class="header">

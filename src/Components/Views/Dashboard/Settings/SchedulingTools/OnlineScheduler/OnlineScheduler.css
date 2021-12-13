@@ -1,0 +1,28 @@
+.onlineScheduler-section {
+}
+
+.onlineScheduler-section .onlineScheduler-wrapper {
+  padding: 24px;
+  display: flex;
+}
+
+.onlineScheduler-section .onlineScheduler-wrapper input {
+  margin-top: 10px;
+}
+
+.onlineScheduler-section .onlineScheduler-wrapper .content {
+  width: 168px;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.onlineScheduler-section .onlineScheduler-wrapper .sub-content {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: left !important;
+  display: block;
+}

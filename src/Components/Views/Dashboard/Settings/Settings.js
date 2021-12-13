@@ -1,6 +1,21 @@
 import React from 'react';
 import './Settings.css';
 import Agreements from './BussinesTools/Agreements/Agreements';
+import { useHistory } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion from '@mui/material/Accordion';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import FormGroup from '@mui/material/FormGroup';
+import Checkbox from '@mui/material/Checkbox';
+import ReportTools from '../Settings/ReportTools/ReportTools';
+import LocationTags from '../Settings/LocationTags/LocationTags';
+import SchedulingOptions from '../Settings/SchedulingTools/SchedulingOptions/SchedulingOptions';
+import OnlineScheduler from '../Settings/SchedulingTools/OnlineScheduler/OnlineScheduler';
+import GetAQuoteWidget from '../Settings/SchedulingTools/GetAQuoteWidget/GetAQuoteWidget';
+import InspectionRequestForm from '../Settings/SchedulingTools/InspectionRequestForm/InspectionRequestForm';
 import SocialLinks from './CompanySettings/SocialLinks';
 import Subscription from './CompanySettings/Subscription';
 import DataImports from './CompanySettings/DataImports'
@@ -9,26 +24,6 @@ import Calendar from './CompanySettings/Calendar';
 import Localization from './CompanySettings/Localization';
 import Integrations from './UserSettings/Integrations';
 import UserOptions from './UserSettings/UserOptions';
-import headerClock from "../../../Software/assets/headerClock.png"
-import headerProfile from "../../../Software/assets/headerProfile.png"
-import headerIconOne from "../../../Software/assets/headerIconOne.png"
-import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
-import sidebarImage from "../../../Software/assets/sidebar-logo.png"
-import textbox from "../../../Software/assets/textbox.png"
-import { useHistory } from 'react-router-dom';
-
-
-import { styled } from '@mui/material/styles';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionSummary from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Agreement from './BussinesTools/Agreements/Agreements';
-
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -65,13 +60,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     padding: theme.spacing(2),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
-
-
-
-/**
- * Checkbox
- * @returns 
- */
 
 const BpIcon = styled('span')(({ theme }) => ({
     borderRadius: 3,
@@ -135,9 +123,6 @@ function BpCheckbox(props) {
     );
 }
 
-
-
-
 const Settings = () => {
 
     const [expanded, setExpanded] = React.useState('panel1');
@@ -154,7 +139,7 @@ const Settings = () => {
         },
         {
             title: "SCHEDULING TOOLS",
-            subTitle: [{ heading: "Scheduling Options", component: <Agreements /> }, { heading: "Online Scheduler", component: <Agreements /> }, { heading: "Get A Quote Widget", component: <Agreements /> }, { heading: "Inspection Request Form", component: <Agreements /> }],
+            subTitle: [{ heading: "Scheduling Options", component: <SchedulingOptions /> }, { heading: "Online Scheduler", component: <OnlineScheduler /> }, { heading: "Get A Quote Widget", component: <GetAQuoteWidget /> }, { heading: "Inspection Request Form", component: <InspectionRequestForm /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
@@ -164,7 +149,7 @@ const Settings = () => {
         },
         {
             title: "REPORT OPTIONS",
-            subTitle: [{ heading: "Report Tools", component: <Agreements /> }, { heading: "Location Tags", component: <Agreements /> }],
+            subTitle: [{ heading: "Report Tools", component: <ReportTools /> }, { heading: "Location Tags", component: <LocationTags /> }],
             // text_messages: ["Inspection Confirmation emails for clients", "Inspection Confirmation emails for clients agent", "Inspection Confirmation emails for listing agent"]
         },
         {
