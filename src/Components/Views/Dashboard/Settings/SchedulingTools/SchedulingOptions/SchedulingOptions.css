@@ -11,6 +11,7 @@
 }
 .schedulingOptions-section .schedulingOptions-wrapper .section-one .one {
   display: flex;
+  margin-top: 40px;
 }
 .schedulingOptions-section .schedulingOptions-wrapper .section-one .one input {
   margin-top: 10px;
@@ -20,7 +21,7 @@
   .section-one
   .one
   .content {
-  width: 168px !important;
+  width: 191px;
   font-size: 18px !important;
   font-weight: 400 !important;
   line-height: 16.8px !important;
@@ -31,6 +32,7 @@
   .section-one
   .one
   .sub-content {
+  width: 600px;
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 16.8px !important;
@@ -38,32 +40,80 @@
   text-align: left !important;
   display: block;
 }
-
 .schedulingOptions-section .schedulingOptions-wrapper .section-one .two {
+  display: flex;
+  margin-top: 40px;
 }
-
-.schedulingOptions-section .schedulingOptions-wrapper .section-one .three {
-}
-
-.schedulingOptions-section .schedulingOptions-wrapper .section-one .four {
-}
-.schedulingOptions-section .schedulingOptions-wrapper input {
-  margin-top: 10px;
-}
-
-.schedulingOptions-section .schedulingOptions-wrapper .content {
-  width: 181px;
+.schedulingOptions-section
+  .schedulingOptions-wrapper
+  .section-one
+  .two
+  .content {
+  width: 191px;
   font-size: 18px !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   line-height: 16.8px !important;
   color: rgba(0, 0, 0, 1) !important;
 }
-
-.schedulingOptions-section .schedulingOptions-wrapper .sub-content {
+.schedulingOptions-section
+  .schedulingOptions-wrapper
+  .section-one
+  .two
+  .sub-content {
+  width: 600px;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .section-two {
+  margin-top: 36px;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .section-two .content {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 16.8px !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+.schedulingOptions-section
+  .schedulingOptions-wrapper
+  .section-two
+  .sub-content {
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 16.8px !important;
   color: rgba(0, 0, 0, 1) !important;
   text-align: left !important;
   display: block;
+  margin-top: 13px;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .section-four {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  text-align: center;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .section-four div {
+  justify-content: center;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .section-four button {
+  border-radius: 8.52px;
+  color: white;
+  background-color: rgba(251, 130, 0);
+  border-color: rgba(251, 130, 0);
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  border: none;
+  margin-top: 20px;
+  padding: 10px 38px;
+  text-align: center;
+}
+.schedulingOptions-section .schedulingOptions-wrapper .line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: 36px;
 }
