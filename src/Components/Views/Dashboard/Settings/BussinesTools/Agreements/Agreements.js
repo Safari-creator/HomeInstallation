@@ -1,15 +1,16 @@
 import React from 'react'
+import './Agreements.css';
 
 function Agreement() {
     return (
         <div>
-            <div className="company-settings-Calendar-row">
+            <div className="company-settings-Calendar-row flex-column">
                 <div className="left-col">
                     Inspect Agreement
                 </div>
-                {/* <div className="right-col">
-                    <p>Allows you to preview customizable info about an inspection when hovering over it on the calendar. Note that this may slow down calendar load times due to more data being loaded!</p>
-                </div> */}
+                <div className="right-col flex-row">
+                    <p>(click to edit)</p>
+                </div>
             </div>
             <div className="company-settings-Calendar-row">
                 <div className="left-col">
@@ -17,7 +18,7 @@ function Agreement() {
                 </div>
                 <div className="right-col">
                     {/* <p>Customize what you see when hovering over an inspection or event on the calendar. Note that this setting applies to everyone in the company.</p> */}
-                    <div className="customize-hover-btn">CREATE A NEW INSPECTION AGREEMENT</div>
+                    <div className="customize-hover-btn width0">CREATE A NEW INSPECTION AGREEMENT</div>
                 </div>
             </div>
         </div>
