@@ -46,13 +46,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-
-
-/**
- * Checkbox
- * @returns 
- */
-
  const BpIcon = styled('span')(({ theme }) => ({
     borderRadius: 3,
     width: 16,
