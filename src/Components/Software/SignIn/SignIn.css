@@ -24,7 +24,7 @@
   display: flex;
 }
 
-.signin-section .container .signin-wrapper .signin-form .password-input .css-i4bv87-MuiSvgIcon-root{
+.signin-section .container .signin-wrapper .signin-form .password-input svg{
   position: absolute;
   right: 25%;
   margin-top: 23px;

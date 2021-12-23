@@ -43,12 +43,12 @@ const SignIn = () => {
         return "none";
     };
 
-    React.useEffect(() => {
-        console.log({showApiResponse})
-        console.log({apiResponseMessage})
-        console.log({apiResponseStatus})
-        setTab(3)
-    }, [showApiResponse, apiResponseMessage, apiResponseStatus])
+    // React.useEffect(() => {
+    //     console.log({ showApiResponse })
+    //     console.log({ apiResponseMessage })
+    //     console.log({ apiResponseStatus })
+    //     setTab(3)
+    // }, [showApiResponse, apiResponseMessage, apiResponseStatus])
 
     // const checkAuth = async (path, body) => {
     //     try {
@@ -114,15 +114,11 @@ const SignIn = () => {
                     password: password
                 },
             )
-                .then( (resp) => {
-                    setTab(1)
-                    console.log(">>>",tab)
-                    console.log("******", resp.data.message)
-                    console.log(">>>>>>", resp.data)
-                    // setSnackBoxData(resp);
+                .then((resp) => {
+                    console.log("event", event)
                     setApiResponseMessage(resp.data.message)
                     if (resp.data.status == false) {
-                    setApiResponseStatus("error")
+                        setApiResponseStatus("error")
                     } else {
                         setApiResponseStatus("success")
                         setTimeout(() => {
@@ -130,18 +126,12 @@ const SignIn = () => {
                         }, 2000)
                     }
                     setShowApiResponse(true)
-                    console.log({ apiResponseStatus })
-                    console.log({ apiResponseMessage })
-                    console.log({ showApiResponse })
-                    // if(resp.data.status == true){
-                    //     setTimeout(() => {
-                    //         history.push('/MainDashboard')
-                    //     }, 2000)
-                    // }else if(resp.data.status == false){
-                    //     return(
-                    //     <CustomizedSnackbars message={"Hi my name is sahib"} type={"error"} show={true} />
-                    //     )
-                    // }
+                    setTimeout(() => {
+                    setShowApiResponse(false)
+                    }, 2000)
+                    // console.log({ apiResponseStatus })
+                    // console.log({ apiResponseMessage })
+                    // console.log({ showApiResponse })
                 })
                 .catch((err) => {
                     console.error(err);
