@@ -4,7 +4,9 @@ import { useHistory } from 'react-router-dom';
 import GoogleLogin from "react-google-login";
 import React, { useState } from 'react';
 import axios from "axios";
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import CustomizedSnackbars from '../../Reusable/SnackBar/SnackBar';
 
 const SignIn = () => {
 
@@ -23,11 +25,15 @@ const SignIn = () => {
         setUrl(response.profileObj.imageUrl);
     };
 
-    // const [checked,setChecked] = useState(false);
     const [tab, setTab] = useState(0);
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [showApiResponse, setShowApiResponse] = useState(null);
+    const [apiResponseMessage, setApiResponseMessage] = useState(null);
+    const [apiResponseStatus, setApiResponseStatus] = useState(null);
     const [url, setUrl] = useState("");
+    const [viewPassword, setViewPassword] = useState(false);
 
     const getAuth = async () => {
         const auth = await localStorage.getItem("auth");
@@ -36,6 +42,13 @@ const SignIn = () => {
         }
         return "none";
     };
+
+    // React.useEffect(() => {
+    //     console.log({ showApiResponse })
+    //     console.log({ apiResponseMessage })
+    //     console.log({ apiResponseStatus })
+    //     setTab(3)
+    // }, [showApiResponse, apiResponseMessage, apiResponseStatus])
 
     // const checkAuth = async (path, body) => {
     //     try {
@@ -65,20 +78,60 @@ const SignIn = () => {
     //     }
     // };
 
+    const setSnackBoxData = (res) => {
+        setApiResponseMessage(res.data.message)
+        if (res.data.status == false) {
+            setApiResponseStatus("error")
+        } else {
+            setApiResponseStatus("success")
+            setTimeout(() => {
+                history.push('/MainDashboard')
+            }, 2000)
+        }
+        setShowApiResponse(true)
+        console.log({ apiResponseStatus })
+        console.log({ apiResponseMessage })
+        console.log({ showApiResponse })
+    }
 
-    const handleSubmit = (event) => {
+    const handleChange = (e) => {
+        console.log("***", e)
+        console.log("***", e.target.value)
+        console.log("***", e.target.name)
+        if (e.target.name == "password") {
+            setPassword(e.target.value)
+        } else if (e.target.name == "email") {
+            setEmail(e.target.value)
+        }
+    }
+
+    async function handleSubmit(event) {
         event.preventDefault();
         if (event) {
-            axios.post("http://34.229.16.173:8000/login",
+            await axios.post("http://34.229.16.173:8000/login",
                 {
-                    email:"aaryan+5@punchh.com",
-                    password:"0987"
+                    email: email,
+                    password: password
                 },
-                )
+            )
                 .then((resp) => {
-                    console.log("******",resp.message)
-                    console.log(">>>>>>",resp.data)
-                    history.push('/MainDashboard')
+                    console.log("event", event)
+                    setApiResponseMessage(resp.data.message)
+                    if (resp.data.status == false) {
+                        setApiResponseStatus("error")
+                    } else {
+                        setApiResponseStatus("success")
+                        setTimeout(() => {
+                            history.push('/MainDashboard')
+                        }, 2000)
+                    }
+                    setShowApiResponse(true)
+                    setTimeout(() => {
+                    setShowApiResponse(false)
+                    }, 2000)
+                    // console.log({ apiResponseStatus })
+                    // console.log({ apiResponseMessage })
+                    // console.log({ showApiResponse })
                 })
                 .catch((err) => {
                     console.error(err);
@@ -97,11 +150,13 @@ const SignIn = () => {
                         <h3>Login to your account</h3>
                         <form className="signin-form-body">
                             <label>Email</label><br />
-                            <input className="form-input" type="text" placeholder="Enter Email..."></input><br />
+                            <input className="form-input" name="email" onChange={(e) => handleChange(e)} type="text" placeholder="Enter Email..."></input><br />
                             <label>Password</label><br />
-                            <input className="form-input" type="text" placeholder=" Enter Password..."></input><br />
-                            {/* <button onClick={(e) => handleSubmit(e)}>Login</button> */}
-                            <button onClick={() => history.push('/MainDashboard')}>Login</button>
+                            <div className="password-input">
+                                <input className="form-input" name="password" onChange={(e) => handleChange(e)} type={viewPassword ? "text" : "password"} placeholder=" Enter Password..."></input><br />
+                                {viewPassword ? <VisibilityOffIcon onClick={() => setViewPassword(false)} /> : <VisibilityIcon onClick={() => setViewPassword(true)} />}
+                            </div>
+                            <button className={email != null && password != null ? "" : "opacity3"} disabled={email != null && password != null ? false : true} onClick={(e) => handleSubmit(e)}>Login</button>
                             {/* <GoogleLogin
                                 clientId={clientId}
                                 onSuccess={responseGoogle}
@@ -109,6 +164,7 @@ const SignIn = () => {
                                 cookiePolicy={"single_host_origin"}
                             >Or Sign-in with google</GoogleLogin> */}
                         </form>
+                        {apiResponseMessage && apiResponseStatus && showApiResponse && <CustomizedSnackbars message={apiResponseMessage} type={apiResponseStatus} show={showApiResponse} />}
                     </div>
                     <div className="signin-image">
                         <div className="image-wrapper">

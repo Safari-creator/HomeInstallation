@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.opacity3{
+  opacity: 0.3;
+}
+
 .signin-section {
   max-width: 100%;
   height: fit-content;
@@ -15,6 +19,18 @@
   /* padding: 100px 100px 100px 100px; */
   height: 100vh;
 }
+
+.signin-section .container .signin-wrapper .signin-form .password-input{
+  display: flex;
+}
+
+.signin-section .container .signin-wrapper .signin-form .password-input svg{
+  position: absolute;
+  right: 25%;
+  margin-top: 23px;
+}
+
+
 
 .signin-section .container .signin-wrapper {
   width: 85%;

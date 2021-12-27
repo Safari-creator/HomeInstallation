@@ -1,8 +1,10 @@
 import React from 'react';
 import './Settings.css';
-import Agreements from './BussinesTools/Agreements/Agreements';
 import { useHistory } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
+import Agreements from './BussinesTools/Agreements/Agreements';
+import Reviews from './BussinesTools/Reviews/Reviews';
+import InternalCommunication from './BussinesTools/InternalCommunication/InternalCommunication';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -134,7 +136,7 @@ const Settings = () => {
     const questionsList = [
         {
             title: "BUSINESS TOOLS",
-            subTitle: [{ heading: "Agreements", component: <Agreements /> }, { heading: "Payments", component: <Agreements /> }, { heading: "Reviews", component: <Agreements /> }, { heading: "Internal Communication", component: <Agreements /> }, { heading: "Emails", component: <Agreements /> }, { heading: "Text/SMS", component: <Agreements /> }],
+            subTitle: [{ heading: "Agreements", component: <Agreements /> }, { heading: "Payments", component: <Agreements /> }, { heading: "Reviews", component: <Reviews /> }, { heading: "Internal Communication", component: <InternalCommunication /> }, { heading: "Emails", component: <Agreements /> }, { heading: "Text/SMS", component: <Agreements /> }],
             // Components: ["Agreement", "Agreement", "Agreement"]
         },
         {
