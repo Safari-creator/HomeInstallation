@@ -1,41 +1,3 @@
-// import React from 'react';
-// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-// import { Pie } from 'react-chartjs-2';
-
-// ChartJS.register(ArcElement, Tooltip, Legend);
-
-// export const data = {
-//   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//   datasets: [
-//     {
-//       label: '# of Votes',
-//       data: [12, 19, 3, 5, 2, 3],
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.2)',
-//         'rgba(54, 162, 235, 0.2)',
-//         'rgba(255, 206, 86, 0.2)',
-//         'rgba(75, 192, 192, 0.2)',
-//         'rgba(153, 102, 255, 0.2)',
-//         'rgba(255, 159, 64, 0.2)',
-//       ],
-//       borderColor: [
-//         'rgba(255, 99, 132, 1)',
-//         'rgba(54, 162, 235, 1)',
-//         'rgba(255, 206, 86, 1)',
-//         'rgba(75, 192, 192, 1)',
-//         'rgba(153, 102, 255, 1)',
-//         'rgba(255, 159, 64, 1)',
-//       ],
-//       borderWidth: 1,
-//     },
-//   ],
-// };
-
-// export default function Metrics() {
-//   return <Pie data={data} />;
-// }
-// 
-// 
 import React from 'react';
 import './Metrics.css';
 import headerClock from "../../../Software/assets/headerClock.png"
@@ -63,16 +25,16 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+export const options_bar = {
   responsive: true,
   plugins: {
     legend: {
       position: 'top',
     },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
+    // title: {
+    //   display: true,
+    //   text: 'Chart.js Bar Chart',
+    // },
     scales: {
         xAxes: [{
             barPercentage: 1,
@@ -82,9 +44,9 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September', 'October', 'November'];
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul','Aug', 'Sep', 'Oct', 'Nov'];
 
-export const data = {
+export const data_bar = {
   labels,
   datasets: [
     {
@@ -192,7 +154,7 @@ const Metrics = () => {
                     <p>INSPECTIONS</p>
                   </div>
                   <div className='body'>
-                    <Bar options={options} data={data}></Bar>
+                    <Bar options={options_bar} data={data_bar}></Bar>
                   </div>
                 </div>
                 <div className="left-two">
@@ -243,10 +205,9 @@ const Metrics = () => {
                   </div>
                 </div>
                 <div className="right-four">
-                  <div className='heading'>
-                    <p>INSPECTIONS</p>
-                  </div>
                   <div className='body'>
+                    <p>NEED HELP?</p>
+                    <button>Call Us</button>
                   </div>
                 </div>
               </div>    

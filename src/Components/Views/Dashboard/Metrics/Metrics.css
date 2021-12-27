@@ -82,14 +82,14 @@
 .metrics-section .metrics-body .metrics-left .left-one .heading {
   background-color: #eeeeee;
   color: #a1a1aa;
-  height: 35px;
   border-radius: 10px;
-  padding-left: 25px;
+  padding: 6px 0px 7px 26px;
 }
 .metrics-section .metrics-body .metrics-left .left-one .heading p {
   line-height: 21.6px;
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 0px;
 }
 .metrics-section .metrics-body .metrics-left .left-one .body {
   display: flex;
@@ -102,17 +102,21 @@
 .metrics-section .metrics-body .metrics-left .left-two {
   background-color: white;
   border-radius: 10px;
+  height: 500px;
 }
 .metrics-section .metrics-body .metrics-left .left-two .heading {
   background-color: #eeeeee;
   color: #a1a1aa;
-  font-size: 18px;
-  font-weight: 600;
-  height: 35px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-left .left-two .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
 }
 .metrics-section .metrics-body .metrics-left .left-two .body {
   display: flex;
@@ -135,13 +139,16 @@
 .metrics-section .metrics-body .metrics-right .right-one .heading {
   background-color: #eeeeee;
   color: #a1a1aa;
-  font-size: 18px;
-  font-weight: 600;
-  height: 35px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-one .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
 }
 .metrics-section .metrics-body .metrics-right .right-one .body {
   display: flex;
@@ -159,13 +166,16 @@
 .metrics-section .metrics-body .metrics-right .right-two .heading {
   background-color: #eeeeee;
   color: #a1a1aa;
-  font-size: 18px;
-  font-weight: 600;
-  height: 35px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-two .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
 }
 .metrics-section .metrics-body .metrics-right .right-two .body {
   display: flex;
@@ -179,17 +189,21 @@
   background-color: white;
   border-radius: 10px;
   margin-bottom: 20px;
+  height: 224px;
 }
 .metrics-section .metrics-body .metrics-right .right-three .heading {
   background-color: #eeeeee;
   color: #a1a1aa;
-  font-size: 18px;
-  font-weight: 600;
-  height: 35px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-three .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
 }
 .metrics-section .metrics-body .metrics-right .right-three .body {
   display: flex;
