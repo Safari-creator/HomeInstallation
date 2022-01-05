@@ -78,26 +78,20 @@ const SignIn = () => {
     //     }
     // };
 
-    const setSnackBoxData = (res) => {
-        setApiResponseMessage(res.data.message)
-        if (res.data.status == false) {
-            setApiResponseStatus("error")
-        } else {
-            setApiResponseStatus("success")
-            setTimeout(() => {
-                history.push('/MainDashboard')
-            }, 2000)
-        }
-        setShowApiResponse(true)
-        console.log({ apiResponseStatus })
-        console.log({ apiResponseMessage })
-        console.log({ showApiResponse })
-    }
+    // const setSnackBoxData = (res) => {
+    //     setApiResponseMessage(res.data.message)
+    //     if (res.data.status == false) {
+    //         setApiResponseStatus("error")
+    //     } else {
+    //         setApiResponseStatus("success")
+    //         setTimeout(() => {
+    //             history.push('/MainDashboard')
+    //         }, 2000)
+    //     }
+    //     setShowApiResponse(true)
+    // }
 
     const handleChange = (e) => {
-        console.log("***", e)
-        console.log("***", e.target.value)
-        console.log("***", e.target.name)
         if (e.target.name == "password") {
             setPassword(e.target.value)
         } else if (e.target.name == "email") {
@@ -115,7 +109,6 @@ const SignIn = () => {
                 },
             )
                 .then((resp) => {
-                    console.log("event", event)
                     setApiResponseMessage(resp.data.message)
                     if (resp.data.status == false) {
                         setApiResponseStatus("error")
@@ -129,9 +122,6 @@ const SignIn = () => {
                     setTimeout(() => {
                     setShowApiResponse(false)
                     }, 2000)
-                    // console.log({ apiResponseStatus })
-                    // console.log({ apiResponseMessage })
-                    // console.log({ showApiResponse })
                 })
                 .catch((err) => {
                     console.error(err);
