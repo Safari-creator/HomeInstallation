@@ -23,6 +23,11 @@ const SignUp = () => {
         setUrl(response.profileObj.imageUrl);
     };
 
+    const handleChange = (e) => {
+        console.log(e.target.value)
+        // if()
+    }
+
     // const [checked,setChecked] = useState(false);
     const [tab, setTab] = useState(0);
     const [name, setName] = useState("");
@@ -43,7 +48,7 @@ const SignUp = () => {
                             <p className="sub-heading">For the purpose of industry regulation, your details are required.</p>
                             <form className="signup-form-body">
                                 <label>Your fullname*</label><br />
-                                <input className="form-input" type="text" placeholder="Enter full name"></input><br />
+                                <input onChange={(e) => handleChange(e)} className="form-input" type="text" placeholder="Enter full name"></input><br />
                                 <label>Email address*</label><br />
                                 <input className="form-input" type="text" placeholder="Enter email address"></input><br />
                                 <label>Create password*</label><br />
