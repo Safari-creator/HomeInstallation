@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CreateNewReports.css';
 import headerClock from "../../../Software/assets/headerClock.png"
 import headerProfile from "../../../Software/assets/headerProfile.png"
@@ -6,6 +6,9 @@ import headerIconOne from "../../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
 
 const CreateNewReports = () => {
+
+    const [selectedFile, setSelectedFile] = useState(null);
+
     return(
         <div className="createnewreports-section">
             {/* <section className="header-part">
@@ -31,12 +34,17 @@ const CreateNewReports = () => {
                                     <div className="form-part">
                                         <div style={{top:"0px"}}>
                                             <label>Enter Report Name:</label>
-                                            <input type="text" style={{width:"177px"}}></input>
+                                            <input className="form-input" name="name" type="text" style={{width:"177px"}} ></input>
                                         </div>
+                                        {/* <div style={{top:"66px"}}>
+                                            <label>Cover Picture 1:</label>
+                                            <input type="file" value={selectedFile} placeholder="choose file"></input>
+                                            <p>No file choosen</p> 
+                                        </div> */}
                                         <div style={{top:"66px"}}>
                                             <label>Cover Picture 1:</label>
-                                            <input type="text" placeholder="choose file"></input>
-                                            <p>No file choosen</p> 
+                                            <input type="file" onChange={(e) => setSelectedFile(e.target.files[0])}/>
+                                            {selectedFile}
                                         </div>
                                         <div style={{top:"116px"}}>
                                             <label>Cover Picture 2:</label>
