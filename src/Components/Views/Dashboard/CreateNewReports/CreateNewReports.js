@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CreateNewReports.css';
 import headerClock from "../../../Software/assets/headerClock.png"
 import headerProfile from "../../../Software/assets/headerProfile.png"
 import headerIconOne from "../../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
+import axios from 'axios'
 
 const CreateNewReports = () => {
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const [countries, setCountries] = useState([]);
+    const [posts, setPosts] = useState([]);
 
+    const handleFileSelect = (event) => {
+        setSelectedFile(event.target.files[0].name);
+        console.log(event.target.files[0]);
+        // console.log(selectedFile);
+    }
+
+    const url = axios.create({
+        baseURL: 'http://34.198.19.55:8000/countries',
+    });
+
+    useEffect( () => {
+        // requesting to get data
+        axios.get('http://34.198.19.55:8000/countries')
+        // then getting the response from that request
+        .then(res=>{
+            console.log(res);
+            setCountries(res.data);
+        })
+        // or getting the error
+        .catch(err => {
+            console.log(err)
+        });
+    },[])
     return(
         <div className="createnewreports-section">
             {/* <section className="header-part">
@@ -43,13 +69,13 @@ const CreateNewReports = () => {
                                         </div> */}
                                         <div style={{top:"66px"}}>
                                             <label>Cover Picture 1:</label>
-                                            <input type="file" onChange={(e) => setSelectedFile(e.target.files[0])}/>
-                                            {selectedFile}
+                                            <input type="file" onChange={handleFileSelect}/>
+                                            <p>{selectedFile}</p>
                                         </div>
                                         <div style={{top:"116px"}}>
                                             <label>Cover Picture 2:</label>
-                                            <input type="text" placeholder="choose file"></input>
-                                            <p>No file choosen</p> 
+                                            <input type="file" onChange={handleFileSelect}/>
+                                            <p>{selectedFile}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +98,14 @@ const CreateNewReports = () => {
                                         <label>Country:</label>
                                         <select name="selectList" id="selectList">
                                             <option value="option 1">Select</option>
-                                            <option value="option 2">Country names</option>
+                                            {/* <option value="option 2">Country names</option> */}
+                                            <option value="option 2">
+                                                <ul>
+                                                {
+                                                    countries.map(country => <li key={country.id}>{country.country_name}</li>)
+                                                }
+                                                </ul>
+                                            </option>
                                         </select>
                                         </div>
                                         <div style={{top:"168px"}}>
@@ -123,36 +156,35 @@ const CreateNewReports = () => {
                         </div>
                         <div className="section-four">
                         <div className="section-header">
-                                    <p>Inspection Fees</p>
-                                    
+                            <p>Inspection Fees</p>
+                        </div>
+                        <div className="section-body">
+                            <div className="form-part">
+                                <div style={{top:"0px"}}>
+                                    <label>Invoice Number:</label>
+                                    <input type="text"></input>
                                 </div>
-                                <div className="section-body">
-                                    <div className="form-part">
-                                        <div style={{top:"0px"}}>
-                                        <label>Invoice Number:</label>
-                                        <input type="text"></input>
-                                        </div>
-                                        <div style={{top:"48px"}}>
-                                        <label>Fees Charged:</label>
-                                        <input type="text"></input>
-                                        </div>
-                                        <div style={{top:"96px"}}>
-                                        <label>Taxes:</label>
-                                        <input type="text"></input>
-                                        </div>
-                                        <div style={{top:"144px"}}>
-                                        <label>Other:</label>
-                                        <input type="text"></input>
-                                        </div>
-                                        <div style={{top:"192px"}}>
-                                        <label>Total Fees:</label>
-                                        <input type="text"></input>
-                                        </div>
-                                        <div style={{top:"240px"}}>
-                                        <label>Date Paid:</label>
-                                        <input type="text" placeholder="select date"></input>
-                                        </div>
-                                    </div>
+                                <div style={{top:"48px"}}>
+                                    <label>Fees Charged:</label>
+                                    <input type="text"></input>
+                                </div>
+                                <div style={{top:"96px"}}>
+                                    <label>Taxes:</label>
+                                    <input type="text"></input>
+                                </div>
+                                <div style={{top:"144px"}}>
+                                    <label>Other:</label>
+                                    <input type="text"></input>
+                                </div>
+                                <div style={{top:"192px"}}>
+                                    <label>Total Fees:</label>
+                                    <input type="text"></input>
+                                </div>
+                                <div style={{top:"240px"}}>
+                                    <label>Date Paid:</label>
+                                    <input type="text" placeholder="select date"></input>
+                                </div>
+                            </div>
                                 </div>
                         </div>
                         <div className="section-five">
