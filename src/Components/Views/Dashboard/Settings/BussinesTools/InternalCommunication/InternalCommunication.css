@@ -1,0 +1,13 @@
+.op6{
+    opacity: 0.6 !important;
+    color: black !important;
+}
+.font9{
+    font-size: 9px;
+}
+.space-evenly{
+    justify-content: space-evenly;
+}
+.marg-top30{
+    margin-top: -30px;
+}

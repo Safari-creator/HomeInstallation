@@ -9,6 +9,8 @@ import bars from '../../../Software/assets/bars.png'
 import { useEffect } from 'react';
 import sidebarImage from '../../../Software/assets/sidebar-logo.png'
 
+import MaterialUIPickers from '../../../Reusable/DatePicker/DatePicker'
+
 const   Dashboard = () => {
     // const [showSidebar, setShowSideBar] = useState(false)
 
@@ -22,6 +24,10 @@ const   Dashboard = () => {
     //         sidebar.style.left = "-216px"
     //     }
     // })
+
+    // const handleDatePicker = () => {
+
+    // }
 
     return (
         <div className="dashboard-section">
@@ -81,7 +87,8 @@ const   Dashboard = () => {
                             <div className="schedule-body">
                                 <button>Select Date</button>
                                 <button>Inspection</button>
-                                <button>Select Time</button>
+                                <button >Select Time</button>
+                                {/* <MaterialUIPickers /> */}
                                 <textarea></textarea>
                             </div>
                         </div>
