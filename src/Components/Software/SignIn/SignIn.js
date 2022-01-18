@@ -7,6 +7,7 @@ import axios from "axios";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import CustomizedSnackbars from '../../Reusable/SnackBar/SnackBar';
+import { BASE_API_URL } from '../../../Constats/Constats';
 
 const SignIn = () => {
 
@@ -102,7 +103,7 @@ const SignIn = () => {
     async function handleSubmit(event) {
         event.preventDefault();
         if (event) {
-            await axios.post("http://34.198.19.55:8000/login",
+            await axios.post(`${BASE_API_URL}/login`,
                 {
                     email: email,
                     password: password
