@@ -103,12 +103,7 @@ const SignIn = () => {
     async function handleSubmit(event) {
         event.preventDefault();
         if (event) {
-<<<<<<< HEAD
-            // await axios.post("http://34.229.16.173:8000/login",
-            await axios.post("http://34.198.19.55:8000/login",
-=======
             await axios.post(`${BASE_API_URL}/login`,
->>>>>>> 891ef3e386b5969d6a2644c655478427637dcc87
                 {
                     email: email,
                     password: password
