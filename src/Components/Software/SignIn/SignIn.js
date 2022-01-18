@@ -7,7 +7,7 @@ import axios from "axios";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import CustomizedSnackbars from '../../Reusable/SnackBar/SnackBar';
-import { BASE_API_URL } from '../../../Constats/Constats';
+import {BASE_API_URL} from '../../../Constats/Constats';
 
 const SignIn = () => {
 

@@ -100,11 +100,11 @@ const CreateNewReports = () => {
                                             <option value="option 1">Select</option>
                                             {/* <option value="option 2">Country names</option> */}
                                             <option value="option 2">
-                                                <ul>
+                                                {/* <ul>
                                                 {
                                                     countries.map(country => <li key={country.id}>{country.country_name}</li>)
                                                 }
-                                                </ul>
+                                                </ul> */}
                                             </option>
                                         </select>
                                         </div>
