@@ -102,7 +102,8 @@ const SignIn = () => {
     async function handleSubmit(event) {
         event.preventDefault();
         if (event) {
-            await axios.post("http://34.229.16.173:8000/login",
+            // await axios.post("http://34.229.16.173:8000/login",
+            await axios.post("http://34.198.19.55:8000/login",
                 {
                     email: email,
                     password: password
@@ -139,7 +140,7 @@ const SignIn = () => {
                         <p>Welcome Back!</p>
                         <h3>Login to your account</h3>
                         <form className="signin-form-body">
-                            <label>Email</label><br />
+                            <label>Email</label><br/>
                             <input className="form-input" name="email" onChange={(e) => handleChange(e)} type="text" placeholder="Enter Email..."></input><br />
                             <label>Password</label><br />
                             <div className="password-input">
