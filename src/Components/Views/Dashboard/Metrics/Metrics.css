@@ -4,7 +4,7 @@
 }
 
 .metrics-section {
-  padding-left: 216px;
+  padding-left: 226px;
   display: flex;
   flex-direction: column;
   /* padding-bottom: 10.9px; */
@@ -61,7 +61,8 @@
 .metrics-section .metrics-body {
   background-color: #e5eaff;
   display: flex;
-  padding: 20px;
+  padding: 30px;
+  padding-top: 100px;
   width: 100%;
   box-sizing: border-box;
   /* height: calc(100vh - 62px); */
