@@ -27,7 +27,7 @@ const Reports = () => {
                         <div class="row">
                             <h2 class="row-heading">House 1</h2>
                             <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-                            <div class="button row-reverse">
+                            <div class="button">
                                 <button class="yellow-button">Print</button>
                                 <button class="blue-button">Create PDF</button>
                                 <button class="yellow-button">Email</button>
@@ -39,7 +39,7 @@ const Reports = () => {
                         <div class="row">
                             <h2 class="row-heading">Test 1</h2>
                             <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-                            <div class="button row-reverse">
+                            <div class="button">
                                 <button class="yellow-button">Print</button>
                                 <button class="blue-button">Create PDF</button>
                                 <button class="yellow-button">Email</button>
@@ -51,7 +51,7 @@ const Reports = () => {
                         <div class="row">
                             <h2 class="row-heading">Test 2</h2>
                             <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-                            <div class="button row-reverse">
+                            <div class="button">
                                 <button class="yellow-button">Print</button>
                                 <button class="blue-button">Create PDF</button>
                                 <button class="yellow-button">Email</button>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './Contracts.css';
 // import { useReactToPrint } from 'react-to-print';
 import ContractDetails from './ContractDetails';
@@ -10,17 +10,22 @@ const Contracts = () => {
     const options = {
         orientation: 'potrait',
         unit: 'in',
-        format: [12,10]
+        format: [12, 10]
     };
 
     const [tab, setTab] = React.useState(0)
     const [selectedFile, setSelectedFile] = useState(null);
 
-     const handleFileSelect = (event) => {
+    useEffect(() => {
+        var image = document.getElementById('output');
+        image.style.display = 'none'
+    }, [])
+    const handleFileSelect = (event) => {
         setSelectedFile(event.target.files[0].name);
         console.log(event.target.files[0]);
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
+        image.style.display = 'block'
     }
 
     const componentRef = useRef();
@@ -32,7 +37,7 @@ const Contracts = () => {
         console.log(tab)
     }, [tab])
 
-     const handleSelect = (e) => {
+    const handleSelect = (e) => {
         console.log(e.target.value)
         if (e.target.value == "1") {
             setTab(0)
@@ -58,7 +63,7 @@ const Contracts = () => {
     }
 
     return (
-            <div className="extrapages-section">
+        <div className="extrapages-section">
             <section className="body-part">
                 <div class="body-part-two bot50">
                     <div class="part-one-left flex space-between">
@@ -74,25 +79,27 @@ const Contracts = () => {
                         {/* {/ for printing /}
                         {/ <button class="blue-button" onClick={handlePrint}>Print</button> /} */}
                         <ReactToPdf targetRef={ref} filename="contract.pdf" options={options} x={0} y={0} scale={1}>
-                            {({toPdf}) => (
+                            {({ toPdf }) => (
                                 <button class="blue-button" onClick={toPdf}>Print</button>
                             )}
                         </ReactToPdf>
                     </div>
                     <div class="part-one-left column top20"  >
                         <div class="flex width40 top-bot-40">
-                            <p>Contract {tab+1}:</p>
+                            <p>Contract {tab + 1}:</p>
                         </div>
                         {/* {/ for printing /}
                         {/ <ContractDetails ref={componentRef} /> /} */}
                         <div ref={ref}>
-                        <ContractDetails/>
+                            <ContractDetails />
                             <div class="part-one-left flex top40">
-                            <div class="flex width200">
-                                <p>Signature:</p>
-                                <input type="file" onChange={handleFileSelect} id="group_image"/><br></br>
-                                <div><p><img src="" id="output" class="signature-image"/></p></div>
-                            </div>
+                                <div class="flex width200 flex-column">
+                                    <div className='d-flex mb-3'>
+                                        <p>Signature:</p>
+                                        <input type="file" onChange={handleFileSelect} id="group_image" />
+                                    </div>
+                                    <div><p><img src="" id="output" class="signature-image" /></p></div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -58,8 +58,9 @@
 }
 
 .createnewreports-section .body-part {
-  padding-left: 238px;
-  padding-top: 21.83px;
+  padding-left: 253px;
+  padding-top: 100px;
+  padding-right: 30px;
   background-color: #e5eaff;
 }
 
@@ -82,7 +83,7 @@
   .body-part-wrapper
   .body-part-left
   .section-one {
-  width: 445px;
+  width: 93%;
   height: 265px;
   /* position: absolute;
   top: 33px;
@@ -109,6 +110,11 @@
   padding-left: 56px;
   padding-bottom: 20px;
   background-color: #eeeeee;
+}
+
+.createnewreports-section .body-part .body-part-wrapper .body-part-left p,
+.createnewreports-section .body-part .body-part-wrapper .body-part-right p {
+  font-size: 24px;
 }
 
 .createnewreports-section
@@ -202,13 +208,13 @@
   .body-part-wrapper
   .body-part-left
   .section-two {
-  width: 456px;
+  width: 93%;
   height: 386px;
   /* position: absolute;
   top: 332px;
   left: 21px; */
   margin-top: 34px;
-  margin-left: 21px;
+  margin-left: 32px;
   border-radius: 10px;
   border: 0px solid #e7e7e7;
   background-color: white;
@@ -336,12 +342,12 @@
   .body-part-wrapper
   .body-part-left
   .section-three {
-  width: 456px;
+  width: 93%;
   height: 329px;
   /* position: absolute;
   top: 752px;
   left: 21px; */
-  margin-left: 21px;
+  margin-left: 32px;
   margin-top: 41px;
   border-radius: 10px;
   border: 0px solid #e7e7e7;
@@ -467,13 +473,13 @@
   .body-part-wrapper
   .body-part-left
   .section-four {
-  width: 456px;
+  width: 93%;
   height: 379px;
   /* position: absolute;
   top: 1115px;
   left: 21px; */
   margin-top: 27px;
-  margin-left: 21px;
+  margin-left: 32px;
   border-radius: 10px;
   border: 0px solid #e7e7e7;
   background-color: white;
@@ -564,12 +570,12 @@
   .body-part-wrapper
   .body-part-left
   .section-five {
-  width: 456px;
+  width: 93%;
   height: 266px;
   /* position: absolute;
   top: 1528px;
   left: 21px; */
-  margin-left: 21px;
+  margin-left: 32px;
   margin-top: 34px;
   border-radius: 10px;
   border: 0px solid #e7e7e7;
@@ -699,7 +705,7 @@
   .body-part-wrapper
   .body-part-right
   .section-six {
-  width: 456px;
+  width: 98%;
   height: 685px;
   margin-top: 33px;
   border-radius: 10px;
@@ -835,12 +841,12 @@
   .body-part-wrapper
   .body-part-right
   .section-seven {
-  width: 456px;
+  width: 98%;
   height: 329px;
   /* position: absolute;
   top: 752px;
   left: 497px; */
-  margin-top: 34px;
+  margin-top: 41px;
   border-radius: 10px;
   border: 0px solid #e7e7e7;
   background-color: white;
