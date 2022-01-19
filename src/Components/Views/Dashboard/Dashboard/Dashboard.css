@@ -37,7 +37,7 @@
   float: right;
   display: flex;
   align-items: center;
-  width: 380px;
+  min-width: 380px;
   justify-content: space-evenly;
 }
 

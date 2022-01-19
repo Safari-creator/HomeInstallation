@@ -34,10 +34,9 @@ function MainDashboard() {
             setTitle(location.pathname.slice(1, location.pathname.length))
         setPath(location.pathname.slice(1, location.pathname.length))
         window.scrollTo(0, 0)
+
     }, [location.pathname])
 
-    // const [tab, setTab] = useState(0);
-    // const [title, setTitle] = useState(["Dashboard", "Create New Report", "Contracts", "Realtors", "Extra Pages", "Reports", "Templates", "Contacts", "Metrics", "Automation", "Settings", "Add Realtors"])
     return (
         <div className="maindashboard-section">
             <Sidebar />

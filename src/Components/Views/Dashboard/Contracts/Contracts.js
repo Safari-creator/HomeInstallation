@@ -66,7 +66,7 @@ const Contracts = () => {
         <div className="extrapages-section">
             <section className="body-part">
                 <div class="body-part-two bot50">
-                    <div class="part-one-left flex space-between">
+                    <div class="part-one-left flex space-between contracts">
                         <select name="selectList" class="select-list" onChange={(e) => handleSelect(e)}>
                             <option value="1" >Contract 1</option>
                             <option value="2" >Contract 2</option>

@@ -191,7 +191,7 @@ const Contacts = () => {
             <section className="body-part">
                 <div class="flex space-between">
                     <div class="part-one-left flex space-between">
-                        <select name="selectList" class="select-list">
+                        {/* <select name="selectList" class="select-list">
                             <option value="1" >Contract 1</option>
                             <option value="2" >Contract 2</option>
                             <option value="3" >Contract 3</option>
@@ -199,10 +199,11 @@ const Contacts = () => {
                             <option value="5" >Contract 5</option>
                             <option value="6" >Contract 6</option>
                             <option value="7" >Contract 7</option>
-                        </select>
+                        </select> */}
+                        <span className='buttons'>Import</span>
                     </div>
                     <div class="part-one-left flex space-between">
-                        <select name="selectList" class="select-list">
+                        {/* <select name="selectList" class="select-list">
                             <option value="1" >Contract 1</option>
                             <option value="2" >Contract 2</option>
                             <option value="3" >Contract 3</option>
@@ -210,10 +211,11 @@ const Contacts = () => {
                             <option value="5" >Contract 5</option>
                             <option value="6" >Contract 6</option>
                             <option value="7" >Contract 7</option>
-                        </select>
+                        </select> */}
+                        <span className='buttons'>Export</span>
                     </div>
                     <div class="part-one-left flex space-between">
-                        <select name="selectList" class="select-list">
+                        {/* <select name="selectList" class="select-list">
                             <option value="1" >Contract 1</option>
                             <option value="2" >Contract 2</option>
                             <option value="3" >Contract 3</option>
@@ -221,10 +223,11 @@ const Contacts = () => {
                             <option value="5" >Contract 5</option>
                             <option value="6" >Contract 6</option>
                             <option value="7" >Contract 7</option>
-                        </select>
+                        </select> */}
+                        <span className='buttons'>Add Agent</span>
                     </div>
                     <div class="part-one-left flex space-between">
-                        <select name="selectList" class="select-list">
+                        {/* <select name="selectList" class="select-list">
                             <option value="1" >Contract 1</option>
                             <option value="2" >Contract 2</option>
                             <option value="3" >Contract 3</option>
@@ -232,22 +235,17 @@ const Contacts = () => {
                             <option value="5" >Contract 5</option>
                             <option value="6" >Contract 6</option>
                             <option value="7" >Contract 7</option>
-                        </select>
+                        </select> */}
+                        <span className='buttons'>Agencies</span>
                     </div>
                 </div>
                 <div class="body-part-two pad0">
                     <div class="part-one-left flex space-between pad-left-right10">
                         <select name="selectList" class="select-list">
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
+                            <option value="Agents" >Agents</option>
                         </select>
                     </div>
-                    <div class="body-part-one pad12 pad-left-right10 marg-bot21">
+                    <div class="body-part-one mb-0">
                         <div class="part-one-left">
                             <p>Show</p>
                             <select name="selectList" id="selectList">
@@ -260,7 +258,7 @@ const Contacts = () => {
                             <input type="text" placeholder="Entries"></input>
                         </div>
                     </div>
-                    <div class="body-part-two pad0">
+                    <div class="body-part-two pad0 pt-0">
                         <div class="part-two-content pad-left-right0">
                             <div class="heading pad-left15">
                                 <div class="wid20">
@@ -302,10 +300,10 @@ const Contacts = () => {
                     </div>
                 </div>
                 <div className="row-reverse">
-                <div className="help-section">
-                    <h3>Need Help?</h3>
-                    <button><h4>Call Us?</h4></button>
-                </div>
+                    <div className="help-section">
+                        <h3>Need Help?</h3>
+                        <button><h4>Call Us?</h4></button>
+                    </div>
                 </div>
             </section>
         </div>

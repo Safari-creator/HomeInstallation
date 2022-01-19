@@ -60,6 +60,7 @@
 .extrapages-section .body-part {
   padding: 100px 20px 100px 253px;
   background-color: #e5eaff;
+  min-height: 100vh;
 }
 .extrapages-section .body-part .body-part-one {
   background-color: white;
@@ -165,7 +166,8 @@
   .part-two-content
   .heading
   .title {
-  width: 50%;
+  width: 30%;
+  text-align: center;
 }
 .extrapages-section
   .body-part
@@ -174,6 +176,7 @@
   .heading
   .date-created {
   width: 25%;
+  text-align: center;
 }
 .extrapages-section
   .body-part
@@ -182,6 +185,7 @@
   .heading
   .manage {
   width: 25%;
+  text-align: center;
 }
 
 .extrapages-section .body-part .body-part-two .part-two-content .heading p {

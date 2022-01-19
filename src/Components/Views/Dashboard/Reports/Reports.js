@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Reports.css';
 
 const Reports = () => {
+    const [reportsArray, setReportsArray] = useState(JSON.parse(localStorage.getItem('Reports')))
+
+    useEffect(() => {
+        console.log(JSON.parse(localStorage.getItem('Reports')))
+        setReportsArray(JSON.parse(localStorage.getItem('Reports')))
+    }, [])
+
     return (
         <div className="extrapages-section">
             <section className="body-part">
@@ -24,9 +31,9 @@ const Reports = () => {
                 </div>
                 <div class="body-part-two report-body">
                     <div class="part-two-content">
-                        <div class="row">
+
+                        {/* <div class="row">
                             <h2 class="row-heading">House 1</h2>
-                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
                             <div class="button">
                                 <button class="yellow-button">Print</button>
                                 <button class="blue-button">Create PDF</button>
@@ -35,38 +42,33 @@ const Reports = () => {
                                 <button class="yellow-button">Delete</button>
                             </div>
                         </div>
-                        <hr class="row-divider" />
-                        <div class="row">
-                            <h2 class="row-heading">Test 1</h2>
-                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-                            <div class="button">
-                                <button class="yellow-button">Print</button>
-                                <button class="blue-button">Create PDF</button>
-                                <button class="yellow-button">Email</button>
-                                <button class="blue-button">Edit</button>
-                                <button class="yellow-button">Delete</button>
-                            </div>
-                        </div>
-                        <hr class="row-divider" />
-                        <div class="row">
-                            <h2 class="row-heading">Test 2</h2>
-                            <div class="details-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-                            <div class="button">
-                                <button class="yellow-button">Print</button>
-                                <button class="blue-button">Create PDF</button>
-                                <button class="yellow-button">Email</button>
-                                <button class="blue-button">Edit</button>
-                                <button class="yellow-button">Delete</button>
-                            </div>
-                        </div>
-                        <hr class="row-divider" />
+                        <hr class="row-divider" /> */}
+
+                        {reportsArray && reportsArray.length > 0 && reportsArray.map(item => {
+                            return (
+                                <>
+                                    <div class="row">
+                                        <h2 class="row-heading">{item.reportName}</h2>
+                                        <div class="button">
+                                            <button class="yellow-button">Print</button>
+                                            <button class="blue-button">Create PDF</button>
+                                            <button class="yellow-button">Email</button>
+                                            <button class="blue-button">Edit</button>
+                                            <button class="yellow-button">Delete</button>
+                                        </div>
+                                    </div>
+                                    <hr class="row-divider" />
+                                </>
+                            )
+                        })}
+
                     </div>
-                    <div class="part-two-footer">
+                    {/* <div class="part-two-footer">
                         <div class="footer-right top222">
                             <button>Previous</button>
                             <p>1/10</p>
                             <button>Next</button></div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>

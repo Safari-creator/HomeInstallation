@@ -1,61 +1,128 @@
-.body-part .part-one-left .select-list{
-    background: #F5F5FA !important;
-    box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%), inset 2px 2px 4px rgb(170 170 204 / 25%), inset 5px 5px 10px rgb(170 170 204 / 50%), inset -5px -5px 10px #ffffff !important;
-    border-radius: 40px !important;
-    width: 229px !important;
-    height: 52px !important;
-    padding-left: 0px !important;
-    border: none !important;
-    color: rgba(0, 0, 0, 50%);
-    text-align: center;
-    margin-left: 5px;
+.body-part .part-one-left .select-list {
+  background: #f5f5fa !important;
+  box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%),
+    inset 2px 2px 4px rgb(170 170 204 / 25%),
+    inset 5px 5px 10px rgb(170 170 204 / 50%), inset -5px -5px 10px #ffffff !important;
+  border-radius: 40px !important;
+  width: 229px !important;
+  height: 52px !important;
+  padding-left: 0px !important;
+  border: none !important;
+  color: rgba(0, 0, 0, 50%);
+  text-align: center;
+  margin-left: 5px;
 }
 
-.body-part-two .MuiPaper-root{
-    /* background: #EEEEEE; */
-    border-radius: 20px 20px 0px 0px;
+.body-part .part-one-left.flex {
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+}
+
+.body-part .part-one-left.flex.contracts {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.body-part .part-one-left span.buttons {
+  background: #f5f5fa !important;
+  box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%),
+    inset 2px 2px 4px rgb(170 170 204 / 25%),
+    inset 5px 5px 10px rgb(170 170 204 / 50%), inset -5px -5px 10px #ffffff !important;
+  border-radius: 40px !important;
+  width: 100% !important;
+  height: 52px !important;
+  padding-left: 0px !important;
+  border: none !important;
+  color: rgba(0, 0, 0, 50%);
+  text-align: center;
+  margin-left: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.body-part-two .MuiPaper-root {
+  /* background: #EEEEEE; */
+  border-radius: 20px 20px 0px 0px;
 }
 
 .body-part-two .MuiPaper-root .MuiAccordionSummary-root {
-    background: #EEEEEE;
-    border-radius: 20px 20px 0px 0px;
-
+  background: #eeeeee;
+  border-radius: 20px 20px 0px 0px;
 }
 
-.body-part-two .MuiPaper-root .MuiButtonBase-root .MuiAccordionSummary-content p{
-    color: #000000;
-    opacity: 0.6;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 29px;
-    margin-left: 50px;
+.body-part-two
+  .MuiPaper-root
+  .MuiButtonBase-root
+  .MuiAccordionSummary-content
+  p {
+  color: #000000;
+  opacity: 0.6;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  margin-left: 50px;
 }
 
-.body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root p{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 29px;
-    color: #000000;
-    opacity: 0.6;
-    margin-left: 50px;
+.body-part-two
+  .MuiPaper-root
+  .MuiCollapse-root
+  .MuiCollapse-wrapper
+  .MuiCollapse-wrapperInner
+  .MuiAccordion-region
+  .MuiAccordionDetails-root
+  p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  color: #000000;
+  opacity: 0.6;
+  margin-left: 50px;
 }
 
-.body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordian-region .MuiAccordianDetails-root .MuiFormGroup-root .MuiFormControlLabel-root .MuiCheckbox-root .PrivateSwitchBase-input{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 120%;
-    color: #A1A1AA;
+.body-part-two
+  .MuiPaper-root
+  .MuiCollapse-root
+  .MuiCollapse-wrapper
+  .MuiCollapse-wrapperInner
+  .MuiAccordian-region
+  .MuiAccordianDetails-root
+  .MuiFormGroup-root
+  .MuiFormControlLabel-root
+  .MuiCheckbox-root
+  .PrivateSwitchBase-input {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  color: #a1a1aa;
 }
 
-.body-part .body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root .MuiFormGroup-root .MuiFormControlLabel-root{
-    margin-left: 40px;
+.body-part
+  .body-part-two
+  .MuiPaper-root
+  .MuiCollapse-root
+  .MuiCollapse-wrapper
+  .MuiCollapse-wrapperInner
+  .MuiAccordion-region
+  .MuiAccordionDetails-root
+  .MuiFormGroup-root
+  .MuiFormControlLabel-root {
+  margin-left: 40px;
 }
 
-.body-part .body-part-two .MuiPaper-root .MuiCollapse-root .MuiCollapse-wrapper .MuiCollapse-wrapperInner .MuiAccordion-region .MuiAccordionDetails-root{
-    background: #FFFFFF;
-    box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
-    border-radius: 0px;
+.body-part
+  .body-part-two
+  .MuiPaper-root
+  .MuiCollapse-root
+  .MuiCollapse-wrapper
+  .MuiCollapse-wrapperInner
+  .MuiAccordion-region
+  .MuiAccordionDetails-root {
+  background: #ffffff;
+  box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+  border-radius: 0px;
 }
