@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import './Realtors.css';
 import NativeSelect from '@mui/material/NativeSelect';
@@ -225,7 +225,7 @@ const top100Films = [
   { title: 'Pulp Fiction', year: 1994 },
 ]
 
-const Realtors = ({setTab}) => {
+const Realtors = ({ setTab }) => {
 
   /**
    * For colum data
@@ -262,21 +262,21 @@ const Realtors = ({setTab}) => {
   });
 
   const [user, setUser] = useState([]);
-  
-  useEffect( () => {
+
+  useEffect(() => {
     // requesting to get data
     axios.get('http://34.198.19.55:8000/realtors')
-    // then getting the response from that request
-    .then(res=>{
+      // then getting the response from that request
+      .then(res => {
         console.log(res);
         setUser(res.data.data);
-    })
-    // or getting the error
-    .catch(err => {
+      })
+      // or getting the error
+      .catch(err => {
         console.log(err)
-    })
+      })
     // console.log([{user:user.first_name}]);
-},[])
+  }, [])
 
   return (
     // <div className="dashboard-section">
@@ -388,7 +388,7 @@ const Realtors = ({setTab}) => {
 
     //   </section>
     // </div>
-    <div className="extrapages-section">
+    <div className="extrapages-section Realtors-list-page">
       <section className="body-part">
         <div class="body-part-one">
           <div class="part-one-left">
@@ -410,7 +410,7 @@ const Realtors = ({setTab}) => {
                 <p>Name</p>
                 {
                   user.map(usr => {
-                    return(<p key={usr.id}>{usr.name}</p>)
+                    return (<p key={usr.id}>{usr.name}</p>)
                   })
                 }
               </div>
@@ -418,7 +418,7 @@ const Realtors = ({setTab}) => {
                 <p>Type</p>
                 {
                   user.map(usr => {
-                    return(<p key={usr.id}>{usr.agent_type}</p>)
+                    return (<p key={usr.id}>{usr.agent_type}</p>)
                   })
                 }
               </div>
@@ -426,7 +426,7 @@ const Realtors = ({setTab}) => {
                 <p>Email Address</p>
                 {
                   user.map(usr => {
-                    return(<p key={usr.id}>{usr.email}</p>)
+                    return (<p key={usr.id}>{usr.email}</p>)
                   })
                 }
               </div>
@@ -434,7 +434,7 @@ const Realtors = ({setTab}) => {
                 <p>Company</p>
                 {
                   user.map(usr => {
-                    return(<p key={usr.id}>{usr.company_name}</p>)
+                    return (<p key={usr.id}>{usr.company_name}</p>)
                   })
                 }
               </div>
@@ -442,17 +442,17 @@ const Realtors = ({setTab}) => {
                 <p>Manage</p>
               </div>
             </div>
-            <div class="body">
+            {/* <div class="body">
               <p>No matching records found</p>
-            </div>
+            </div> */}
           </div>
-          <div class="part-two-footer">
+          {/* <div class="part-two-footer">
             <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
             <div class="footer-right">
               <button>Previous</button>
               <p>1/10</p>
               <button>Next</button></div>
-          </div>
+          </div> */}
         </div>
         <div class="button">
           <button onClick={() => setTab(11)}>Add New Realtors</button>

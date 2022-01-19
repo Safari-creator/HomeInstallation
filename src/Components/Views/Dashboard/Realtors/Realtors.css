@@ -1,26 +1,26 @@
-.width100{
-    width: 100% !important;
+.width100 {
+  width: 100% !important;
 }
 
-.column{
-    flex-direction: column;
+.column {
+  flex-direction: column;
 }
 
-.space-between{
-    flex-direction: row !important;
-    justify-content: space-between !important;
+.space-between {
+  flex-direction: row !important;
+  justify-content: space-between !important;
 }
 
-.whitebg{
-    background: white;
+.whitebg {
+  background: white;
 }
 
-.row-reverse{
-    display: flex;
-    flex-direction: row-reverse;
+.row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.add-realtors{
+.add-realtors {
   width: 50%;
   background-color: #fb8200;
   border-radius: 9px;
@@ -37,21 +37,10 @@
   height: 54px;
 }
 
-
-.extrapages-section
-  .body-part
-  .body-part-two
-  .part-two-content
-  .heading
-  .name {
+.extrapages-section .body-part .body-part-two .part-two-content .heading .name {
   width: 20%;
 }
-.extrapages-section
-  .body-part
-  .body-part-two
-  .part-two-content
-  .heading
-  .type {
+.extrapages-section .body-part .body-part-two .part-two-content .heading .type {
   width: 20%;
 }
 .extrapages-section
@@ -77,4 +66,83 @@
   .heading
   .manage {
   width: 20%;
+}
+
+.Realtors-list-page .body-part-two .name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Realtors-list-page .body-part-two .name p {
+  margin-bottom: 10px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .name p:first-of-type {
+  font-size: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.Realtors-list-page .body-part-two .type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Realtors-list-page .body-part-two .type p {
+  margin-bottom: 10px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .type p:first-of-type {
+  font-size: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.Realtors-list-page .body-part-two .email-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Realtors-list-page .body-part-two .email-address p {
+  margin-bottom: 10px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .email-address p:first-of-type {
+  font-size: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.Realtors-list-page .body-part-two .company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Realtors-list-page .body-part-two .company p {
+  margin-bottom: 10px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .company p:first-of-type {
+  font-size: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.Realtors-list-page .body-part-two .manage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Realtors-list-page .body-part-two .manage p {
+  margin-bottom: 10px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .manage p:first-of-type {
+  font-size: 24px !important;
+  margin-bottom: 30px !important;
+}
+
+.Realtors-list-page .body-part .body-part-two .heading {
+  padding-left: 20px !important;
 }
