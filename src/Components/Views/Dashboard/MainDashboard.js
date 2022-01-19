@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Reports from './Reports/Reports';
+import EditReport from './Reports/EditReport'
+import ReportDetails from './Reports/ReportDetail'
 import CreateNewReports from './CreateNewReports/CreateNewReports';
 import Contracts from './Contracts/Contracts';
 import Realtors from './Realtors/Realtors';
@@ -17,22 +19,28 @@ import { useLocation } from 'react-router-dom'
 
 function MainDashboard() {
     const location = useLocation()
-    const [path, setPath] = useState(location.pathname.slice(1, location.pathname.length))
-    const [title, setTitle] = useState(location.pathname.slice(1, location.pathname.length))
+    const [path, setPath] = useState(location.pathname.split('/')[1])
+    const [title, setTitle] = useState(location.pathname.split('/')[1])
 
     useEffect(() => {
-        if (location.pathname.slice(1, location.pathname.length) == 'CreateNewReport')
+        if (location.pathname.split('/')[1] == 'CreateNewReport')
             setTitle('Create New Report')
 
-        else if (location.pathname.slice(1, location.pathname.length) == 'ExtraPages')
+        else if (location.pathname.split('/')[1] == 'ExtraPages')
             setTitle('Extra Pages')
 
-        else if (location.pathname.slice(1, location.pathname.length) == 'AddRealtor')
+        else if (location.pathname.split('/')[1] == 'AddRealtor')
             setTitle('Add Realtor')
 
+        else if (location.pathname.split('/')[1] == 'EditReport')
+            setTitle('Edit Report')
+
+        else if (location.pathname.split('/')[1] == 'ReportDetails')
+            setTitle('Report Details')
+
         else
-            setTitle(location.pathname.slice(1, location.pathname.length))
-        setPath(location.pathname.slice(1, location.pathname.length))
+            setTitle(location.pathname.split('/')[1])
+        setPath(location.pathname.split('/')[1])
         window.scrollTo(0, 0)
 
     }, [location.pathname])
@@ -61,6 +69,12 @@ function MainDashboard() {
                     }
                     {path === 'Reports' &&
                         <Reports></Reports>
+                    }
+                    {path === 'EditReport' &&
+                        <EditReport></EditReport>
+                    }
+                    {path === 'ReportDetails' &&
+                        <ReportDetails></ReportDetails>
                     }
                     {path === 'Template' &&
                         <Templates></Templates>

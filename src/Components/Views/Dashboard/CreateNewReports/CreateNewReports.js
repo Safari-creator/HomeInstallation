@@ -89,18 +89,17 @@ const CreateNewReports = () => {
                 console.log(err)
             });
 
-        console.log(JSON.parse(localStorage.getItem('Reports')))
     }, [])
 
-    function saveDetails() {
+    async function saveDetails() {
         const body = {
-            reportName: reportName,
+            report_name: reportName,
 
-            propertyAddress1: propertyAddress1,
-            propertyAddress2: propertyAddress2,
-            propertyCountry: propertyCountry,
-            propertyState: propertyState,
-            propertyCity: propertyCity,
+            property_street_address: propertyAddress1,
+            // propertyAddress2: propertyAddress2,
+            property_country: propertyCountry,
+            property_state: propertyState,
+            property_city: propertyCity,
 
             inspectionInvoice: inspectionInvoice,
             inspectionFees: inspectionFees,
@@ -109,53 +108,44 @@ const CreateNewReports = () => {
             inspectionTotalFees: inspectionTotalFees,
             inspectionDatePaid: inspectionDatePaid,
 
-            structureFurnished: structureFurnished,
-            structureStories: structureStories,
-            structureStyle: structureStyle,
-            structureOrientation: structureOrientation,
+            furnished: structureFurnished,
+            number_of_stories: structureStories,
+            style: structureStyle,
+            structure_orientations: structureOrientation,
 
-            clientName: clientName,
-            clientAddress: clientAddress,
-            clientCountry: clientCountry,
-            clientState: clientState,
-            clientCity: clientCity,
-            clientZipCode: clientZipCode,
-            clientPhone: clientPhone,
-            clientEmail: clientEmail,
-            clientPhone: clientPhone,
-            clientNote: clientNote,
+            client_name: clientName,
+            client_street_address: clientAddress,
+            client_country: clientCountry,
+            client_state: clientState,
+            client_city: clientCity,
+            // clientZipCode: clientZipCode,
+            client_phone: clientPhone,
+            client_email: clientEmail,
+            client_fax: clientFax,
+            client_note: clientNote,
 
-            inspectionDate: inspectionDate,
-            inspectionStartTime: inspectionStartTime,
-            inspectionEndTime: inspectionEndTime,
+            inspection_date: inspectionDate,
+            inspection_start_time: inspectionStartTime,
+            inspection_end_time: inspectionEndTime,
 
-            weatherClimate: weatherClimate,
-            weatherTemperature: weatherTemperature,
-            weatherHumidity: weatherHumidity,
+            climate: weatherClimate,
+            temperature: weatherTemperature,
+            humidity: weatherHumidity,
 
-            constructionType: constructionType,
-            constructionYear: constructionYear,
-            constructionArea: constructionArea,
+            type_of_construction: constructionType,
+            year_built: constructionYear,
+            sq_ft: constructionArea,
 
-            travelStart: travelStart,
-            travelEnd: travelEnd,
-            travelTotal: travelTotal
+            travel_distance_start: travelStart,
+            travel_distance_end: travelEnd,
+            total_travel: travelTotal
         }
 
-        let reportsArray;
-        const oldReport = JSON.parse(localStorage.getItem('Reports'))
-
-
-        if (oldReport && oldReport.length > 0)
-            reportsArray = [...oldReport, body]
-        else
-            reportsArray = [body]
-
-        localStorage.setItem('Reports', JSON.stringify(reportsArray))
-
-        setTimeout(() => {
-            history.push('/Reports')
-        }, 2000)
+        const response = await axios.post('http://34.198.19.55:8000/reports', body)
+        console.log(response)
+        if (response.data.message == "Created successfully!") {
+            window.location.reload()
+        }
 
     }
 

@@ -44,6 +44,8 @@ function App() {
       <Route exact path='/Realtors' component={MainDashboard}></Route>
       <Route exact path='/ExtraPages' component={MainDashboard}></Route>
       <Route exact path='/Reports' component={MainDashboard}></Route>
+      <Route exact path='/EditReport/:id' component={MainDashboard}></Route>
+      <Route exact path='/ReportDetails/:id' component={MainDashboard}></Route>
       <Route exact path='/Template' component={MainDashboard}></Route>
       <Route exact path='/Contacts' component={MainDashboard}></Route>
       <Route exact path='/Metrics' component={MainDashboard}></Route>

@@ -1,13 +1,30 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Reports.css';
+import { useHistory } from 'react-router-dom'
 
 const Reports = () => {
-    const [reportsArray, setReportsArray] = useState(JSON.parse(localStorage.getItem('Reports')))
+    const history = useHistory()
+    const [reportsArray, setReportsArray] = useState([])
+    const [filteredArray, setFilteredArray] = useState([])
+    const [searchKey, setSearchKey] = useState('')
+    const [startDate, setStartDate] = useState('')
+    const [EndDate, setEndDate] = useState('')
+
+    useEffect(async () => {
+        const response = await axios.get('http://34.198.19.55:8000/reports')
+        setReportsArray(response.data.data)
+        setFilteredArray(response.data.data)
+        console.log(response.data.data)
+    }, [])
 
     useEffect(() => {
-        console.log(JSON.parse(localStorage.getItem('Reports')))
-        setReportsArray(JSON.parse(localStorage.getItem('Reports')))
-    }, [])
+        setFilteredArray(reportsArray.filter(item => item.report_name.includes(searchKey)))
+    }, [searchKey])
+
+    function deleteReport(id) {
+
+    }
 
     return (
         <div className="extrapages-section">
@@ -15,17 +32,22 @@ const Reports = () => {
                 <div class="body-part-one">
                     <div class="part-one-left">
                         <p>Search</p>
-                        <input type="text" placeholder="Start Date"></input>
-                    </div>
-                    <div class="part-one-right">
-                        <p>Report Date</p>
-                        <input type="text" placeholder="Start Date"></input>
-                        <input type="text" placeholder="End Date"></input>
+                        <input type="text" style={{ marginRight: 20 }} placeholder="Keywords.." value={searchKey} onChange={(e) => setSearchKey(e.target.value)}></input>
+                        <div class="part-one-right">
+                            <p>Report Date</p>
+                            <input type="date" placeholder="Start Date" onChange={(e) => setStartDate(e.target.value)}></input>&nbsp;&nbsp;
+                            {/* <p>End Date</p>
+                        <input type="date" placeholder="End Date" onChange={(e) => setEndDate(e.target.value)}></input> */}
+                        </div>
                     </div>
 
+
                     <div class="button">
-                        <button class="yellow-button">Search</button>
-                        <button class="blue-button">Reset</button>
+                        {/* <button class="yellow-button">Search</button> */}
+                        <button class="blue-button" onClick={() => {
+                            setSearchKey('')
+                            setStartDate('')
+                        }}>Reset</button>
                     </div>
 
                 </div>
@@ -44,17 +66,17 @@ const Reports = () => {
                         </div>
                         <hr class="row-divider" /> */}
 
-                        {reportsArray && reportsArray.length > 0 && reportsArray.map(item => {
+                        {filteredArray && filteredArray.length > 0 && filteredArray.map(item => {
                             return (
                                 <>
                                     <div class="row">
-                                        <h2 class="row-heading">{item.reportName}</h2>
+                                        <h2 class="row-heading" style={{ cursor: 'pointer' }} onClick={() => history.push('/ReportDetails/' + item.id)}>{item.report_name}</h2>
                                         <div class="button">
                                             <button class="yellow-button">Print</button>
-                                            <button class="blue-button">Create PDF</button>
-                                            <button class="yellow-button">Email</button>
-                                            <button class="blue-button">Edit</button>
-                                            <button class="yellow-button">Delete</button>
+                                            <button class="blue-button" >Create PDF</button>
+                                            <button class="yellow-button" >Email</button>
+                                            <button class="blue-button" onClick={() => history.push('/EditReport/' + item.id)}>Edit</button>
+                                            <button class="yellow-button" onClick={() => deleteReport(item.id)}>Delete</button>
                                         </div>
                                     </div>
                                     <hr class="row-divider" />

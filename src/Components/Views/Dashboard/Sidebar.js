@@ -103,7 +103,7 @@ const Sidebar = ({ setTab }) => {
                         path == "Reports" ? <img src={reportsSelected} alt="reportsIcon" className={`content-icon`} /> :
                             <img src={reports} alt="reportsIcon" className={`content-icon`} />
                     }
-                    <p className={`content-name ${path == "Reports" ? 'active' : ''}`} onClick={() => history.push('/Reports')}>Reports</p>
+                    <p className={`content-name ${path == "Reports" || path == "EditReport" || path == "ReportDetails" ? 'active' : ''}`} onClick={() => history.push('/Reports')}>Reports</p>
                 </div>
                 <div className="contents" style={{ top: '369.46px' }}>
                     {
