@@ -104,3 +104,15 @@
   width: 29%;
   justify-content: space-evenly;
 }
+
+.add-realtors-page .body-part .part-one-left.flex {
+  width: 100% !important;
+}
+
+.add-realtors-page .body-part .body-part-two .part-one-left select {
+  width: 270px;
+}
+
+.add-realtors-page .body-part p {
+  min-width: 180px;
+}

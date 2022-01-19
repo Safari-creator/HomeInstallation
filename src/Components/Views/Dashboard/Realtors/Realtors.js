@@ -14,6 +14,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { useHistory } from 'react-router-dom'
 
 /**
  * table and rows 
@@ -230,6 +231,7 @@ const Realtors = ({ setTab }) => {
   /**
    * For colum data
    */
+  const history = useHistory()
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -455,7 +457,7 @@ const Realtors = ({ setTab }) => {
           </div> */}
         </div>
         <div class="button">
-          <button onClick={() => setTab(11)}>Add New Realtors</button>
+          <button onClick={() => history.push('/AddRealtor')}>Add New Realtors</button>
         </div>
       </section>
     </div>

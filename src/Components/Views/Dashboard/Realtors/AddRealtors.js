@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './AddRealtors.css'
 import axios from 'axios';
 
@@ -17,41 +17,41 @@ function AddRealtors() {
     }
 
     const handleChangeInput = (event) => {
-        setPost({...post, [event.target.name]: event.target.value})
+        setPost({ ...post, [event.target.name]: event.target.value })
     }
 
     function createPost(e) {
-        const body = {user:post.name}
+        const body = { user: post.name }
         e.preventDefault()
         axios
-          .post('http://34.198.19.55:8000/realtors',
-          post)
-          .then((response) => {
-            setPost(response);
-            console.log(response.data);
-          })
-          .catch((error) => {
-              console.log(error)
-          });
+            .post('http://34.198.19.55:8000/realtors',
+                post)
+            .then((response) => {
+                setPost(response);
+                // console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error)
+            });
         // console.log(body);
-      }
+    }
 
-    useEffect( () => {
+    useEffect(() => {
         // requesting to get data
         axios.get('http://34.198.19.55:8000/countries')
-        // then getting the response from that request
-        .then(res=>{
-            console.log(res);
-            setCountries(res.data.data);
-        })
-        // or getting the error
-        .catch(err => {
-            console.log(err)
-        })
-    },[])
+            // then getting the response from that request
+            .then(res => {
+                console.log(res);
+                setCountries(res.data.data);
+            })
+            // or getting the error
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
 
     return (
-        <div className="extrapages-section">
+        <div className="extrapages-section add-realtors-page">
             <section className="body-part">
                 <div class="body-part-two">
                     <div class="part-one-left flex left34">
@@ -91,12 +91,12 @@ function AddRealtors() {
                         </div>
                         <div class="flex right70 width40">
                             <p>Country:</p>
-                            <select name="selectList" id="selectList"> 
+                            <select name="selectList" id="selectList" onChange={handleChangeInput}>
                                 <option value="option1">Select</option>
                                 {
-                                countries.map(country => {
-                                    return(<option value={country.id}>{country.country}</option>)
-                                })
+                                    countries.map(country => {
+                                        return (<option value={country.id}>{country.country_name}</option>)
+                                    })
                                 }
                             </select>
                         </div>
@@ -116,14 +116,14 @@ function AddRealtors() {
                     <div class="part-one-left flex top20 left34">
                         <div class="flex width40">
                             <p>Agent Picture:</p>
-                            <input type="file" onChange={handleFileSelect} id="group_image"/>
+                            <input type="file" onChange={handleFileSelect} id="group_image" />
                         </div>
                     </div>
                     <hr class="top20 width102" />
                     <div class="part-one-left flex top20 left34">
                         <div class="flex width41-5">
                             <p>Personal Notes:</p>
-                            <input type="text" placeholder="Name..." name="notes" value={post.notes} onChange={handleChangeInput}></input>
+                            <textarea placeholder="Notes..." name="notes" value={post.notes} onChange={handleChangeInput}></textarea>
                         </div>
                     </div>
                     <hr class="top20 width102" />
