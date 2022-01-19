@@ -115,6 +115,7 @@
 .createnewreports-section .body-part .body-part-wrapper .body-part-left p,
 .createnewreports-section .body-part .body-part-wrapper .body-part-right p {
   font-size: 24px;
+  margin-bottom: 0;
 }
 
 .createnewreports-section
@@ -133,7 +134,7 @@
   .section-one
   .section-body
   .form-part {
-  width: 322px;
+  width: 85%;
   height: 144px;
   position: absolute;
   top: 81px;
@@ -153,6 +154,8 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .createnewreports-section
@@ -198,6 +201,10 @@
   div
   p {
   font-size: 12px;
+  width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 400;
   line-height: 20px;
   color: rgba(0, 0, 0, 0.5);
@@ -264,6 +271,7 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -276,6 +284,7 @@
   div
   label {
   width: 145px;
+  min-width: 145px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -290,7 +299,8 @@
   .form-part
   div
   input {
-  width: 177px;
+  width: 225px;
+  min-width: 225px;
   height: 28px;
   border-radius: 10px;
   text-align: center;
@@ -531,6 +541,7 @@
   left: 0px;
   top: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -557,7 +568,8 @@
   .form-part
   div
   input {
-  width: 177px;
+  width: 225px;
+  min-width: 225px;
   height: 28px;
   border-radius: 10px;
   text-align: center;
@@ -628,6 +640,7 @@
   left: 0px;
   top: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -640,6 +653,7 @@
   div
   label {
   width: 143px;
+  min-width: 143px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -655,7 +669,8 @@
   .form-part
   div
   select {
-  width: 177px;
+  width: 225px;
+  min-width: 225px;
   height: 28px;
   border-radius: 10px;
   border-color: #bbbbbb;
@@ -747,11 +762,22 @@
   .section-six
   .section-body
   .form-part {
-  width: 322px;
+  width: 80%;
   height: 576px;
   position: absolute;
   top: 89px;
   left: 62px;
+}
+
+.createnewreports-section
+  .body-part
+  .body-part-wrapper
+  .body-part-right
+  .section-six
+  .section-body
+  .form-part
+  div {
+  width: 100%;
 }
 
 .createnewreports-section
@@ -768,6 +794,7 @@
   left: 0px;
   top: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -780,6 +807,7 @@
   div
   label {
   width: 145px;
+  min-width: 145px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -795,7 +823,8 @@
   .form-part
   div
   input {
-  width: 177px;
+  width: 225px;
+  min-width: 225px;
   height: 28px;
   border-radius: 10px;
   text-align: center;
@@ -897,6 +926,7 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -908,7 +938,8 @@
   .form-part
   div
   label {
-  width: 145px;
+  width: 160px;
+  min-width: 160px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -923,7 +954,8 @@
   .form-part
   div
   input {
-  width: 177px;
+  width: 225px;
+  min-width: 225px;
   height: 28px;
   border-radius: 10px;
   text-align: center;
@@ -991,6 +1023,7 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -1086,6 +1119,7 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section
@@ -1181,6 +1215,7 @@
   position: absolute;
   left: 0px;
   display: flex;
+  align-items: center;
 }
 
 .createnewreports-section

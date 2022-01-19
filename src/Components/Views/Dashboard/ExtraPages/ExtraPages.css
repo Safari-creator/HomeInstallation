@@ -83,6 +83,9 @@
 .extrapages-section .body-part .body-part-two .part-one-left.left34 {
   margin-left: 40px !important;
 }
+.extrapages-section .body-part .body-part-two .part-one-left.left34 p {
+  margin-right: 15px;
+}
 .extrapages-section .body-part .body-part-one .part-one-left select {
   width: 61px;
   height: 28px;
