@@ -70,7 +70,7 @@ function DashboardHeader({ title }) {
                 <div className="header-right">
                     {/* <img className="header-clock" src={headerClock} alt="headerClock"></img><p>14:20 PM Friday April, 2021</p> */}
                     <div className='d-flex align-items-center'>
-                        <img className="header-clock" style={{ marginRight: 5 }} src={headerClock} alt="headerClock"></img><p> {time} {`${dayCount}`} {`${MonthCount ? MonthCount + ', ' : ''}`}{yearCount}</p>
+                        <img className="header-clock" style={{ marginRight: 5 }} src={headerClock} alt="headerClock"></img><p> {time} {`${dayCount ? dayCount + ', ' : ''}`}{yearCount}</p>
                     </div>
                     <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
