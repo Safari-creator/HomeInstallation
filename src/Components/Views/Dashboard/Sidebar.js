@@ -35,7 +35,7 @@ const Sidebar = ({ setTab }) => {
                     <p>System</p>
                 </div>
                 <div className="contents">
-                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => setTab(0)} />
+                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => history.push('/Dashboard')} />
                     <p className="content-name" onClick={() => history.push('/Dashboard')}>Dashboard</p>
                 </div>
                 <div className="contents" style={{ top: '153.38px' }}>
