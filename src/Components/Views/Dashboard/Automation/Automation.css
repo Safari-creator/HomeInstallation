@@ -18,6 +18,11 @@
   margin-bottom: 20px;
 }
 
+.body-part .part-one-left.flex.contracts {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 .body-part .part-one-left span.buttons {
   background: #f5f5fa !important;
   box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%),
