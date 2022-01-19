@@ -5,8 +5,10 @@ import headerProfile from "../../../Software/assets/headerProfile.png"
 import headerIconOne from "../../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../../Software/assets/headerIconTwo.png"
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const CreateNewReports = () => {
+    const history = useHistory()
 
     const [selectedFile1, setSelectedFile1] = useState(null);
     const [selectedFile2, setSelectedFile2] = useState(null);
@@ -58,7 +60,6 @@ const CreateNewReports = () => {
     const [travelEnd, setTravelEnd] = useState('')
     const [travelTotal, setTravelTotal] = useState('')
 
-    const [oldReports, setOldReports] = useState(JSON.parse(localStorage.getItem('Reports')))
     const [countries, setCountries] = useState([])
 
 
@@ -91,7 +92,7 @@ const CreateNewReports = () => {
         console.log(JSON.parse(localStorage.getItem('Reports')))
     }, [])
 
-    async function saveDetails() {
+    function saveDetails() {
         const body = {
             reportName: reportName,
 
@@ -141,9 +142,21 @@ const CreateNewReports = () => {
             travelTotal: travelTotal
         }
 
-        const reportsArray = [...oldReports, body]
+        let reportsArray;
+        const oldReport = JSON.parse(localStorage.getItem('Reports'))
+
+
+        if (oldReport && oldReport.length > 0)
+            reportsArray = [...oldReport, body]
+        else
+            reportsArray = [body]
 
         localStorage.setItem('Reports', JSON.stringify(reportsArray))
+
+        setTimeout(() => {
+            history.push('/Reports')
+        }, 2000)
+
     }
 
     return (
@@ -173,11 +186,6 @@ const CreateNewReports = () => {
                                         <label>Enter Report Name:</label>
                                         <input className="form-input" name="name" type="text" onChange={(e) => setReportName(e.target.value)} style={{ width: "177px" }} value={reportName}></input>
                                     </div>
-                                    {/* <div style={{top:"66px"}}>
-                                            <label>Cover Picture 1:</label>
-                                            <input type="file" value={selectedFile} placeholder="choose file"></input>
-                                            <p>No file choosen</p> 
-                                        </div> */}
                                     <div style={{ top: "66px" }}>
                                         <label>Cover Picture 1:</label>
                                         <input type="file" onChange={handleFileSelect1} />
