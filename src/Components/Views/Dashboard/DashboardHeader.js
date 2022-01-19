@@ -30,7 +30,7 @@ function DashboardHeader({ title }) {
                     <img src={bars} onClick={() => {
                         setShowSideBar(() => true)
                     }} className="fa fa-bars" />
-                    <span className="screen-title">Dashboard</span></h2>
+                    <span className="screen-title">{title}</span></h2>
                 <img src={sidebarImage} alt="topbarImage" className="topbarImage"></img>
                 <div className="header-right">
                     <img className="header-clock" src={headerClock} alt="headerClock"></img><p>14:20 PM Friday April, 2021</p>

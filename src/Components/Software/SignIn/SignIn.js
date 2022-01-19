@@ -7,7 +7,7 @@ import axios from "axios";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import CustomizedSnackbars from '../../Reusable/SnackBar/SnackBar';
-import {BASE_API_URL} from '../../../Constats/Constats';
+import { BASE_API_URL } from '../../../Constats/Constats';
 
 const SignIn = () => {
 
@@ -116,7 +116,7 @@ const SignIn = () => {
                     } else {
                         setApiResponseStatus("success")
                         setTimeout(() => {
-                            history.push('/MainDashboard')
+                            history.push('/Dashboard')
                         }, 2000)
                     }
                     setShowApiResponse(true)
@@ -140,7 +140,7 @@ const SignIn = () => {
                         <p>Welcome Back!</p>
                         <h3>Login to your account</h3>
                         <form className="signin-form-body">
-                            <label>Email</label><br/>
+                            <label>Email</label><br />
                             <input className="form-input" name="email" onChange={(e) => handleChange(e)} type="text" placeholder="Enter Email..."></input><br />
                             <label>Password</label><br />
                             <div className="password-input">

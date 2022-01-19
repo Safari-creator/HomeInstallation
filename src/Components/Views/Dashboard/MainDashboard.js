@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Reports from './Reports/Reports';
 import CreateNewReports from './CreateNewReports/CreateNewReports';
 import Contracts from './Contracts/Contracts';
@@ -13,51 +13,72 @@ import Settings from './Settings/Settings';
 import Sidebar from './Sidebar';
 import DashboardHeader from './DashboardHeader';
 import AddRealtors from './Realtors/AddRealtors';
+import { useLocation } from 'react-router-dom'
 
 function MainDashboard() {
+    const location = useLocation()
+    const [path, setPath] = useState(location.pathname.slice(1, location.pathname.length))
+    const [title, setTitle] = useState(location.pathname.slice(1, location.pathname.length))
 
-    const [tab, setTab] = useState(0);
-    const [title, setTitle] = useState(["Dashboard", "Create New Report", "Contracts", "Realtors", "Extra Pages", "Reports", "Templates", "Contacts", "Metrics", "Automation", "Settings", "Add Realtors"])
+    useEffect(() => {
+        if (location.pathname.slice(1, location.pathname.length) == 'CreateNewReport')
+            setTitle('Create New Report')
+
+        else if (location.pathname.slice(1, location.pathname.length) == 'ExtraPages')
+            setTitle('Extra Pages')
+
+        else if (location.pathname.slice(1, location.pathname.length) == 'AddRealtor')
+            setTitle('Add Realtor')
+
+        else
+            setTitle(location.pathname.slice(1, location.pathname.length))
+        setPath(location.pathname.slice(1, location.pathname.length))
+        window.scrollTo(0, 0)
+    }, [location.pathname])
+
+    // const [tab, setTab] = useState(0);
+    // const [title, setTitle] = useState(["Dashboard", "Create New Report", "Contracts", "Realtors", "Extra Pages", "Reports", "Templates", "Contacts", "Metrics", "Automation", "Settings", "Add Realtors"])
     return (
         <div className="maindashboard-section">
-            <Sidebar setTab={setTab} />
+            <Sidebar />
             <div className="tabs-section">
                 <div className="container-fluid p-0">
-                    <DashboardHeader title={title[tab]} />
-                    {tab === 0 &&
+                    <DashboardHeader title={title} />
+
+                    {path === 'Dashboard' &&
                         <Dashboard></Dashboard>
                     }
-                    {tab === 1 &&
+                    {path === 'CreateNewReport' &&
                         <CreateNewReports></CreateNewReports>
                     }
-                    {tab === 2 &&
+                    {path === 'Contracts' &&
                         <Contracts></Contracts>
                     }
-                    {tab === 3 &&
-                        <Realtors setTab={setTab}></Realtors>
+                    {path === 'Realtors' &&
+                        <Realtors></Realtors>
                     }
-                    {tab === 4 &&
+                    {path === 'ExtraPages' &&
                         <ExtraPages></ExtraPages>
                     }
-                    {tab === 5 &&
+                    {path === 'Reports' &&
                         <Reports></Reports>
                     }
-                    {tab === 6 &&
+                    {path === 'Template' &&
                         <Templates></Templates>
                     }
-                    {tab === 7 &&
+                    {path === 'Contacts' &&
                         <Contacts></Contacts>
                     }
-                    {tab === 8 &&
+                    {path === 'Metrics' &&
                         <Metrics></Metrics>
                     }
-                    {tab === 9 &&
+                    {path === 'Automation' &&
                         <Automation></Automation>
                     }
-                    {tab === 10 &&
+                    {path === 'Settings' &&
                         <Settings></Settings>
                     }
-                    {tab === 11 &&
+                    {path === 'AddRealtor' &&
                         <AddRealtors></AddRealtors>
                     }
                 </div>

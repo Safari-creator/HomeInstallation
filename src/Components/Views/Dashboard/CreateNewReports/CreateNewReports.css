@@ -1062,6 +1062,23 @@
   .body-part
   .body-part-wrapper
   .body-part-right
+  .section-eight
+  .section-body
+  .form-part
+  div
+  input {
+  width: 177px;
+  height: 28px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 6px;
+}
+
+.createnewreports-section
+  .body-part
+  .body-part-wrapper
+  .body-part-right
   .section-nine {
   width: 456px;
   height: 229px;
@@ -1152,6 +1169,23 @@
   border-color: #bbbbbb;
   padding-left: 19px;
   color: rgba(0, 0, 0, 50%);
+}
+
+.createnewreports-section
+  .body-part
+  .body-part-wrapper
+  .body-part-right
+  .section-nine
+  .section-body
+  .form-part
+  div
+  input {
+  width: 177px;
+  height: 28px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 6px;
 }
 
 .createnewreports-section

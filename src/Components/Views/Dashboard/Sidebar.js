@@ -13,13 +13,15 @@ import metrics from "../../Software/assets/metrics.png"
 import automation from "../../Software/assets/automation.png"
 import settings from "../../Software/assets/settings.png"
 import profile from "../../Software/assets/profile.png"
+import { useHistory } from 'react-router-dom'
 
 const Sidebar = ({ setTab }) => {
+    const history = useHistory()
 
     function changeColor() {
         document.body.style.color = "red";
         return false;
-    }    
+    }
 
     return (
         <div className="sidebar-section">
@@ -33,57 +35,57 @@ const Sidebar = ({ setTab }) => {
                     <p>System</p>
                 </div>
                 <div className="contents">
-                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => setTab(0)}/>
-                    <p className="content-name" onClick={() => setTab(0)}>Dashboard</p>
+                    <img src={dashboard} alt="icon" className="content-icon" onClick={() => setTab(0)} />
+                    <p className="content-name" onClick={() => history.push('/Dashboard')}>Dashboard</p>
                 </div>
                 <div className="contents" style={{ top: '153.38px' }}>
                     <img src={createNewReports} alt="icon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(1)}>Create New Reports</p>
+                    <p className="content-name" onClick={() => history.push('/CreateNewReport')}>Create New Reports</p>
                 </div>
                 <div className="contents" style={{ top: '196.83px' }}>
                     <img src={contracts} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(2)}>Contracts</p>
+                    <p className="content-name" onClick={() => history.push('/Contracts')}>Contracts</p>
                 </div>
                 <div className="contents" style={{ top: '240px' }}>
                     <img src={realtors} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(3)}>Realtors</p>
+                    <p className="content-name" onClick={() => history.push('/Realtors')}>Realtors</p>
                 </div>
                 <div className="contents" style={{ top: '283px' }}>
                     <img src={extraPages} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(4)}>Extra Pages</p>
+                    <p className="content-name" onClick={() => history.push('/ExtraPages')}>Extra Pages</p>
                 </div>
                 <div className="contents" style={{ top: '326.38px' }}>
                     <img src={reports} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(5)}>Reports</p>
+                    <p className="content-name" onClick={() => history.push('/Reports')}>Reports</p>
                 </div>
                 <div className="contents" style={{ top: '369.46px' }}>
                     <img src={template} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(6)}>Template</p>
+                    <p className="content-name" onClick={() => history.push('/Template')}>Template</p>
                 </div>
                 <div className="contents" style={{ top: '412.91px' }}>
                     <img src={contacts} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(7)}>Contacts</p>
+                    <p className="content-name" onClick={() => history.push('/Contacts')}>Contacts</p>
                 </div>
                 <div className="contents" style={{ top: '456.37px' }}>
                     <img src={metrics} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(8)}>Metrics</p>
+                    <p className="content-name" onClick={() => history.push('/Metrics')}>Metrics</p>
                 </div>
                 <div className="contents" style={{ top: '499.83px' }}>
                     <img src={automation} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(9)}>Automation</p>
+                    <p className="content-name" onClick={() => history.push('/Automation')}>Automation</p>
                 </div>
                 <div className="contents" style={{ top: '543.28px' }}>
                     <img src={settings} alt="reportsIcon" className="content-icon" />
-                    <p className="content-name" onClick={() => setTab(10)}>Settings</p>
+                    <p className="content-name" onClick={() => history.push('/Settings')}>Settings</p>
                 </div>
                 <div className="buttons" style={{ top: '821px' }}>
                     <button>Help?</button>
                 </div>
-                <div className="buttons" style={{ top: '890.53px' }}>
+                {/* <div className="buttons" style={{ top: '890.53px' }}>
                     <button>
                         <img src={profile} alt=""></img>
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
