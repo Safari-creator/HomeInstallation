@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import './Realtors.css';
 import NativeSelect from '@mui/material/NativeSelect';
 import PropTypes from 'prop-types';
@@ -13,7 +14,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { useHistory } from 'react-router-dom'
 
 /**
  * table and rows 
@@ -67,12 +67,6 @@ const rows = [
   createData('Nigeria', 'NG', 200962417, 923768),
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
-
-
-
-
-
-
 
 const Root = styled('div')(
   ({ theme }) => `
@@ -231,14 +225,13 @@ const top100Films = [
   { title: 'Pulp Fiction', year: 1994 },
 ]
 
-const Realtors = ({ setTab }) => {
+const Realtors = ({setTab}) => {
 
   /**
    * For colum data
    */
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const history = useHistory()
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -248,9 +241,6 @@ const Realtors = ({ setTab }) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-
-
-
 
   const {
     getRootProps,
@@ -270,6 +260,24 @@ const Realtors = ({ setTab }) => {
     options: top100Films,
     getOptionLabel: (option) => option.title,
   });
+
+  const [user, setUser] = useState([]);
+  
+  useEffect( () => {
+    // requesting to get data
+    axios.get('http://34.198.19.55:8000/realtors')
+    // then getting the response from that request
+    .then(res=>{
+        console.log(res);
+        setUser(res.data.data);
+    })
+    // or getting the error
+    .catch(err => {
+        console.log(err)
+    })
+    // console.log([{user:user.first_name}]);
+},[])
+
   return (
     // <div className="dashboard-section">
     //   <section className="dashboard-body column">
@@ -340,7 +348,7 @@ const Realtors = ({ setTab }) => {
     //                 </TableHead>
     //                 <TableBody>
     //                   {rows
-    //                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+    //                     .slice(page  rowsPerPage, page  rowsPerPage + rowsPerPage)
     //                     .map((row) => {
     //                       return (
     //                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
@@ -400,15 +408,35 @@ const Realtors = ({ setTab }) => {
             <div class="heading">
               <div class="name">
                 <p>Name</p>
+                {
+                  user.map(usr => {
+                    return(<p key={usr.id}>{usr.name}</p>)
+                  })
+                }
               </div>
               <div class="type">
                 <p>Type</p>
+                {
+                  user.map(usr => {
+                    return(<p key={usr.id}>{usr.agent_type}</p>)
+                  })
+                }
               </div>
               <div class="email-address">
                 <p>Email Address</p>
+                {
+                  user.map(usr => {
+                    return(<p key={usr.id}>{usr.email}</p>)
+                  })
+                }
               </div>
               <div class="company">
                 <p>Company</p>
+                {
+                  user.map(usr => {
+                    return(<p key={usr.id}>{usr.company_name}</p>)
+                  })
+                }
               </div>
               <div class="manage">
                 <p>Manage</p>
@@ -427,7 +455,7 @@ const Realtors = ({ setTab }) => {
           </div>
         </div>
         <div class="button">
-          <button onClick={() => history.push('/AddRealtor')}>Add New Realtors</button>
+          <button onClick={() => setTab(11)}>Add New Realtors</button>
         </div>
       </section>
     </div>
