@@ -43,7 +43,10 @@ function AddRealtors() {
                         </div>
                         <div class="flex right70 width40">
                             <p>Country:</p>
-                            <input type="text" placeholder="Select Country..."></input>
+                            <select name="country" id="countryList">
+                                <option value="option 1">Select Countries</option>
+                                <option value="option 2">Buyer</option>
+                            </select>
                         </div>
                     </div>
                     <hr class="top20 width102" />
