@@ -101,6 +101,10 @@
   margin-bottom: 0;
 }
 
+.sidebar-section .sidebar-content .contents .content-name.active {
+  color: #fb8200;
+}
+
 .sidebar-section .sidebar-content .buttons {
   /* position: absolute; */
   left: 17.04px;

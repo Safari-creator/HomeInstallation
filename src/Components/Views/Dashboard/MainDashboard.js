@@ -34,6 +34,7 @@ function MainDashboard() {
             setTitle(location.pathname.slice(1, location.pathname.length))
         setPath(location.pathname.slice(1, location.pathname.length))
         window.scrollTo(0, 0)
+
     }, [location.pathname])
 
     // const [tab, setTab] = useState(0);
