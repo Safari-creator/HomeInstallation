@@ -13,6 +13,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { useHistory } from 'react-router-dom'
 
 /**
  * table and rows 
@@ -230,13 +231,14 @@ const top100Films = [
   { title: 'Pulp Fiction', year: 1994 },
 ]
 
-const Realtors = ({setTab}) => {
+const Realtors = ({ setTab }) => {
 
   /**
    * For colum data
    */
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const history = useHistory()
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -425,7 +427,7 @@ const Realtors = ({setTab}) => {
           </div>
         </div>
         <div class="button">
-          <button onClick={() => setTab(11)}>Add New Realtors</button>
+          <button onClick={() => history.push('/AddRealtor')}>Add New Realtors</button>
         </div>
       </section>
     </div>

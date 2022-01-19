@@ -4,8 +4,10 @@
 }
 
 .metrics-section {
-  box-sizing: border-box;
-  margin: 0 auto;
+  padding-left: 226px;
+  display: flex;
+  flex-direction: column;
+  /* padding-bottom: 10.9px; */
 }
 
 .metrics-section .header-part {
@@ -56,19 +58,159 @@
   margin-left: 12.78px;
   margin-top: 17.04px;
 }
-.metrics-section .body-part {
-  /* padding-left: 238px;
-  padding-top: 29.83px;
-  padding-right: 20px; */
+.metrics-section .metrics-body {
   background-color: #e5eaff;
-  padding: 20.83px 30px 10.9px 238px;
-}
-.metrics-section .body-part .body-wrapper {
+  display: flex;
+  padding: 30px;
+  padding-top: 100px;
   width: 100%;
+  box-sizing: border-box;
+  /* height: calc(100vh - 62px); */
+  overflow: auto;
+  scrollbar-width: none;
 }
-.metrics-section .body-part .body-wrapper .left {
+.metrics-section .metrics-body .metrics-left {
+  display: flex;
+  flex-direction: column;
   width: 60%;
+  margin-right: 23px;
 }
-.metrics-section .body-part .body-wrapper .left .one {
+.metrics-section .metrics-body .metrics-left .left-one {
   background-color: white;
+  border-radius: 10px;
+  margin-bottom: 23px;
+}
+.metrics-section .metrics-body .metrics-left .left-one .heading {
+  background-color: #eeeeee;
+  color: #a1a1aa;
+  border-radius: 10px;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-left .left-one .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.metrics-section .metrics-body .metrics-left .left-one .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+.metrics-section .metrics-body .metrics-left .left-two {
+  background-color: white;
+  border-radius: 10px;
+  height: 500px;
+}
+.metrics-section .metrics-body .metrics-left .left-two .heading {
+  background-color: #eeeeee;
+  color: #a1a1aa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-left .left-two .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.metrics-section .metrics-body .metrics-left .left-two .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+.metrics-section .metrics-body .metrics-right {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.metrics-section .metrics-body .metrics-right .right-one {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.metrics-section .metrics-body .metrics-right .right-one .heading {
+  background-color: #eeeeee;
+  color: #a1a1aa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-one .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.metrics-section .metrics-body .metrics-right .right-one .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+.metrics-section .metrics-body .metrics-right .right-two {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.metrics-section .metrics-body .metrics-right .right-two .heading {
+  background-color: #eeeeee;
+  color: #a1a1aa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-two .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.metrics-section .metrics-body .metrics-right .right-two .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
+}
+.metrics-section .metrics-body .metrics-right .right-three {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 224px;
+}
+.metrics-section .metrics-body .metrics-right .right-three .heading {
+  background-color: #eeeeee;
+  color: #a1a1aa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0px 7px 26px;
+}
+.metrics-section .metrics-body .metrics-right .right-three .heading p {
+  line-height: 21.6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.metrics-section .metrics-body .metrics-right .right-three .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: inherit;
+  padding: 10px;
 }

@@ -57,7 +57,7 @@
   margin-top: 17.04px;
 }
 .templates-section .body-part {
-  padding: 25.83px 20px 133.9px 233px;
+  padding: 100px 20px 100px 253px;
   background-color: #e5eaff;
 }
 .templates-section .body-part .body-part-one {
@@ -74,6 +74,7 @@
   font-weight: 600;
   line-height: 21.6px;
   color: #bababa;
+  margin-bottom: 0;
 }
 .templates-section .body-part .body-part-one .part-one-right {
   padding: 11px 37.33px 10px 0px;
@@ -159,6 +160,12 @@
   padding: 6px 0px 7px 26px;
   background-color: #eeeeee;
   margin-bottom: 6.82px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+}
+.templates-section .body-part .body-part-two .three-columns .column-one p {
+  margin-bottom: 0;
 }
 .templates-section
   .body-part
@@ -280,6 +287,19 @@
   padding: 6px 0px 7px 26px;
   background-color: #eeeeee;
   margin-bottom: 6.82px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+}
+.templates-section
+  .body-part
+  .body-part-two
+  .three-columns
+  .column-two
+  .items
+  .items-header
+  p {
+  margin-bottom: 0;
 }
 .templates-section
   .body-part
@@ -404,6 +424,18 @@
   border-radius: 10px;
   padding: 6px 0px 7px 26px;
   background-color: #eeeeee;
+  height: 51px;
+  display: flex;
+  align-items: center;
+}
+.templates-section
+  .body-part
+  .body-part-two
+  .three-columns
+  .column-two
+  .attachments-header
+  p {
+  margin-bottom: 0;
 }
 .templates-section
   .body-part
@@ -486,6 +518,19 @@
   padding: 6px 0px 7px 26px;
   background-color: #eeeeee;
   margin-bottom: 6.82px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+}
+.templates-section
+  .body-part
+  .body-part-two
+  .three-columns
+  .column-three
+  .informational
+  .informational-header
+  p {
+  margin-bottom: 0;
 }
 .templates-section
   .body-part
@@ -576,6 +621,19 @@
   border-radius: 10px;
   padding: 6px 0px 7px 26px;
   background-color: #eeeeee;
+  height: 51px;
+  display: flex;
+  align-items: center;
+}
+.templates-section
+  .body-part
+  .body-part-two
+  .three-columns
+  .column-three
+  .limitations
+  .limitations-header
+  p {
+  margin-bottom: 0;
 }
 .templates-section
   .body-part

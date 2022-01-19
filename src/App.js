@@ -34,18 +34,31 @@ import SettingsBusinessTools from './Components/Views/Dashboard/SettingsBusiness
 
 function App() {
   return (
-      <Router>
-        <Route exact path='/' component={SignUp}></Route>
-        <Route exact path='/Sign-In' component={SignIn}></Route>
-        <Route exact path='/MainDashboard' component={MainDashboard}></Route>
-        <Route exact path='/SettingsProfile' component={SettingsProfile}></Route>
-        <Route exact path='/SettingsServices' component={SettingsServices}></Route>
-        <Route exact path='/SettingsAvailability' component={SettingsAvailability}></Route>
-        <Route exact path='/SettingsTeam' component={SettingsTeam}></Route>
-        <Route exact path='/SettingsSampleReports' component={SettingsSampleReports}></Route>
-        <Route exact path='/SettingsDiscountCodes' component={SettingsDiscountCodes}></Route>
-        <Route exact path='/Settings/BusinessTools' component={SettingsBusinessTools}></Route>
-      </Router>
+    <Router>
+      <Route exact path='/' component={SignUp}></Route>
+      <Route exact path='/Sign-In' component={SignIn}></Route>
+      <Route exact path='/Dashboard' component={MainDashboard}></Route>
+
+      <Route exact path='/CreateNewReport' component={MainDashboard}></Route>
+      <Route exact path='/Contracts' component={MainDashboard}></Route>
+      <Route exact path='/Realtors' component={MainDashboard}></Route>
+      <Route exact path='/ExtraPages' component={MainDashboard}></Route>
+      <Route exact path='/Reports' component={MainDashboard}></Route>
+      <Route exact path='/Template' component={MainDashboard}></Route>
+      <Route exact path='/Contacts' component={MainDashboard}></Route>
+      <Route exact path='/Metrics' component={MainDashboard}></Route>
+      <Route exact path='/Automation' component={MainDashboard}></Route>
+      <Route exact path='/Settings' component={MainDashboard}></Route>
+      <Route exact path='/AddRealtor' component={MainDashboard}></Route>
+
+      <Route exact path='/SettingsProfile' component={SettingsProfile}></Route>
+      <Route exact path='/SettingsServices' component={SettingsServices}></Route>
+      <Route exact path='/SettingsAvailability' component={SettingsAvailability}></Route>
+      <Route exact path='/SettingsTeam' component={SettingsTeam}></Route>
+      <Route exact path='/SettingsSampleReports' component={SettingsSampleReports}></Route>
+      <Route exact path='/SettingsDiscountCodes' component={SettingsDiscountCodes}></Route>
+      <Route exact path='/Settings/BusinessTools' component={SettingsBusinessTools}></Route>
+    </Router>
   );
 }
 

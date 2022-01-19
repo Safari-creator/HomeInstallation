@@ -1,16 +1,18 @@
-.body-part .body-part-two .part-one-left .select-list{
-    background: #F5F5FA !important;
-    box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%), inset 2px 2px 4px rgb(170 170 204 / 25%), inset 5px 5px 10px rgb(170 170 204 / 50%), inset -5px -5px 10px #ffffff !important;
-    border-radius: 40px !important;
-    width: 229px !important;
-    height: 52px !important;
-    padding-left: 0px !important;
-    border: none !important;
+.body-part .body-part-two .part-one-left .select-list {
+  background: #f5f5fa !important;
+  box-shadow: inset -2px -2px 4px rgb(255 255 255 / 50%),
+    inset 2px 2px 4px rgb(170 170 204 / 25%),
+    inset 5px 5px 10px rgb(170 170 204 / 50%), inset -5px -5px 10px #ffffff !important;
+  border-radius: 40px !important;
+  width: 229px !important;
+  height: 52px !important;
+  padding-left: 0px !important;
+  border: none !important;
 }
 
-.top-bot-40{
-    margin-top: 40px;
-    margin-bottom: 40px;
+.top-bot-40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 /* #file-upload-button{
@@ -21,65 +23,69 @@ box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08) !important;
 border-radius: 10px !important;
 } */
 
-.custom-file-upload{
-    display: flex;
-align-items: center;
-justify-content: center;
-    background: #FFFFFF !important;
-border: 1px solid rgba(0, 0, 0, 0.5) !important;
-box-sizing: border-box !important;
-box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08) !important;
-border-radius: 10px !important;
-font-weight: normal;
-font-size: 12px;
-line-height: 20px;
-width: 102px;
-height: 28px;
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.5) !important;
+  box-sizing: border-box !important;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08) !important;
+  border-radius: 10px !important;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  width: 102px;
+  height: 28px;
 }
 
-.width20{
-    width: 20%;
-    justify-content: space-between;
+.width20 {
+  width: 20%;
+  justify-content: space-between;
 }
 
-.display-none{
-    display: none;
+.display-none {
+  display: none;
 }
 
-.bot50{
-    padding-bottom: 50px !important;
+.bot50 {
+  padding-bottom: 50px !important;
 }
 
-.body-part .body-part-two .part-one-left .contract-details{
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
-    border-radius: 10px;
-    padding: 30px;
-    font-family: Inter;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 120%;
-    color: #525252;
-    height: 432px;
+.body-part .body-part-two .part-one-left .contract-details {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(31, 41, 55, 0.08);
+  border-radius: 10px;
+  padding: 30px;
+  font-family: Inter;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+  color: #525252;
+  height: 432px;
 }
 
-.space-between{
-    justify-content: space-between;
+.space-between {
+  justify-content: space-between;
 }
 
-.top175{
-    margin-top: 175px;
+.top175 {
+  margin-top: 175px;
 }
 
-.top40{
-    margin-top: 40px;
+.top40 {
+  margin-top: 40px;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
+.center {
+  display: flex;
+  justify-content: center;
 }
 
+.signature-image {
+  width: 150px;
+  height: 50px;
+}
