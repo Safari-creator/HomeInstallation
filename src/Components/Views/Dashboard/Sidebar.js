@@ -143,11 +143,11 @@ const Sidebar = ({ setTab }) => {
                 <div className="buttons" style={{ top: '821px' }}>
                     <button>Help?</button>
                 </div>
-                {/* <div className="buttons" style={{ top: '890.53px' }}>
+                <div className="buttons" style={{ top: '890.53px' }}>
                     <button>
                         <img src={profile} alt=""></img>
                     </button>
-                </div> */}
+                </div>
             </div>
         </div>
     );
