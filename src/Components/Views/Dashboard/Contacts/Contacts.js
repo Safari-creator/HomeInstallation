@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Contacts.css';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
@@ -9,7 +9,8 @@ import Typography from '@mui/material/Typography';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -116,8 +117,51 @@ function BpCheckbox(props) {
     );
 }
 
+// for modal
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      width: '50%',
+      padding:'0px',
+      marginTop: '50px',
+    },
+  };
+  
+  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+// Modal.setAppElement('#yourAppElement');
+
 const Contacts = () => {
 
+    // for modal
+   
+    const [modalAgentIsOpen, setModalAgentIsOpen] = React.useState(false);
+    const [modalAgencyIsOpen, setModalAgencyIsOpen] = React.useState(false);
+
+    function openModalAgent() {
+        setModalAgentIsOpen(true);
+      }
+    function closeModalAgent() {
+        setModalAgentIsOpen(false);
+      }
+    function openModalAgency() {
+        setModalAgencyIsOpen(true);
+      }
+    function closeModalAgency() {
+        setModalAgencyIsOpen(false);
+      }
+
+    //   for AGENT AGENCIES table
+
+    const [selected, setSelected] = React.useState("");
+  
+    const changeSelectOptionHandler = (event) => {
+        setSelected(event.target.value);
+    };
 
     // const Automation = () => {
     const [expanded, setExpanded] = React.useState('panel1');
@@ -183,66 +227,118 @@ const Contacts = () => {
         },
     ]
 
-
-
-
     return (
         <div className="extrapages-section">
             <section className="body-part">
                 <div class="flex space-between">
                     <div class="part-one-left flex space-between">
-                        {/* <select name="selectList" class="select-list">
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
-                        </select> */}
                         <span className='buttons'>Import</span>
                     </div>
                     <div class="part-one-left flex space-between">
-                        {/* <select name="selectList" class="select-list">
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
-                        </select> */}
                         <span className='buttons'>Export</span>
                     </div>
                     <div class="part-one-left flex space-between">
-                        {/* <select name="selectList" class="select-list">
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
-                        </select> */}
-                        <span className='buttons'>Add Agent</span>
+                        <span className='buttons' onClick={openModalAgent}>Add Agent</span>
+                        <Modal isOpen={modalAgentIsOpen}
+                            onRequestClose={closeModalAgent}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                            class="modal-agent">
+                                <div class="modal-body">
+                                    <button onClick={closeModalAgent}>x</button>
+                                    <div class="modal-form">
+                                        <form class="form">
+                                            <div>
+                                                <label>First Name:</label>
+                                                <input type="text" placeholder='firstname'></input>
+                                            </div>
+                                            <div>
+                                                <label>Last Name:</label>
+                                                <input type="text" placeholder='lastname'></input>
+                                            </div>
+                                            <div>
+                                                <label>Agency:</label>
+                                                <input type="text" placeholder='agency'></input>
+                                            </div>
+                                            <div>
+                                                <label>Client Agent:</label>
+                                                <input type="text" placeholder='client agent'></input>
+                                            </div>
+                                            <div>
+                                                <label>Seller Agent:</label>
+                                                <input type="text" placeholder='seller agent'></input>
+                                            </div>
+                                            <div>
+                                                <label>Phone:</label>
+                                                <input type="text" placeholder='phone number'></input>
+                                            </div>
+                                            <div>
+                                                <label>Email:</label>
+                                                <input type="email" placeholder='email'></input>
+                                            </div>
+                                            <div class="form-buttons">
+                                                <button>Add</button>
+                                                <button>Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </Modal>
                     </div>
                     <div class="part-one-left flex space-between">
-                        {/* <select name="selectList" class="select-list">
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
-                        </select> */}
-                        <span className='buttons'>Agencies</span>
+                        <span className='buttons' onClick={openModalAgency}>Add Agencies</span>
+                        <Modal isOpen={modalAgencyIsOpen}
+                            onRequestClose={closeModalAgency}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                            class="modal-agent">
+                                <div class="modal-body">
+                                    <button onClick={closeModalAgency}>x</button>
+                                    <div class="modal-form">
+                                        <form class="form">
+                                            <div>
+                                                <label>First Name:</label>
+                                                <input type="text" placeholder='firstname'></input>
+                                            </div>
+                                            <div>
+                                                <label>Last Name:</label>
+                                                <input type="text" placeholder='lastname'></input>
+                                            </div>
+                                            <div>
+                                                <label>Agency:</label>
+                                                <input type="text" placeholder='agency'></input>
+                                            </div>
+                                            <div>
+                                                <label>Client Agent:</label>
+                                                <input type="text" placeholder='client agent'></input>
+                                            </div>
+                                            <div>
+                                                <label>Seller Agent:</label>
+                                                <input type="text" placeholder='seller agent'></input>
+                                            </div>
+                                            <div>
+                                                <label>Phone:</label>
+                                                <input type="text" placeholder='phone number'></input>
+                                            </div>
+                                            <div>
+                                                <label>Email:</label>
+                                                <input type="email" placeholder='email'></input>
+                                            </div>
+                                            <div class="form-buttons">
+                                                <button>Add</button>
+                                                <button>Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </Modal>
                     </div>
                 </div>
                 <div class="body-part-two pad0">
                     <div class="part-one-left flex space-between pad-left-right10">
-                        <select name="selectList" class="select-list">
-                            <option value="Agents" >Agents</option>
+                        <select name="selectList" class="select-list" onChange={changeSelectOptionHandler}>
+                            <option value="Agency">Agencies</option>
+                            <option value="Agent">Agents</option>
                         </select>
                     </div>
                     <div class="body-part-one mb-0">
@@ -258,38 +354,68 @@ const Contacts = () => {
                             <input type="text" placeholder="Entries"></input>
                         </div>
                     </div>
+                  
                     <div class="body-part-two pad0 pt-0">
+                        {(selected == "Agent") ?
                         <div class="part-two-content pad-left-right0">
-                            <div class="heading pad-left15">
-                                <div class="wid20">
-                                    <p>First Name</p>
-                                </div>
-                                <div class="title">
-                                    <p>Last Name</p>
-                                </div>
-                                <div class="title">
-                                    <p>Agency</p>
-                                </div>
-                                <div class="title">
-                                    <p>Client Agent</p>
-                                </div>
-                                <div class="date-created">
-                                    <p>Seller Agent</p>
-                                </div>
-                                <div class="manage">
-                                    <p>phone</p>
-                                </div>
-                                <div class="manage">
-                                    <p>Email</p>
-                                </div>
-                                <div class="manage">
-                                    <p>Actions</p>
-                                </div>
+                        <div class="heading pad-left15">
+                            <div class="wid20">
+                                <p>First Name</p>
                             </div>
-                            <div class="body height400">
-                                <p>No matching records found</p>
+                            <div class="title">
+                                <p>Last Name</p>
+                            </div>
+                            <div class="title">
+                                <p>Agency</p>
+                            </div>
+                            <div class="title">
+                                <p>Client Agent</p>
+                            </div>
+                            <div class="date-created">
+                                <p>Seller Agent</p>
+                            </div>
+                            <div class="manage">
+                                <p>phone</p>
+                            </div>
+                            <div class="manage">
+                                <p>Email</p>
+                            </div>
+                            <div class="manage">
+                                <p>Actions</p>
                             </div>
                         </div>
+                        <div class="body height400">
+                            <p>No matching records found</p>
+                        </div>
+                    </div> :
+
+                    <div class="part-two-content pad-left-right0">
+                    <div class="heading pad-left15">
+                        <div class="wid20">
+                            <p>Agency Name</p>
+                        </div>
+                        <div class="title">
+                            <p>Client Agency</p>
+                        </div>
+                        <div class="date-created">
+                            <p>Seller Agency</p>
+                        </div>
+                        <div class="manage">
+                            <p>phone</p>
+                        </div>
+                        <div class="manage">
+                            <p>Email</p>
+                        </div>
+                        <div class="manage">
+                            <p>Actions</p>
+                        </div>
+                    </div>
+                    <div class="body height400">
+                        <p>No matching records found</p>
+                    </div>
+                    </div>
+                        }
+                        
                         <div class="part-two-footer space-around pad-bot20">
                             <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
                             <div class="footer-right">
