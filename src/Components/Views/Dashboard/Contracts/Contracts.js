@@ -15,6 +15,7 @@ const Contracts = () => {
 
     const [tab, setTab] = React.useState(0)
     const [selectedFile, setSelectedFile] = useState(null);
+    const [fileButton, setFileButton] = useState(true)
 
     useEffect(() => {
         var image = document.getElementById('output');
@@ -80,7 +81,10 @@ const Contracts = () => {
                         {/ <button class="blue-button" onClick={handlePrint}>Print</button> /} */}
                         <ReactToPdf targetRef={ref} filename="contract.pdf" options={options} x={0.4} y={0.3} scale={0.9}>
                             {({ toPdf }) => (
-                                <button class="blue-button" onClick={toPdf}>Print</button>
+                                <button class="blue-button" onClick={() => {
+                                    toPdf()
+                                    setFileButton(false)
+                                }}>Print</button>
                             )}
                         </ReactToPdf>
                     </div>
@@ -96,7 +100,7 @@ const Contracts = () => {
                                 <div class="flex width200 flex-column align-items-start">
                                     <div className='d-flex mb-3'>
                                         <p>Signature:</p>
-                                        <input type="file" onChange={handleFileSelect} id="group_image" />
+                                        {fileButton && <input type="file" onChange={handleFileSelect} id="group_image" />}
                                     </div>
                                     <div><p><img src="" id="output" class="signature-image" /></p></div>
                                 </div>

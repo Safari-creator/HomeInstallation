@@ -74,8 +74,12 @@ function DashboardHeader({ title }) {
                         <img className="header-clock" style={{ marginRight: 5 }} src={headerClock} alt="headerClock"></img><p> {time} {`${dayCount ? dayCount + ', ' : ''}`}{yearCount}</p>
                     </div>
                     <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
-                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
-                    <img className="header-icon-profile" style={{ cursor: 'pointer' }} src={headerProfile} alt="headerProfile"></img>
+                    {/* <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img> */}
+                    {/* <img className="header-icon-profile" style={{ cursor: 'pointer' }} src={headerProfile} alt="headerProfile"></img> */}
+                    <span className='fa fa-sign-out' style={{ fontSize: 25, cursor: 'pointer' }} onClick={() => {
+                        history.push('/Sign-In')
+                        sessionStorage.clear()
+                    }}></span>
                 </div>
             </section>
             {/* <section className="header-part">
