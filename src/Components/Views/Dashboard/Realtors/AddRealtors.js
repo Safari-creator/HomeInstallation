@@ -9,11 +9,11 @@ function AddRealtors() {
     const [countries, setCountries] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
 
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState({ agent_type: 'Seller' });
 
     const handleFileSelect = (event) => {
         setSelectedFile(event.target.files[0].name);
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 
     const handleChangeInput = (event) => {
@@ -21,19 +21,20 @@ function AddRealtors() {
     }
 
     function createPost(e) {
-        const body = { user: post.name }
+        console.log(post)
         e.preventDefault()
         axios
             .post('http://34.198.19.55:8000/realtors',
                 post)
             .then((response) => {
-                setPost(response);
-                // console.log(response.data);
+                // setPost(response);
+                console.log(response)
+                if (response.data.status == 200)
+                    window.location.reload()
             })
             .catch((error) => {
                 console.log(error)
             });
-        // console.log(body);
     }
 
     useEffect(() => {
@@ -41,7 +42,6 @@ function AddRealtors() {
         axios.get('http://34.198.19.55:8000/countries')
             // then getting the response from that request
             .then(res => {
-                console.log(res);
                 setCountries(res.data.data);
             })
             // or getting the error
@@ -56,9 +56,9 @@ function AddRealtors() {
                 <div class="body-part-two">
                     <div class="part-one-left flex left34">
                         <p>Agent Type</p>
-                        <select name="agent_type" value={post.agent_type} id="selectList">
-                            <option value="option 1">Seller</option>
-                            <option value="option 2">Buyer</option>
+                        <select name="agent_type" value={post.agent_type} id="selectList" onChange={handleChangeInput}>
+                            <option value="Seller">Seller</option>
+                            <option value="Buyer">Buyer</option>
                         </select>
                     </div>
                     <hr class="top20 width102" />
@@ -87,15 +87,15 @@ function AddRealtors() {
                     <div class="part-one-left flex top20 space-around">
                         <div class="flex width40">
                             <p>Street Address:</p>
-                            <input type="text" placeholder="Enter Street Address..." name="city" value={post.city} onChange={handleChangeInput}></input>
+                            <input type="text" placeholder="Enter Street Address..." name="address" value={post.address} onChange={handleChangeInput}></input>
                         </div>
                         <div class="flex right70 width40">
                             <p>Country:</p>
-                            <select name="selectList" id="selectList" onChange={handleChangeInput}>
+                            <select name="country" id="country" onChange={handleChangeInput}>
                                 <option value="option1">Select</option>
                                 {
                                     countries.map(country => {
-                                        return (<option value={country.id}>{country.country_name}</option>)
+                                        return (<option value={country.country_name}>{country.country_name}</option>)
                                     })
                                 }
                             </select>
@@ -123,7 +123,7 @@ function AddRealtors() {
                     <div class="part-one-left flex top20 left34">
                         <div class="flex width41-5">
                             <p>Personal Notes:</p>
-                            <textarea placeholder="Notes..." name="notes" value={post.notes} onChange={handleChangeInput}></textarea>
+                            <textarea placeholder="Notes..." style={{ width: 285 }} name="notes" value={post.notes} onChange={handleChangeInput}></textarea>
                         </div>
                     </div>
                     <hr class="top20 width102" />
@@ -131,7 +131,7 @@ function AddRealtors() {
                     </div>
                     <div class="top50">
                         <button class="yellow-button" onClick={createPost}>Add</button>
-                        <button class="blue-button">Cancel</button>
+                        <button class="blue-button" onClick={() => window.history.back()}>Cancel</button>
                     </div>
                 </div>
             </section>

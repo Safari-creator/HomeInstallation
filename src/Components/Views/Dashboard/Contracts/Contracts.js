@@ -111,9 +111,9 @@ const Contracts = () => {
                     </div>
                     <div class="part-two-content">
                     </div>
-                    <div class="top175 center">
+                    {/* <div class="top175 center">
                         <button class="yellow-button">Save</button>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>

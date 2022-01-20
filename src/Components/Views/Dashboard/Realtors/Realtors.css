@@ -146,3 +146,41 @@
 .Realtors-list-page .body-part .body-part-two .heading {
   padding-left: 20px !important;
 }
+
+.Realtors-list-page .body-part .body-part-two .table-body-part {
+  background-color: #eeeeee;
+  padding: 20px;
+  padding-top: 0;
+  padding-right: 0;
+}
+
+.Realtors-list-page .body-part .body-part-two .table-body-part .d-flex {
+  cursor: pointer;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* .Realtors-list-page .body-part .body-part-two .table-body-part .d-flex:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+.Realtors-list-page .body-part .body-part-two .table-body-part p {
+  font-size: 14px;
+  color: #a1a1aa;
+  text-align: center;
+}
+
+.Realtors-list-page .body-part .body-part-two .table-body-part .dlt-btn {
+  display: inline-block;
+  /* width: 100%; */
+  text-align: center;
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 600;
+  color: #a1a1aa;
+  cursor: pointer;
+}
+
+.Realtors-list-page .body-part .body-part-two .heading p {
+  text-align: center;
+}
