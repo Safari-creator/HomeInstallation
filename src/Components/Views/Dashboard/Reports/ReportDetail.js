@@ -10,6 +10,7 @@ import { useHistory, useParams } from 'react-router-dom'
 const CreateNewReports = () => {
     const history = useHistory()
     const params = useParams()
+
     const [selectedFile1, setSelectedFile1] = useState(null);
     const [selectedFile2, setSelectedFile2] = useState(null);
     const [reportName, setReportName] = useState('')
@@ -19,7 +20,14 @@ const CreateNewReports = () => {
     const [propertyCountry, setPropertyCountry] = useState([])
     const [propertyState, setPropertyState] = useState('')
     const [propertyCity, setPropertyCity] = useState('')
-    const [wintnessArray, setWitnessArray] = useState([])
+
+    const [witnessBuyer, setWitnessBuyer] = useState(false)
+    const [witnessBuyerAgent, setWitnessBuyerAgent] = useState(false)
+    const [witnessSeller, setWitnessSeller] = useState(false)
+    const [witnessSellerAgent, setWitnessSellerAgent] = useState(false)
+    const [witnessNone, setWitnessNone] = useState(false)
+    const [witnessOwner, setWitnessOwner] = useState(false)
+    const [witnessOther, setWitnessOther] = useState(false)
 
     const [inspectionInvoice, setInspectionInvoice] = useState('')
     const [inspectionFees, setInspectionFees] = useState('')
@@ -84,6 +92,62 @@ const CreateNewReports = () => {
     useEffect(async () => {
         const response = await axios.get('http://34.198.19.55:8000/reports/' + params.id)
         console.log(response.data.data)
+
+        setReportName(response.data.data.report_name)
+
+        setPropertyAddress1(response.data.data.property_street_address)
+        setPropertyState(response.data.data.property_state)
+        setPropertyCountry(response.data.data.property_country)
+        setPropertyCity(response.data.data.property_city)
+
+        setWitnessBuyer(response.data.data.buyer)
+        setWitnessBuyerAgent(response.data.data.buyer_agent)
+        setWitnessSeller(response.data.data.seller)
+        setWitnessSellerAgent(response.data.data.seller_agent)
+        setWitnessOwner(response.data.data.owner)
+        setWitnessOther(response.data.data.other_present)
+        // setWitnessNone(response.data.data.)
+
+        setInspectionInvoice(response.data.data.invoice_number)
+        setInspectionFees(response.data.data.fees_charged)
+        setInspectionTaxes(response.data.data.taxes)
+        setInspectionOther(response.data.data.other_charges)
+        setInspectionTotalFees(response.data.data.total_fee)
+        setInspectionDatePaid(response.data.data.date_paid)
+
+        setStructureFurnished(response.data.data.furnished)
+        setStructureStyle(response.data.data.style)
+        setStructureStories(response.data.data.number_of_stories)
+        setStructureOrientation(response.data.data.structure_orientations)
+
+        setClientName(response.data.data.client_name)
+        setClientAddress(response.data.data.client_street_address)
+        setClientCountry(response.data.data.client_country)
+        setClientState(response.data.data.client_state)
+        setClientCity(response.data.data.client_city)
+        setClientPhone(response.data.data.client_phone)
+        setClientZipCode('')
+        setClientEmail(response.data.data.client_email)
+        setClientFax(response.data.data.client_fax)
+        setClientNote(response.data.data.client_note)
+
+        setInspectionStartTime(response.data.data.inspection_start_time)
+        setInspectionEndTime(response.data.data.inspection_end_time)
+        setInspectionDate(response.data.data.inspection_date)
+
+        setWeatherClimate(response.data.data.climate)
+        setWeatherTemperture(response.data.data.temperature)
+        setWeatherHumidity(response.data.data.humidity)
+
+        setConstructionType(response.data.data.type_of_construction)
+        setConstructionYear(response.data.data.year_built)
+        setConstructionArea(response.data.data.sq_ft)
+
+        setTravelStart(response.data.data.travel_distance_start)
+        setTravelEnd(response.data.data.travel_distance_end)
+        setTravelTotal(response.data.data.total_travel)
+
+
     }, [])
 
     async function saveDetails() {
@@ -95,6 +159,13 @@ const CreateNewReports = () => {
             property_country: propertyCountry,
             property_state: propertyState,
             property_city: propertyCity,
+
+            buyer: witnessBuyer,
+            seller: witnessSeller,
+            buyer_agent: witnessBuyerAgent,
+            seller_agent: witnessSellerAgent,
+            owner: witnessOwner,
+            other_present: witnessOther,
 
             inspectionInvoice: inspectionInvoice,
             inspectionFees: inspectionFees,
@@ -136,9 +207,9 @@ const CreateNewReports = () => {
             total_travel: travelTotal
         }
 
-        const response = await axios.post('http://34.198.19.55:8000/reports', body)
+        const response = await axios.put('http://34.198.19.55:8000/reports/' + params.id, body)
         console.log(response)
-        if (response.data.message == "Created successfully!") {
+        if (response.statusText == "OK") {
             window.location.reload()
         }
 
@@ -146,18 +217,6 @@ const CreateNewReports = () => {
 
     return (
         <div className="createnewreports-section">
-            {/* <section className="header-part">
-                <div class="header-part-left">
-                    <p className="header-name">Create New Reports</p>
-                </div>
-                <div class="header-part-right">
-                    <img className="header-clock" src={headerClock} alt="headerClock"></img>
-                    <p className="header-time">14:20 PM Friday April, 21</p>
-                    <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
-                    <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
-                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
-                </div>
-            </section> */}
             <section className="body-part">
                 <div className="body-part-wrapper">
                     <div className="body-part-left">
@@ -168,8 +227,9 @@ const CreateNewReports = () => {
                             <div className="section-body">
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
-                                        <label>Enter Report Name:</label>
-                                        <input className="form-input" name="name" type="text" onChange={(e) => setReportName(e.target.value)} style={{ width: "177px" }} value={reportName}></input>
+                                        <label>Report Name:</label>
+                                        {/* <input className="form-input" name="name" type="text" onChange={(e) => setReportName(e.target.value)} style={{ width: "177px" }} value={reportName}></input> */}
+                                        <span>{reportName}</span>
                                     </div>
                                     <div style={{ top: "66px" }}>
                                         <label>Cover Picture 1:</label>
@@ -192,15 +252,17 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "24px" }}>
                                         <label>Street Address 1:</label>
-                                        <input type="text" value={propertyAddress1} onChange={(e) => setPropertyAddress1(e.target.value)}></input>
+                                        {/* <input type="text" value={propertyAddress1} onChange={(e) => setPropertyAddress1(e.target.value)}></input> */}
+                                        <span>{propertyAddress1}</span>
                                     </div>
                                     <div style={{ top: "72px" }}>
                                         <label>Street Address 2:</label>
-                                        <input type="text" value={propertyAddress2} onChange={(e) => setPropertyAddress2(e.target.value)} placeholder=""></input>
+                                        {/* <input type="text" value={propertyAddress2} onChange={(e) => setPropertyAddress2(e.target.value)} placeholder=""></input> */}
+                                        {/* <span>{propertyAddress1}</span> */}
                                     </div>
                                     <div style={{ top: "120px" }}>
                                         <label>Country:</label>
-                                        <select value={propertyCountry?.name} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
+                                        {/* <select value={propertyCountry?.name} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
@@ -209,25 +271,21 @@ const CreateNewReports = () => {
                                                     )
                                                 })
                                             }
-                                        </select>
+                                        </select> */}
+                                        <span>{propertyCountry}</span>
                                     </div>
                                     <div style={{ top: "168px" }}>
                                         <label>State/Province:</label>
-                                        {/* <select name="selectList" id="selectList" value={}>
-                                            <option value="option 1">Select</option>
-                                            <option value="option 2">State names</option>
-                                        </select> */}
-                                        <input type="text" placeholder="" value={propertyState} onChange={(e) => setPropertyState(e.target.value)}></input>
+                                        {/* <input type="text" placeholder="" value={propertyState} onChange={(e) => setPropertyState(e.target.value)}></input> */}
+                                        <span>{propertyState}</span>
                                     </div>
                                     <div style={{ top: "216px" }}>
                                         <label>City:</label>
-                                        <input type="text" placeholder="" value={propertyCity} onChange={(e) => setPropertyCity(e.target.value)}></input>
+                                        <span>{propertyCity}</span>
+                                        {/* <input type="text" placeholder="" value={propertyCity} onChange={(e) => setPropertyCity(e.target.value)}></input> */}
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="section-footer">
-                                    <p>Add Alternate Property Owner Address</p>
-                                </div> */}
                         </div>
                         <div className="section-three">
                             <div className="section-header">
@@ -236,22 +294,22 @@ const CreateNewReports = () => {
                             <div className="section-body">
                                 <div className="form-part">
                                     <div class="form-left">
-                                        <div><input type="checkbox" value="Buyer" name='witness' />
+                                        <div><input type="checkbox" value="Buyer" checked={witnessBuyer ? true : false} name='witness' disabled />
                                             <label>Buyer</label></div>
-                                        <div><input type="checkbox" value="Seller" name='witness' />
+                                        <div><input type="checkbox" value="Seller" name='witness' checked={witnessSeller ? true : false} disabled />
                                             <label>Seller</label></div>
-                                        <div><input type="checkbox" value="Owners" name='witness' />
+                                        <div><input type="checkbox" value="Owners" name='witness' checked={witnessOwner ? true : false} disabled />
                                             <label>Owners</label></div>
-                                        <div class="owners"><input type="checkbox" value="other" name='witness' />
+                                        <div class="owners"><input type="checkbox" value="other" name='witness' checked={witnessOther ? true : false} disabled />
                                             <label>Other Present</label></div>
 
                                     </div>
                                     <div class="form-right">
-                                        <div><input type="checkbox" value="Buyer Agent" name='witness' />
+                                        <div><input type="checkbox" value="Buyer Agent" name='witness' checked={witnessBuyerAgent ? true : false} disabled />
                                             <label>Buyer's Agent</label></div>
-                                        <div><input type="checkbox" value="none" name='witness' />
+                                        <div><input type="checkbox" value="none" name='witness' checked={witnessNone ? true : false} disabled />
                                             <label>None</label></div>
-                                        <div><input type="checkbox" value="Seller Agent" name='witness' />
+                                        <div><input type="checkbox" value="Seller Agent" name='witness' checked={witnessSellerAgent ? true : false} disabled />
                                             <label>Seller's Agent</label></div>
                                     </div>
 
@@ -266,27 +324,33 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Invoice Number:</label>
-                                        <input type="text" value={inspectionInvoice} onChange={(e) => setInspectionInvoice(e.target.value)}></input>
+                                        <span>{inspectionInvoice}</span>
+                                        {/* <input type="text" value={inspectionInvoice} onChange={(e) => setInspectionInvoice(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>Fees Charged:</label>
-                                        <input type="text" value={inspectionFees} onChange={(e) => setInspectionFees(e.target.value)}></input>
+                                        <span>{inspectionFees}</span>
+                                        {/* <input type="text" value={inspectionFees} onChange={(e) => setInspectionFees(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Taxes:</label>
-                                        <input type="text" value={inspectionTaxes} onChange={(e) => setInspectionTaxes(e.target.value)}></input>
+                                        <span>{inspectionTaxes}</span>
+                                        {/* <input type="text" value={inspectionTaxes} onChange={(e) => setInspectionTaxes(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "144px" }}>
                                         <label>Other:</label>
-                                        <input type="text" value={inspectionOther} onChange={(e) => setInspectionOther(e.target.value)}></input>
+                                        <span>{inspectionOther}</span>
+                                        {/* <input type="text" value={inspectionOther} onChange={(e) => setInspectionOther(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "192px" }}>
                                         <label>Total Fees:</label>
-                                        <input type="text" value={inspectionTotalFees} onChange={(e) => setInspectionTotalFees(e.target.value)}></input>
+                                        <span>{inspectionTotalFees}</span>
+                                        {/* <input type="text" value={inspectionTotalFees} onChange={(e) => setInspectionTotalFees(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "240px" }}>
                                         <label>Date Paid:</label>
-                                        <input type="date" value={inspectionDatePaid} onChange={(e) => setInspectionDatePaid(e.target.value)}></input>
+                                        <span>{inspectionDatePaid}</span>
+                                        {/* <input type="date" value={inspectionDatePaid} onChange={(e) => setInspectionDatePaid(e.target.value)}></input> */}
                                     </div>
                                 </div>
                             </div>
@@ -299,16 +363,18 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Furnished:</label>
-                                        <select name="selectList" id="selectList" value={structureFurnished} onChange={(e) => setStructureFurnished(e.target.value)}>
+                                        <span>{structureFurnished}</span>
+                                        {/* <select name="selectList" id="selectList" value={structureFurnished} onChange={(e) => setStructureFurnished(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="Fully Furnished">Fully Furnished</option>
                                             <option value="Semi Furnished">Semi Furnished</option>
                                             <option value="UnFurnished">UnFurnished</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>No. of Stories:</label>
-                                        <select name="selectList" id="selectList" value={structureStories} onChange={(e) => setStructureStories(e.target.value)}>
+                                        <span>{structureStories}</span>
+                                        {/* <select name="selectList" id="selectList" value={structureStories} onChange={(e) => setStructureStories(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -320,26 +386,28 @@ const CreateNewReports = () => {
                                             <option value="8">8</option>
                                             <option value="9">9</option>
                                             <option value="10">10</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Style:</label>
-                                        <select name="selectList" id="selectList" value={structureStyle} onChange={(e) => setStructureStyle(e.target.value)}>
+                                        <span>{structureStyle}</span>
+                                        {/* <select name="selectList" id="selectList" value={structureStyle} onChange={(e) => setStructureStyle(e.target.value)}>
                                             <option value="option 1">Select</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "144px" }}>
                                         <label>Structure Orientation:</label>
-                                        <select name="selectList" id="selectList" value={structureOrientation} onChange={(e) => setStructureOrientation(e.target.value)}>
+                                        <span>{structureOrientation}</span>
+                                        {/* <select name="selectList" id="selectList" value={structureOrientation} onChange={(e) => setStructureOrientation(e.target.value)}>
                                             <option value="option 1">Select</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="button">
+                        {/* <div class="button">
                             <button onClick={saveDetails}>Save</button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="body-part-right">
                         <div className="section-six">
@@ -350,15 +418,18 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Client Name:</label>
-                                        <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)}></input>
+                                        <span>{clientName}</span>
+                                        {/* <input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>Street Address:</label>
-                                        <input type="text" placeholder="" value={clientAddress} onChange={(e) => setClientAddress(e.target.value)}></input>
+                                        <span>{clientAddress}</span>
+                                        {/* <input type="text" placeholder="" value={clientAddress} onChange={(e) => setClientAddress(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Country:</label>
-                                        <select name="selectList" id="selectList" value={clientCountry.name} onChange={(e) => setClientCountry(e.target.value)}>
+                                        <span>{clientCountry}</span>
+                                        {/* <select name="selectList" id="selectList" value={clientCountry?.name} onChange={(e) => setClientCountry(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
@@ -367,40 +438,41 @@ const CreateNewReports = () => {
                                                     )
                                                 })
                                             }
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "144px" }}>
                                         <label>State/Province:</label>
-                                        <input type="text" placeholder="" value={clientState} onChange={(e) => setClientState(e.target.value)}></input>
-                                        {/* <select name="selectList" id="selectList">
-                                            <option value="option 1">Select</option>
-                                            <option value="option 2">state names</option>
-                                        </select> */}
+                                        <span>{clientState}</span>
+                                        {/* <input type="text" placeholder="" value={clientState} onChange={(e) => setClientState(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "192px" }}>
                                         <label>City:</label>
-                                        <input type="text" placeholder="" value={clientCity} onChange={(e) => setClientCity(e.target.value)}></input>
+                                        <span>{clientCity}</span>
+                                        {/* <input type="text" placeholder="" value={clientCity} onChange={(e) => setClientCity(e.target.value)}></input> */}
+                                    </div>
+                                    <div style={{ top: "240px" }}>
+                                        <label>Zip/Postal Code:</label>
+                                        {/* <input type="text" placeholder="" value={clientZipCode} onChange={(e) => setClientZipCode(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "288px" }}>
-                                        <label>Zip/Postal Code:</label>
-                                        <input type="text" placeholder="" value={clientZipCode} onChange={(e) => setClientZipCode(e.target.value)}></input>
+                                        <label>Phone:</label>
+                                        <span>{clientPhone}</span>
+                                        {/* <input type="text" placeholder="" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "336px" }}>
-                                        <label>Phone:</label>
-                                        <input type="text" placeholder="" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}></input>
+                                        <label>Email:</label>
+                                        <span>{clientEmail}</span>
+                                        {/* <input type="text" placeholder="" value={clientEmail} onChange={(e) => setClientEmail(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "384px" }}>
-                                        <label>Email:</label>
-                                        <input type="text" placeholder="" value={clientEmail} onChange={(e) => setClientEmail(e.target.value)}></input>
+                                        <label>Fax:</label>
+                                        <span>{clientFax}</span>
+                                        {/* <input type="text" placeholder="" value={clientFax} onChange={(e) => setClientFax(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "432px" }}>
-                                        <label>Fax:</label>
-                                        <input type="text" placeholder="" value={clientFax} onChange={(e) => setClientFax(e.target.value)}></input>
-                                    </div>
-                                    <div style={{ top: "480px" }}>
                                         <label>Note:</label>
-                                        {/* <input type="text" placeholder=""></input> */}
-                                        <textarea value={clientNote} onChange={(e) => setClientNote(e.target.value)}></textarea>
+                                        <span>{clientNote}</span>
+                                        {/* <textarea value={clientNote} onChange={(e) => setClientNote(e.target.value)}></textarea> */}
                                     </div>
                                 </div>
                             </div>
@@ -413,16 +485,19 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Inspection Date:</label>
-                                        <input type="date" placeholder="Select Date" value={inspectionDate} onChange={(e) => setInspectionDate(e.target.value)}></input>
+                                        <span>{inspectionDate}</span>
+                                        {/* <input type="date" placeholder="Select Date" value={inspectionDate} onChange={(e) => setInspectionDate(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>Inspection Start Time:</label>
-                                        <input type="time" placeholder="Select Time" value={inspectionStartTime} onChange={(e) => setInspectionStartTime(e.target.value)}></input>
+                                        <span>{inspectionStartTime}</span>
+                                        {/* <input type="time" placeholder="Select Time" value={inspectionStartTime} onChange={(e) => setInspectionStartTime(e.target.value)}></input> */}
 
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Inspection End Time:</label>
-                                        <input type="time" placeholder="Select Time" value={inspectionEndTime} onChange={(e) => setInspectionEndTime(e.target.value)}></input>
+                                        <span>{inspectionEndTime}</span>
+                                        {/* <input type="time" placeholder="Select Time" value={inspectionEndTime} onChange={(e) => setInspectionEndTime(e.target.value)}></input> */}
 
                                     </div>
                                 </div>
@@ -436,7 +511,8 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Climate:</label>
-                                        <select name="selectList" id="selectList" >
+                                        <span>{weatherClimate}</span>
+                                        {/* <select name="selectList" id="selectList" value={weatherClimate} onChange={(e) => setWeatherClimate(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="Tropical Rainy">Tropical Rainy</option>
                                             <option value="Dry">Dry</option>
@@ -444,21 +520,17 @@ const CreateNewReports = () => {
                                             <option value="Temperate Continental">Temperate Continental</option>
                                             <option value="Polar">Polar</option>
                                             <option value="Highlands">Highlands</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>Temperature (in <sup>o</sup>F):</label>
-                                        {/* <select name="selectList" id="selectList">
-                                            <option value="option 1">Select</option>
-                                        </select> */}
-                                        <input type="text" value={weatherTemperature} onChange={(e) => setWeatherTemperture(e.target.value)} />
+                                        <span>{weatherTemperature}</span>
+                                        {/* <input type="text" value={weatherTemperature} onChange={(e) => setWeatherTemperture(e.target.value)} /> */}
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Humidity (in g/m<sup>3</sup>):</label>
-                                        {/* <select name="selectList" id="selectList">
-                                            <option value="option 1">Select</option>
-                                        </select> */}
-                                        <input type="text" value={weatherHumidity} onChange={(e) => setWeatherHumidity(e.target.value)} />
+                                        <span>{weatherHumidity}</span>
+                                        {/* <input type="text" value={weatherHumidity} onChange={(e) => setWeatherHumidity(e.target.value)} /> */}
                                     </div>
                                 </div>
                             </div>
@@ -471,7 +543,8 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Type of Construction:</label>
-                                        <select name="selectList" id="selectList" value={constructionType} onChange={(e) => setConstructionType(e.target.value)}>
+                                        <span>{constructionType}</span>
+                                        {/* <select name="selectList" id="selectList" value={constructionType} onChange={(e) => setConstructionType(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="Wood Frame">Wood Frame</option>
                                             <option value="Light Gauge Steel Frame">Light Gauge Steel Frame</option>
@@ -479,23 +552,17 @@ const CreateNewReports = () => {
                                             <option value="Steel Frame">Steel Frame</option>
                                             <option value="Concrete Frame">Concrete Frame</option>
                                             <option value="Pre-engineered">Pre-engineered</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>Year Built:</label>
-                                        {/* <select name="selectList" id="selectList">
-                                            <option value="option 1">Select</option>
-                                            <option value="option 2">state names</option>
-                                        </select> */}
-                                        <input type='text' value={constructionYear} onChange={(e) => setConstructionYear(e.target.value)} />
+                                        <span>{constructionYear}</span>
+                                        {/* <input type='text' value={constructionYear} onChange={(e) => setConstructionYear(e.target.value)} /> */}
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Sq.Ft.:</label>
-                                        {/* <select name="selectList" id="selectList" value={constructionType} onChange={(e) => setConstructionType(e.target.value)}>
-                                            <option value="option 1">Select</option>
-                                            <option value="option 2">state names</option>
-                                        </select> */}
-                                        <input type='text' value={constructionArea} onChange={(e) => setConstructionArea(e.target.value)} />
+                                        <span>{constructionArea}</span>
+                                        {/* <input type='text' value={constructionArea} onChange={(e) => setConstructionArea(e.target.value)} /> */}
                                     </div>
                                 </div>
                             </div>
@@ -508,16 +575,19 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Start:</label>
-                                        <input type="text" value={travelStart} onChange={(e) => setTravelStart(e.target.value)}></input>
+                                        <span>{travelStart}</span>
+                                        {/* <input type="text" value={travelStart} onChange={(e) => setTravelStart(e.target.value)}></input> */}
                                     </div>
                                     <div style={{ top: "48px" }}>
                                         <label>End:</label>
-                                        <input type="text" value={travelEnd} onChange={(e) => setTravelEnd(e.target.value)}></input>
+                                        <span>{travelEnd}</span>
+                                        {/* <input type="text" value={travelEnd} onChange={(e) => setTravelEnd(e.target.value)}></input> */}
 
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Total Travel:</label>
-                                        <input type="text" value={travelTotal} onChange={(e) => setTravelTotal(e.target.value)}></input>
+                                        <span>{travelTotal}</span>
+                                        {/* <input type="text" value={travelTotal} onChange={(e) => setTravelTotal(e.target.value)}></input> */}
 
                                     </div>
                                 </div>

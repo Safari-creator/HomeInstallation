@@ -10,6 +10,7 @@ import { useHistory, useParams } from 'react-router-dom'
 const CreateNewReports = () => {
     const history = useHistory()
     const params = useParams()
+
     const [selectedFile1, setSelectedFile1] = useState(null);
     const [selectedFile2, setSelectedFile2] = useState(null);
     const [reportName, setReportName] = useState('')
@@ -19,7 +20,14 @@ const CreateNewReports = () => {
     const [propertyCountry, setPropertyCountry] = useState([])
     const [propertyState, setPropertyState] = useState('')
     const [propertyCity, setPropertyCity] = useState('')
-    const [wintnessArray, setWitnessArray] = useState([])
+
+    const [witnessBuyer, setWitnessBuyer] = useState(false)
+    const [witnessBuyerAgent, setWitnessBuyerAgent] = useState(false)
+    const [witnessSeller, setWitnessSeller] = useState(false)
+    const [witnessSellerAgent, setWitnessSellerAgent] = useState(false)
+    const [witnessNone, setWitnessNone] = useState(false)
+    const [witnessOwner, setWitnessOwner] = useState(false)
+    const [witnessOther, setWitnessOther] = useState(false)
 
     const [inspectionInvoice, setInspectionInvoice] = useState('')
     const [inspectionFees, setInspectionFees] = useState('')
@@ -84,6 +92,62 @@ const CreateNewReports = () => {
     useEffect(async () => {
         const response = await axios.get('http://34.198.19.55:8000/reports/' + params.id)
         console.log(response.data.data)
+
+        setReportName(response.data.data.report_name)
+
+        setPropertyAddress1(response.data.data.property_street_address)
+        setPropertyState(response.data.data.property_state)
+        setPropertyCountry(response.data.data.property_country)
+        setPropertyCity(response.data.data.property_city)
+
+        setWitnessBuyer(response.data.data.buyer)
+        setWitnessBuyerAgent(response.data.data.buyer_agent)
+        setWitnessSeller(response.data.data.seller)
+        setWitnessSellerAgent(response.data.data.seller_agent)
+        setWitnessOwner(response.data.data.owner)
+        setWitnessOther(response.data.data.other_present)
+        // setWitnessNone(response.data.data.)
+
+        setInspectionInvoice(response.data.data.invoice_number)
+        setInspectionFees(response.data.data.fees_charged)
+        setInspectionTaxes(response.data.data.taxes)
+        setInspectionOther(response.data.data.other_charges)
+        setInspectionTotalFees(response.data.data.total_fee)
+        setInspectionDatePaid(response.data.data.date_paid)
+
+        setStructureFurnished(response.data.data.furnished)
+        setStructureStyle(response.data.data.style)
+        setStructureStories(response.data.data.number_of_stories)
+        setStructureOrientation(response.data.data.structure_orientations)
+
+        setClientName(response.data.data.client_name)
+        setClientAddress(response.data.data.client_street_address)
+        setClientCountry(response.data.data.client_country)
+        setClientState(response.data.data.client_state)
+        setClientCity(response.data.data.client_city)
+        setClientPhone(response.data.data.client_phone)
+        setClientZipCode('')
+        setClientEmail(response.data.data.client_email)
+        setClientFax(response.data.data.client_fax)
+        setClientNote(response.data.data.client_note)
+
+        setInspectionStartTime(response.data.data.inspection_start_time)
+        setInspectionEndTime(response.data.data.inspection_end_time)
+        setInspectionDate(response.data.data.inspection_date)
+
+        setWeatherClimate(response.data.data.climate)
+        setWeatherTemperture(response.data.data.temperature)
+        setWeatherHumidity(response.data.data.humidity)
+
+        setConstructionType(response.data.data.type_of_construction)
+        setConstructionYear(response.data.data.year_built)
+        setConstructionArea(response.data.data.sq_ft)
+
+        setTravelStart(response.data.data.travel_distance_start)
+        setTravelEnd(response.data.data.travel_distance_end)
+        setTravelTotal(response.data.data.total_travel)
+
+
     }, [])
 
     async function saveDetails() {
@@ -96,12 +160,19 @@ const CreateNewReports = () => {
             property_state: propertyState,
             property_city: propertyCity,
 
-            inspectionInvoice: inspectionInvoice,
-            inspectionFees: inspectionFees,
-            inspectionTaxes: inspectionTaxes,
-            inspectionOther: inspectionOther,
-            inspectionTotalFees: inspectionTotalFees,
-            inspectionDatePaid: inspectionDatePaid,
+            buyer: witnessBuyer,
+            seller: witnessSeller,
+            buyer_agent: witnessBuyerAgent,
+            seller_agent: witnessSellerAgent,
+            owner: witnessOwner,
+            other_present: witnessOther,
+
+            invoice_number: inspectionInvoice,
+            fees_charged: inspectionFees,
+            taxes: inspectionTaxes,
+            other_charges: inspectionOther,
+            total_fee: inspectionTotalFees,
+            date_paid: inspectionDatePaid,
 
             furnished: structureFurnished,
             number_of_stories: structureStories,
@@ -136,9 +207,9 @@ const CreateNewReports = () => {
             total_travel: travelTotal
         }
 
-        const response = await axios.post('http://34.198.19.55:8000/reports', body)
+        const response = await axios.put('http://34.198.19.55:8000/reports/' + params.id, body)
         console.log(response)
-        if (response.data.message == "Created successfully!") {
+        if (response.statusText == "OK") {
             window.location.reload()
         }
 
@@ -200,12 +271,12 @@ const CreateNewReports = () => {
                                     </div>
                                     <div style={{ top: "120px" }}>
                                         <label>Country:</label>
-                                        <select value={propertyCountry?.name} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
+                                        <select value={propertyCountry} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
                                                     return (
-                                                        <option value={item} name={item.country_name}>{item.country_name}</option>
+                                                        <option value={item.country_name} name={item.country_name}>{item.country_name}</option>
                                                     )
                                                 })
                                             }
@@ -236,22 +307,22 @@ const CreateNewReports = () => {
                             <div className="section-body">
                                 <div className="form-part">
                                     <div class="form-left">
-                                        <div><input type="checkbox" value="Buyer" name='witness' />
+                                        <div><input type="checkbox" value="Buyer" checked={witnessBuyer ? true : false} name='witness' onClick={(e) => setWitnessBuyer(!witnessBuyer)} />
                                             <label>Buyer</label></div>
-                                        <div><input type="checkbox" value="Seller" name='witness' />
+                                        <div><input type="checkbox" value="Seller" name='witness' checked={witnessSeller ? true : false} onClick={(e) => setWitnessSeller(!witnessSeller)} />
                                             <label>Seller</label></div>
-                                        <div><input type="checkbox" value="Owners" name='witness' />
+                                        <div><input type="checkbox" value="Owners" name='witness' checked={witnessOwner ? true : false} onClick={(e) => setWitnessOwner(!witnessOwner)} />
                                             <label>Owners</label></div>
-                                        <div class="owners"><input type="checkbox" value="other" name='witness' />
+                                        <div class="owners"><input type="checkbox" value="other" name='witness' checked={witnessOther ? true : false} onClick={(e) => setWitnessOther(!witnessOther)} />
                                             <label>Other Present</label></div>
 
                                     </div>
                                     <div class="form-right">
-                                        <div><input type="checkbox" value="Buyer Agent" name='witness' />
+                                        <div><input type="checkbox" value="Buyer Agent" name='witness' checked={witnessBuyerAgent ? true : false} onClick={(e) => setWitnessBuyerAgent(!witnessBuyerAgent)} />
                                             <label>Buyer's Agent</label></div>
-                                        <div><input type="checkbox" value="none" name='witness' />
+                                        <div><input type="checkbox" value="none" name='witness' checked={witnessNone ? true : false} onClick={(e) => setWitnessNone(!witnessNone)} />
                                             <label>None</label></div>
-                                        <div><input type="checkbox" value="Seller Agent" name='witness' />
+                                        <div><input type="checkbox" value="Seller Agent" name='witness' checked={witnessSellerAgent ? true : false} onClick={(e) => setWitnessSellerAgent(!witnessSellerAgent)} />
                                             <label>Seller's Agent</label></div>
                                     </div>
 
@@ -358,12 +429,12 @@ const CreateNewReports = () => {
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Country:</label>
-                                        <select name="selectList" id="selectList" value={clientCountry.name} onChange={(e) => setClientCountry(e.target.value)}>
+                                        <select name="selectList" id="selectList" value={clientCountry} onChange={(e) => setClientCountry(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
                                                     return (
-                                                        <option value={item} name={item.country_name}>{item.country_name}</option>
+                                                        <option value={item.country_name} name={item.country_name}>{item.country_name}</option>
                                                     )
                                                 })
                                             }
@@ -381,23 +452,23 @@ const CreateNewReports = () => {
                                         <label>City:</label>
                                         <input type="text" placeholder="" value={clientCity} onChange={(e) => setClientCity(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "288px" }}>
+                                    <div style={{ top: "240px" }}>
                                         <label>Zip/Postal Code:</label>
                                         <input type="text" placeholder="" value={clientZipCode} onChange={(e) => setClientZipCode(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "336px" }}>
+                                    <div style={{ top: "288px" }}>
                                         <label>Phone:</label>
                                         <input type="text" placeholder="" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "384px" }}>
+                                    <div style={{ top: "336px" }}>
                                         <label>Email:</label>
                                         <input type="text" placeholder="" value={clientEmail} onChange={(e) => setClientEmail(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "432px" }}>
+                                    <div style={{ top: "384px" }}>
                                         <label>Fax:</label>
                                         <input type="text" placeholder="" value={clientFax} onChange={(e) => setClientFax(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "480px" }}>
+                                    <div style={{ top: "432px" }}>
                                         <label>Note:</label>
                                         {/* <input type="text" placeholder=""></input> */}
                                         <textarea value={clientNote} onChange={(e) => setClientNote(e.target.value)}></textarea>
@@ -436,7 +507,7 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Climate:</label>
-                                        <select name="selectList" id="selectList" >
+                                        <select name="selectList" id="selectList" value={weatherClimate} onChange={(e) => setWeatherClimate(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="Tropical Rainy">Tropical Rainy</option>
                                             <option value="Dry">Dry</option>

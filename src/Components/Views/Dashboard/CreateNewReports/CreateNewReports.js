@@ -19,7 +19,14 @@ const CreateNewReports = () => {
     const [propertyCountry, setPropertyCountry] = useState([])
     const [propertyState, setPropertyState] = useState('')
     const [propertyCity, setPropertyCity] = useState('')
-    const [wintnessArray, setWitnessArray] = useState([])
+
+    const [witnessBuyer, setWitnessBuyer] = useState(false)
+    const [witnessBuyerAgent, setWitnessBuyerAgent] = useState(false)
+    const [witnessSeller, setWitnessSeller] = useState(false)
+    const [witnessSellerAgent, setWitnessSellerAgent] = useState(false)
+    const [witnessNone, setWitnessNone] = useState(false)
+    const [witnessOwner, setWitnessOwner] = useState(false)
+    const [witnessOther, setWitnessOther] = useState(false)
 
     const [inspectionInvoice, setInspectionInvoice] = useState('')
     const [inspectionFees, setInspectionFees] = useState('')
@@ -101,12 +108,19 @@ const CreateNewReports = () => {
             property_state: propertyState,
             property_city: propertyCity,
 
-            inspectionInvoice: inspectionInvoice,
-            inspectionFees: inspectionFees,
-            inspectionTaxes: inspectionTaxes,
-            inspectionOther: inspectionOther,
-            inspectionTotalFees: inspectionTotalFees,
-            inspectionDatePaid: inspectionDatePaid,
+            buyer: witnessBuyer,
+            seller: witnessSeller,
+            buyer_agent: witnessBuyerAgent,
+            seller_agent: witnessSellerAgent,
+            owner: witnessOwner,
+            other_present: witnessOther,
+
+            invoice_number: inspectionInvoice,
+            fees_charged: inspectionFees,
+            taxes: inspectionTaxes,
+            other_charges: inspectionOther,
+            total_fee: inspectionTotalFees,
+            date_paid: inspectionDatePaid,
 
             furnished: structureFurnished,
             number_of_stories: structureStories,
@@ -143,7 +157,7 @@ const CreateNewReports = () => {
 
         const response = await axios.post('http://34.198.19.55:8000/reports', body)
         console.log(response)
-        if (response.data.message == "Created successfully!") {
+        if (response.data.data.message == "Created successfully!") {
             window.location.reload()
         }
 
@@ -205,12 +219,12 @@ const CreateNewReports = () => {
                                     </div>
                                     <div style={{ top: "120px" }}>
                                         <label>Country:</label>
-                                        <select value={propertyCountry?.name} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
+                                        <select value={propertyCountry} onChange={(e) => setPropertyCountry(e.target.value)} name="selectList" id="selectList">
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
                                                     return (
-                                                        <option value={item} name={item.country_name}>{item.country_name}</option>
+                                                        <option value={item.country_name} name={item.country_name}>{item.country_name}</option>
                                                     )
                                                 })
                                             }
@@ -241,22 +255,22 @@ const CreateNewReports = () => {
                             <div className="section-body">
                                 <div className="form-part">
                                     <div class="form-left">
-                                        <div><input type="checkbox" value="Buyer" name='witness' />
+                                        <div><input type="checkbox" value="Buyer" checked={witnessBuyer ? true : false} name='witness' onClick={(e) => setWitnessBuyer(!witnessBuyer)} />
                                             <label>Buyer</label></div>
-                                        <div><input type="checkbox" value="Seller" name='witness' />
+                                        <div><input type="checkbox" value="Seller" name='witness' checked={witnessSeller ? true : false} onClick={(e) => setWitnessSeller(!witnessSeller)} />
                                             <label>Seller</label></div>
-                                        <div><input type="checkbox" value="Owners" name='witness' />
+                                        <div><input type="checkbox" value="Owners" name='witness' checked={witnessOwner ? true : false} onClick={(e) => setWitnessOwner(!witnessOwner)} />
                                             <label>Owners</label></div>
-                                        <div class="owners"><input type="checkbox" value="other" name='witness' />
+                                        <div class="owners"><input type="checkbox" value="other" name='witness' checked={witnessOther ? true : false} onClick={(e) => setWitnessOther(!witnessOther)} />
                                             <label>Other Present</label></div>
 
                                     </div>
                                     <div class="form-right">
-                                        <div><input type="checkbox" value="Buyer Agent" name='witness' />
+                                        <div><input type="checkbox" value="Buyer Agent" name='witness' checked={witnessBuyerAgent ? true : false} onClick={(e) => setWitnessBuyerAgent(!witnessBuyerAgent)} />
                                             <label>Buyer's Agent</label></div>
-                                        <div><input type="checkbox" value="none" name='witness' />
+                                        <div><input type="checkbox" value="none" name='witness' checked={witnessNone ? true : false} onClick={(e) => setWitnessNone(!witnessNone)} />
                                             <label>None</label></div>
-                                        <div><input type="checkbox" value="Seller Agent" name='witness' />
+                                        <div><input type="checkbox" value="Seller Agent" name='witness' checked={witnessSellerAgent ? true : false} onClick={(e) => setWitnessSellerAgent(!witnessSellerAgent)} />
                                             <label>Seller's Agent</label></div>
                                     </div>
 
@@ -363,12 +377,12 @@ const CreateNewReports = () => {
                                     </div>
                                     <div style={{ top: "96px" }}>
                                         <label>Country:</label>
-                                        <select name="selectList" id="selectList" value={clientCountry.name} onChange={(e) => setClientCountry(e.target.value)}>
+                                        <select name="selectList" id="selectList" value={clientCountry} onChange={(e) => setClientCountry(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             {
                                                 countries.map(item => {
                                                     return (
-                                                        <option value={item} name={item.country_name}>{item.country_name}</option>
+                                                        <option value={item.country_name} name={item.country_name}>{item.country_name}</option>
                                                     )
                                                 })
                                             }
@@ -386,23 +400,23 @@ const CreateNewReports = () => {
                                         <label>City:</label>
                                         <input type="text" placeholder="" value={clientCity} onChange={(e) => setClientCity(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "288px" }}>
+                                    <div style={{ top: "240px" }}>
                                         <label>Zip/Postal Code:</label>
                                         <input type="text" placeholder="" value={clientZipCode} onChange={(e) => setClientZipCode(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "336px" }}>
+                                    <div style={{ top: "288px" }}>
                                         <label>Phone:</label>
                                         <input type="text" placeholder="" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "384px" }}>
+                                    <div style={{ top: "336px" }}>
                                         <label>Email:</label>
                                         <input type="text" placeholder="" value={clientEmail} onChange={(e) => setClientEmail(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "432px" }}>
+                                    <div style={{ top: "384px" }}>
                                         <label>Fax:</label>
                                         <input type="text" placeholder="" value={clientFax} onChange={(e) => setClientFax(e.target.value)}></input>
                                     </div>
-                                    <div style={{ top: "480px" }}>
+                                    <div style={{ top: "432px" }}>
                                         <label>Note:</label>
                                         {/* <input type="text" placeholder=""></input> */}
                                         <textarea value={clientNote} onChange={(e) => setClientNote(e.target.value)}></textarea>
@@ -441,7 +455,7 @@ const CreateNewReports = () => {
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
                                         <label>Climate:</label>
-                                        <select name="selectList" id="selectList" >
+                                        <select name="selectList" id="selectList" value={weatherClimate} onChange={(e) => setWeatherClimate(e.target.value)}>
                                             <option value="option 1">Select</option>
                                             <option value="Tropical Rainy">Tropical Rainy</option>
                                             <option value="Dry">Dry</option>

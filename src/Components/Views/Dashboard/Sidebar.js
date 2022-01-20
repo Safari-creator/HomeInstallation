@@ -91,13 +91,13 @@ const Sidebar = ({ setTab }) => {
                     }
                     <p className={`content-name ${path == "Realtors" || path == "AddRealtor" ? 'active' : ''}`} onClick={() => history.push('/Realtors')}>Realtors</p>
                 </div>
-                <div className="contents" style={{ top: '283px' }}>
+                {/* <div className="contents" style={{ top: '283px' }}>
                     {
                         path == "ExtraPages" ? <img src={extraPagesSelected} alt="reportsIcon" className={`content-icon`} /> :
                             <img src={extraPages} alt="reportsIcon" className={`content-icon`} />
                     }
                     <p className={`content-name ${path == "ExtraPages" ? 'active' : ''}`} onClick={() => history.push('/ExtraPages')}>Extra Pages</p>
-                </div>
+                </div> */}
                 <div className="contents" style={{ top: '326.38px' }}>
                     {
                         path == "Reports" ? <img src={reportsSelected} alt="reportsIcon" className={`content-icon`} /> :

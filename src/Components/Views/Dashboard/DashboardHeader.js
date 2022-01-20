@@ -6,7 +6,7 @@ import headerClock from "../../Software/assets/headerClock.png"
 import headerProfile from "../../Software/assets/headerProfile.png"
 import headerIconOne from "../../Software/assets/headerIconOne.png"
 import headerIconTwo from "../../Software/assets/headerIconTwo.png"
-
+import { useHistory } from 'react-router-dom'
 
 function DashboardHeader({ title }) {
     const [showSidebar, setShowSideBar] = React.useState(false)
@@ -14,6 +14,7 @@ function DashboardHeader({ title }) {
     const [dayCount, setDayCount] = useState('')
     const [yearCount, setYearCount] = useState(new Date().getFullYear())
     const [MonthCount, setMonthCount] = useState(new Date().getUTCMonth())
+    const history = useHistory()
 
     React.useEffect(() => {
         const sidebar = document.querySelector('.sidebar-section')
@@ -74,7 +75,7 @@ function DashboardHeader({ title }) {
                     </div>
                     <img className="header-icon-one" src={headerIconOne} alt="headerIconOne"></img>
                     <img className="header-icon-two" src={headerIconTwo} alt="headerIconTwo"></img>
-                    <img className="header-icon-profile" src={headerProfile} alt="headerProfile"></img>
+                    <img className="header-icon-profile" style={{ cursor: 'pointer' }} src={headerProfile} alt="headerProfile"></img>
                 </div>
             </section>
             {/* <section className="header-part">

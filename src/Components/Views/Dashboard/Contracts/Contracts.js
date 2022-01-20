@@ -8,7 +8,7 @@ const Contracts = () => {
 
     const ref = React.createRef();
     const options = {
-        orientation: 'potrait',
+        orientation: 'landscape',
         unit: 'in',
         format: [12, 10]
     };
@@ -78,7 +78,7 @@ const Contracts = () => {
                         </select>
                         {/* {/ for printing /}
                         {/ <button class="blue-button" onClick={handlePrint}>Print</button> /} */}
-                        <ReactToPdf targetRef={ref} filename="contract.pdf" options={options} x={0} y={0} scale={1}>
+                        <ReactToPdf targetRef={ref} filename="contract.pdf" options={options} x={0.4} y={0.3} scale={0.9}>
                             {({ toPdf }) => (
                                 <button class="blue-button" onClick={toPdf}>Print</button>
                             )}
@@ -93,13 +93,19 @@ const Contracts = () => {
                         <div ref={ref}>
                             <ContractDetails />
                             <div class="part-one-left flex top40">
-                                <div class="flex width200 flex-column">
+                                <div class="flex width200 flex-column align-items-start">
                                     <div className='d-flex mb-3'>
                                         <p>Signature:</p>
                                         <input type="file" onChange={handleFileSelect} id="group_image" />
                                     </div>
                                     <div><p><img src="" id="output" class="signature-image" /></p></div>
                                 </div>
+                            </div>
+                        </div>
+                        <div style={{ display: 'none' }}>
+                            <div style={{ width: '740px' }}>
+                                <ContractDetails />
+                                <div><p><img src="" id="output" class="signature-image" /></p></div>
                             </div>
                         </div>
                     </div>

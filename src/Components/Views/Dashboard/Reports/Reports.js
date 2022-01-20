@@ -15,15 +15,17 @@ const Reports = () => {
         const response = await axios.get('http://34.198.19.55:8000/reports')
         setReportsArray(response.data.data)
         setFilteredArray(response.data.data)
-        console.log(response.data.data)
     }, [])
 
     useEffect(() => {
         setFilteredArray(reportsArray.filter(item => item.report_name.includes(searchKey)))
     }, [searchKey])
 
-    function deleteReport(id) {
-
+    async function deleteReport(id) {
+        const response = await axios.delete('http://34.198.19.55:8000/reports/' + id)
+        console.log(response)
+        if (response.data.message == 'Deleted successfully')
+            window.location.reload()
     }
 
     return (
@@ -70,11 +72,12 @@ const Reports = () => {
                             return (
                                 <>
                                     <div class="row">
-                                        <h2 class="row-heading" style={{ cursor: 'pointer' }} onClick={() => history.push('/ReportDetails/' + item.id)}>{item.report_name}</h2>
+                                        <h2 class="row-heading" style={{ cursor: 'pointer' }}>{item.report_name}</h2>
                                         <div class="button">
-                                            <button class="yellow-button">Print</button>
+                                            {/* <button class="yellow-button">Print</button>
                                             <button class="blue-button" >Create PDF</button>
-                                            <button class="yellow-button" >Email</button>
+                                            <button class="yellow-button" >Email</button> */}
+                                            <button class="yellow-button" onClick={() => history.push('/ReportDetails/' + item.id)}>View</button>
                                             <button class="blue-button" onClick={() => history.push('/EditReport/' + item.id)}>Edit</button>
                                             <button class="yellow-button" onClick={() => deleteReport(item.id)}>Delete</button>
                                         </div>

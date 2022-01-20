@@ -86,92 +86,90 @@
 } */
 
 .report-body {
-    padding-top: 5px !important;
-    padding-left: 55px !important;
-    padding-bottom: 12px !important;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
+  padding-top: 5px !important;
+  padding-left: 55px !important;
+  padding-bottom: 12px !important;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.body-part .body-part-one .part-one-left input{
+.body-part .body-part-one .part-one-left input {
   width: 177px;
-    height: 28px;
-    margin-left: 5px;
-    border-radius: 100px;
-    border: 1px solid #00a1fb;
-    color: rgba(0, 0, 0, 50%);
-    text-align: center;
-    box-shadow: 0px 1px 2px rgb(31 41 55 / 8%);
+  height: 28px;
+  margin-left: 5px;
+  border-radius: 100px;
+  border: 1px solid #00a1fb;
+  color: rgba(0, 0, 0, 50%);
+  text-align: center;
+  box-shadow: 0px 1px 2px rgb(31 41 55 / 8%);
 }
 
-.body-part .body-part-two .part-two-content .row-heading{
+.body-part .body-part-two .part-two-content .row-heading {
   margin-top: 20px;
 }
 
 .body-part .body-part-two .part-two-content .row .details-left {
   font-size: 12px;
-    font-weight: 300;
-    line-height: 120%;
-    color: rgba(0, 0, 0, 0.7);
-    margin-top: 16px;
-    font-style: italic;
+  font-weight: 300;
+  line-height: 120%;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 16px;
+  font-style: italic;
 }
 
-
-.body-part .body-part-two .part-two-content .row .button .yellow-button{
+.body-part .body-part-two .part-two-content .row .button .yellow-button {
   color: white;
   width: 109px;
   height: 36px;
-  background: #FB8200;
+  background: #fb8200;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
   border-radius: 9px;
   font-size: 14px;
   font-weight: 600;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
 }
 
-.body-part .body-part-two .part-two-content .row .button .blue-button{
+.body-part .body-part-two .part-two-content .row .button .blue-button {
   color: white;
   width: 109px;
   height: 36px;
-  background: #00A1FB;
+  background: #00a1fb;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
   border-radius: 9px;
-  border: 1px solid #00A1FB;
+  border: 1px solid #00a1fb;
   font-size: 14px;
   font-weight: 600;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
 }
 
-.body-part .body-part-two .part-two-content .row .button{
-  margin-Top: 14px;
+.body-part .body-part-two .part-two-content .row .button {
+  margin-top: 14px;
   width: 58%;
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  /* justify-content: space-around; */
 }
 
-
-.body-part .body-part-two .part-two-content .row-divider{
+.body-part .body-part-two .part-two-content .row-divider {
   border: 2px solid rgba(0, 0, 0, 0.1);
   width: 941px;
   margin-top: 30px;
 }
 
-
-.extrapages-section .body-part .body-part-one .button{
+.extrapages-section .body-part .body-part-one .button {
   margin: 0px;
   width: 24%;
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-.extrapages-section .body-part .body-part-one .button .yellow-button{
+.extrapages-section .body-part .body-part-one .button .yellow-button {
   /* font-size: 18px;
   background-color: white;
   line-height: 21.6px;
@@ -184,17 +182,17 @@
   color: white;
   width: 109px;
   height: 36px;
-  background: #FB8200;
+  background: #fb8200;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
   border-radius: 9px;
   font-size: 14px;
   font-weight: 600;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.extrapages-section .body-part .body-part-one .button .blue-button{
+.extrapages-section .body-part .body-part-one .button .blue-button {
   /* font-size: 18px;
   background-color: white;
   line-height: 21.6px;
@@ -207,17 +205,17 @@
   color: white;
   width: 109px;
   height: 36px;
-  background: #00A1FB;
+  background: #00a1fb;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
   border-radius: 9px;
-  border: 1px solid #00A1FB;
+  border: 1px solid #00a1fb;
   font-size: 14px;
   font-weight: 600;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.top222{
+.top222 {
   margin-top: 222px !important;
 }
