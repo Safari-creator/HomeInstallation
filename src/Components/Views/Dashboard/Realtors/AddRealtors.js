@@ -131,7 +131,7 @@ function AddRealtors() {
                     </div>
                     <div class="top50">
                         <button class="yellow-button" onClick={createPost}>Add</button>
-                        <button class="blue-button">Cancel</button>
+                        <button class="blue-button" onClick={() => window.history.back()}>Cancel</button>
                     </div>
                 </div>
             </section>

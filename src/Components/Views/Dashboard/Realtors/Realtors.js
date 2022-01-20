@@ -15,6 +15,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { useHistory } from 'react-router-dom'
+import { Modal, ModalBody } from 'react-bootstrap';
 
 /**
  * table and rows 
@@ -234,6 +235,8 @@ const Realtors = ({ setTab }) => {
   const history = useHistory()
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [searchKey, setSearchKey] = useState('')
+  const [filteredArray, setFilteredArray] = useState([])
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -272,13 +275,17 @@ const Realtors = ({ setTab }) => {
       .then(res => {
         console.log(res);
         setUser(res.data.data);
+        setFilteredArray(res.data.data)
       })
       // or getting the error
       .catch(err => {
         console.log(err)
       })
-    // console.log([{user:user.first_name}]);
   }, [])
+
+  useEffect(() => {
+    setFilteredArray(user.filter(item => item.name.includes(searchKey)))
+  }, [searchKey])
 
   return (
     // <div className="dashboard-section">
@@ -394,15 +401,10 @@ const Realtors = ({ setTab }) => {
       <section className="body-part">
         <div class="body-part-one">
           <div class="part-one-left">
-            {/* <p>Show</p>
-            <select name="selectList" id="selectList">
-              <option value="option 1">10</option>
-              <option value="option 2">25</option>
-            </select> */}
           </div>
           <div class="part-one-right">
             <p>Search</p>
-            <input type="text" placeholder="keywords.."></input>
+            <input type="text" style={{ width: 250 }} placeholder="Enter Name.." onChange={(e) => setSearchKey(e.target.value)}></input>
           </div>
         </div>
         <div class="body-part-two">
@@ -411,7 +413,7 @@ const Realtors = ({ setTab }) => {
               <div className='col-3'>
                 <p>Name</p>
               </div>
-              <div className='col-3'>
+              <div className='col-1'>
                 <p>Type</p>
               </div>
               <div className='col-3'>
@@ -420,16 +422,19 @@ const Realtors = ({ setTab }) => {
               <div className='col-3'>
                 <p>Company</p>
               </div>
+              {/* <div className='col-2'>
+                <p>Action</p>
+              </div> */}
             </div>
             <div className='d-flex flex-column table-body-part'>
               {
-                user.map(item => {
+                filteredArray.map(item => {
                   return (
                     <div className='d-flex' key={item.id}>
                       <div className='col-3'>
                         <p>{item.name}</p>
                       </div>
-                      <div className='col-3'>
+                      <div className='col-1'>
                         <p>{item.agent_type ? item.agent_type : 'Not Set'}</p>
                       </div>
                       <div className='col-3'>
@@ -438,39 +443,28 @@ const Realtors = ({ setTab }) => {
                       <div className='col-3'>
                         <p>{item.company_name}</p>
                       </div>
+                      {/* <div className='col-2'>
+                        <div className='w-100 text-center'>
+                          <span className='dlt-btn'>View</span>&nbsp;/&nbsp;
+                          <span className='dlt-btn'>Delete</span>
+                        </div>
+                      </div> */}
                     </div>
                   )
                 })
               }
             </div>
-
-
-            {/* <div class="name">
-                <p>Name</p>
-                {
-                  user.map(usr => {
-                    return (<p key={usr.id}>{usr.name}</p>)
-                  })
-                }
-              </div>
-    
-            </div>
-            {/* <div class="body">
-              <p>No matching records found</p>
-            </div> */}
           </div>
-          {/* <div class="part-two-footer">
-            <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
-            <div class="footer-right">
-              <button>Previous</button>
-              <p>1/10</p>
-              <button>Next</button></div>
-          </div> */}
         </div>
         <div class="button">
           <button onClick={() => history.push('/AddRealtor')}>Add New Realtors</button>
         </div>
       </section>
+      {/* <Modal>
+        <ModalBody>
+
+        </ModalBody>
+      </Modal> */}
     </div>
   );
 }
