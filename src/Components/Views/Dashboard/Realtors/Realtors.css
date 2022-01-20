@@ -146,3 +146,14 @@
 .Realtors-list-page .body-part .body-part-two .heading {
   padding-left: 20px !important;
 }
+
+.Realtors-list-page .body-part .body-part-two .table-body-part {
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.Realtors-list-page .body-part .body-part-two .table-body-part p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #a1a1aa;
+}

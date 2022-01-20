@@ -394,21 +394,58 @@ const Realtors = ({ setTab }) => {
       <section className="body-part">
         <div class="body-part-one">
           <div class="part-one-left">
-            <p>Show</p>
+            {/* <p>Show</p>
             <select name="selectList" id="selectList">
               <option value="option 1">10</option>
               <option value="option 2">25</option>
-            </select>
+            </select> */}
           </div>
           <div class="part-one-right">
             <p>Search</p>
-            <input type="text" placeholder="Entries"></input>
+            <input type="text" placeholder="keywords.."></input>
           </div>
         </div>
         <div class="body-part-two">
           <div class="part-two-content">
             <div class="heading">
-              <div class="name">
+              <div className='col-3'>
+                <p>Name</p>
+              </div>
+              <div className='col-3'>
+                <p>Type</p>
+              </div>
+              <div className='col-3'>
+                <p>Email</p>
+              </div>
+              <div className='col-3'>
+                <p>Company</p>
+              </div>
+            </div>
+            <div className='d-flex flex-column table-body-part'>
+              {
+                user.map(item => {
+                  return (
+                    <div className='d-flex' key={item.id}>
+                      <div className='col-3'>
+                        <p>{item.name}</p>
+                      </div>
+                      <div className='col-3'>
+                        <p>{item.agent_type ? item.agent_type : 'Not Set'}</p>
+                      </div>
+                      <div className='col-3'>
+                        <p>{item.email}</p>
+                      </div>
+                      <div className='col-3'>
+                        <p>{item.company_name}</p>
+                      </div>
+                    </div>
+                  )
+                })
+              }
+            </div>
+
+
+            {/* <div class="name">
                 <p>Name</p>
                 {
                   user.map(usr => {
@@ -416,33 +453,7 @@ const Realtors = ({ setTab }) => {
                   })
                 }
               </div>
-              <div class="type">
-                <p>Type</p>
-                {
-                  user.map(usr => {
-                    return (<p key={usr.id}>{usr.agent_type}</p>)
-                  })
-                }
-              </div>
-              <div class="email-address">
-                <p>Email Address</p>
-                {
-                  user.map(usr => {
-                    return (<p key={usr.id}>{usr.email}</p>)
-                  })
-                }
-              </div>
-              <div class="company">
-                <p>Company</p>
-                {
-                  user.map(usr => {
-                    return (<p key={usr.id}>{usr.company_name}</p>)
-                  })
-                }
-              </div>
-              <div class="manage">
-                <p>Manage</p>
-              </div>
+    
             </div>
             {/* <div class="body">
               <p>No matching records found</p>
