@@ -104,7 +104,7 @@ const SignIn = () => {
     async function handleSubmit(event) {
         event.preventDefault();
         if (event) {
-            await axios.post(`${BASE_API_URL}/login`,
+            await axios.post(`${BASE_API_URL}login`,
                 {
                     email: email,
                     password: password
