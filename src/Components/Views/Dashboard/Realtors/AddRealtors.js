@@ -9,7 +9,8 @@ function AddRealtors() {
     const [countries, setCountries] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
 
-    const [post, setPost] = useState({ agent_type: 'Seller' });
+    const [post, setPost] = useState({ agent_type: 'Seller', user_id: sessionStorage.getItem('userId') });
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
 
     const handleFileSelect = (event) => {
         setSelectedFile(event.target.files[0].name);

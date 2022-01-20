@@ -10,11 +10,15 @@ const Reports = () => {
     const [searchKey, setSearchKey] = useState('')
     const [startDate, setStartDate] = useState('')
     const [EndDate, setEndDate] = useState('')
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
 
     useEffect(async () => {
         const response = await axios.get('http://34.198.19.55:8000/reports')
-        setReportsArray(response.data.data)
-        setFilteredArray(response.data.data)
+
+        const dataArray = response.data.data
+
+        setReportsArray(dataArray.filter(item => item.user_id == userId))
+        setFilteredArray(dataArray.filter(item => item.user_id == userId))
     }, [])
 
     useEffect(() => {

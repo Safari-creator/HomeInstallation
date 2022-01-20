@@ -68,6 +68,7 @@ const CreateNewReports = () => {
     const [travelTotal, setTravelTotal] = useState('')
 
     const [countries, setCountries] = useState([])
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
 
 
     const handleFileSelect1 = (event) => {
@@ -95,11 +96,12 @@ const CreateNewReports = () => {
             .catch(err => {
                 console.log(err)
             });
-
+        console.log(sessionStorage.getItem('userId'))
     }, [])
 
     async function saveDetails() {
         const body = {
+            user_id: userId,
             report_name: reportName,
 
             property_street_address: propertyAddress1,

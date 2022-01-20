@@ -267,17 +267,15 @@ const Realtors = ({ setTab }) => {
   });
 
   const [user, setUser] = useState([]);
+  const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
 
   useEffect(() => {
-    // requesting to get data
     axios.get('http://34.198.19.55:8000/realtors')
-      // then getting the response from that request
       .then(res => {
-        console.log(res);
-        setUser(res.data.data);
-        setFilteredArray(res.data.data)
+        const dataArray = res.data.data
+        setUser(dataArray.filter(item => item.user_id == userId));
+        setFilteredArray(dataArray.filter(item => item.user_id == userId))
       })
-      // or getting the error
       .catch(err => {
         console.log(err)
       })
@@ -286,6 +284,13 @@ const Realtors = ({ setTab }) => {
   useEffect(() => {
     setFilteredArray(user.filter(item => item.name.includes(searchKey)))
   }, [searchKey])
+
+  async function deleteRealtor(id) {
+    const response = await axios.delete('http://34.198.19.55:8000/realtors/' + id)
+    console.log(response)
+    if (response)
+      window.location.reload()
+  }
 
   return (
     // <div className="dashboard-section">
@@ -422,9 +427,9 @@ const Realtors = ({ setTab }) => {
               <div className='col-3'>
                 <p>Company</p>
               </div>
-              {/* <div className='col-2'>
+              <div className='col-2'>
                 <p>Action</p>
-              </div> */}
+              </div>
             </div>
             <div className='d-flex flex-column table-body-part'>
               {
@@ -443,12 +448,12 @@ const Realtors = ({ setTab }) => {
                       <div className='col-3'>
                         <p>{item.company_name}</p>
                       </div>
-                      {/* <div className='col-2'>
+                      <div className='col-2'>
                         <div className='w-100 text-center'>
-                          <span className='dlt-btn'>View</span>&nbsp;/&nbsp;
-                          <span className='dlt-btn'>Delete</span>
+                          {/* <span className='dlt-btn'>View</span>&nbsp;/&nbsp; */}
+                          <span className='dlt-btn' onClick={() => deleteRealtor(item.id)}>Delete</span>
                         </div>
-                      </div> */}
+                      </div>
                     </div>
                   )
                 })

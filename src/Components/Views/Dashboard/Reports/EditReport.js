@@ -69,6 +69,7 @@ const CreateNewReports = () => {
     const [travelTotal, setTravelTotal] = useState('')
 
     const [countries, setCountries] = useState([])
+    const [userId, setUserId] = useState(localStorage.getItem('userId'))
 
 
     const handleFileSelect1 = (event) => {
@@ -152,6 +153,7 @@ const CreateNewReports = () => {
 
     async function saveDetails() {
         const body = {
+            // user_id: userId,
             report_name: reportName,
 
             property_street_address: propertyAddress1,

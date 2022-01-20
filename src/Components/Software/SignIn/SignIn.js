@@ -35,6 +35,7 @@ const SignIn = () => {
     const [apiResponseStatus, setApiResponseStatus] = useState(null);
     const [url, setUrl] = useState("");
     const [viewPassword, setViewPassword] = useState(false);
+    const [userId, setUserId] = useState('')
 
     const getAuth = async () => {
         const auth = await localStorage.getItem("auth");
@@ -115,6 +116,9 @@ const SignIn = () => {
                         setApiResponseStatus("error")
                     } else {
                         setApiResponseStatus("success")
+                        setUserId(resp.data.data.id)
+                        localStorage.setItem('userId', resp.data.data.id)
+                        sessionStorage.setItem('userId', resp.data.data.id)
                         setTimeout(() => {
                             history.push('/Dashboard')
                         }, 2000)
