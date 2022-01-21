@@ -155,13 +155,14 @@ const Contacts = () => {
         setModalAgencyIsOpen(false);
       }
 
-    //   for AGENT AGENCIES table
+    //   for AGENTS AGENCIES CLIENTS table
 
-    const [selected, setSelected] = React.useState("");
-  
-    const changeSelectOptionHandler = (event) => {
-        setSelected(event.target.value);
-    };
+    const [Tab,setTab] = useState(['Agent']);
+
+    function handleSelectTab(event) {
+        setTab(event.target.value);
+        console.log(event.target.value);
+    }
 
     // const Automation = () => {
     const [expanded, setExpanded] = React.useState('panel1');
@@ -336,9 +337,10 @@ const Contacts = () => {
                 </div>
                 <div class="body-part-two pad0">
                     <div class="part-one-left flex space-between pad-left-right10">
-                        <select name="selectList" class="select-list" onChange={changeSelectOptionHandler}>
-                            <option value="Agency">Agencies</option>
+                        <select name="selectList" class="select-list" value={Tab} onChange={handleSelectTab}>
                             <option value="Agent">Agents</option>
+                            <option value="Client">Clients</option>
+                            <option value="Agency">Agencies</option>
                         </select>
                     </div>
                     <div class="body-part-one mb-0">
@@ -356,65 +358,75 @@ const Contacts = () => {
                     </div>
                   
                     <div class="body-part-two pad0 pt-0">
-                        {(selected == "Agent") ?
+
+                        {Tab == 'Agent' &&
                         <div class="part-two-content pad-left-right0">
                         <div class="heading pad-left15">
                             <div class="wid20">
-                                <p>First Name</p>
+                                <p>FIRST NAME</p>
                             </div>
                             <div class="title">
-                                <p>Last Name</p>
+                                <p>LAST NAME</p>
                             </div>
                             <div class="title">
-                                <p>Agency</p>
+                                <p>AGENCY</p>
                             </div>
                             <div class="title">
-                                <p>Client Agent</p>
+                                <p>CLIENT'S AGENT</p>
                             </div>
                             <div class="date-created">
-                                <p>Seller Agent</p>
+                                <p>SELLER'S AGENT</p>
                             </div>
                             <div class="manage">
-                                <p>phone</p>
+                                <p>PHONE</p>
                             </div>
                             <div class="manage">
-                                <p>Email</p>
+                                <p>EMAIL</p>
                             </div>
                             <div class="manage">
-                                <p>Actions</p>
+                                <p>ACTIONS</p>
                             </div>
                         </div>
                         <div class="body height400">
                             <p>No matching records found</p>
                         </div>
-                    </div> :
+                    </div>}
 
+                    {Tab == 'Client' && 
                     <div class="part-two-content pad-left-right0">
                     <div class="heading pad-left15">
                         <div class="wid20">
-                            <p>Agency Name</p>
+                            <p>FIRST NAME</p>
                         </div>
                         <div class="title">
-                            <p>Client Agency</p>
+                            <p>LAST NAME</p>
                         </div>
                         <div class="date-created">
-                            <p>Seller Agency</p>
+                            <p>PHONE</p>
                         </div>
                         <div class="manage">
-                            <p>phone</p>
+                            <p>EMAIL</p>
                         </div>
                         <div class="manage">
-                            <p>Email</p>
-                        </div>
-                        <div class="manage">
-                            <p>Actions</p>
+                            <p>ACTIONS</p>
                         </div>
                     </div>
                     <div class="body height400">
                         <p>No matching records found</p>
                     </div>
+                    </div>}
+
+                    {Tab == 'Agency' && 
+                    <div class="part-two-content pad-left-right0">
+                    <div class="heading pad-left15">
+                        <div class="wid20">
+                            <p>AGENCY NAMES</p>
+                        </div>
                     </div>
-                        }
+                    <div class="body height400">
+                        <p>No matching records found</p>
+                    </div>
+                    </div>}
                         
                         <div class="part-two-footer space-around pad-bot20">
                             <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
