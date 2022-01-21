@@ -23,6 +23,7 @@
   top: 0;
   background-color: white;
   z-index: 1;
+  box-shadow: 0 2px 2px #00000029;
 }
 
 .dashboard-section .dashboard-header h2 {

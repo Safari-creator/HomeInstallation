@@ -194,13 +194,19 @@ const CreateNewReports = () => {
                                     </div>
                                     <div style={{ top: "66px" }}>
                                         <label>Cover Picture 1:</label>
-                                        <input type="file" onChange={handleFileSelect1} />
-                                        <p>{selectedFile1?.name}</p>
+                                        <input type="file" id="selected-file-1" onChange={handleFileSelect1} style={{ display: 'none' }} />
+                                        <span className='choose-file-text' onClick={() => {
+                                            document.querySelector('#selected-file-1').click()
+                                        }}>Choose File</span>
+                                        <p>{selectedFile1 ? selectedFile1.name : 'No File Selected'}</p>
                                     </div>
                                     <div style={{ top: "116px" }}>
                                         <label>Cover Picture 2:</label>
-                                        <input type="file" onChange={handleFileSelect2} />
-                                        <p>{selectedFile2?.name}</p>
+                                        <input type="file" id="selected-file-2" onChange={handleFileSelect2} style={{ display: 'none' }} />
+                                        <span className='choose-file-text' onClick={() => {
+                                            document.querySelector('#selected-file-2').click()
+                                        }}>Choose File</span>
+                                        <p>{selectedFile2 ? selectedFile2.name : 'No File Selected'}</p>
                                     </div>
                                 </div>
                             </div>

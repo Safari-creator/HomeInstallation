@@ -858,7 +858,7 @@
   .form-part
   div
   textarea {
-  width: 177px;
+  width: 225px;
   height: 96px;
   border-radius: 10px;
   border-color: #bbbbbb;
@@ -1282,6 +1282,21 @@
   border-radius: 10px;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.createnewreports-section .choose-file-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  height: 27px;
+  border: 1px solid #adadad;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 /* responsivenss */

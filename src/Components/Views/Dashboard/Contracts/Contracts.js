@@ -99,8 +99,10 @@ const Contracts = () => {
                             <div class="part-one-left flex top40">
                                 <div class="flex width200 flex-column align-items-start">
                                     <div className='d-flex mb-3'>
-                                        <p>Signature:</p>
-                                        {fileButton && <input type="file" onChange={handleFileSelect} id="group_image" />}
+                                        <p style={{ marginRight: 10 }}>Signature:</p>
+                                        {fileButton && <><span onClick={() => {
+                                            document.querySelector('#signature').click()
+                                        }} className='file-choose'>Choose File</span><input style={{ display: 'none' }} id="signature" type="file" onChange={handleFileSelect} /></>}
                                     </div>
                                     <div><p><img src="" id="output" class="signature-image" /></p></div>
                                 </div>

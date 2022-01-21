@@ -56,7 +56,7 @@ function AddRealtors() {
             <section className="body-part">
                 <div class="body-part-two">
                     <div class="part-one-left flex left34">
-                        <p>Agent Type</p>
+                        <p style={{ marginRight: 0 }}>Agent Type</p>
                         <select name="agent_type" value={post.agent_type} id="selectList" onChange={handleChangeInput}>
                             <option value="Seller">Seller</option>
                             <option value="Buyer">Buyer</option>
@@ -117,14 +117,18 @@ function AddRealtors() {
                     <div class="part-one-left flex top20 left34">
                         <div class="flex width40">
                             <p>Agent Picture:</p>
-                            <input type="file" onChange={handleFileSelect} id="group_image" />
+                            <input style={{ display: 'none' }} type="file" onChange={handleFileSelect} id="file-upload" />
+                            <span className='file-choose' onClick={() => {
+                                document.querySelector('#file-upload').click()
+                            }}>Choose File</span>
+                            <p style={{ fontSize: 14 }}>{selectedFile}</p>
                         </div>
                     </div>
                     <hr class="top20 width102" />
                     <div class="part-one-left flex top20 left34">
                         <div class="flex width41-5">
                             <p>Personal Notes:</p>
-                            <textarea placeholder="Notes..." style={{ width: 285 }} name="notes" value={post.notes} onChange={handleChangeInput}></textarea>
+                            <textarea placeholder="Notes..." style={{ width: 270, padding: 10, borderRadius: 8 }} name="notes" value={post.notes} onChange={handleChangeInput}></textarea>
                         </div>
                     </div>
                     <hr class="top20 width102" />
