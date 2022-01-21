@@ -45,7 +45,6 @@
 
 .width40 {
   width: 40%;
-  justify-content: space-between;
 }
 
 .width102 {
@@ -63,7 +62,6 @@
 
 .width41-5 {
   width: 41.5% !important;
-  justify-content: space-between;
 }
 
 .body-part .body-part-two .yellow-button {
@@ -111,6 +109,7 @@
 
 .add-realtors-page .body-part .body-part-two .part-one-left select {
   width: 270px;
+  margin-left: 10px;
 }
 
 .add-realtors-page .body-part p {

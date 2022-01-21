@@ -6,6 +6,7 @@
   top: 0px;
   background: white;
   z-index: 1000;
+  box-shadow: 0 2px 2px #00000029;
 }
 .sidebar-section .sidebar-image {
   margin-left: 15px;
