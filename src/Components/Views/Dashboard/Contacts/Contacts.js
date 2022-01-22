@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './Contacts.css';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
@@ -11,6 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -120,44 +121,44 @@ function BpCheckbox(props) {
 // for modal
 const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      width: '50%',
-      padding:'0px',
-      marginTop: '50px',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '50%',
+        padding: '0px',
+        marginTop: '50px',
     },
-  };
-  
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+};
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 // Modal.setAppElement('#yourAppElement');
 
 const Contacts = () => {
 
     // for modal
-   
+
     const [modalAgentIsOpen, setModalAgentIsOpen] = React.useState(false);
     const [modalAgencyIsOpen, setModalAgencyIsOpen] = React.useState(false);
 
     function openModalAgent() {
         setModalAgentIsOpen(true);
-      }
+    }
     function closeModalAgent() {
         setModalAgentIsOpen(false);
-      }
+    }
     function openModalAgency() {
         setModalAgencyIsOpen(true);
-      }
+    }
     function closeModalAgency() {
         setModalAgencyIsOpen(false);
-      }
+    }
 
     //   for AGENTS AGENCIES CLIENTS table
 
-    const [Tab,setTab] = useState(['Agent']);
+    const [Tab, setTab] = useState(['Agent']);
 
     function handleSelectTab(event) {
         setTab(event.target.value);
@@ -245,196 +246,198 @@ const Contacts = () => {
                             style={customStyles}
                             contentLabel="Example Modal"
                             class="modal-agent">
-                                <div class="modal-body">
-                                    <button onClick={closeModalAgent}>x</button>
-                                    <div class="modal-form">
-                                        <form class="form">
-                                            <div>
-                                                <label>First Name:</label>
-                                                <input type="text" placeholder='firstname'></input>
-                                            </div>
-                                            <div>
-                                                <label>Last Name:</label>
-                                                <input type="text" placeholder='lastname'></input>
-                                            </div>
-                                            <div>
-                                                <label>Agency:</label>
-                                                <input type="text" placeholder='agency'></input>
-                                            </div>
-                                            <div>
-                                                <label>Client Agent:</label>
-                                                <input type="text" placeholder='client agent'></input>
-                                            </div>
-                                            <div>
-                                                <label>Seller Agent:</label>
-                                                <input type="text" placeholder='seller agent'></input>
-                                            </div>
-                                            <div>
-                                                <label>Phone:</label>
-                                                <input type="text" placeholder='phone number'></input>
-                                            </div>
-                                            <div>
-                                                <label>Email:</label>
-                                                <input type="email" placeholder='email'></input>
-                                            </div>
-                                            <div class="form-buttons">
-                                                <button>Add</button>
-                                                <button>Cancel</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                            <ModalHeader closeButton onClick={closeModalAgent}></ModalHeader>
+                            <div class="modal-body">
+                                {/* <button onClick={closeModalAgent}>x</button> */}
+                                <div class="modal-form">
+                                    <form class="form">
+                                        <div>
+                                            <label>First Name:</label>
+                                            <input type="text" placeholder='firstname'></input>
+                                        </div>
+                                        <div>
+                                            <label>Last Name:</label>
+                                            <input type="text" placeholder='lastname'></input>
+                                        </div>
+                                        <div>
+                                            <label>Agency:</label>
+                                            <input type="text" placeholder='agency'></input>
+                                        </div>
+                                        <div>
+                                            <label>Client Agent:</label>
+                                            <input type="text" placeholder='client agent'></input>
+                                        </div>
+                                        <div>
+                                            <label>Seller Agent:</label>
+                                            <input type="text" placeholder='seller agent'></input>
+                                        </div>
+                                        <div>
+                                            <label>Phone:</label>
+                                            <input type="text" placeholder='phone number'></input>
+                                        </div>
+                                        <div>
+                                            <label>Email:</label>
+                                            <input type="email" placeholder='email'></input>
+                                        </div>
+                                        <div class="form-buttons">
+                                            <button>Add</button>
+                                            <button>Cancel</button>
+                                        </div>
+                                    </form>
                                 </div>
+                            </div>
                         </Modal>
                     </div>
                     <div class="part-one-left flex space-between">
-                        <span className='buttons' onClick={openModalAgency}>Add Agencies</span>
-                        <Modal isOpen={modalAgencyIsOpen}
+                        <span className='buttons' onClick={() => setTab('Agency')}>Agencies</span>
+                        {/* <Modal isOpen={modalAgencyIsOpen}
                             onRequestClose={closeModalAgency}
                             style={customStyles}
                             contentLabel="Example Modal"
                             class="modal-agent">
-                                <div class="modal-body">
-                                    <button onClick={closeModalAgency}>x</button>
-                                    <div class="modal-form">
-                                        <form class="form">
-                                            <div>
-                                                <label>First Name:</label>
-                                                <input type="text" placeholder='firstname'></input>
-                                            </div>
-                                            <div>
-                                                <label>Last Name:</label>
-                                                <input type="text" placeholder='lastname'></input>
-                                            </div>
-                                            <div>
-                                                <label>Agency:</label>
-                                                <input type="text" placeholder='agency'></input>
-                                            </div>
-                                            <div>
-                                                <label>Client Agent:</label>
-                                                <input type="text" placeholder='client agent'></input>
-                                            </div>
-                                            <div>
-                                                <label>Seller Agent:</label>
-                                                <input type="text" placeholder='seller agent'></input>
-                                            </div>
-                                            <div>
-                                                <label>Phone:</label>
-                                                <input type="text" placeholder='phone number'></input>
-                                            </div>
-                                            <div>
-                                                <label>Email:</label>
-                                                <input type="email" placeholder='email'></input>
-                                            </div>
-                                            <div class="form-buttons">
-                                                <button>Add</button>
-                                                <button>Cancel</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                            <div class="modal-body">
+                                <button onClick={closeModalAgency}>x</button>
+                                <div class="modal-form">
+                                    <form class="form">
+                                        <div>
+                                            <label>First Name:</label>
+                                            <input type="text" placeholder='firstname'></input>
+                                        </div>
+                                        <div>
+                                            <label>Last Name:</label>
+                                            <input type="text" placeholder='lastname'></input>
+                                        </div>
+                                        <div>
+                                            <label>Agency:</label>
+                                            <input type="text" placeholder='agency'></input>
+                                        </div>
+                                        <div>
+                                            <label>Client Agent:</label>
+                                            <input type="text" placeholder='client agent'></input>
+                                        </div>
+                                        <div>
+                                            <label>Seller Agent:</label>
+                                            <input type="text" placeholder='seller agent'></input>
+                                        </div>
+                                        <div>
+                                            <label>Phone:</label>
+                                            <input type="text" placeholder='phone number'></input>
+                                        </div>
+                                        <div>
+                                            <label>Email:</label>
+                                            <input type="email" placeholder='email'></input>
+                                        </div>
+                                        <div class="form-buttons">
+                                            <button>Add</button>
+                                            <button>Cancel</button>
+                                        </div>
+                                    </form>
                                 </div>
-                        </Modal>
+                            </div>
+                        </Modal> */}
                     </div>
                 </div>
                 <div class="body-part-two pad0">
                     <div class="part-one-left flex space-between pad-left-right10">
                         <select name="selectList" class="select-list" value={Tab} onChange={handleSelectTab}>
+                            <option value="Select">Select</option>
                             <option value="Agent">Agents</option>
                             <option value="Client">Clients</option>
-                            <option value="Agency">Agencies</option>
+                            {/* <option value="Agency">Agencies</option> */}
                         </select>
                     </div>
                     <div class="body-part-one mb-0">
                         <div class="part-one-left">
-                            <p>Show</p>
+                            {/* <p>Show</p>
                             <select name="selectList" id="selectList">
                                 <option value="option 1">10</option>
                                 <option value="option 2">25</option>
-                            </select>
+                            </select> */}
                         </div>
                         <div class="part-one-right">
                             <p>Search</p>
                             <input type="text" placeholder="Entries"></input>
                         </div>
                     </div>
-                  
+
                     <div class="body-part-two pad0 pt-0">
 
                         {Tab == 'Agent' &&
-                        <div class="part-two-content pad-left-right0">
-                        <div class="heading pad-left15">
-                            <div class="wid20">
-                                <p>FIRST NAME</p>
-                            </div>
-                            <div class="title">
-                                <p>LAST NAME</p>
-                            </div>
-                            <div class="title">
-                                <p>AGENCY</p>
-                            </div>
-                            <div class="title">
-                                <p>CLIENT'S AGENT</p>
-                            </div>
-                            <div class="date-created">
-                                <p>SELLER'S AGENT</p>
-                            </div>
-                            <div class="manage">
-                                <p>PHONE</p>
-                            </div>
-                            <div class="manage">
-                                <p>EMAIL</p>
-                            </div>
-                            <div class="manage">
-                                <p>ACTIONS</p>
-                            </div>
-                        </div>
-                        <div class="body height400">
-                            <p>No matching records found</p>
-                        </div>
-                    </div>}
+                            <div class="part-two-content pad-left-right0">
+                                <div class="heading pad-left15">
+                                    <div class="wid20">
+                                        <p>FIRST NAME</p>
+                                    </div>
+                                    <div class="title">
+                                        <p>LAST NAME</p>
+                                    </div>
+                                    <div class="title">
+                                        <p>AGENCY</p>
+                                    </div>
+                                    <div class="title">
+                                        <p>CLIENT'S AGENT</p>
+                                    </div>
+                                    <div class="date-created">
+                                        <p>SELLER'S AGENT</p>
+                                    </div>
+                                    <div class="manage">
+                                        <p>PHONE</p>
+                                    </div>
+                                    <div class="manage">
+                                        <p>EMAIL</p>
+                                    </div>
+                                    <div class="manage">
+                                        <p>ACTIONS</p>
+                                    </div>
+                                </div>
+                                <div class="body height400">
+                                    <p>No matching records found</p>
+                                </div>
+                            </div>}
 
-                    {Tab == 'Client' && 
-                    <div class="part-two-content pad-left-right0">
-                    <div class="heading pad-left15">
-                        <div class="wid20">
-                            <p>FIRST NAME</p>
-                        </div>
-                        <div class="title">
-                            <p>LAST NAME</p>
-                        </div>
-                        <div class="date-created">
-                            <p>PHONE</p>
-                        </div>
-                        <div class="manage">
-                            <p>EMAIL</p>
-                        </div>
-                        <div class="manage">
-                            <p>ACTIONS</p>
-                        </div>
-                    </div>
-                    <div class="body height400">
-                        <p>No matching records found</p>
-                    </div>
-                    </div>}
+                        {Tab == 'Client' &&
+                            <div class="part-two-content pad-left-right0">
+                                <div class="heading pad-left15">
+                                    <div class="wid20">
+                                        <p>FIRST NAME</p>
+                                    </div>
+                                    <div class="title">
+                                        <p>LAST NAME</p>
+                                    </div>
+                                    <div class="date-created">
+                                        <p>PHONE</p>
+                                    </div>
+                                    <div class="manage">
+                                        <p>EMAIL</p>
+                                    </div>
+                                    <div class="manage">
+                                        <p>ACTIONS</p>
+                                    </div>
+                                </div>
+                                <div class="body height400">
+                                    <p>No matching records found</p>
+                                </div>
+                            </div>}
 
-                    {Tab == 'Agency' && 
-                    <div class="part-two-content pad-left-right0">
-                    <div class="heading pad-left15">
-                        <div class="wid20">
-                            <p>AGENCY NAMES</p>
-                        </div>
-                    </div>
-                    <div class="body height400">
-                        <p>No matching records found</p>
-                    </div>
-                    </div>}
-                        
-                        <div class="part-two-footer space-around pad-bot20">
+                        {Tab == 'Agency' &&
+                            <div class="part-two-content pad-left-right0">
+                                <div class="heading pad-left15">
+                                    <div class="wid20">
+                                        <p>AGENCY NAMES</p>
+                                    </div>
+                                </div>
+                                <div class="body height400">
+                                    <p>No matching records found</p>
+                                </div>
+                            </div>}
+
+                        {/* <div class="part-two-footer space-around pad-bot20">
                             <div class="footer-left"><p>Showing 5 to 5 of 5 entries (filtered from 42 total entries)</p></div>
                             <div class="footer-right">
                                 <button>Previous</button>
                                 <p>1/10</p>
                                 <button>Next</button></div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="row-reverse">

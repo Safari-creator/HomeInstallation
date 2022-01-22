@@ -129,3 +129,7 @@
   background-color: #c5c4c4;
   margin: 5px;
 }
+
+.ReactModalPortal .form label {
+  min-width: 100px;
+}
