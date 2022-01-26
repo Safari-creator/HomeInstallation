@@ -329,7 +329,7 @@ const Contacts = () => {
                             <ModalHeader closeButton onClick={closeModalAgent}></ModalHeader>
                             <div class="modal-body">
                                 {/* <button onClick={closeModalAgent}>x</button> */}
-                                <div class="modal-form form">
+                                <div class="modal-form form flex-row">
                                     <div>
                                         <label>First Name*:</label>
                                         <input type="text" placeholder='firstname' onChange={(e) => setFName(e.target.value)}></input>
