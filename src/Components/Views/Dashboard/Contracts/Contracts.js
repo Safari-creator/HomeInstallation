@@ -3,6 +3,11 @@ import './Contracts.css';
 // import { useReactToPrint } from 'react-to-print';
 import ContractDetails from './ContractDetails';
 import ReactToPdf from 'react-to-pdf';
+import Modal from 'react-modal';
+import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+import { ModalTitle } from 'react-bootstrap';
+import { BASE_API_URL } from '../../../../Constats/Constats';
+import axios from 'axios';
 
 const Contracts = () => {
 
@@ -16,11 +21,33 @@ const Contracts = () => {
     const [tab, setTab] = React.useState(0)
     const [selectedFile, setSelectedFile] = useState(null);
     const [fileButton, setFileButton] = useState(true)
+    const [addContractModal, setAddContractModal] = useState(false)
+    const [editContractModal, setEditContractModal] = useState(false)
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
+    const [oldContract, setOldContract] = useState('')
+    const [newContract, setNewContract] = useState('')
+    const [contractArray, setContractArray] = useState([])
+    const [selectedContract, setSelectedContract] = useState()
+
+
+
+    useEffect(async () => {
+        const response = await axios.get(BASE_API_URL + 'contracts')
+        let dataArray = []
+
+        dataArray = response.data.data.filter(item => item.user_id == userId)
+
+        setContractArray(dataArray)
+        setOldContract(dataArray[0].contract_summary)
+        setSelectedContract(dataArray[0].id)
+    }, [])
+
 
     useEffect(() => {
         var image = document.getElementById('output');
         image.style.display = 'none'
     }, [])
+
     const handleFileSelect = (event) => {
         setSelectedFile(event.target.files[0].name);
         console.log(event.target.files[0]);
@@ -34,48 +61,83 @@ const Contracts = () => {
     // content: () => componentRef.current,
     // });
 
-    React.useEffect(() => {
-        console.log(tab)
-    }, [tab])
 
     const handleSelect = (e) => {
-        console.log(e.target.value)
-        if (e.target.value == "1") {
-            setTab(0)
+        let contract = contractArray.filter(item => item.id == e.target.value)
+        setOldContract(contract[0].contract_summary)
+        setSelectedContract(e.target.value)
+    }
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: '50%',
+            padding: '0px',
+            marginTop: '50px',
+        },
+    };
+
+    async function addContracts() {
+        if (!newContract)
+            return
+
+        const body = {
+            contract_summary: newContract,
+            signature: '',
+            user_id: userId
         }
-        if (e.target.value == "2") {
-            setTab(1)
+        const response = await axios.post(BASE_API_URL + 'contracts', body)
+
+        if (response.statusText == "Created") {
+            setAddContractModal(!addContractModal)
+            window.location.reload()
         }
-        if (e.target.value == "3") {
-            setTab(2)
+    }
+
+
+    async function editContracts() {
+        if (!newContract)
+            return
+
+        const body = {
+            contract_summary: newContract,
+            signature: '',
+            user_id: userId
         }
-        if (e.target.value == "4") {
-            setTab(3)
+        const response = await axios.put(BASE_API_URL + 'contracts/' + selectedContract, body)
+
+        if (response.statusText == "OK") {
+            setEditContractModal(!editContractModal)
+            window.location.reload()
         }
-        if (e.target.value == "5") {
-            setTab(4)
-        }
-        if (e.target.value == "6") {
-            setTab(5)
-        }
-        if (e.target.value == "7") {
-            setTab(6)
+    }
+
+    async function deleteContract() {
+        const response = await axios.delete(BASE_API_URL + 'contracts/' + selectedContract)
+
+        if (response.statusText == "OK") {
+            window.location.reload()
         }
     }
 
     return (
-        <div className="extrapages-section">
+        <div className="extrapages-section contracts-page">
             <section className="body-part">
                 <div class="body-part-two bot50">
                     <div class="part-one-left flex space-between contracts">
                         <select name="selectList" class="select-list" onChange={(e) => handleSelect(e)}>
-                            <option value="1" >Contract 1</option>
-                            <option value="2" >Contract 2</option>
-                            <option value="3" >Contract 3</option>
-                            <option value="4" >Contract 4</option>
-                            <option value="5" >Contract 5</option>
-                            <option value="6" >Contract 6</option>
-                            <option value="7" >Contract 7</option>
+                            {
+                                contractArray.map((item, index) => {
+                                    return (
+                                        <option value={item.id}>Contract {index + 1}</option>
+                                    )
+                                })
+                            }
                         </select>
                         {/* {/ for printing /}
                         {/ <button class="blue-button" onClick={handlePrint}>Print</button> /} */}
@@ -89,13 +151,18 @@ const Contracts = () => {
                         </ReactToPdf>
                     </div>
                     <div class="part-one-left column top20"  >
-                        <div class="flex width40 top-bot-40">
+                        {/* <div class="flex width40 top-bot-40">
                             <p>Contract {tab + 1}:</p>
-                        </div>
+                        </div> */}
                         {/* {/ for printing /}
                         {/ <ContractDetails ref={componentRef} /> /} */}
+                        <div className='edit-contracts'>
+                            <span className='fa fa-plus' onClick={() => setAddContractModal(true)} style={{ marginRight: 15, cursor: 'pointer', fontSize: 18 }} />
+                            <span className='fa fa-pen' onClick={() => setEditContractModal(true)} style={{ marginRight: 15, cursor: 'pointer', fontSize: 18 }} />
+                            <span className='fa fa-close' onClick={deleteContract} style={{ marginRight: 8, cursor: 'pointer', fontSize: 18 }} />
+                        </div>
                         <div ref={ref}>
-                            <ContractDetails />
+                            <ContractDetails contract={oldContract} />
                             <div class="part-one-left flex top40">
                                 <div class="flex width200 flex-column align-items-start">
                                     <div className='d-flex mb-3'>
@@ -108,12 +175,42 @@ const Contracts = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{ display: 'none' }}>
-                            <div style={{ width: '740px' }}>
-                                <ContractDetails />
-                                <div><p><img src="" id="output" class="signature-image" /></p></div>
+                        <Modal isOpen={addContractModal}
+                            onRequestClose={() => setAddContractModal(!addContractModal)}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                            id="modal-add-Contracts">
+                            <ModalHeader closeButton onClick={() => setAddContractModal(!addContractModal)}>
+                                <ModalTitle className='d-flex w-100 justify-content-center'>Add Contract</ModalTitle>
+                            </ModalHeader>
+                            <div class="modal-body">
+                                <div class="modal-form">
+                                    <textarea style={{ resize: 'none' }} onChange={(e) => setNewContract(e.target.value)}></textarea>
+                                    <div class="form-buttons">
+                                        <button onClick={() => addContracts()} className='add-contract-btn'>Save</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </Modal>
+
+                        <Modal isOpen={editContractModal}
+                            onRequestClose={() => setEditContractModal(!editContractModal)}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                            id="modal-add-Contracts">
+                            <ModalHeader closeButton onClick={() => setEditContractModal(!editContractModal)}>
+                                <ModalTitle className='d-flex w-100 justify-content-center'>Edit Contract</ModalTitle>
+                            </ModalHeader>
+                            <div class="modal-body">
+                                <div class="modal-form">
+                                    <textarea style={{ resize: 'none' }} onChange={(e) => setNewContract(e.target.value)}>{oldContract}</textarea>
+                                    <div class="form-buttons">
+                                        <button onClick={() => editContracts()} className='add-contract-btn'>Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </Modal>
+
                     </div>
                     <div class="part-two-content">
                     </div>

@@ -69,7 +69,7 @@ const CreateNewReports = () => {
     const [travelTotal, setTravelTotal] = useState('')
 
     const [countries, setCountries] = useState([])
-    const [userId, setUserId] = useState(localStorage.getItem('userId'))
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
 
 
     const handleFileSelect1 = (event) => {

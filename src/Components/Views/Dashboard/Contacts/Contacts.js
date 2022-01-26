@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Contacts.css';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
@@ -12,6 +12,8 @@ import Checkbox from '@mui/material/Checkbox';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import ModalHeader from 'react-bootstrap/esm/ModalHeader';
+import axios from 'axios';
+import { BASE_API_URL } from '../../../../Constats/Constats';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -142,6 +144,25 @@ const Contacts = () => {
 
     const [modalAgentIsOpen, setModalAgentIsOpen] = React.useState(false);
     const [modalAgencyIsOpen, setModalAgencyIsOpen] = React.useState(false);
+    const [agentsArray, setAgentsArray] = useState([])
+    const [clientsArray, setClientsArray] = useState([])
+    const [agencyArray, setAgencyArray] = useState([])
+
+
+    const [fname, setFName] = useState('')
+    const [lname, setLName] = useState('')
+    const [agency, setAgency] = useState('')
+    const [clientAgent, setClientAgent] = useState('')
+    const [sellerAgent, setSellerAgent] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
+
+    const [city, setCity] = useState('')
+    const [states, setStates] = useState('')
+    const [country, setCountry] = useState('')
+    const [agencyPhone, setAgencyPhone] = useState('')
+    const [userId, setUserId] = useState(sessionStorage.getItem('userId'))
+
 
     function openModalAgent() {
         setModalAgentIsOpen(true);
@@ -171,6 +192,57 @@ const Contacts = () => {
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+
+    useEffect(async () => {
+        const response = await axios.get(BASE_API_URL + 'agent_contacts')
+        console.log(response.data.data)
+        setAgentsArray(response.data.data)
+    }, [])
+
+    useEffect(async () => {
+        const response = await axios.get(BASE_API_URL + 'agency_contacts')
+        console.log(response.data.data)
+        setAgencyArray(response.data.data)
+    }, [Tab])
+
+    async function addContact() {
+        if (!fname && !agency && !phone && !lname)
+            return;
+
+        const body = {
+            first_name: fname,
+            agency_name: agency,
+            client_agent: clientAgent,
+            seller_agent: sellerAgent,
+            phone: phone,
+            email: email,
+            city: city,
+            state: states,
+            country: country,
+            last_name: lname,
+            second_email: '',
+            second_phone: '',
+            date_of_birth: '',
+            agency_phone: agencyPhone,
+            image: '',
+            user_id: userId
+        }
+
+        const response = await axios.post(BASE_API_URL + 'agent_contacts', body)
+        console.log(response.data)
+
+        const agencyBody = {
+            name: agency,
+            user_id: userId
+        }
+        const response2 = await axios.post(BASE_API_URL + 'agency_contacts', agencyBody)
+        console.log(response2)
+
+        if (response.data.status == 200 && response2.statusText == "Created") {
+            setModalAgentIsOpen(!modalAgentIsOpen)
+            window.location.reload()
+        }
+    }
 
     const questionsList = [
         {
@@ -229,8 +301,16 @@ const Contacts = () => {
         },
     ]
 
+    async function deleteAgent(id) {
+        const response = await axios.delete(BASE_API_URL + 'agent_contacts/' + id)
+        console.log(response)
+        if (response.data.message == "Deleted successfully") {
+            window.location.reload()
+        }
+    }
+
     return (
-        <div className="extrapages-section">
+        <div className="extrapages-section contracts-page">
             <section className="body-part">
                 <div class="flex space-between">
                     <div class="part-one-left flex space-between">
@@ -249,41 +329,51 @@ const Contacts = () => {
                             <ModalHeader closeButton onClick={closeModalAgent}></ModalHeader>
                             <div class="modal-body">
                                 {/* <button onClick={closeModalAgent}>x</button> */}
-                                <div class="modal-form">
-                                    <form class="form">
-                                        <div>
-                                            <label>First Name:</label>
-                                            <input type="text" placeholder='firstname'></input>
-                                        </div>
-                                        <div>
-                                            <label>Last Name:</label>
-                                            <input type="text" placeholder='lastname'></input>
-                                        </div>
-                                        <div>
-                                            <label>Agency:</label>
-                                            <input type="text" placeholder='agency'></input>
-                                        </div>
-                                        <div>
-                                            <label>Client Agent:</label>
-                                            <input type="text" placeholder='client agent'></input>
-                                        </div>
-                                        <div>
-                                            <label>Seller Agent:</label>
-                                            <input type="text" placeholder='seller agent'></input>
-                                        </div>
-                                        <div>
-                                            <label>Phone:</label>
-                                            <input type="text" placeholder='phone number'></input>
-                                        </div>
-                                        <div>
-                                            <label>Email:</label>
-                                            <input type="email" placeholder='email'></input>
-                                        </div>
-                                        <div class="form-buttons">
-                                            <button>Add</button>
-                                            <button>Cancel</button>
-                                        </div>
-                                    </form>
+                                <div class="modal-form form">
+                                    <div>
+                                        <label>First Name*:</label>
+                                        <input type="text" placeholder='firstname' onChange={(e) => setFName(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Last Name*:</label>
+                                        <input type="text" placeholder='lastname' onChange={(e) => setLName(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Agency*:</label>
+                                        <input type="text" placeholder='agency' onChange={(e) => setAgency(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Client Agent:</label>
+                                        <input type="text" placeholder='client agent' onChange={(e) => setClientAgent(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Seller Agent:</label>
+                                        <input type="text" placeholder='seller agent' onChange={(e) => setSellerAgent(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>City:</label>
+                                        <input type="text" placeholder='city' onChange={(e) => setCity(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>State:</label>
+                                        <input type="text" placeholder='state' onChange={(e) => setCountry(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Country:</label>
+                                        <input type="text" placeholder='country' onChange={(e) => setCountry(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Phone*:</label>
+                                        <input type="text" placeholder='phone number' onChange={(e) => setPhone(e.target.value)}></input>
+                                    </div>
+                                    <div>
+                                        <label>Email:</label>
+                                        <input type="email" placeholder='email' onChange={(e) => setEmail(e.target.value)}></input>
+                                    </div>
+                                    <div class="form-buttons">
+                                        <button type='button' onClick={() => addContact()}>Add</button>
+                                        {/* <button>Cancel</button> */}
+                                    </div>
                                 </div>
                             </div>
                         </Modal>
@@ -365,7 +455,7 @@ const Contacts = () => {
                         {Tab == 'Agent' &&
                             <div class="part-two-content pad-left-right0">
                                 <div class="heading pad-left15">
-                                    <div class="wid20">
+                                    <div class="wid20 text-center">
                                         <p>FIRST NAME</p>
                                     </div>
                                     <div class="title">
@@ -391,7 +481,38 @@ const Contacts = () => {
                                     </div>
                                 </div>
                                 <div class="body height400">
-                                    <p>No matching records found</p>
+                                    {
+                                        agentsArray.map(item => {
+                                            return (
+                                                <div className='body-row'>
+                                                    <div class="cell-1">
+                                                        <p>{item.first_name}</p>
+                                                    </div>
+                                                    <div class="cell-2">
+                                                        <p>{item.last_name}</p>
+                                                    </div>
+                                                    <div class="cell-3">
+                                                        <p>{item.agency_name}</p>
+                                                    </div>
+                                                    <div class="cell-4">
+                                                        <p>{item.client_agent}</p>
+                                                    </div>
+                                                    <div class="cell-5">
+                                                        <p>{item.seller_agent}</p>
+                                                    </div>
+                                                    <div class="cell-6">
+                                                        <p>{item.phone}</p>
+                                                    </div>
+                                                    <div class="cell-7">
+                                                        <p>{item.email}</p>
+                                                    </div>
+                                                    <div class="cell-8">
+                                                        <p onClick={() => deleteAgent(item.id)}>Delete</p>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
                             </div>}
 
@@ -427,7 +548,15 @@ const Contacts = () => {
                                     </div>
                                 </div>
                                 <div class="body height400">
-                                    <p>No matching records found</p>
+                                    {
+                                        agencyArray.map(item => {
+                                            return (
+                                                <div className='body-row'>
+                                                    <p>{item.name}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
                             </div>}
 

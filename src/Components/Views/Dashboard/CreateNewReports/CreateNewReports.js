@@ -100,6 +100,9 @@ const CreateNewReports = () => {
     }, [])
 
     async function saveDetails() {
+        if (!reportName)
+            return
+
         const body = {
             user_id: userId,
             report_name: reportName,

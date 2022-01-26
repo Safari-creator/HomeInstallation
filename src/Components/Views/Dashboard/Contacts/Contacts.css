@@ -23,7 +23,7 @@
 }
 
 .height400 {
-  height: 400px !important;
+  min-height: 400px !important;
 }
 
 .pad0 {
@@ -132,4 +132,45 @@
 
 .ReactModalPortal .form label {
   min-width: 100px;
+}
+
+.contracts-page .body-part .body-part-two .part-two-content .body .body-row {
+  display: flex;
+  width: 100%;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.contracts-page
+  .body-part
+  .body-part-two
+  .part-two-content
+  .body
+  .body-row
+  .cell-8
+  p {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-1 {
+  width: 20%;
+}
+
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-2,
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-3,
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-4 {
+  width: 30%;
+}
+
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-5,
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-6,
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-7,
+.contracts-page .body-part .body-part-two .part-two-content .body .cell-8 {
+  width: 25%;
+}
+
+.contracts-page .body-part .body-part-two.pad0 {
+  padding-bottom: 10px !important;
 }
