@@ -23,6 +23,8 @@ function AddRealtors() {
 
     function createPost(e) {
         console.log(post)
+        if (!post.name)
+            return
         e.preventDefault()
         axios
             .post('http://34.198.19.55:8000/realtors',

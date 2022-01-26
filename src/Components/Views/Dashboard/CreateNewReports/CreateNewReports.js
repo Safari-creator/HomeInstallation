@@ -192,7 +192,7 @@ const CreateNewReports = () => {
                             <div className="section-body">
                                 <div className="form-part">
                                     <div style={{ top: "0px" }}>
-                                        <label>Enter Report Name:</label>
+                                        <label>Enter Report Name*:</label>
                                         <input className="form-input" name="name" type="text" onChange={(e) => setReportName(e.target.value)} style={{ width: "177px" }} value={reportName}></input>
                                     </div>
                                     <div style={{ top: "66px" }}>
